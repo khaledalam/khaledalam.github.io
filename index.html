@@ -102,19 +102,22 @@
     <!-- Cards -->
     <script>
       const projects = [
-        { name: "Khardl", type: "saas", desc: "Multi-tenant Laravel SaaS platform.", tag: "PHP", link: "https://github.com/khaledalam/khardl" },
         { name: "Makyee Platform", type: "web", desc: "Real estate PropTech platform built in Yii 1.1", tag: "PHP", link:"https://makyee.com" },
+        { name: "MintMe", type: "web", desc: "Crypto token exchange platform built in Symfony and Vue.", tag: "PHP", link: "https://mintme.com" },
+        { name: "CoinIMP", type: "web", desc: "JS-based browser crypto miner built in Symfony and Vue.", tag: "PHP", link: "https://coinimp.com" },
+        { name: "CoffeePlanet", type: "web", desc: "Corporate website for coffee brand built with Shopify.", tag: "Liquid", link: "https://coffeeplanet.com/" },
+        { name: "Misk Events", type: "web", desc: "Hub for Saudi Misk Foundation events built in WordPress.", tag: "PHP", link: "https://hub.misk.org.sa/events" },
+        { name: "Prima International", type: "web", desc: "A clean, modern Next.js-powered website for Prima International, a Riyadh-based gourmet bakery operating in the food and beverage manufacturing sector.", tag: "TypeScript", link: "https://www.primainternational.com/" },
+        { name: "Arla Food App", type: "mobile", desc: "Internal food safety inspection app", tag: "React Native" },
+        { name: "Sourcetoad Core", type: "web", desc: "Cruise Director platform built in Yii2", tag: "PHP", link: "https://ondecksoftware.com/cruise-director-platform/" },
+        { name: "Khardl", type: "saas", desc: "Multi-tenant Laravel SaaS platform.", tag: "PHP", link: "https://github.com/khaledalam/khardl" },
         { name: "Digital Twin", type: "web", desc: "React-based AI health assistant.", tag: "React" },
         { name: "Avatoon", type: "web", desc: "React Three Fiber component for animated avatars with lip-sync and head motion.", tag: "React", link: "https://github.com/khaledalam/avatoon" },
         { name: "Rugby Game", type: "web", desc: "Laravel-powered rugby management app.", tag: "PHP" },
         { name: "Redis", type: "opensource", desc: "Real-time chatting with redis server in CLI.", tag: "C", link: "https://github.com/redis/redis/pull/12215" },
         { name: "GraphRag", type: "opensource", desc: "LLM Token and Cost Estimation Pre-check Before Indexing.", tag: "Python", link: "https://github.com/microsoft/graphrag/pull/1917" },
-        { name: "MintMe", type: "web", desc: "Crypto token exchange platform built in Symfony and Vue.", tag: "PHP", link: "https://mintme.com" },
-        { name: "CoinIMP", type: "web", desc: "JS-based browser crypto miner built in Symfony and Vue.", tag: "PHP", link: "https://coinimp.com" },
-        { name: "CoffeePlanet", type: "web", desc: "Corporate website for coffee brand built with Shopify.", tag: "Liquid", link: "https://coffeeplanet.com/" },
-        { name: "Misk Events", type: "web", desc: "Hub for Saudi Misk Foundation events built in WordPress.", tag: "PHP", link: "https://hub.misk.org.sa/events" },
-        { name: "Arla Food App", type: "mobile", desc: "Internal food safety inspection app", tag: "React Native" },
-        { name: "Sourcetoad Core", type: "web", desc: "Cruise Director platform built in Yii2", tag: "PHP", link: "https://ondecksoftware.com/cruise-director-platform/" },
+        
+        
         { name: "OrdersAnalytics", type: "saas", desc: "BigCommerce analytics SaaS app built in Laravel.", tag: "PHP", link: "https://www.bigcommerce.com/apps/orders-analytics/" },
         { name: "SpeakTextOnline", type: "web", desc: "Text-to-speech tool with AI automation built in Laravel and React", tag: "PHP", link: "https://speaktextonline.com" },
         { name: "KhaledAlam.net", type: "web", desc: "Personal portfolio site.", tag: "PHP", link: "https://khaledalam.net" },
@@ -125,6 +128,7 @@
         { name: "Arrow Shooting", type: "games", desc: "Arrow Shooting 2D Game in C++ using OpenGL and various Trigonometry and Geometry Algorithms.", tag: "C++", link: "https://github.com/khaledalam/arrow-shooting" },
         { name: "Unit", type: "tools", desc: "A lightweight PHP library for working with physical quantities and unit conversions. Supports arithmetic operations, precision formatting, and dimensional analysis.", tag: "PHP", link: "https://github.com/khaledalam/unit" },
          { name: "PHP SDK/API for Google Bard", type: "tools", desc: "PHP SDK/API for Google Bard (experiment version) (unofficial)", tag: "PHP", link: "https://github.com/khaledalam/bard-sdk-php" },
+         { name: "htop", type: "tools", desc: "(WIP) Real-time Laravel request monitor with CLI & WebSocket GUI dashboard", tag: "PHP", link: "https://github.com/khaledalam/htop" },
       ];
 
       document.addEventListener('DOMContentLoaded', () => {
