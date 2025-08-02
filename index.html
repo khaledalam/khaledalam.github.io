@@ -94,7 +94,7 @@
 
   </header>
 
-  <section id="hero" class="pt-20 min-h-screen flex flex-col justify-center px-6 md:px-20 dark:bg-black bg-white">
+  <section id="hero" class="flex items-center pt-20 min-h-screen flex flex-col justify-center px-6 md:px-20 dark:bg-black bg-white">
 
 
     <div class="flex mb-10 flex-col md:flex-row items-start gap-10 max-w-6xl w-full">
@@ -309,6 +309,21 @@
             logo: "https://neom.directory/media/com_jbusinessdirectory/pictures/companies/627/sourcetoad_logo_rgb_1672176463.png"
           },
           {
+            name: "OrdersAnalytics",
+            type: "web",
+            desc: "SaaS platform for BigCommerce that visualizes order trends, customer cohorts, and product performance. Built using Laravel and React, deployed via DigitalOcean, and listed in BigCommerce App Store.",
+            tag: "PHP",
+            link: "https://www.bigcommerce.com/apps/orders-analytics/"
+          },
+          {
+            name: "SpeakTextOnline",
+            type: "web",
+            desc: "AI text-to-speech SaaS platform using Laravel and React. Allows users to upload text or documents and generate natural speech in multiple voices. Includes auto publishing to TikTok and Instagram features.",
+            tag: "PHP",
+            link: "https://speaktextonline.com",
+            logo: 'https://fosterclark.com/wp-content/uploads/2016/05/fc-blue_2.png'
+          },
+          {
             name: "Digital Twin",
             type: "web",
             desc: "AI-powered health assistant frontend built in React and Three.js. Renders a digital 3D avatar synced with AI recommendations based on blood, microbiome, and genomic files. Integrates real-time chat, animated lip sync, and voice playback.",
@@ -328,35 +343,6 @@
             tag: "PHP"
           },
           {
-            name: "Redis",
-            type: "opensource",
-            desc: "Open-source CLI-based real-time chat client for Redis. Implemented as a custom PR into Redis repo to enable direct pub/sub messaging via command-line interface.",
-            tag: "C",
-            link: "https://github.com/redis/redis/pull/12215"
-          },
-          {
-            name: "GraphRag",
-            type: "opensource",
-            desc: "GraphRag PR that enables token cost estimation before indexing. Helps OpenAI + Azure users forecast embedding and context cost in RAG pipelines. Submitted to Microsoft's official repo.",
-            tag: "Python",
-            link: "https://github.com/microsoft/graphrag/pull/1917"
-          },
-          {
-            name: "OrdersAnalytics",
-            type: "web",
-            desc: "SaaS platform for BigCommerce that visualizes order trends, customer cohorts, and product performance. Built using Laravel and React, deployed via DigitalOcean, and listed in BigCommerce App Store.",
-            tag: "PHP",
-            link: "https://www.bigcommerce.com/apps/orders-analytics/"
-          },
-          {
-            name: "SpeakTextOnline",
-            type: "web",
-            desc: "AI text-to-speech SaaS platform using Laravel and React. Allows users to upload text or documents and generate natural speech in multiple voices. Includes auto publishing to TikTok and Instagram features.",
-            tag: "PHP",
-            link: "https://speaktextonline.com",
-            logo: 'https://fosterclark.com/wp-content/uploads/2016/05/fc-blue_2.png'
-          },
-          {
             name: "KhaledAlam.net",
             type: "web",
             desc: "Personal portfolio website showcasing projects, blog posts, and tools. Built with vanilla HTML, Tailwind CSS, and dynamic JS filters. Supports light/dark mode and RSS-powered blog feed.",
@@ -369,6 +355,20 @@
             type: "mobile",
             desc: "FinTech mobile app developed in Flutter to manage borrow/lend contracts between users. Includes identity verification, payment tracking, contract history, and notification system.",
             tag: "Flutter"
+          },
+          {
+            name: "Redis",
+            type: "opensource",
+            desc: "Open-source CLI-based real-time chat client for Redis. Implemented as a custom PR into Redis repo to enable direct pub/sub messaging via command-line interface.",
+            tag: "C",
+            link: "https://github.com/redis/redis/pull/12215"
+          },
+          {
+            name: "GraphRag",
+            type: "opensource",
+            desc: "GraphRag PR that enables token cost estimation before indexing. Helps OpenAI + Azure users forecast embedding and context cost in RAG pipelines. Submitted to Microsoft's official repo.",
+            tag: "Python",
+            link: "https://github.com/microsoft/graphrag/pull/1917"
           },
           {
             name: "SoftCropper",
@@ -399,18 +399,18 @@
             link: "https://github.com/khaledalam/unit"
           },
           {
-            name: "PHP SDK/API for Google Bard",
-            type: "tools",
-            desc: "Unofficial PHP SDK for interacting with the experimental Bard AI. Handles session cookies, input formatting, and response parsing for chatbot interaction.",
-            tag: "PHP",
-            link: "https://github.com/khaledalam/bard-sdk-php"
-          },
-          {
             name: "htop",
             type: "tools",
             desc: "Work-in-progress Laravel package to monitor HTTP request activity in real-time. Includes both CLI and Web GUI (via WebSocket). Inspired by Linux htop, aimed at debugging Laravel applications.",
             tag: "PHP",
             link: "https://github.com/khaledalam/htop"
+          },
+          {
+            name: "PHP SDK/API for Google Bard",
+            type: "tools",
+            desc: "Unofficial PHP SDK for interacting with the experimental Bard AI. Handles session cookies, input formatting, and response parsing for chatbot interaction.",
+            tag: "PHP",
+            link: "https://github.com/khaledalam/bard-sdk-php"
           },
         ];
 
