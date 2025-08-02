@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello, I am Khaled Alam</title>
   <link rel="icon" href="./logo.png" />
-  <meta name="description" content="Khaled Alam – Full-Stack Software Engineer in Dubai specialized in PHP, Laravel, React, and SaaS development.">
+  <meta name="description"
+    content="Khaled Alam – Full-Stack Software Engineer in Dubai specialized in PHP, Laravel, React, and SaaS development.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode: 'class' };</script>
   <style>
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
+
     .filter-btn.active {
       background-color: #3b83f65c;
       color: white;
       border-color: #3b82f6;
     }
+
     .arrow-down {
       position: absolute;
       bottom: 2rem;
@@ -22,379 +28,688 @@
       transform: translateX(-50%);
       animation: bounce 2s infinite;
     }
+
     @keyframes bounce {
-      0%, 100% { transform: translate(-50%, 0); }
-      50% { transform: translate(-50%, 10px); }
+
+      0%,
+      100% {
+        transform: translate(-50%, 0);
+      }
+
+      50% {
+        transform: translate(-50%, 10px);
+      }
     }
   </style>
   <script>
-  // Check localStorage and set initial theme class before page renders
-  if (localStorage.getItem('theme') === 'dark') {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-  function toggleTheme() {
-    const html = document.documentElement;
-    const isDark = html.classList.toggle('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  }
-</script>
+    // Check localStorage and set initial theme class before page renders
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light');
+    } else {
+      document.documentElement.classList.remove('light');
+    }
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+  </script>
 
 </head>
+
 <body class="bg-white text-black dark:bg-black dark:text-white font-sans">
 
-<!-- Navbar -->
-<header class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-    <a href="#hero" class="flex items-center space-x-2 text-lg font-bold">
-      <img src="./logo.png" alt="Logo" class="w-6 h-6" />
-      <span>Khaled Alam</span>
-    </a>
-    <div class="space-x-4 hidden md:flex">
-      <a href="#projects" class="text-sm hover:underline">Projects</a>
-      <a href="#tools" class="text-sm hover:underline">Tools</a>
-      <a href="#companies" class="text-sm hover:underline">Companies</a>
-      <a href="#resume" class="text-sm hover:underline">Resume</a>
-      <a href="#blog" class="text-sm hover:underline">Blog</a>
+  <!-- Navbar -->
+  <header
+    class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <a href="#hero" class="flex items-center space-x-2 text-lg font-bold">
+        <img src="./logo.png" alt="Logo" class="w-6 h-6" />
+        <span>Khaled Alam</span>
+      </a>
+      <div class="space-x-4 hidden md:flex">
+        <a href="#projects" class="text-sm hover:underline">Projects</a>
+        <a href="#tools" class="text-sm hover:underline">Tools</a>
+        <a href="#companies" class="text-sm hover:underline">Companies</a>
+        <a href="#resume" class="text-sm hover:underline">Resume</a>
+        <a href="#blog" class="text-sm hover:underline">Blog</a>
+        <!-- Toggle -->
+        <div class="">
+          <button onclick="toggleTheme()" class="px-2 py-0 border rounded text-sm dark:border-white border-black">Toggle
+            View</button>
+        </div>
+      </div>
+      <button class="md:hidden" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">☰</button>
+    </nav>
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+      <a href="#projects" class="block py-2 text-sm">Projects</a>
+      <a href="#tools" class="block py-2 text-sm">Tools</a>
+      <a href="#companies" class="block py-2 text-sm">Companies</a>
       <!-- Toggle -->
-    <div class="">
-      <button onclick="toggleTheme()" class="px-2 py-0 border rounded text-sm dark:border-white border-black">Toggle View</button>
+      <div class="fixed top-2 right-2 z-50 mt-16">
+        <button onclick="toggleTheme()" class="px-2 py-0 border rounded text-sm dark:border-white border-black">Toggle
+          View</button>
+      </div>
     </div>
+
+  </header>
+
+  <section id="hero" class="pt-20 min-h-screen flex flex-col justify-center px-6 md:px-20 dark:bg-black bg-white">
+
+
+    <div class="flex mb-10 flex-col md:flex-row items-start gap-10 max-w-6xl w-full">
+
+      <!-- Left: Image + Text -->
+      <div class="flex-1">
+        <div class="flex items-center gap-4 mb-4">
+          <img src="./DP_Khaled.jpeg" alt="Khaled Alam"
+            class="w-16 h-16 rounded-full border-2 border-white dark:border-gray-800" />
+          <h1 class="text-3xl md:text-4xl font-bold">Hey, I am Khaled</h1>
+        </div>
+        <p class="text-lg text-gray-700 dark:text-gray-300">
+          Senior Software Engineer based in Dubai. I build SaaS tools, engineer high-performing systems.
+        </p>
+      </div>
+
+      <!-- Right: Cards -->
+      <div class="flex-1 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <a href="#projects"
+          class="bg-gray-900 text-white border border-gray-700 p-4 rounded-lg hover:bg-gray-800 transition">
+          <h2 class="text-lg font-semibold">📦 Projects</h2>
+          <p class="text-sm text-gray-400">SaaS, PropTech, MedTech, FinTech, CMS, AI tools, and open source.</p>
+        </a>
+        <a href="#tools"
+          class="bg-gray-900 text-white border border-gray-700 p-4 rounded-lg hover:bg-gray-800 transition">
+          <h2 class="text-lg font-semibold">🛠 Tools</h2>
+          <p class="text-sm text-gray-400">Tech and tools I use to build apps, solve problems, and make life easier.</p>
+        </a>
+      </div>
+
     </div>
-    <button class="md:hidden" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">☰</button>
-  </nav>
-  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
-    <a href="#projects" class="block py-2 text-sm">Projects</a>
-    <a href="#tools" class="block py-2 text-sm">Tools</a>
-    <a href="#companies" class="block py-2 text-sm">Companies</a>
-    <!-- Toggle -->
-    <div class="fixed top-2 right-2 z-50 mt-16">
-      <button onclick="toggleTheme()" class="px-2 py-0 border rounded text-sm dark:border-white border-black">Toggle View</button>
+
+
+    <!-- Companies Section -->
+    <section id="companies" class="py-12 text-center">
+      <h2 class="text-3xl font-bold mb-10">Some Amazing Companies I've Worked With</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 px-6">
+        <div class="flex flex-col items-center">
+          <img src="https://1000logos.net/wp-content/uploads/2023/02/STC-logo.png" class="h-12 mb-2" alt="STC" />
+          <p class="text-sm text-gray-600 dark:text-gray-400">STC</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Victoria%27s_Secret_PINK_logo.png"
+            alt="Victoria's Secret" class="h-10 mb-2" />
+          <p class="text-sm text-gray-600 dark:text-gray-400">Victoria's Secret</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://ucarecdn.com/44b17637-1d88-4b95-bad1-beaa36b866f1/cafe-image-6890" class="h-10 mb-2"
+            alt="CoffeePlanet" />
+          <p class="text-sm text-gray-600 dark:text-gray-400">CoffeePlanet</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://images.squarespace-cdn.com/content/v1/5a573aade45a7c861137d973/dce6a40f-750a-4b4a-b9d0-af1fdbfe47ae/misk-21-logo-light-1024x588.png" class="h-10 mb-2"
+            alt="Misk" />
+          <p class="text-sm text-gray-600 dark:text-gray-400">MISK</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://logos-world.net/wp-content/uploads/2023/05/Cohere-Logo.png"
+            class="h-10 mb-2" alt="cohere"/>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Cohere</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://avatars.githubusercontent.com/u/38435289?s=280&v=4" class="h-10 mb-2" alt="mintme"/>
+          <p class="text-sm text-gray-600 dark:text-gray-400">MintMe Exchange</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img
+            src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_8943fa7e4e1dce960ce9b8456f13f271/coinimp.jpg"
+            class="h-10 bg-white rounded mb-2" alt="coinimp"/>
+          <p class="text-sm text-gray-600 dark:text-gray-400">CoinIMP Miner</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img
+            src="https://neom.directory/media/com_jbusinessdirectory/pictures/companies/627/sourcetoad_logo_rgb_1672176463.png"
+            class="h-10 mb-2" alt="sourcetoad"/>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Sourcetoad</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img
+            src="https://images.yourstory.com/cs/images/companies/jdnypgntjxomydkx-1717068500813.jpg?fm=auto&ar=1:1&mode=fill&fill=solid&fill-color=fff"
+            class="h-10 mb-2" alt="makyee"/>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Makyee</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img
+            src="https://www.leadliaison.com/wp-content/uploads/2013/04/Lead-Liaison-Logo5.png"
+            class="h-10 mb-2" alt="LeadLiaison"/>
+          <p class="text-sm text-gray-600 dark:text-gray-400">LeadLiaison</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img
+            src="https://media.licdn.com/dms/image/v2/D4D0BAQHNXhM6lT2HBA/company-logo_200_200/company-logo_200_200/0/1736835412281/prepaire_labs_logo?e=2147483647&v=beta&t=Lz_kC249G1GqQ0d8HOgUXlHyuYF-G-qQHx9U0C0ObIo"
+            class="h-10 mb-2" alt="prepaire"/>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Prepaire Labs</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Arla_Foods_logo.svg/640px-Arla_Foods_logo.svg.png"
+            class="h-10 mb-2" alt="arla foods"/>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Arla Foods</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2k9pbVyi5iu_hi-YtnJmTH8BtYdrUq1HK3Q&s"
+            class="h-10 mb-2" alt="9h digital"/>
+          <p class="text-sm text-gray-600 dark:text-gray-400">9H Digital</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://amplifydubai.com/wp-content/uploads/2020/06/Amplify-Marketing-Agency-Dubai_Logo.png"
+            class="h-10 mb-2" alt="amplify marketing agency dubai"/>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Amplify Marketing Agency</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://fosterclark.com/wp-content/uploads/2016/05/fc-blue_2.png" class="h-10 mb-2" alt="Foster Clark"/>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Foster Clark</p>
+        </div>
+      </div>
+    </section>
+
+
+
+  </section>
+
+
+
+
+  <!-- Filter + Projects -->
+  <section id="projects" class="py-10 px-4 max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">Projects I Worked On</h2>
+    <div class="mb-6 flex flex-wrap justify-center gap-2">
+      <button class="filter-btn px-4 py-1 border rounded active" onclick="filterProjects('all')">All</button>
+      <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('web')">Web</button>
+      <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('mobile')">Mobile</button>
+      <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('tools')">Tools</button>
+      <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('games')">Games</button>
+      <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('opensource')">Open Source</button>
     </div>
-  </div>
-  
-</header>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left" id="projectGrid">
+      <!-- Cards -->
+      <script>
+        const projects = [
+          {
+            name: "Khardl",
+            type: "web",
+            desc: "Comprehensive restaurant management system featuring multi-user roles, multi-tenancy, multi-language support, and subdomains. The platform includes essential functionalities like menu management, worker and driver coordination, branch oversight, and customizable front pages. Integrated with TAP payment gateway, Msegat SMS, push notifications, delivery companies, and provided API endpoints and webhooks for mobile apps.",
+            tag: "PHP",
+            link: "https://github.com/khaledalam/khardl",
+            linkIcon: "📷"
+          },
+          {
+            name: "MintMe",
+            type: "web",
+            desc: "Decentralized crypto token exchange platform developed with Symfony and Vue.js. Enables users to create, launch, and trade their own custom coins. Provides real-time order book, token wallets, trading interface, charts, and token promotion tools.",
+            tag: "PHP",
+            link: "https://mintme.com",
+            logo: "https://avatars.githubusercontent.com/u/38435289?s=280&v=4"
+          },
+          {
+            name: "CoinIMP",
+            type: "web",
+            desc: "JavaScript-based browser mining platform for Monero, built with Symfony backend. Provided embeddable miners, real-time analytics, campaign management, and revenue reports. Used WebAssembly and advanced cryptographic optimizations.",
+            tag: "PHP",
+            link: "https://coinimp.com",
+            logo: "https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_8943fa7e4e1dce960ce9b8456f13f271/coinimp.jpg"
 
-<!-- Hero -->
-<section id="hero" class="h-screen flex flex-col justify-center items-center text-center px-4 relative">
-  <img src="./DP_Khaled.jpeg" alt="Khaled Alam" class="w-40 h-40 rounded-full mb-4 border-4 border-white dark:border-gray-800" />
-  <h1 class="text-4xl md:text-6xl font-bold mb-2">Khaled Alam</h1>
-  <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300">Senior Software Engineer - PHP | Laravel, Symfony, Yii, WordPress | React, React Native | SaaS</p>
-  <svg class="arrow-down w-6 h-6 text-gray-400 absolute bottom-40 animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-  </svg>
-</section>
+          },
+          {
+            name: "CoffeePlanet",
+            type: "web",
+            desc: "Corporate website for Coffee Planet UAE, developed using Shopify Liquid templates. Features product showcases, brand storytelling, subscription modules, and integrated Google Tag Manager for marketing analytics.",
+            tag: "Liquid",
+            link: "https://coffeeplanet.com/",
+            logo: "https://ucarecdn.com/44b17637-1d88-4b95-bad1-beaa36b866f1/cafe-image-6890"
+          },
+          {
+            name: "Misk Events",
+            type: "web",
+            desc: "Custom WordPress solution for Saudi Arabia's Misk Foundation to manage public events, sessions, and attendee registration. Integrated with localization, accessibility enhancements, and performance optimizations.",
+            tag: "PHP",
+            link: "https://hub.misk.org.sa/events",
+            logo: "https://images.squarespace-cdn.com/content/v1/5a573aade45a7c861137d973/dce6a40f-750a-4b4a-b9d0-af1fdbfe47ae/misk-21-logo-light-1024x588.png"
+          },
+          {
+            name: "Prima International",
+            type: "web",
+            desc: "Modern marketing website for a Riyadh-based gourmet bakery. Built using Next.js and TypeScript, includes full CMS support, optimized SEO meta, and lightweight animations. Hosted on Vercel with instant deployments.",
+            tag: "TypeScript",
+            link: "https://www.primainternational.com/",
+            logo: "https://horecaway.com/userfiles/b46c3f34a7cf6fe0eee68ac9c38c7e7d.png"
+          },
+          {
+            name: "Makyee",
+            type: ["web", "mobile"],
+            desc: "Real estate PropTech platform built using Yii 1.1, custom PHP backend and React Native for mobile. Features an admin dashboard, property listings management, client CRM tools, and mobile app API integration. Integrated Google Maps, WhatsApp sharing, dynamic meta tags, and multilingual support. Core product of Makyee Real Estate.",
+            tag: "PHP",
+            link: "https://makyee.com",
+            mobileapp: "https://apps.apple.com/ae/app/makyee/id6504030415",
+            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKHpL37ZH_zyZY43pTo24lBuj-J3Ee-rA5w&s"
+          },
+          {
+            name: "Arla Food",
+            type: "mobile",
+            desc: "React Native mobile app for internal food safety inspections at Arla. Includes multi-step checklists, offline data sync, barcode scanning, and admin portal integration.",
+            tag: "React Native",
+            logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Arla_Foods_logo.svg/640px-Arla_Foods_logo.svg.png"
+          },
+          {
+            name: "Sourcetoad Core",
+            type: "web",
+            desc: "Cruise ship management SaaS platform built with Yii2 for Sourcetoad. Supports crew scheduling, passenger info, real-time notifications, and third-party data integrations.",
+            tag: "PHP",
+            link: "https://ondecksoftware.com/cruise-director-platform/",
+            logo: "https://neom.directory/media/com_jbusinessdirectory/pictures/companies/627/sourcetoad_logo_rgb_1672176463.png"
+          },
+          {
+            name: "Digital Twin",
+            type: "web",
+            desc: "AI-powered health assistant frontend built in React and Three.js. Renders a digital 3D avatar synced with AI recommendations based on blood, microbiome, and genomic files. Integrates real-time chat, animated lip sync, and voice playback.",
+            tag: "React"
+          },
+          {
+            name: "Avatoon",
+            type: "web",
+            desc: "React Three Fiber component that renders animated avatars. Supports lip-sync using visemes, emotion-based morph targets, and real-time audio playback. Built as a reusable npm module for interactive interfaces.",
+            tag: "React",
+            link: "https://github.com/khaledalam/avatoon"
+          },
+          {
+            name: "Rugby Game",
+            type: "web",
+            desc: "Web-based rugby team management platform developed with Laravel. Provides match scheduling, team formation, real-time updates, and match statistics dashboards.",
+            tag: "PHP"
+          },
+          {
+            name: "Redis",
+            type: "opensource",
+            desc: "Open-source CLI-based real-time chat client for Redis. Implemented as a custom PR into Redis repo to enable direct pub/sub messaging via command-line interface.",
+            tag: "C",
+            link: "https://github.com/redis/redis/pull/12215"
+          },
+          {
+            name: "GraphRag",
+            type: "opensource",
+            desc: "GraphRag PR that enables token cost estimation before indexing. Helps OpenAI + Azure users forecast embedding and context cost in RAG pipelines. Submitted to Microsoft's official repo.",
+            tag: "Python",
+            link: "https://github.com/microsoft/graphrag/pull/1917"
+          },
+          {
+            name: "OrdersAnalytics",
+            type: "web",
+            desc: "SaaS platform for BigCommerce that visualizes order trends, customer cohorts, and product performance. Built using Laravel and React, deployed via DigitalOcean, and listed in BigCommerce App Store.",
+            tag: "PHP",
+            link: "https://www.bigcommerce.com/apps/orders-analytics/"
+          },
+          {
+            name: "SpeakTextOnline",
+            type: "web",
+            desc: "AI text-to-speech SaaS platform using Laravel and React. Allows users to upload text or documents and generate natural speech in multiple voices. Includes auto publishing to TikTok and Instagram features.",
+            tag: "PHP",
+            link: "https://speaktextonline.com",
+            logo: 'https://fosterclark.com/wp-content/uploads/2016/05/fc-blue_2.png'
+          },
+          {
+            name: "KhaledAlam.net",
+            type: "web",
+            desc: "Personal portfolio website showcasing projects, blog posts, and tools. Built with vanilla HTML, Tailwind CSS, and dynamic JS filters. Supports light/dark mode and RSS-powered blog feed.",
+            tag: "PHP",
+            link: "https://khaledalam.net",
+            logo: "./logo.png"
+          },
+          {
+            name: "Kolega Kapital FinTech mobile app",
+            type: "mobile",
+            desc: "FinTech mobile app developed in Flutter to manage borrow/lend contracts between users. Includes identity verification, payment tracking, contract history, and notification system.",
+            tag: "Flutter"
+          },
+          {
+            name: "SoftCropper",
+            type: "tools",
+            desc: "Python-based CLI tool to convert rectangular photos into perfect squares by padding with blurred edges. Built for Canva Magnet production automation. Available as a pip package.",
+            tag: "Python",
+            link: "https://github.com/khaledalam/softcropper"
+          },
+          {
+            name: "PHP Attributed Unrolling Patch",
+            type: "opensource",
+            desc: "Custom patch for PHP Zend Engine to implement a userland `#[Unroll(n)]` attribute for loop unrolling during compilation. Explored potential performance optimizations at bytecode level.",
+            tag: "C",
+            link: "https://gist.github.com/khaledalam/2f2237733e1cc3ec74d597b1b20d94df"
+          },
+          {
+            name: "Arrow Shooting",
+            type: "games",
+            desc: "C++ OpenGL-based 2D game that simulates arrow shooting using geometric algorithms. Features projectile motion, collision detection, and keyboard controls for training math concepts interactively.",
+            tag: "C++",
+            link: "https://github.com/khaledalam/arrow-shooting"
+          },
+          {
+            name: "Unit",
+            type: "tools",
+            desc: "Lightweight PHP library to work with physical quantities and unit conversions. Supports dimensional analysis, precision formatting, and arithmetic operations. PSR-4 compliant and tested with PHPUnit.",
+            tag: "PHP",
+            link: "https://github.com/khaledalam/unit"
+          },
+          {
+            name: "PHP SDK/API for Google Bard",
+            type: "tools",
+            desc: "Unofficial PHP SDK for interacting with the experimental Bard AI. Handles session cookies, input formatting, and response parsing for chatbot interaction.",
+            tag: "PHP",
+            link: "https://github.com/khaledalam/bard-sdk-php"
+          },
+          {
+            name: "htop",
+            type: "tools",
+            desc: "Work-in-progress Laravel package to monitor HTTP request activity in real-time. Includes both CLI and Web GUI (via WebSocket). Inspired by Linux htop, aimed at debugging Laravel applications.",
+            tag: "PHP",
+            link: "https://github.com/khaledalam/htop"
+          },
+        ];
 
-<!-- Filter + Projects -->
-<section id="projects" class="py-10 px-4 max-w-6xl mx-auto text-center">
-  <h2 class="text-3xl font-bold mb-6">Projects I Worked On</h2>
-  <div class="mb-6 flex flex-wrap justify-center gap-2">
-    <button class="filter-btn px-4 py-1 border rounded active" onclick="filterProjects('all')">All</button>
-    <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('web')">Web</button>
-    <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('mobile')">Mobile</button>
-    <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('tools')">Tools</button>
-    <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('games')">Games</button>
-    <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('saas')">SaaS</button>
-    <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('opensource')">Open Source</button>
-  </div>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-left" id="projectGrid">
-    <!-- Cards -->
-    <script>
-      const projects = [
-        { name: "Makyee Platform", type: "web", desc: "Real estate PropTech platform built in Yii 1.1", tag: "PHP", link:"https://makyee.com" },
-        { name: "MintMe", type: "web", desc: "Crypto token exchange platform built in Symfony and Vue.", tag: "PHP", link: "https://mintme.com" },
-        { name: "CoinIMP", type: "web", desc: "JS-based browser crypto miner built in Symfony and Vue.", tag: "PHP", link: "https://coinimp.com" },
-        { name: "CoffeePlanet", type: "web", desc: "Corporate website for coffee brand built with Shopify.", tag: "Liquid", link: "https://coffeeplanet.com/" },
-        { name: "Misk Events", type: "web", desc: "Hub for Saudi Misk Foundation events built in WordPress.", tag: "PHP", link: "https://hub.misk.org.sa/events" },
-        { name: "Prima International", type: "web", desc: "A clean, modern Next.js-powered website for Prima International, a Riyadh-based gourmet bakery operating in the food and beverage manufacturing sector.", tag: "TypeScript", link: "https://www.primainternational.com/" },
-        { name: "Arla Food App", type: "mobile", desc: "Internal food safety inspection app", tag: "React Native" },
-        { name: "Sourcetoad Core", type: "web", desc: "Cruise Director platform built in Yii2", tag: "PHP", link: "https://ondecksoftware.com/cruise-director-platform/" },
-        { name: "Khardl", type: "saas", desc: "Multi-tenant Laravel SaaS platform.", tag: "PHP", link: "https://github.com/khaledalam/khardl" },
-        { name: "Digital Twin", type: "web", desc: "React-based AI health assistant.", tag: "React" },
-        { name: "Avatoon", type: "web", desc: "React Three Fiber component for animated avatars with lip-sync and head motion.", tag: "React", link: "https://github.com/khaledalam/avatoon" },
-        { name: "Rugby Game", type: "web", desc: "Laravel-powered rugby management app.", tag: "PHP" },
-        { name: "Redis", type: "opensource", desc: "Real-time chatting with redis server in CLI.", tag: "C", link: "https://github.com/redis/redis/pull/12215" },
-        { name: "GraphRag", type: "opensource", desc: "LLM Token and Cost Estimation Pre-check Before Indexing.", tag: "Python", link: "https://github.com/microsoft/graphrag/pull/1917" },
-        
-        
-        { name: "OrdersAnalytics", type: "saas", desc: "BigCommerce analytics SaaS app built in Laravel.", tag: "PHP", link: "https://www.bigcommerce.com/apps/orders-analytics/" },
-        { name: "SpeakTextOnline", type: "web", desc: "Text-to-speech tool with AI automation built in Laravel and React", tag: "PHP", link: "https://speaktextonline.com" },
-        { name: "KhaledAlam.net", type: "web", desc: "Personal portfolio site.", tag: "PHP", link: "https://khaledalam.net" },
-        { name: "Kolega Kapital FinTech mobile app", type: "mobile", desc: "Fintech app to manage borrow/lend contracts", tag: "Flutter" },
-        { name: "Makyee Mobile", type: "mobile", desc: "React Native app for property browsing", tag: "React Native", link: "https://apps.apple.com/ae/app/makyee/id6504030415" },
-        { name: "SoftCropper", type: "tools", desc: "Automatically resize and blur-pad rectangular images into perfect squares. Ideal for photo preparation and print workflows.", tag: "Python", link: "https://github.com/khaledalam/softcropper" },
-        { name: "PHP Attributed Unrolling Patch", type: "opensource", desc: "PHP internal Attributed Unrolling In Userland patch in PHP Zend engine", tag: "C", link: "https://gist.github.com/khaledalam/2f2237733e1cc3ec74d597b1b20d94df" },
-        { name: "Arrow Shooting", type: "games", desc: "Arrow Shooting 2D Game in C++ using OpenGL and various Trigonometry and Geometry Algorithms.", tag: "C++", link: "https://github.com/khaledalam/arrow-shooting" },
-        { name: "Unit", type: "tools", desc: "A lightweight PHP library for working with physical quantities and unit conversions. Supports arithmetic operations, precision formatting, and dimensional analysis.", tag: "PHP", link: "https://github.com/khaledalam/unit" },
-         { name: "PHP SDK/API for Google Bard", type: "tools", desc: "PHP SDK/API for Google Bard (experiment version) (unofficial)", tag: "PHP", link: "https://github.com/khaledalam/bard-sdk-php" },
-         { name: "htop", type: "tools", desc: "(WIP) Real-time Laravel request monitor with CLI & WebSocket GUI dashboard", tag: "PHP", link: "https://github.com/khaledalam/htop" },
-      ];
+        document.addEventListener('DOMContentLoaded', () => {
+          const grid = document.getElementById('projectGrid');
 
-      document.addEventListener('DOMContentLoaded', () => {
-        const grid = document.getElementById('projectGrid');
-        projects.forEach(p => {
-          const div = document.createElement('div');
-          div.className = `project-card ${p.type} p-5 border rounded-lg shadow hover:shadow-xl bg-white dark:bg-gray-800 transition`;
-          div.innerHTML = `
-            <div class="flex justify-between items-center mb-2">
-              <h3 class="text-xl font-semibold">${p.name}</h3>
-              <span class="text-sm bg-gray-600 text-white px-2 py-1 rounded-lg">${p.tag}</span>
-            </div>
-            <p class="text-sm">${p.desc}</p>
-          `;
-
-          if (p.link) {
-            div.innerHTML += `<br /><a href="${p.link}" target="_blank">👀</a>`;
-          }
-          
-          grid.appendChild(div);
-        });
-      });
-
-      function filterProjects(type) {
-        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-        event.target.classList.add('active');
-        document.querySelectorAll('.project-card').forEach(card => {
-          card.style.display = (type === 'all' || card.classList.contains(type)) ? 'block' : 'none';
-        });
-      }
-    </script>
-  </div>
-</section>
+          projects.forEach(p => {
+            const types = Array.isArray(p.type) ? p.type : [p.type];
+            const div = document.createElement('div');
+            div.className = `project-card p-5 border rounded-lg shadow hover:shadow-xl bg-white dark:bg-gray-800 transition`;
+            div.dataset.types = types.join(',');
 
 
+              div.className = `
+    project-card ${types.join(' ')} 
+    bg-[#1e1e2f] dark:bg-gray-900 
+    border border-gray-800 
+    rounded-xl shadow-sm hover:shadow-md 
+    transition flex flex-col 
+    h-[250px] p-4
+  `.trim();
 
-<!-- Companies Section -->
-<section id="companies" class="py-12 text-center">
-  <h2 class="text-3xl font-bold mb-6">Some Amazing Companies I've Worked With</h2>
-  <div class="flex flex-wrap justify-center items-center gap-6">
-    <img src="https://1000logos.net/wp-content/uploads/2023/02/STC-logo.png" class="h-12" alt="STC" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Victoria%27s_Secret_PINK_logo.png" class="h-10" />
-    <img src="https://ucarecdn.com/44b17637-1d88-4b95-bad1-beaa36b866f1/cafe-image-6890" class="h-10" />
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2k9pbVyi5iu_hi-YtnJmTH8BtYdrUq1HK3Q&s" class="h-10" />
-    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Arla_Foods_logo.svg/640px-Arla_Foods_logo.svg.png" class="h-10" />
-    <img src="https://avatars.githubusercontent.com/u/38435289?s=280&v=4" class="h-10" />
-    <img src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_8943fa7e4e1dce960ce9b8456f13f271/coinimp.jpg" class="h-10 bg-white rounded" />
-    <img src="https://neom.directory/media/com_jbusinessdirectory/pictures/companies/627/sourcetoad_logo_rgb_1672176463.png" class="h-10" />
-    <img src="https://images.yourstory.com/cs/images/companies/jdnypgntjxomydkx-1717068500813.jpg?fm=auto&ar=1:1&mode=fill&fill=solid&fill-color=fff" class="h-10" />
-    <img src="https://fosterclark.com/wp-content/uploads/2016/05/fc-blue_2.png" class="h-10" />
+              div.dataset.types = types.join(',');
+
+              div.innerHTML = `
+    <div class="flex justify-between items-start mb-3">
+      <div class="flex items-center gap-2">
+        ${p.logo ? `<img src="${p.logo}" class="h-7 w-7 rounded object-contain bg-white p-0.5" alt="${p.name} logo">` : ''}
+        <h3 class="text-md font-semibold text-white">${p.name}</h3>
+      </div>
+      <span class="text-xs px-2 py-0.5 rounded-full bg-gray-700 text-gray-200">${p.tag}</span>
+    </div>
+
+    <!-- Middle: Scrollable Description -->
+    <div class="text-sm h-[135px] leading-7 text-[17px] flex items-start text-gray-400 overflow-y-auto mb-3 flex-1 pr-1">
+      ${p.desc}
+    </div>
+
+    <!-- Bottom: Action -->
+    ${p.link ? `
+      <div class="mt-auto">
+        <a href="${p.link}" target="_blank" class="inline-flex items-center gap-1 text-sm text-blue-400">
+          ${p.linkIcon ? p.linkIcon : "🌐"}
+        </a>
+
+        ${p.mobileapp ? `
+        <a href="${p.mobileapp}" target="_blank" class="inline-flex items-center gap-1 text-sm mx-4 text-blue-400">
+          📲
+        </a>
+    ` : ''}
+
+      </div>
+    ` : ''}
+
     
-    <!-- Add more -->
-  </div>
-</section>
+
+    
+  `;
+
+              document.getElementById('projectGrid').appendChild(div);
+            });
 
 
-<!-- Resume Section -->
-<section id="resume" class="py-12 px-4 max-w-4xl mx-auto text-center">
-  <h2 class="text-3xl font-bold mb-4">My Resume</h2>
-  <button onclick="toggleResume()" class="px-4 py-2 bg-blue-600 text-white rounded mb-4">
-    👀 Expand Here
-  </button>
-  <button onclick="window.open('https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view', '_blank')" class="px-4 py-2 bg-blue-600 text-white rounded mb-4">
-    🔗 Open in New Tab
-  </button>
+        });
 
-  <div id="resumeEmbed" class="hidden">
-    <iframe src="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/preview" width="100%" height="600" allow="autoplay"></iframe>
-  </div>
-</section>
+        function filterProjects(type) {
+          document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+          event.target.classList.add('active');
 
-<script>
-  function toggleResume() {
-    const embed = document.getElementById('resumeEmbed');
-    embed.classList.toggle('hidden');
-  }
-</script>
+          document.querySelectorAll('.project-card').forEach(card => {
+            const cardTypes = card.dataset.types.split(','); // stored from data-types
+            card.style.display = (type === 'all' || cardTypes.includes(type)) ? 'block' : 'none';
+          });
+        }
+
+      </script>
+    </div>
+  </section>
 
 
-<!-- Tools Section -->
-<section id="tools" class="py-12 bg-gray-100 dark:bg-gray-900 text-center">
-  <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">Tools I Love to Use</h2>
-  <div class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-
-    <!-- Tool Cards -->
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/php/777BB4" class="h-8 mb-2" alt="PHP" />
-      <span class="text-sm">PHP</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/laravel/F55247" class="h-8 mb-2" alt="Laravel" />
-      <span class="text-sm">Laravel</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/symfony/000000" class="h-8 mb-2" alt="Symfony" />
-      <span class="text-sm">Symfony</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/yii/39B54A" class="h-8 mb-2" alt="Yii" />
-      <span class="text-sm">Yii</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/wordpress/21759B" class="h-8 mb-2" alt="WordPress" />
-      <span class="text-sm">WordPress</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/woocommerce/96588A" class="h-8 mb-2" alt="WooCommerce" />
-      <span class="text-sm">WooCommerce</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/wix/000000" class="h-8 mb-2" alt="Wix" />
-      <span class="text-sm">Wix</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/javascript/F7DF1E" class="h-8 mb-2" alt="JavaScript" />
-      <span class="text-sm">JavaScript</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/typescript/3178C6" class="h-8 mb-2" alt="TypeScript" />
-      <span class="text-sm">TypeScript</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/react/61DAFB" class="h-8 mb-2" alt="React" />
-      <span class="text-sm">React</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/react/61DAFB" class="h-8 mb-2" alt="React Native" />
-      <span class="text-sm">React Native</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/node.js/339933" class="h-8 mb-2" alt="Node.js" />
-      <span class="text-sm">Node.js</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/nextdotjs/000000" class="h-8 mb-2" alt="Next.js" />
-      <span class="text-sm">Next.js</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/docker/2496ED" class="h-8 mb-2" alt="Docker" />
-      <span class="text-sm">Docker</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/mysql/4479A1" class="h-8 mb-2" alt="MySQL" />
-      <span class="text-sm">MySQL</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/postgresql/336791" class="h-8 mb-2" alt="PostgreSQL" />
-      <span class="text-sm">PostgreSQL</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png" class="h-8 mb-2" alt="AWS" />
-      <span class="text-sm">AWS</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/googlecloud/4285F4" class="h-8 mb-2" alt="GCP" />
-      <span class="text-sm">GCP</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/vercel/000000" class="h-8 mb-2" alt="Vercel" />
-      <span class="text-sm">Vercel</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/digitalocean/0080FF" class="h-8 mb-2" alt="DigitalOcean" />
-      <span class="text-sm">DigitalOcean</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/firebase/FFCA28" class="h-8 mb-2" alt="Firebase" />
-      <span class="text-sm">Firebase</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" class="h-8 mb-2" alt="Tailwind CSS" />
-      <span class="text-sm">Tailwind CSS</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/sass/CC6699" class="h-8 mb-2" alt="SCSS" />
-      <span class="text-sm">SCSS</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/sass/CC6699" class="h-8 mb-2" alt="Sass" />
-      <span class="text-sm">Sass</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/github/181717" class="h-8 mb-2" alt="GitHub" />
-      <span class="text-sm">GitHub</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/gitlab/FCA121" class="h-8 mb-2" alt="GitLab" />
-      <span class="text-sm">GitLab</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/grafana/F46800" class="h-8 mb-2" alt="Grafana" />
-      <span class="text-sm">Grafana</span>
-    </div>
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-      <img src="https://cdn.simpleicons.org/googlemaps/4285F4" class="h-8 mb-2" alt="Google Maps" />
-      <span class="text-sm">Google Maps</span>
-    </div>
-
-  </div>
-</section>
 
 
-<!-- Recent Blog Posts -->
-<section id="blog" class="py-12 px-4 max-w-4xl mx-auto text-center">
-  <h2 class="text-3xl font-bold mb-6">Latest Blog Posts</h2>
-  <ul id="rssFeedList" class="space-y-4 text-left"></ul>
-</section>
 
-<script>
-  async function fetchRSS() {
-    const rssUrl = 'https://blog.khaledalam.net/feed';
-    try {
-      const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl));
-      const data = await res.json();
-      const list = document.getElementById('rssFeedList');
 
-      const li_tmp = document.createElement('li');
-      li_tmp.innerHTML = `<a href="https://linkedin.com/posts/khaledalam_phpunit-phptesting-unittesting-activity-7354164808520253440-5_fu/" target="_blank" class="text-blue-600 hover:underline font-semibold">Stop writing 10 PHPUnit tests for the same function.</a>
-      <p class="text-sm text-gray-600 dark:text-gray-300">24/07/2025</p>`;
-      list.appendChild(li_tmp);
+  <!-- Resume Section -->
+  <section id="resume" class="py-12 px-4 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">My Resume</h2>
+    <button onclick="toggleResume()" class="px-4 py-2 bg-blue-600 text-white rounded mb-4">
+      👀 Expand Here
+    </button>
+    <button onclick="window.open('https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view', '_blank')"
+      class="px-4 py-2 bg-blue-600 text-white rounded mb-4">
+      🔗 Open in New Tab
+    </button>
 
-      data.items.slice(0, 5).forEach(item => {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="${item.link}" target="_blank" class="text-blue-600 hover:underline font-semibold">${item.title}</a>
-        <p class="text-sm text-gray-600 dark:text-gray-300">${new Date(item.pubDate).toLocaleDateString()}</p>`;
-        list.appendChild(li);
-      });
-    } catch (err) {
-      console.error("Failed to load RSS feed", err);
+    <div id="resumeEmbed" class="hidden">
+      <iframe src="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/preview" width="100%" height="600"
+        allow="autoplay"></iframe>
+    </div>
+  </section>
+
+  <script>
+    function toggleResume() {
+      const embed = document.getElementById('resumeEmbed');
+      embed.classList.toggle('hidden');
     }
-  }
-  fetchRSS();
-</script>
+  </script>
+
+
+  <!-- Tools Section -->
+  <section id="tools" class="py-12 bg-gray-100 dark:bg-gray-900 text-center">
+    <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">Tools I Love to Use</h2>
+    <div class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+
+      <!-- Tool Cards -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/php/777BB4" class="h-8 mb-2" alt="PHP" />
+        <span class="text-sm">PHP</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/laravel/F55247" class="h-8 mb-2" alt="Laravel" />
+        <span class="text-sm">Laravel</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/symfony/000000" class="h-8 mb-2" alt="Symfony" />
+        <span class="text-sm">Symfony</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/yii/39B54A" class="h-8 mb-2" alt="Yii" />
+        <span class="text-sm">Yii</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/wordpress/21759B" class="h-8 mb-2" alt="WordPress" />
+        <span class="text-sm">WordPress</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/woocommerce/96588A" class="h-8 mb-2" alt="WooCommerce" />
+        <span class="text-sm">WooCommerce</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/wix/000000" class="h-8 mb-2" alt="Wix" />
+        <span class="text-sm">Wix</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/javascript/F7DF1E" class="h-8 mb-2" alt="JavaScript" />
+        <span class="text-sm">JavaScript</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/typescript/3178C6" class="h-8 mb-2" alt="TypeScript" />
+        <span class="text-sm">TypeScript</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/react/61DAFB" class="h-8 mb-2" alt="React" />
+        <span class="text-sm">React</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/react/61DAFB" class="h-8 mb-2" alt="React Native" />
+        <span class="text-sm">React Native</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/node.js/339933" class="h-8 mb-2" alt="Node.js" />
+        <span class="text-sm">Node.js</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/nextdotjs/000000" class="h-8 mb-2" alt="Next.js" />
+        <span class="text-sm">Next.js</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/docker/2496ED" class="h-8 mb-2" alt="Docker" />
+        <span class="text-sm">Docker</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/mysql/4479A1" class="h-8 mb-2" alt="MySQL" />
+        <span class="text-sm">MySQL</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/postgresql/336791" class="h-8 mb-2" alt="PostgreSQL" />
+        <span class="text-sm">PostgreSQL</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png"
+          class="h-8 mb-2" alt="AWS" />
+        <span class="text-sm">AWS</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/googlecloud/4285F4" class="h-8 mb-2" alt="GCP" />
+        <span class="text-sm">GCP</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/vercel/000000" class="h-8 mb-2" alt="Vercel" />
+        <span class="text-sm">Vercel</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/digitalocean/0080FF" class="h-8 mb-2" alt="DigitalOcean" />
+        <span class="text-sm">DigitalOcean</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/firebase/FFCA28" class="h-8 mb-2" alt="Firebase" />
+        <span class="text-sm">Firebase</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" class="h-8 mb-2" alt="Tailwind CSS" />
+        <span class="text-sm">Tailwind CSS</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/sass/CC6699" class="h-8 mb-2" alt="SCSS" />
+        <span class="text-sm">SCSS</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/sass/CC6699" class="h-8 mb-2" alt="Sass" />
+        <span class="text-sm">Sass</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/github/181717" class="h-8 mb-2" alt="GitHub" />
+        <span class="text-sm">GitHub</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/gitlab/FCA121" class="h-8 mb-2" alt="GitLab" />
+        <span class="text-sm">GitLab</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/grafana/F46800" class="h-8 mb-2" alt="Grafana" />
+        <span class="text-sm">Grafana</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/googlemaps/4285F4" class="h-8 mb-2" alt="Google Maps" />
+        <span class="text-sm">Google Maps</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Recent Blog Posts -->
+  <section id="blog" class="py-12 px-4 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">Latest Blog Posts</h2>
+    <ul id="rssFeedList" class="space-y-4 text-left"></ul>
+  </section>
+
+  <script>
+    async function fetchRSS() {
+      const rssUrl = 'https://blog.khaledalam.net/feed';
+      try {
+        const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl));
+        const data = await res.json();
+        const list = document.getElementById('rssFeedList');
+
+        const li_tmp = document.createElement('li');
+
+        data.items.slice(0, 5).forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="${item.link}" target="_blank" class="text-blue-600 hover:underline font-semibold">${item.title}</a>
+        <p class="text-sm text-gray-600 dark:text-gray-300">${new Date(item.pubDate).toLocaleDateString()}</p>`;
+          list.appendChild(li);
+        });
+      } catch (err) {
+        console.error("Failed to load RSS feed", err);
+      }
+    }
+    fetchRSS();
+  </script>
 
 
 
-<!-- Footer -->
-<footer class="text-center py-6 border-t dark:border-gray-700">
-  <div class="flex justify-center gap-4">
-    <a href="https://github.com/khaledalam" target="_blank" title="GitHub">
-      <img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-1-logo-black-and-white.png" class="h-6 bg-white rounded-xl" />
-    </a>
-    <a href="https://linkedin.com/in/khaledalam" target="_blank" title="LinkedIn">
-      <img src="https://cdn3.iconfinder.com/data/icons/2018-social-media-black-and-white-logos/1000/2018_social_media_popular_app_logo_linkedin-512.png" class="h-6 bg-gray" />
-    </a>
-    <a href="https://blog.khaledalam.net" title="Blog">
-      <img src="https://www.freeiconspng.com/uploads/blogger-logo-icon-png-22.png" class="h-6 bg-gray" />
-    </a>
+  <!-- Footer -->
+  <footer class="text-center py-6 border-t dark:border-gray-700">
+    <div class="flex justify-center gap-4">
+      <a href="https://github.com/khaledalam" target="_blank" title="GitHub">
+        <img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-1-logo-black-and-white.png"
+          class="h-6 bg-white rounded-xl" />
+      </a>
+      <a href="https://linkedin.com/in/khaledalam" target="_blank" title="LinkedIn">
+        <img
+          src="https://cdn3.iconfinder.com/data/icons/2018-social-media-black-and-white-logos/1000/2018_social_media_popular_app_logo_linkedin-512.png"
+          class="h-6 bg-gray" />
+      </a>
+      <a href="https://blog.khaledalam.net" title="Blog">
+        <img src="https://www.freeiconspng.com/uploads/blogger-logo-icon-png-22.png" class="h-6 bg-gray" />
+      </a>
 
-  </div>
+    </div>
 
-  <p class="text-sm my-3">© 2025 Khaled Alam</p>
+    <p class="text-sm my-3">© 2025 Khaled Alam</p>
 
-</footer>
+  </footer>
 
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/6423c59431ebfa0fe7f542fd/1gslrnke5';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/6423c59431ebfa0fe7f542fd/1gslrnke5';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
 
     })();
   </script>
 </body>
+
 </html>
