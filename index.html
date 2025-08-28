@@ -47,10 +47,10 @@
   </style>
   <script>
     // Check localStorage and set initial theme class before page renders
-    if (localStorage.getItem("theme") === "dark") {
-      document.documentElement.classList.add("dark");
+    if (localStorage.getItem("theme") === "light") {
+      document.documentElement.classList.add("light");
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove("light");
     }
     function toggleTheme() {
       const html = document.documentElement;
@@ -615,6 +615,10 @@
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
         <img src="https://cdn.simpleicons.org/wordpress/21759B" class="h-8 mb-2" alt="WordPress" />
         <span class="text-sm">WordPress</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/magento/21759B" class="h-8 mb-2" alt="Magento" />
+        <span class="text-sm">Magento</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
         <img src="https://cdn.simpleicons.org/woocommerce/96588A" class="h-8 mb-2" alt="WooCommerce" />
