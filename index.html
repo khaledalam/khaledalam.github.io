@@ -259,315 +259,434 @@
   </section>
 
   <!-- Filter + Projects -->
-  <section id="projects" class="py-10 px-4 max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-6">Projects I Worked On</h2>
-    <div class="mb-6 flex flex-wrap justify-center gap-2">
-      <button class="filter-btn px-4 py-1 border rounded active" onclick="filterProjects('all')">All</button>
-      <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('web')">Web</button>
-      <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('mobile')">Mobile</button>
-      <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('tools')">Tools</button>
-      <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('games')">Games</button>
-      <button class="filter-btn px-4 py-1 border rounded" onclick="filterProjects('opensource')">Open Source</button>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left" id="projectGrid">
-      <!-- Cards -->
-      <script>
-        const projects = [
-          {
-            name: "CustomMarine.ae",
-            type: "web",
-            desc: "Premium UAE-based marine services and products platform. Developed and optimized custom PHP solutions, enhanced frontend UI/UX, and implemented performance improvements for faster load times and better customer engagement.",
-            tag: "HTML/CSS",
-            link: "https://www.custommarine.ae",
-            logo: "https://www.custommarine.ae/assets/img/logo.png",
-          },
+  <section id="projects" class="py-12 px-4 max-w-7xl mx-auto">
+  <div class="flex items-end justify-between gap-4 flex-wrap">
+    <h2 class="text-3xl font-bold">Projects I Worked On</h2>
 
-          {
-            name: "CBA.pl",
-            type: "web",
-            desc: "High-traffic Polish free hosting platform. Contributed to backend improvements and performance optimizations using PHP and MySQL, enhancing uptime and request throughput for thousands of daily users.",
-            tag: "PHP",
-            link: "https://www.cba.pl",
-            logo: "https://www.cba.pl/img/logo_cba.png",
-          },
-          {
-            name: "Khardl",
-            type: "web",
-            desc: "Comprehensive restaurant management system featuring multi-user roles, multi-tenancy, multi-language support, and subdomains. The platform includes essential functionalities like menu management, worker and driver coordination, branch oversight, and customizable front pages. Integrated with TAP payment gateway, Msegat SMS, push notifications, delivery companies, and provided API endpoints and webhooks for mobile apps.",
-            tag: "PHP",
-            link: "https://github.com/khaledalam/khardl",
-            linkIcon: "📷",
-            logo: "./logo.png",
-          },
-          {
-            name: "MintMe",
-            type: "web",
-            desc: "Decentralized crypto token exchange platform developed with Symfony and Vue.js. Enables users to create, launch, and trade their own custom coins. Provides real-time order book, token wallets, trading interface, charts, and token promotion tools.",
-            tag: "PHP",
-            link: "https://mintme.com",
-            logo: "https://avatars.githubusercontent.com/u/38435289?s=280&v=4",
-          },
-          {
-            name: "CoinIMP",
-            type: "web",
-            desc: "JavaScript-based browser mining platform for Monero, built with Symfony backend. Provided embeddable miners, real-time analytics, campaign management, and revenue reports. Used WebAssembly and advanced cryptographic optimizations.",
-            tag: "PHP",
-            link: "https://coinimp.com",
-            logo: "https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_8943fa7e4e1dce960ce9b8456f13f271/coinimp.jpg",
-          },
-          {
-            name: "CoffeePlanet",
-            type: "web",
-            desc: "Corporate website for Coffee Planet UAE, developed using Shopify Liquid templates. Features product showcases, brand storytelling, subscription modules, and integrated Google Tag Manager for marketing analytics.",
-            tag: "Liquid",
-            link: "https://coffeeplanet.com/",
-            logo: "https://ucarecdn.com/44b17637-1d88-4b95-bad1-beaa36b866f1/cafe-image-6890",
-          },
-          {
-            name: "Misk Events",
-            type: "web",
-            desc: "Custom WordPress solution for Saudi Arabia's Misk Foundation to manage public events, sessions, and attendee registration. Integrated with localization, accessibility enhancements, and performance optimizations.",
-            tag: "PHP",
-            link: "https://hub.misk.org.sa/events",
-            logo: "https://images.squarespace-cdn.com/content/v1/5a573aade45a7c861137d973/dce6a40f-750a-4b4a-b9d0-af1fdbfe47ae/misk-21-logo-light-1024x588.png",
-          },
-
-          {
-            name: "Prima International",
-            type: "web",
-            desc: "Modern marketing website for a Riyadh-based gourmet bakery. Built using Next.js and TypeScript, includes full CMS support, optimized SEO meta, and lightweight animations. Hosted on Vercel with instant deployments.",
-            tag: "TypeScript",
-            link: "https://www.primainternational.com/",
-            logo: "https://horecaway.com/userfiles/b46c3f34a7cf6fe0eee68ac9c38c7e7d.png",
-          },
-          {
-            name: "Makyee",
-            type: ["web", "mobile"],
-            desc: "Real estate PropTech platform built using Yii 1.1, custom PHP backend and React Native for mobile. Features an admin dashboard, property listings management, client CRM tools, and mobile app API integration. Integrated Google Maps, WhatsApp sharing, dynamic meta tags, and multilingual support. Core product of Makyee Real Estate.",
-            tag: "PHP",
-            link: "https://makyee.com",
-            mobileapp: "https://apps.apple.com/ae/app/makyee/id6504030415",
-            logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKHpL37ZH_zyZY43pTo24lBuj-J3Ee-rA5w&s",
-          },
-          {
-            name: "Arla Food",
-            type: "mobile",
-            desc: "React Native mobile app for internal food safety inspections at Arla. Includes multi-step checklists, offline data sync, barcode scanning, and admin portal integration.",
-            tag: "React Native",
-            logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Arla_Foods_logo.svg/640px-Arla_Foods_logo.svg.png",
-          },
-          {
-            name: "Sourcetoad Core",
-            type: "web",
-            desc: "Cruise ship management SaaS platform built with Yii2 for Sourcetoad. Supports crew scheduling, passenger info, real-time notifications, and third-party data integrations.",
-            tag: "PHP",
-            link: "https://ondecksoftware.com/cruise-director-platform/",
-            logo: "https://neom.directory/media/com_jbusinessdirectory/pictures/companies/627/sourcetoad_logo_rgb_1672176463.png",
-          },
-          {
-            name: "OrdersAnalytics",
-            type: "web",
-            desc: "SaaS platform for BigCommerce that visualizes order trends, customer cohorts, and product performance. Built using Laravel and React, deployed via DigitalOcean, and listed in BigCommerce App Store.",
-            tag: "PHP",
-            link: "https://www.bigcommerce.com/apps/orders-analytics/",
-            logo: "./logo.png",
-          },
-          {
-            name: "SpeakTextOnline",
-            type: "web",
-            desc: "AI text-to-speech SaaS platform using Laravel and React. Allows users to upload text or documents and generate natural speech in multiple voices. Includes auto publishing to TikTok and Instagram features.",
-            tag: "PHP",
-            link: "https://speaktextonline.com",
-            logo: "https://fosterclark.com/wp-content/uploads/2016/05/fc-blue_2.png",
-          },
-          {
-            name: "Expense Management System",
-            type: "web",
-            desc: "A role-based expense management system built with Yii 1.1 (role-based access Admin & User features, Swagger API, multi-files upload, API key authentication, admin review workflows, testing).",
-            tag: "PHP",
-            link: "https://github.com/khaledalam/yii-expense-system",
-            logo: "./logo.png",
-          },
-          {
-            name: "Digital Twin",
-            type: "web",
-            desc: "AI-powered health assistant frontend built in React and Three.js. Renders a digital 3D avatar synced with AI recommendations based on blood, microbiome, and genomic files. Integrates real-time chat, animated lip sync, and voice playback.",
-            tag: "React",
-            logo: "./logo.png",
-          },
-          {
-            name: "Avatoon",
-            type: "web",
-            desc: "React Three Fiber component that renders animated avatars. Supports lip-sync using visemes, emotion-based morph targets, and real-time audio playback. Built as a reusable npm module for interactive interfaces.",
-            tag: "React",
-            link: "https://github.com/khaledalam/avatoon",
-            logo: "./logo.png",
-          },
-          {
-            name: "Rugby Game",
-            type: "web",
-            desc: "Web-based rugby team management platform developed with Laravel. Provides match scheduling, team formation, real-time updates, and match statistics dashboards.",
-            tag: "PHP",
-            logo: "./logo.png",
-          },
-          {
-            name: "KhaledAlam.net",
-            type: "web",
-            desc: "Personal portfolio website showcasing projects, blog posts, and tools. Built with vanilla HTML, Tailwind CSS, and dynamic JS filters. Supports light/dark mode and RSS-powered blog feed.",
-            tag: "PHP",
-            link: "https://khaledalam.net",
-            logo: "./logo.png",
-          },
-          {
-            name: "Kolega Kapital FinTech mobile app",
-            type: "mobile",
-            desc: "FinTech mobile app developed in Flutter to manage borrow/lend contracts between users. Includes identity verification, payment tracking, contract history, and notification system.",
-            tag: "Flutter",
-            logo: "./logo.png",
-          },
-          {
-            name: "Redis",
-            type: "opensource",
-            desc: "Open-source CLI-based real-time chat client for Redis. Implemented as a custom PR into Redis repo to enable direct pub/sub messaging via command-line interface.",
-            tag: "C",
-            link: "https://github.com/redis/redis/pull/12215",
-            logo: "./logo.png",
-          },
-          {
-            name: "GraphRag",
-            type: "opensource",
-            desc: "GraphRag PR that enables token cost estimation before indexing. Helps OpenAI + Azure users forecast embedding and context cost in RAG pipelines. Submitted to Microsoft's official repo.",
-            tag: "Python",
-            link: "https://github.com/microsoft/graphrag/pull/1917",
-            logo: "./logo.png",
-          },
-          {
-            name: "SoftCropper",
-            type: "tools",
-            desc: "Python-based CLI tool to convert rectangular photos into perfect squares by padding with blurred edges. Built for Canva Magnet production automation. Available as a pip package.",
-            tag: "Python",
-            link: "https://github.com/khaledalam/softcropper",
-            logo: "./logo.png",
-          },
-          {
-            name: "PHP Attributed Unrolling Patch",
-            type: "opensource",
-            desc: "Custom patch for PHP Zend Engine to implement a userland `#[Unroll(n)]` attribute for loop unrolling during compilation. Explored potential performance optimizations at bytecode level.",
-            tag: "C",
-            link: "https://gist.github.com/khaledalam/2f2237733e1cc3ec74d597b1b20d94df",
-            logo: "./logo.png",
-          },
-          {
-            name: "Arrow Shooting",
-            type: "games",
-            desc: "C++ OpenGL-based 2D game that simulates arrow shooting using geometric algorithms. Features projectile motion, collision detection, and keyboard controls for training math concepts interactively.",
-            tag: "C++",
-            link: "https://github.com/khaledalam/arrow-shooting",
-            logo: "./logo.png",
-          },
-          {
-            name: "Unit",
-            type: "tools",
-            desc: "Lightweight PHP library to work with physical quantities and unit conversions. Supports dimensional analysis, precision formatting, and arithmetic operations. PSR-4 compliant and tested with PHPUnit.",
-            tag: "PHP",
-            link: "https://github.com/khaledalam/unit",
-            logo: "./logo.png",
-          },
-          {
-            name: "htop",
-            type: "tools",
-            desc: "Work-in-progress Laravel package to monitor HTTP request activity in real-time. Includes both CLI and Web GUI (via WebSocket). Inspired by Linux htop, aimed at debugging Laravel applications.",
-            tag: "PHP",
-            link: "https://github.com/khaledalam/htop",
-            logo: "./logo.png",
-          },
-          {
-            name: "PHP SDK/API for Google Bard",
-            type: "tools",
-            desc: "Unofficial PHP SDK for interacting with the experimental Bard AI. Handles session cookies, input formatting, and response parsing for chatbot interaction.",
-            tag: "PHP",
-            link: "https://github.com/khaledalam/bard-sdk-php",
-            logo: "./logo.png",
-          },
-        ];
-
-        document.addEventListener("DOMContentLoaded", () => {
-          const grid = document.getElementById("projectGrid");
-
-          projects.forEach((p) => {
-            const types = Array.isArray(p.type) ? p.type : [p.type];
-            const div = document.createElement("div");
-            div.className = `project-card p-5 border rounded-lg shadow hover:shadow-xl bg-white dark:bg-gray-800 transition`;
-            div.dataset.types = types.join(",");
-
-            div.className = `
-    project-card ${types.join(" ")} 
-    dark:bg-[#1e1e2f] dark:bg-gray-900 
-    border border-gray-800 
-    rounded-xl shadow-sm hover:shadow-md 
-    transition flex flex-col 
-    h-[250px] p-4
-  `.trim();
-
-            div.dataset.types = types.join(",");
-
-            div.innerHTML = `
-    <div class="flex justify-between items-start mb-3">
-      <div class="flex items-center gap-2">
-        ${p.logo ? `<img src="${p.logo}" class="h-7 w-7 rounded object-contain bg-white p-0.5" alt="${p.name} logo">` : ""}
-        <h3 class="text-md font-semibold dark:text-white">${p.name}</h3>
+    <!-- Controls -->
+    <div class="flex items-center gap-2 w-full md:w-auto">
+      <div class="relative flex-1 md:flex-none">
+        <input id="search_input" type="text" placeholder="Search projects or tech"
+               class="w-full dark:bg-gray-800 md:w-72 rounded-lg border px-3 py-2 pl-9 outline-none focus:ring"
+               oninput="ApplyFilters()" />
+        <svg class="absolute left-2 top-2.5 h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none">
+          <path d="M21 21l-4.3-4.3M17 10.5A6.5 6.5 0 1 1 4 10.5a6.5 6.5 0 0 1 13 0Z" stroke="currentColor" stroke-width="2"/>
+        </svg>
       </div>
-      <span class="text-xs px-2 py-0.5 rounded-full bg-gray-700 text-gray-200">${p.tag}</span>
+
+      <select id="sort_select" class="rounded-lg border px-3 py-2 dark:bg-gray-800" onchange="ApplyFilters()">
+        <option value="name_asc">Sort: Name A→Z</option>
+        <option value="name_desc">Sort: Name Z→A</option>
+        <option value="type">Sort: Type</option>
+      </select>
     </div>
+  </div>
 
-    <!-- Middle: Scrollable Description -->
-    <div class="text-sm h-[135px] leading-7 text-[17px] flex items-start text-gray-400 overflow-y-auto mb-3 flex-1 pr-1">
-      ${p.desc}
-    </div>
+  <!-- Filter chips -->
+  <div class="mt-6 flex flex-wrap gap-2" id="filter_chips">
+    <button class="filter-btn px-3 py-1 rounded-full border data-[active=true]:bg-gray-900 data-[active=true]:text-white"
+            data-type="all" onclick="FilterProjects('all', event)" data-active="true">All <span class="ml-1 text-xs opacity-70" id="count_all"></span></button>
+    <button class="filter-btn px-3 py-1 rounded-full border" data-type="web" onclick="FilterProjects('web', event)">Web <span class="ml-1 text-xs opacity-70" id="count_web"></span></button>
+    <button class="filter-btn px-3 py-1 rounded-full border" data-type="mobile" onclick="FilterProjects('mobile', event)">Mobile <span class="ml-1 text-xs opacity-70" id="count_mobile"></span></button>
+    <button class="filter-btn px-3 py-1 rounded-full border" data-type="tools" onclick="FilterProjects('tools', event)">Tools <span class="ml-1 text-xs opacity-70" id="count_tools"></span></button>
+    <button class="filter-btn px-3 py-1 rounded-full border" data-type="games" onclick="FilterProjects('games', event)">Games <span class="ml-1 text-xs opacity-70" id="count_games"></span></button>
+  </div>
 
-    <!-- Bottom: Action -->
-    ${p.link
-                ? `
-      <div class="mt-auto">
-        <a href="${p.link}" target="_blank" class="inline-flex items-center gap-1 text-sm text-blue-400">
-          ${p.linkIcon ? p.linkIcon : "🌐"}
-        </a>
+  <!-- Grid -->
+  <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6" id="project_grid"></div>
 
-        ${p.mobileapp
-                  ? `
-        <a href="${p.mobileapp}" target="_blank" class="inline-flex items-center gap-1 text-sm mx-4 text-blue-400">
-          📲
-        </a>
-    `
-                  : ""
-                }
+  <!-- Lightbox -->
+  <div id="shot_lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4"
+       onclick="CloseLightbox(event)">
+    <figure class="max-w-5xl w-full">
+      <img id="lightbox_img" src="" alt="Project screenshot" class="w-full rounded-lg shadow-2xl" />
+      <figcaption id="lightbox_caption" class="mt-3 text-sm text-gray-200"></figcaption>
+    </figure>
+    <button class="absolute top-4 right-4 rounded-full bg-white/10 px-3 py-1 text-white backdrop-blur"
+            onclick="CloseLightbox(event)">Close</button>
+  </div>
 
-      </div>
-    `
-                : ""
-              }
+  <script>
+    // Data
+    const project_list = [
+      {
+        name: "CustomMarine.ae",
+        type: "web",
+        desc: "Premium UAE-based marine services and products platform. Custom PHP features, UI/UX polish, and performance work.",
+        tag: "HTML/CSS",
+        link: "https://www.custommarine.ae",
+        logo: "https://www.custommarine.ae/assets/img/logo.png",
+        shot: "screenshots/custommarine.png"
+      },
+      {
+        name: "CBA.pl",
+        type: "web",
+        desc: "High-traffic Polish free hosting platform. Backend improvements and MySQL performance tuning.",
+        tag: "PHP",
+        link: "https://www.cba.pl",
+        logo: "https://www.cba.pl/img/logo_cba.png",
+        shot: "screenshots/cba.pl.png"
+      },
+      {
+        name: "Khardl",
+        type: "web",
+        desc: "Restaurant management system with multi-tenant, roles, branches, TAP, SMS, push, delivery, webhooks, APIs.",
+        tag: "PHP",
+        link: "https://github.com/khaledalam/khardl",
+        logo: "./logo.png",
+        shot: "screenshots/khardl.png"
+      },
+      {
+        name: "MintMe",
+        type: "web",
+        desc: "Decentralized token exchange with Symfony + Vue. Real-time book, wallets, trading UI, charts.",
+        tag: "PHP",
+        link: "https://mintme.com",
+        logo: "https://avatars.githubusercontent.com/u/38435289?s=280&v=4",
+        shot: "screenshots/mintme.png"
+      },
+      {
+        name: "CoinIMP",
+        type: "web",
+        desc: "Browser mining platform with Symfony backend, WebAssembly miner, analytics and campaigns.",
+        tag: "PHP",
+        link: "https://coinimp.com",
+        logo: "https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_8943fa7e4e1dce960ce9b8456f13f271/coinimp.jpg",
+        shot: "screenshots/coinimp.png"
+      },
+      {
+        name: "CoffeePlanet",
+        type: "web",
+        desc: "Shopify Liquid build for Coffee Planet UAE. Product pages, subscriptions, GTM integration.",
+        tag: "Liquid",
+        link: "https://coffeeplanet.com/",
+        logo: "https://ucarecdn.com/44b17637-1d88-4b95-bad1-beaa36b866f1/cafe-image-6890",
+        shot: "screenshots/coffeeplanet.png"
+      },
+      {
+        name: "Misk Events",
+        type: "web",
+        desc: "WordPress solution for event management, sessions, localization, accessibility and performance.",
+        tag: "PHP",
+        link: "https://hub.misk.org.sa/events",
+        logo: "https://images.squarespace-cdn.com/content/v1/5a573aade45a7c861137d973/dce6a40f-750a-4b4a-b9d0-af1fdbfe47ae/misk-21-logo-light-1024x588.png",
+        shot: "screenshots/misk.png"
+      },
+      {
+        name: "Prima International",
+        type: "web",
+        desc: "Next.js site with CMS, SEO and light animations. Hosted on Vercel with instant deploys.",
+        tag: "TypeScript",
+        link: "https://www.primainternational.com/",
+        logo: "https://horecaway.com/userfiles/b46c3f34a7cf6fe0eee68ac9c38c7e7d.png",
+        shot: "screenshots/prima.png"
+      },
+      {
+        name: "Makyee",
+        type: ["web","mobile"],
+        desc: "PropTech platform with Yii 1.1 backend and React Native apps. Listings, CRM, maps, sharing, multilingual.",
+        tag: "PHP",
+        link: "https://makyee.com",
+        mobileapp: "https://apps.apple.com/ae/app/makyee/id6504030415",
+        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKHpL37ZH_zyZY43pTo24lBuj-J3Ee-rA5w&s",
+        shot: "screenshots/makyee.png"
+      },
+      {
+        name: "Arla Food",
+        type: "mobile",
+        desc: "React Native app for inspections. Offline sync, barcode scan, admin portal integration.",
+        tag: "React Native",
+        logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Arla_Foods_logo.svg/640px-Arla_Foods_logo.svg.png",
+        shot: ""
+      },
+      {
+        name: "Sourcetoad Core",
+        type: "web",
+        desc: "Cruise ship management SaaS (Yii2). Crew scheduling, passenger info, integrations.",
+        tag: "PHP",
+        link: "https://ondecksoftware.com/cruise-director-platform/",
+        logo: "https://neom.directory/media/com_jbusinessdirectory/pictures/companies/627/sourcetoad_logo_rgb_1672176463.png",
+        shot: ""
+      },
+      {
+        name: "OrdersAnalytics",
+        type: "web",
+        desc: "Laravel + React analytics app for BigCommerce sellers. Trends, cohorts, performance.",
+        tag: "PHP",
+        link: "https://www.bigcommerce.com/apps/orders-analytics/",
+        logo: "./logo.png",
+        shot: ""
+      },
+      {
+        name: "SpeakTextOnline",
+        type: "web",
+        desc: "Laravel + React TTS SaaS. Multi-voice, doc upload, auto publish to TikTok and Instagram.",
+        tag: "PHP",
+        link: "https://speaktextonline.com",
+        logo: "https://fosterclark.com/wp-content/uploads/2016/05/fc-blue_2.png",
+        shot: ""
+      },
+      {
+        name: "Expense Management System",
+        type: "web",
+        desc: "Yii 1.1 RBAC, Swagger API, multi-file upload, review workflows, tests.",
+        tag: "PHP",
+        link: "https://github.com/khaledalam/yii-expense-system",
+        logo: "./logo.png",
+        shot: ""
+      },
+      {
+        name: "Digital Twin",
+        type: "web",
+        desc: "React + Three.js 3D avatar with health insights and real-time chat and voice.",
+        tag: "React",
+        logo: "./logo.png",
+        shot: ""
+      },
+      {
+        name: "Avatoon",
+        type: "web",
+        desc: "React Three Fiber avatar component with viseme-based lip-sync.",
+        tag: "React",
+        link: "https://github.com/khaledalam/avatoon",
+        logo: "./logo.png",
+        shot: ""
+      },
+      {
+        name: "Rugby Game",
+        type: "web",
+        desc: "Laravel-driven match scheduling, formations, live updates, stats.",
+        tag: "PHP",
+        logo: "./logo.png",
+        shot: ""
+      },
+      {
+        name: "KhaledAlam.net",
+        type: "web",
+        desc: "Portfolio with filters, dark mode, and RSS blog feed.",
+        tag: "PHP",
+        link: "https://khaledalam.net",
+        logo: "./logo.png",
+        shot: ""
+      },
+      {
+        name: "Kolega Kapital FinTech mobile app",
+        type: "mobile",
+        desc: "Flutter app for borrow and lend contracts with verification and tracking.",
+        tag: "Flutter",
+        logo: "./logo.png",
+        shot: ""
+      },
+      {
+        name: "Redis",
+        type: "tools",
+        desc: "CLI real-time chat client example via Redis pub/sub PR.",
+        tag: "C",
+        link: "https://github.com/redis/redis/pull/12215",
+        logo: "./logo.png",
+        shot: ""
+      },
+      {
+        name: "SoftCropper",
+        type: "tools",
+        desc: "Python CLI to square photos with blurred borders. Pip package.",
+        tag: "Python",
+        link: "https://github.com/khaledalam/softcropper",
+        logo: "./logo.png",
+        shot: ""
+      },
+      {
+        name: "Arrow Shooting",
+        type: "games",
+        desc: "C++ OpenGL-based 2D training game with projectile physics.",
+        tag: "C++",
+        link: "https://github.com/khaledalam/arrow-shooting",
+        logo: "./logo.png",
+        shot: ""
+      },
+      {
+        name: "Unit",
+        type: "tools",
+        desc: "PHP library for units, dimensions, and conversions.",
+        tag: "PHP",
+        link: "https://github.com/khaledalam/unit",
+        logo: "./logo.png",
+        shot: ""
+      },
+      {
+        name: "htop",
+        type: "tools",
+        desc: "Laravel request monitor, CLI and Web via WebSocket.",
+        tag: "PHP",
+        link: "https://github.com/khaledalam/htop",
+        logo: "./logo.png",
+        shot: ""
+      },
+      {
+        name: "PHP SDK/API for Google Bard",
+        type: "tools",
+        desc: "Unofficial PHP SDK for Bard. Sessions, formatting, parsing.",
+        tag: "PHP",
+        link: "https://github.com/khaledalam/bard-sdk-php",
+        logo: "./logo.png",
+        shot: ""
+      }
+    ];
 
-    
+    // Render
+    document.addEventListener("DOMContentLoaded", () => {
+      RenderProjects(project_list);
+      UpdateCounts();
+    });
 
-    
-  `;
+    function RenderProjects(list_input) {
+      const grid_el = document.getElementById("project_grid");
+      grid_el.innerHTML = "";
 
-            document.getElementById("projectGrid").appendChild(div);
-          });
+      list_input.forEach((p) => {
+        const types_arr = Array.isArray(p.type) ? p.type : [p.type];
+        const type_badge = types_arr.map(t => `<span class="text-[11px] px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 border">${t}</span>`).join(" ");
+
+        // Card
+        const card_el = document.createElement("article");
+        card_el.className =
+          "project-card group rounded-2xl border overflow-hidden bg-white dark:bg-gray-900 dark:border-gray-800 shadow-sm hover:shadow-lg transition";
+        card_el.dataset.types = types_arr.join(",");
+
+        // Screenshot area
+        const shot_html = p.shot
+          ? `
+            <button class="relative block w-full aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-gray-800"
+                    onclick="OpenLightbox('${encodeURI(p.shot)}', '${escapeHtml(p.name)}')" aria-label="Open screenshot">
+              <img src="${p.shot}" alt="${escapeHtml(p.name)} screenshot"
+                   class="h-full w-full object-cover transition group-hover:scale-[1.02]" loading="lazy" />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"></div>
+            </button>
+          `
+          : `
+            <div class="flex items-center justify-center w-full aspect-[16/9] bg-gray-100 dark:bg-gray-800 text-xs text-gray-500">
+              No screenshot provided
+            </div>
+          `;
+
+        card_el.innerHTML = `
+          ${shot_html}
+          <div class="p-4 flex flex-col gap-3">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex items-center gap-2">
+                ${p.logo ? `<img src="${p.logo}" class="h-7 w-7 rounded bg-white p-0.5 object-contain border" alt="${escapeHtml(p.name)} logo" loading="lazy">` : ""}
+                <h3 class="text-base font-semibold">${p.name}</h3>
+              </div>
+              <span class="text-[11px] px-2 py-0.5 rounded-full bg-gray-900 text-white">${p.tag}</span>
+            </div>
+
+            <p class="text-sm text-gray-600 dark:text-gray-300 leading-6 line-clamp-4">${p.desc}</p>
+
+            <div class="flex items-center justify-between">
+              <div class="flex flex-wrap gap-1">${type_badge}</div>
+              <div class="flex items-center gap-3">
+                ${p.link ? `<a class="text-sm underline underline-offset-4" target="_blank" rel="noreferrer" href="${p.link}">Preview</a>` : ""}
+                ${p.mobileapp ? `<a class="text-sm underline underline-offset-4" target="_blank" rel="noreferrer" href="${p.mobileapp}">App</a>` : ""}
+              </div>
+            </div>
+          </div>
+        `;
+
+        grid_el.appendChild(card_el);
+      });
+    }
+
+    // Filters
+    let active_type = "all";
+
+    function FilterProjects(type_arg, ev) {
+      active_type = type_arg;
+      document.querySelectorAll("#filter_chips .filter-btn").forEach((btn) => {
+        btn.dataset.active = (btn.getAttribute("data-type") === type_arg) || (type_arg === "all" && btn.getAttribute("data-type") === "all");
+      });
+      ApplyFilters();
+    }
+
+    function ApplyFilters() {
+      const query_val = (document.getElementById("search_input").value || "").toLowerCase().trim();
+      const sort_val = document.getElementById("sort_select").value;
+
+      // filter by type and search
+      let filtered_list = project_list.filter((p) => {
+        const types_arr = Array.isArray(p.type) ? p.type : [p.type];
+        const match_type = active_type === "all" || types_arr.includes(active_type);
+        const blob = `${p.name} ${p.desc} ${p.tag} ${Array.isArray(p.type) ? p.type.join(" ") : p.type}`.toLowerCase();
+        const match_query = !query_val || blob.includes(query_val);
+        return match_type && match_query;
+      });
+
+      // sort
+      if (sort_val === "name_asc") filtered_list.sort((a, b) => a.name.localeCompare(b.name));
+      if (sort_val === "name_desc") filtered_list.sort((a, b) => b.name.localeCompare(a.name));
+      if (sort_val === "type") filtered_list.sort((a, b) => (Array.isArray(a.type)?a.type[0]:a.type).localeCompare(Array.isArray(b.type)?b.type[0]:b.type));
+
+      RenderProjects(filtered_list);
+      UpdateCounts(filtered_list);
+    }
+
+    // Counts beside chips
+    function UpdateCounts(current_list_opt) {
+      const base = current_list_opt || project_list;
+      const count_map = { all: project_list.length, web: 0, mobile: 0, tools: 0, games: 0 };
+      project_list.forEach((p) => {
+        const types_arr = Array.isArray(p.type) ? p.type : [p.type];
+        types_arr.forEach((t) => {
+          if (count_map.hasOwnProperty(t)) count_map[t]++;
         });
+      });
 
-        function filterProjects(type) {
-          document.querySelectorAll(".filter-btn").forEach((btn) => btn.classList.remove("active"));
-          event.target.classList.add("active");
+      const setCount = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = `(${id === "count_all" ? project_list.length : val})`;
+      };
 
-          document.querySelectorAll(".project-card").forEach((card) => {
-            const cardTypes = card.dataset.types.split(","); // stored from data-types
-            card.style.display = type === "all" || cardTypes.includes(type) ? "block" : "none";
-          });
-        }
-      </script>
-    </div>
-  </section>
+      setCount("count_all", count_map.all);
+      setCount("count_web", count_map.web);
+      setCount("count_mobile", count_map.mobile);
+      setCount("count_tools", count_map.tools);
+      setCount("count_games", count_map.games);
+    }
+
+    // Lightbox
+    function OpenLightbox(src_arg, caption_arg) {
+      const box_el = document.getElementById("shot_lightbox");
+      const img_el = document.getElementById("lightbox_img");
+      const cap_el = document.getElementById("lightbox_caption");
+      img_el.src = decodeURI(src_arg);
+      cap_el.textContent = caption_arg;
+      box_el.classList.remove("hidden");
+      box_el.classList.add("flex");
+      document.addEventListener("keydown", LightboxKeyHandler);
+    }
+
+    function CloseLightbox(ev) {
+      // Allow clicking the backdrop or close button. Prevent closing when clicking the image area.
+      const box_el = document.getElementById("shot_lightbox");
+      if (ev && ev.target && ev.target.id !== "shot_lightbox" && ev.target.tagName.toLowerCase() !== "button") {
+        return;
+      }
+      box_el.classList.add("hidden");
+      box_el.classList.remove("flex");
+      document.removeEventListener("keydown", LightboxKeyHandler);
+    }
+
+    function LightboxKeyHandler(e) {
+      if (e.key === "Escape") CloseLightbox(e);
+    }
+
+    // Util
+    function escapeHtml(str) {
+      return (str || "").replace(/[&<>"']/g, (m) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+      }[m]));
+    }
+  </script>
+</section>
 
   <!-- Resume Section -->
   <section id="resume" class="py-12 px-4 max-w-4xl mx-auto text-center">
@@ -861,8 +980,14 @@
       <a href="https://blog.khaledalam.net" title="Blog">
         <img src="https://www.freeiconspng.com/uploads/blogger-logo-icon-png-22.png" class="h-6 bg-gray" />
       </a>
+      <a href="http://wa.me/971582936628" title="WhatsApp">
+        +971 58 293 6628
+      </a>
+      <a href="mailto:khaledalam.net@gmail.com" title="WhatsApp">
+        khaledalam.net@gmail.com
+      </a>
     </div>
-
+    
     <p class="text-sm my-3">© 2025 Khaled Alam</p>
   </footer>
 
