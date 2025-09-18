@@ -125,6 +125,22 @@
       </div>
     </div>
 
+
+    <!-- Resume Section -->
+  <section id="resume" class="py-12 px-4 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">My Resume</h2>
+    <button onclick="toggleResume()" class="px-4 py-2 bg-blue-600 text-white rounded mb-4">👀 Expand Here</button>
+    <button onclick="window.open('https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view', '_blank')"
+      class="px-4 py-2 bg-blue-600 text-white rounded mb-4">
+      🔗 Open in New Tab
+    </button>
+
+    <div id="resumeEmbed" class="hidden">
+      <iframe src="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/preview" width="100%" height="600"
+        allow="autoplay"></iframe>
+    </div>
+  </section>
+    
   <!-- Recent Blog Posts -->
   <section id="blog" class="py-12 px-4 max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-6">Latest Blog Posts</h2>
@@ -608,20 +624,7 @@
   </script>
 </section>
 
-  <!-- Resume Section -->
-  <section id="resume" class="py-12 px-4 max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-4">My Resume</h2>
-    <button onclick="toggleResume()" class="px-4 py-2 bg-blue-600 text-white rounded mb-4">👀 Expand Here</button>
-    <button onclick="window.open('https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view', '_blank')"
-      class="px-4 py-2 bg-blue-600 text-white rounded mb-4">
-      🔗 Open in New Tab
-    </button>
-
-    <div id="resumeEmbed" class="hidden">
-      <iframe src="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/preview" width="100%" height="600"
-        allow="autoplay"></iframe>
-    </div>
-  </section>
+  
 
   <script>
     function toggleResume() {
