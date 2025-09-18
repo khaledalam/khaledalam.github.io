@@ -106,7 +106,7 @@
           <h1 class="text-3xl md:text-4xl font-bold">Hey, I am Khaled</h1>
         </div>
         <p class="text-lg text-gray-700 dark:text-gray-300">
-          Senior Software Engineer based in Dubai. I build SaaS tools, engineer high-performing systems.
+          Senior Full-Stack Engineer in Dubai, building SaaS products and high-performance systems.
         </p>
       </div>
 
@@ -125,47 +125,12 @@
       </div>
     </div>
 
-    <!-- Intro Video Section -->
-    <section id="intro-video" class="py-16 px-4">
-      <div class="max-w-6xl mx-auto">
-        <header class="mb-6">
-          <h4 class="text-xl md:text-2xl font-bold">Khaled Alam – Software Development</h4>
-          <p class="text-sm text-gray-500 mt-1">Playlist with an optional featured video</p>
-        </header>
-
-        <!-- Main playlist -->
-        <div class="aspect-video w-full rounded-xl shadow-lg overflow-hidden bg-black">
-          <iframe class="w-full h-full"
-            src="https://www.youtube.com/embed/videoseries?list=PLWpBFtxKP27_yuOszH3je89_B1KaBiDnm&rel=0&modestbranding=1"
-            title="Makyee Real Estate – Playlist" frameborder="0" loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <!-- Controls -->
-        <div class="mt-4 flex items-center justify-between gap-3">
-          <span class="text-sm text-gray-600">Prefer a single highlight?</span>
-          <button id="toggleVideoBtn" type="button"
-            class="inline-flex items-center gap-2 rounded-lg border border-gray-200 px-4 py-2 text-sm font-medium hover:bg-gray-50 active:bg-gray-100 transition"
-            aria-expanded="false" aria-controls="videoPanel">
-            Show featured video
-          </button>
-        </div>
-
-        <!-- Collapsible featured video (hidden by default) -->
-        <div id="videoPanel" class="mt-4 hidden rounded-xl border border-gray-200 overflow-hidden shadow-sm">
-          <div class="aspect-video w-full bg-black">
-            <iframe class="w-full h-full" src="https://www.youtube.com/embed/FvNB4ayfVvE?rel=0&modestbranding=1"
-              title="Featured Video" frameborder="0" loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-
+  <!-- Recent Blog Posts -->
+  <section id="blog" class="py-12 px-4 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">Latest Blog Posts</h2>
+    <ul id="rssFeedList" class="space-y-4 text-left"></ul>
+  </section>
+    
     <!-- Companies Section -->
     <section id="companies" class="py-12 text-center">
       <h2 class="text-3xl font-bold mb-10">Some Amazing Companies I've Worked With</h2>
@@ -936,11 +901,6 @@
     </div>
   </section>
 
-  <!-- Recent Blog Posts -->
-  <section id="blog" class="py-12 px-4 max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-6">Latest Blog Posts</h2>
-    <ul id="rssFeedList" class="space-y-4 text-left"></ul>
-  </section>
 
   <script>
     async function fetchRSS() {
