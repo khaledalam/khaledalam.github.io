@@ -101,12 +101,12 @@
       <!-- Left: Image + Text -->
       <div class="flex-1">
         <div class="flex items-center gap-4 mb-4">
-          <img src="./DP_Khaled.jpeg" alt="Khaled Alam"
-            class="w-16 h-16 rounded-full border-2 border-white dark:border-gray-800" />
+          <img src="./DP_Khaled.jpg" alt="Khaled Alam"
+            class="w-20 h-20 rounded-full border-2 border-white dark:border-gray-800" />
           <h1 class="text-3xl md:text-4xl font-bold">Hey, I am Khaled</h1>
         </div>
         <p class="text-lg text-gray-700 dark:text-gray-300">
-          Senior Full-Stack Engineer in Dubai, building SaaS products and high-performance systems.
+          Software Engineer | PHP, React, React Native, C++ | SaaS, FinTech, PropTech | Cloud-Native Systems
         </p>
       </div>
 
@@ -120,37 +120,38 @@
         <a href="#tools"
           class="dark:bg-gray-900 dark:text-white border border-gray-700 p-4 rounded-lg hover:bg-gray-800 transition">
           <h2 class="text-lg font-semibold">🛠 Tools</h2>
-          <p class="text-sm dark:text-gray-400">Tech and tools I use to build apps, solve problems, and make life easier.</p>
+          <p class="text-sm dark:text-gray-400">Tech and tools I use to build apps, solve problems, and make life
+            easier.</p>
         </a>
       </div>
     </div>
 
 
     <!-- Resume Section -->
-  <section id="resume" class="py-12 px-4 max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-4">My Resume</h2>
-    <button onclick="toggleResume()" class="px-4 py-2 bg-blue-600 text-white rounded mb-4">👀 Expand Here</button>
-    <button onclick="window.open('https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view', '_blank')"
-      class="px-4 py-2 bg-blue-600 text-white rounded mb-4">
-      🔗 Open in New Tab
-    </button>
+    <section id="resume" class="py-8 px-4 max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">My Resume</h2>
+      <button onclick="toggleResume()" class="px-4 py-2 bg-blue-600 text-white rounded mb-4">Expand Here</button>
+      <button onclick="window.open('https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view', '_blank')"
+        class="px-4 py-2 bg-blue-600 text-white rounded mb-4">
+        Open in New Tab
+      </button>
 
-    <div id="resumeEmbed" class="hidden">
-      <iframe src="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/preview" width="100%" height="600"
-        allow="autoplay"></iframe>
-    </div>
-  </section>
-    
-  <!-- Recent Blog Posts -->
-  <section id="blog" class="py-12 px-4 max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-6">Latest Blog Posts</h2>
-    <ul id="rssFeedList" class="space-y-4 text-left"></ul>
-  </section>
-    
+      <div id="resumeEmbed" class="hidden">
+        <iframe src="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/preview" width="100%"
+          height="600" allow="autoplay"></iframe>
+      </div>
+    </section>
+
+    <!-- Recent Blog Posts -->
+    <section id="blog" class="py-8 px-4 max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Latest Blog Posts</h2>
+      <ul id="rssFeedList" class="space-y-4 text-left"></ul>
+    </section>
+
     <!-- Companies Section -->
     <section id="companies" class="py-12 text-center">
       <h2 class="text-3xl font-bold mb-10">Some Amazing Companies I've Worked With</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 px-6">
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 px-6">
         <div class="flex flex-col items-center">
           <img src="https://1000logos.net/wp-content/uploads/2023/02/STC-logo.png" class="h-12 mb-2" alt="STC" />
           <p class="text-sm text-gray-600 dark:text-gray-400">STC</p>
@@ -172,7 +173,9 @@
           <p class="text-sm text-gray-600 dark:text-gray-400">MISK</p>
         </div>
         <div class="flex flex-col items-center">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxIUmyFJfAdCU9u-CLaFglCcdhpgCJczU_SILDkU-m7zcfYx4-ZiD3gSy8rDVLHaTRbxA&usqp=CAU" class="h-10 mb-2" alt="custom marine" />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxIUmyFJfAdCU9u-CLaFglCcdhpgCJczU_SILDkU-m7zcfYx4-ZiD3gSy8rDVLHaTRbxA&usqp=CAU"
+            class="h-10 mb-2" alt="custom marine" />
           <p class="text-sm text-gray-600 dark:text-gray-400">CustomMarine</p>
         </div>
         <div class="flex flex-col items-center">
@@ -241,257 +244,267 @@
 
   <!-- Filter + Projects -->
   <section id="projects" class="py-12 px-4 max-w-7xl mx-auto">
-  <div class="flex items-end justify-between gap-4 flex-wrap">
-    <h2 class="text-3xl font-bold">Projects I Worked On</h2>
+    <div class="flex items-end justify-between gap-4 flex-wrap">
+      <h2 class="text-3xl font-bold">Projects I Worked On</h2>
 
-    <!-- Controls -->
-    <div class="flex items-center gap-2 w-full md:w-auto">
-      <div class="relative flex-1 md:flex-none">
-        <input id="search_input" type="text" placeholder="Search projects or tech"
-               class="w-full dark:bg-gray-800 md:w-72 rounded-lg border px-3 py-2 pl-9 outline-none focus:ring"
-               oninput="ApplyFilters()" />
-        <svg class="absolute left-2 top-2.5 h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none">
-          <path d="M21 21l-4.3-4.3M17 10.5A6.5 6.5 0 1 1 4 10.5a6.5 6.5 0 0 1 13 0Z" stroke="currentColor" stroke-width="2"/>
-        </svg>
+      <!-- Controls -->
+      <div class="flex items-center gap-2 w-full md:w-auto">
+        <div class="relative flex-1 md:flex-none">
+          <input id="search_input" type="text" placeholder="Search projects or tech"
+            class="w-full dark:bg-gray-800 md:w-72 rounded-lg border px-3 py-2 pl-9 outline-none focus:ring"
+            oninput="ApplyFilters()" />
+          <svg class="absolute left-2 top-2.5 h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none">
+            <path d="M21 21l-4.3-4.3M17 10.5A6.5 6.5 0 1 1 4 10.5a6.5 6.5 0 0 1 13 0Z" stroke="currentColor"
+              stroke-width="2" />
+          </svg>
+        </div>
+
+        <select id="sort_select" class="rounded-lg border px-3 py-2 dark:bg-gray-800" onchange="ApplyFilters()">
+          <option value="name_asc">Sort: Name A→Z</option>
+          <option value="name_desc">Sort: Name Z→A</option>
+          <option value="type">Sort: Type</option>
+        </select>
       </div>
-
-      <select id="sort_select" class="rounded-lg border px-3 py-2 dark:bg-gray-800" onchange="ApplyFilters()">
-        <option value="name_asc">Sort: Name A→Z</option>
-        <option value="name_desc">Sort: Name Z→A</option>
-        <option value="type">Sort: Type</option>
-      </select>
     </div>
-  </div>
 
-  <!-- Filter chips -->
-  <div class="mt-6 flex flex-wrap gap-2" id="filter_chips">
-    <button class="filter-btn px-3 py-1 rounded-full border data-[active=true]:bg-gray-900 data-[active=true]:text-white"
-            data-type="all" onclick="FilterProjects('all', event)" data-active="true">All <span class="ml-1 text-xs opacity-70" id="count_all"></span></button>
-    <button class="filter-btn px-3 py-1 rounded-full border" data-type="web" onclick="FilterProjects('web', event)">Web <span class="ml-1 text-xs opacity-70" id="count_web"></span></button>
-    <button class="filter-btn px-3 py-1 rounded-full border" data-type="mobile" onclick="FilterProjects('mobile', event)">Mobile <span class="ml-1 text-xs opacity-70" id="count_mobile"></span></button>
-    <button class="filter-btn px-3 py-1 rounded-full border" data-type="tools" onclick="FilterProjects('tools', event)">Tools <span class="ml-1 text-xs opacity-70" id="count_tools"></span></button>
-    <button class="filter-btn px-3 py-1 rounded-full border" data-type="games" onclick="FilterProjects('games', event)">Games <span class="ml-1 text-xs opacity-70" id="count_games"></span></button>
-  </div>
+    <!-- Filter chips -->
+    <div class="mt-6 flex flex-wrap gap-2" id="filter_chips">
+      <button
+        class="filter-btn px-3 py-1 rounded-full border data-[active=true]:bg-gray-900 data-[active=true]:text-white"
+        data-type="all" onclick="FilterProjects('all', event)" data-active="true">All <span
+          class="ml-1 text-xs opacity-70" id="count_all"></span></button>
+      <button class="filter-btn px-3 py-1 rounded-full border" data-type="web"
+        onclick="FilterProjects('web', event)">Web <span class="ml-1 text-xs opacity-70" id="count_web"></span></button>
+      <button class="filter-btn px-3 py-1 rounded-full border" data-type="mobile"
+        onclick="FilterProjects('mobile', event)">Mobile <span class="ml-1 text-xs opacity-70"
+          id="count_mobile"></span></button>
+      <button class="filter-btn px-3 py-1 rounded-full border" data-type="tools"
+        onclick="FilterProjects('tools', event)">Tools <span class="ml-1 text-xs opacity-70"
+          id="count_tools"></span></button>
+      <button class="filter-btn px-3 py-1 rounded-full border" data-type="games"
+        onclick="FilterProjects('games', event)">Games <span class="ml-1 text-xs opacity-70"
+          id="count_games"></span></button>
+    </div>
 
-  <!-- Grid -->
-  <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6" id="project_grid"></div>
+    <!-- Grid -->
+    <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-6" id="project_grid"></div>
 
-  <!-- Lightbox -->
-  <div id="shot_lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4"
-       onclick="CloseLightbox(event)">
-    <figure class="max-w-5xl w-full">
-      <img id="lightbox_img" src="" alt="Project screenshot" class="w-full rounded-lg shadow-2xl" />
-      <figcaption id="lightbox_caption" class="mt-3 text-sm text-gray-200"></figcaption>
-    </figure>
-    <button class="absolute top-4 right-4 rounded-full bg-white/10 px-3 py-1 text-white backdrop-blur"
-            onclick="CloseLightbox(event)">Close</button>
-  </div>
+    <!-- Lightbox -->
+    <div id="shot_lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4"
+      onclick="CloseLightbox(event)">
+      <figure class="max-w-5xl w-full">
+        <img id="lightbox_img" src="" alt="Project screenshot" class="w-full rounded-lg shadow-2xl" />
+        <figcaption id="lightbox_caption" class="mt-3 text-sm text-gray-200"></figcaption>
+      </figure>
+      <button class="absolute top-4 right-4 rounded-full bg-white/10 px-3 py-1 text-white backdrop-blur"
+        onclick="CloseLightbox(event)">Close</button>
+    </div>
 
-  <script>
-    // Data
-    const project_list = [
-      {
-        name: "CustomMarine.ae",
-        type: "web",
-        desc: "Premium UAE-based marine services and products platform. Custom PHP features, UI/UX polish, and performance work.",
-        tag: "HTML/CSS",
-        link: "https://www.custommarine.ae",
-        logo: "https://www.custommarine.ae/assets/img/logo.png",
-        shot: "screenshots/custommarine.png"
-      },
-      {
-        name: "CBA.pl",
-        type: "web",
-        desc: "High-traffic Polish free hosting platform. Backend improvements and MySQL performance tuning.",
-        tag: "PHP",
-        link: "https://www.cba.pl",
-        logo: "https://www.cba.pl/img/logo_cba.png",
-        shot: "screenshots/cba.pl.png"
-      },
-      {
-        name: "Khardl",
-        type: "web",
-        desc: "Restaurant management system with multi-tenant, roles, branches, TAP, SMS, push, delivery, webhooks, APIs.",
-        tag: "PHP",
-        link: "https://github.com/khaledalam/khardl",
-        logo: "./logo.png",
-        shot: "screenshots/khardl.png"
-      },
-      {
-        name: "MintMe",
-        type: "web",
-        desc: "Decentralized token exchange with Symfony + Vue. Real-time book, wallets, trading UI, charts.",
-        tag: "PHP",
-        link: "https://mintme.com",
-        logo: "https://avatars.githubusercontent.com/u/38435289?s=280&v=4",
-        shot: "screenshots/mintme.png"
-      },
-      {
-        name: "CoinIMP",
-        type: "web",
-        desc: "Browser mining platform with Symfony backend, WebAssembly miner, analytics and campaigns.",
-        tag: "PHP",
-        link: "https://coinimp.com",
-        logo: "https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_8943fa7e4e1dce960ce9b8456f13f271/coinimp.jpg",
-        shot: "screenshots/coinimp.png"
-      },
-      {
-        name: "CoffeePlanet",
-        type: "web",
-        desc: "Shopify Liquid build for Coffee Planet UAE. Product pages, subscriptions, GTM integration.",
-        tag: "Liquid",
-        link: "https://coffeeplanet.com/",
-        logo: "https://ucarecdn.com/44b17637-1d88-4b95-bad1-beaa36b866f1/cafe-image-6890",
-        shot: "screenshots/coffeeplanet.png"
-      },
-      {
-        name: "Misk Events",
-        type: "web",
-        desc: "WordPress solution for event management, sessions, localization, accessibility and performance.",
-        tag: "PHP",
-        link: "https://hub.misk.org.sa/events",
-        logo: "https://images.squarespace-cdn.com/content/v1/5a573aade45a7c861137d973/dce6a40f-750a-4b4a-b9d0-af1fdbfe47ae/misk-21-logo-light-1024x588.png",
-        shot: "screenshots/misk.png"
-      },
-      {
-        name: "Prima International",
-        type: "web",
-        desc: "Next.js site with CMS, SEO and light animations. Hosted on Vercel with instant deploys.",
-        tag: "TypeScript",
-        link: "https://www.primainternational.com/",
-        logo: "https://horecaway.com/userfiles/b46c3f34a7cf6fe0eee68ac9c38c7e7d.png",
-        shot: "screenshots/prima.png"
-      },
-      {
-        name: "Makyee",
-        type: ["web","mobile"],
-        desc: "PropTech platform with Yii 1.1 backend and React Native apps. Listings, CRM, maps, sharing, multilingual.",
-        tag: "PHP",
-        link: "https://makyee.com",
-        mobileapp: "https://apps.apple.com/ae/app/makyee/id6504030415",
-        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKHpL37ZH_zyZY43pTo24lBuj-J3Ee-rA5w&s",
-        shot: "screenshots/makyee.png"
-      },
-      {
-        name: "SoftCropper",
-        type: "tools",
-        desc: "Python CLI to square photos with blurred borders. Pip package.",
-        tag: "Python",
-        link: "https://github.com/khaledalam/softcropper",
-        logo: "./logo.png",
-        shot: "https://raw.githubusercontent.com/khaledalam/softcropper/main/tests/softcropper.png"
-      },
-      {
-        name: "OrdersAnalytics",
-        type: "web",
-        desc: "Laravel + React analytics app for BigCommerce sellers. Trends, cohorts, performance.",
-        tag: "PHP",
-        link: "https://www.bigcommerce.com/apps/orders-analytics/",
-        logo: "./logo.png",
-        shot: "screenshots/orders-analytics.png"
-      },
-      {
-        name: "Arla Food",
-        type: "mobile",
-        desc: "React Native app for inspections. Offline sync, barcode scan, admin portal integration.",
-        tag: "React Native",
-        logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Arla_Foods_logo.svg/640px-Arla_Foods_logo.svg.png",
-        shot: "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/21768_Arla%20Foods%20Header%20Image?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1900&hei=550&qlt=100&fmt=png-alpha&fit=crop"
-      },
-      {
-        name: "Sourcetoad Core",
-        type: "web",
-        desc: "Cruise ship management SaaS (Yii2). Crew scheduling, passenger info, integrations.",
-        tag: "PHP",
-        link: "https://ondecksoftware.com/cruise-director-platform/",
-        logo: "https://neom.directory/media/com_jbusinessdirectory/pictures/companies/627/sourcetoad_logo_rgb_1672176463.png",
-        shot: "https://ondecksoftware.com/wp-content/uploads/2025/05/Cruise-Director-Shoreside-Shipboard-sync-e1748358948494-1290x1536.png"
-      },
-      {
-        name: "Gibson",
-        type: "mobile",
-        desc: "Cross-platform medical mobile applications that help doctors, patients, ambulance drivers. using React Native, JS, GeoFire, Google APIs, Expo.",
-        tag: "React Native",
-        logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Arla_Foods_logo.svg/640px-Arla_Foods_logo.svg.png",
-        shot: "https://github.com/khaledalam/Gibson/blob/master/Screenshots/emergency/request.jpg?raw=true"
-      },
-      {
-        name: "SpeakTextOnline",
-        type: "web",
-        desc: "Laravel + React TTS SaaS. Multi-voice, doc upload, auto publish to TikTok and Instagram.",
-        tag: "PHP",
-        link: "https://speaktextonline.com",
-        logo: "https://fosterclark.com/wp-content/uploads/2016/05/fc-blue_2.png",
-        shot: "screenshots/speaktextonline.png"
-      },
-      {
-        name: "Digital Twin",
-        type: "web",
-        desc: "React + Three.js 3D avatar with health insights and real-time chat and voice.",
-        tag: "React",
-        logo: "./logo.png",
-        shot: "https://framerusercontent.com/images/NvpfWZO9xOmBeZ2frUBBZG9uXxw.png"
-      },
-      {
-        name: "Rugby Game",
-        type: "web",
-        desc: "Laravel-driven match scheduling, formations, live updates, stats.",
-        tag: "PHP",
-        logo: "./logo.png",
-        shot: "screenshots/rugby.png"
-      },
-      {
-        name: "Redis",
-        type: "tools",
-        desc: "CLI real-time chat client example via Redis pub/sub PR.",
-        tag: "C",
-        link: "https://github.com/redis/redis/pull/12215",
-        logo: "./logo.png",
-        shot: "https://private-user-images.githubusercontent.com/8682067/240156528-e5340ccd-2dc1-4920-a5a5-68918e13972f.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTgxODg3NDksIm5iZiI6MTc1ODE4ODQ0OSwicGF0aCI6Ii84NjgyMDY3LzI0MDE1NjUyOC1lNTM0MGNjZC0yZGMxLTQ5MjAtYTVhNS02ODkxOGUxMzk3MmYucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MDkxOCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTA5MThUMDk0MDQ5WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MWU1YmYyMDk3NWUwNTI5NzcwMTFhMzc1YjUyYjI1NGUyMTdmMGNlYTA0YjJlNmRjMWVlYzNhZjM0ZmRiZDkxYiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ._f3LRQG5_JfzUu4a1l_w_CXF082gQgbmBlwOrxzYYQc"
-      },
-      {
-        name: "Arrow Shooting",
-        type: "games",
-        desc: "C++ OpenGL-based 2D training game with projectile physics.",
-        tag: "C++",
-        link: "https://github.com/khaledalam/arrow-shooting",
-        logo: "./logo.png",
-        shot: "https://github.com/khaledalam/arrow-shooting/raw/master/imgs/arrow.jpg"
-      },
-      {
-        name: "PHP SDK/API for Google Bard",
-        type: "tools",
-        desc: "Unofficial PHP SDK for Bard. Sessions, formatting, parsing.",
-        tag: "PHP",
-        link: "https://github.com/khaledalam/bard-sdk-php",
-        logo: "./logo.png",
-        shot: "https://github.com/khaledalam/bard-sdk-php/raw/master/get_cookie_value.png"
-      }
-    ];
+    <script>
+      // Data
+      const project_list = [
+        {
+          name: "CustomMarine.ae",
+          type: "web",
+          desc: "Premium UAE-based marine services and products platform. Custom PHP features, UI/UX polish, and performance work.",
+          tag: "HTML/CSS",
+          link: "https://www.custommarine.ae",
+          logo: "https://www.custommarine.ae/assets/img/logo.png",
+          shot: "screenshots/custommarine.png"
+        },
+        {
+          name: "CBA.pl",
+          type: "web",
+          desc: "High-traffic Polish free hosting platform. Backend improvements and MySQL performance tuning.",
+          tag: "PHP",
+          link: "https://www.cba.pl",
+          logo: "https://www.cba.pl/img/logo_cba.png",
+          shot: "screenshots/cba.pl.png"
+        },
+        {
+          name: "Khardl",
+          type: "web",
+          desc: "Restaurant management system with multi-tenant, roles, branches, TAP, SMS, push, delivery, webhooks, APIs.",
+          tag: "PHP",
+          link: "https://github.com/khaledalam/khardl",
+          logo: "./logo.png",
+          shot: "screenshots/khardl.png"
+        },
+        {
+          name: "MintMe",
+          type: "web",
+          desc: "Decentralized token exchange with Symfony + Vue. Real-time book, wallets, trading UI, charts.",
+          tag: "PHP",
+          link: "https://mintme.com",
+          logo: "https://avatars.githubusercontent.com/u/38435289?s=280&v=4",
+          shot: "screenshots/mintme.png"
+        },
+        {
+          name: "CoinIMP",
+          type: "web",
+          desc: "Browser mining platform with Symfony backend, WebAssembly miner, analytics and campaigns.",
+          tag: "PHP",
+          link: "https://coinimp.com",
+          logo: "https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_8943fa7e4e1dce960ce9b8456f13f271/coinimp.jpg",
+          shot: "screenshots/coinimp.png"
+        },
+        {
+          name: "CoffeePlanet",
+          type: "web",
+          desc: "Shopify Liquid build for Coffee Planet UAE. Product pages, subscriptions, GTM integration.",
+          tag: "Liquid",
+          link: "https://coffeeplanet.com/",
+          logo: "https://ucarecdn.com/44b17637-1d88-4b95-bad1-beaa36b866f1/cafe-image-6890",
+          shot: "screenshots/coffeeplanet.png"
+        },
+        {
+          name: "Misk Events",
+          type: "web",
+          desc: "WordPress solution for event management, sessions, localization, accessibility and performance.",
+          tag: "PHP",
+          link: "https://hub.misk.org.sa/events",
+          logo: "https://images.squarespace-cdn.com/content/v1/5a573aade45a7c861137d973/dce6a40f-750a-4b4a-b9d0-af1fdbfe47ae/misk-21-logo-light-1024x588.png",
+          shot: "screenshots/misk.png"
+        },
+        {
+          name: "Prima International",
+          type: "web",
+          desc: "Next.js site with CMS, SEO and light animations. Hosted on Vercel with instant deploys.",
+          tag: "TypeScript",
+          link: "https://www.primainternational.com/",
+          logo: "https://horecaway.com/userfiles/b46c3f34a7cf6fe0eee68ac9c38c7e7d.png",
+          shot: "screenshots/prima.png"
+        },
+        {
+          name: "Makyee",
+          type: ["web", "mobile"],
+          desc: "PropTech platform with Yii 1.1 backend and React Native apps. Listings, CRM, maps, sharing, multilingual.",
+          tag: "PHP",
+          link: "https://makyee.com",
+          mobileapp: "https://apps.apple.com/ae/app/makyee/id6504030415",
+          logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKHpL37ZH_zyZY43pTo24lBuj-J3Ee-rA5w&s",
+          shot: "screenshots/makyee.png"
+        },
+        {
+          name: "SoftCropper",
+          type: "tools",
+          desc: "Python CLI to square photos with blurred borders. Pip package.",
+          tag: "Python",
+          link: "https://github.com/khaledalam/softcropper",
+          logo: "./logo.png",
+          shot: "https://raw.githubusercontent.com/khaledalam/softcropper/main/tests/softcropper.png"
+        },
+        {
+          name: "OrdersAnalytics",
+          type: "web",
+          desc: "Laravel + React analytics app for BigCommerce sellers. Trends, cohorts, performance.",
+          tag: "PHP",
+          link: "https://www.bigcommerce.com/apps/orders-analytics/",
+          logo: "./logo.png",
+          shot: "screenshots/orders-analytics.png"
+        },
+        {
+          name: "Arla Food",
+          type: "mobile",
+          desc: "React Native app for inspections. Offline sync, barcode scan, admin portal integration.",
+          tag: "React Native",
+          logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Arla_Foods_logo.svg/640px-Arla_Foods_logo.svg.png",
+          shot: "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/21768_Arla%20Foods%20Header%20Image?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1900&hei=550&qlt=100&fmt=png-alpha&fit=crop"
+        },
+        {
+          name: "Sourcetoad Core",
+          type: "web",
+          desc: "Cruise ship management SaaS (Yii2). Crew scheduling, passenger info, integrations.",
+          tag: "PHP",
+          link: "https://ondecksoftware.com/cruise-director-platform/",
+          logo: "https://neom.directory/media/com_jbusinessdirectory/pictures/companies/627/sourcetoad_logo_rgb_1672176463.png",
+          shot: "https://ondecksoftware.com/wp-content/uploads/2025/05/Cruise-Director-Shoreside-Shipboard-sync-e1748358948494-1290x1536.png"
+        },
+        {
+          name: "Gibson",
+          type: "mobile",
+          desc: "Cross-platform medical mobile applications that help doctors, patients, ambulance drivers. using React Native, JS, GeoFire, Google APIs, Expo.",
+          tag: "React Native",
+          logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Arla_Foods_logo.svg/640px-Arla_Foods_logo.svg.png",
+          shot: "https://github.com/khaledalam/Gibson/blob/master/Screenshots/emergency/request.jpg?raw=true"
+        },
+        {
+          name: "SpeakTextOnline",
+          type: "web",
+          desc: "Laravel + React TTS SaaS. Multi-voice, doc upload, auto publish to TikTok and Instagram.",
+          tag: "PHP",
+          link: "https://speaktextonline.com",
+          logo: "./logo.png",
+          shot: "screenshots/speaktextonline.png"
+        },
+        {
+          name: "Digital Twin",
+          type: "web",
+          desc: "React + Three.js 3D avatar with health insights and real-time chat and voice.",
+          tag: "React",
+          logo: "./logo.png",
+          shot: "https://framerusercontent.com/images/NvpfWZO9xOmBeZ2frUBBZG9uXxw.png"
+        },
+        {
+          name: "Rugby Game",
+          type: "web",
+          desc: "Laravel-driven match scheduling, formations, live updates, stats.",
+          tag: "PHP",
+          logo: "./logo.png",
+          shot: "screenshots/rugby.png"
+        },
+        {
+          name: "Redis",
+          type: "tools",
+          desc: "CLI real-time chat client example via Redis pub/sub PR.",
+          tag: "C",
+          link: "https://github.com/redis/redis/pull/12215",
+          logo: "./logo.png",
+          shot: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqyKcS7unXuTQ-bE-i2itRVl1mV-xEuaT5wg&s"
+        },
+        {
+          name: "Arrow Shooting",
+          type: "games",
+          desc: "C++ OpenGL-based 2D training game with projectile physics.",
+          tag: "C++",
+          link: "https://github.com/khaledalam/arrow-shooting",
+          logo: "./logo.png",
+          shot: "https://github.com/khaledalam/arrow-shooting/raw/master/imgs/arrow.jpg"
+        },
+        {
+          name: "PHP SDK/API for Google Bard",
+          type: "tools",
+          desc: "Unofficial PHP SDK for Bard. Sessions, formatting, parsing.",
+          tag: "PHP",
+          link: "https://github.com/khaledalam/bard-sdk-php",
+          logo: "./logo.png",
+          shot: "https://github.com/khaledalam/bard-sdk-php/raw/master/get_cookie_value.png"
+        }
+      ];
 
-    // Render
-    document.addEventListener("DOMContentLoaded", () => {
-      RenderProjects(project_list);
-      UpdateCounts();
-    });
+      // Render
+      document.addEventListener("DOMContentLoaded", () => {
+        RenderProjects(project_list);
+        UpdateCounts();
+      });
 
-    function RenderProjects(list_input) {
-      const grid_el = document.getElementById("project_grid");
-      grid_el.innerHTML = "";
+      function RenderProjects(list_input) {
+        const grid_el = document.getElementById("project_grid");
+        grid_el.innerHTML = "";
 
-      list_input.forEach((p) => {
-        const types_arr = Array.isArray(p.type) ? p.type : [p.type];
-        const type_badge = types_arr.map(t => `<span class="text-[11px] px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 border">${t}</span>`).join(" ");
+        list_input.forEach((p) => {
+          const types_arr = Array.isArray(p.type) ? p.type : [p.type];
+          const type_badge = types_arr.map(t => `<span class="text-[11px] px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 border">${t}</span>`).join(" ");
 
-        // Card
-        const card_el = document.createElement("article");
-        card_el.className =
-          "project-card group rounded-2xl border overflow-hidden bg-white dark:bg-gray-900 dark:border-gray-800 shadow-sm hover:shadow-lg transition";
-        card_el.dataset.types = types_arr.join(",");
+          // Card
+          const card_el = document.createElement("article");
+          card_el.className =
+            "project-card group rounded-2xl border overflow-hidden bg-white dark:bg-gray-900 dark:border-gray-800 shadow-sm hover:shadow-lg transition";
+          card_el.dataset.types = types_arr.join(",");
 
-        // Screenshot area
-        const shot_html = p.shot
-          ? `
+          // Screenshot area
+          const shot_html = p.shot
+            ? `
             <button class="relative block w-full aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-gray-800"
                     onclick="OpenLightbox('${encodeURI(p.shot)}', '${escapeHtml(p.name)}')" aria-label="Open screenshot">
               <img src="${p.shot}" alt="${escapeHtml(p.name)} screenshot"
@@ -499,13 +512,13 @@
               <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"></div>
             </button>
           `
-          : `
+            : `
             <div class="flex items-center justify-center w-full aspect-[16/9] bg-gray-100 dark:bg-gray-800 text-xs text-gray-500">
               No screenshot provided
             </div>
           `;
 
-        card_el.innerHTML = `
+          card_el.innerHTML = `
           ${shot_html}
           <div class="p-4 flex flex-col gap-3">
             <div class="flex items-start justify-between gap-3">
@@ -528,103 +541,103 @@
           </div>
         `;
 
-        grid_el.appendChild(card_el);
-      });
-    }
-
-    // Filters
-    let active_type = "all";
-
-    function FilterProjects(type_arg, ev) {
-      active_type = type_arg;
-      document.querySelectorAll("#filter_chips .filter-btn").forEach((btn) => {
-        btn.dataset.active = (btn.getAttribute("data-type") === type_arg) || (type_arg === "all" && btn.getAttribute("data-type") === "all");
-      });
-      ApplyFilters();
-    }
-
-    function ApplyFilters() {
-      const query_val = (document.getElementById("search_input").value || "").toLowerCase().trim();
-      const sort_val = document.getElementById("sort_select").value;
-
-      // filter by type and search
-      let filtered_list = project_list.filter((p) => {
-        const types_arr = Array.isArray(p.type) ? p.type : [p.type];
-        const match_type = active_type === "all" || types_arr.includes(active_type);
-        const blob = `${p.name} ${p.desc} ${p.tag} ${Array.isArray(p.type) ? p.type.join(" ") : p.type}`.toLowerCase();
-        const match_query = !query_val || blob.includes(query_val);
-        return match_type && match_query;
-      });
-
-      // sort
-      if (sort_val === "name_asc") filtered_list.sort((a, b) => a.name.localeCompare(b.name));
-      if (sort_val === "name_desc") filtered_list.sort((a, b) => b.name.localeCompare(a.name));
-      if (sort_val === "type") filtered_list.sort((a, b) => (Array.isArray(a.type)?a.type[0]:a.type).localeCompare(Array.isArray(b.type)?b.type[0]:b.type));
-
-      RenderProjects(filtered_list);
-      UpdateCounts(filtered_list);
-    }
-
-    // Counts beside chips
-    function UpdateCounts(current_list_opt) {
-      const base = current_list_opt || project_list;
-      const count_map = { all: project_list.length, web: 0, mobile: 0, tools: 0, games: 0 };
-      project_list.forEach((p) => {
-        const types_arr = Array.isArray(p.type) ? p.type : [p.type];
-        types_arr.forEach((t) => {
-          if (count_map.hasOwnProperty(t)) count_map[t]++;
+          grid_el.appendChild(card_el);
         });
-      });
-
-      const setCount = (id, val) => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = `(${id === "count_all" ? project_list.length : val})`;
-      };
-
-      setCount("count_all", count_map.all);
-      setCount("count_web", count_map.web);
-      setCount("count_mobile", count_map.mobile);
-      setCount("count_tools", count_map.tools);
-      setCount("count_games", count_map.games);
-    }
-
-    // Lightbox
-    function OpenLightbox(src_arg, caption_arg) {
-      const box_el = document.getElementById("shot_lightbox");
-      const img_el = document.getElementById("lightbox_img");
-      const cap_el = document.getElementById("lightbox_caption");
-      img_el.src = decodeURI(src_arg);
-      cap_el.textContent = caption_arg;
-      box_el.classList.remove("hidden");
-      box_el.classList.add("flex");
-      document.addEventListener("keydown", LightboxKeyHandler);
-    }
-
-    function CloseLightbox(ev) {
-      // Allow clicking the backdrop or close button. Prevent closing when clicking the image area.
-      const box_el = document.getElementById("shot_lightbox");
-      if (ev && ev.target && ev.target.id !== "shot_lightbox" && ev.target.tagName.toLowerCase() !== "button") {
-        return;
       }
-      box_el.classList.add("hidden");
-      box_el.classList.remove("flex");
-      document.removeEventListener("keydown", LightboxKeyHandler);
-    }
 
-    function LightboxKeyHandler(e) {
-      if (e.key === "Escape") CloseLightbox(e);
-    }
+      // Filters
+      let active_type = "all";
 
-    // Util
-    function escapeHtml(str) {
-      return (str || "").replace(/[&<>"']/g, (m) => ({
-        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
-      }[m]));
-    }
-  </script>
-</section>
+      function FilterProjects(type_arg, ev) {
+        active_type = type_arg;
+        document.querySelectorAll("#filter_chips .filter-btn").forEach((btn) => {
+          btn.dataset.active = (btn.getAttribute("data-type") === type_arg) || (type_arg === "all" && btn.getAttribute("data-type") === "all");
+        });
+        ApplyFilters();
+      }
 
-  
+      function ApplyFilters() {
+        const query_val = (document.getElementById("search_input").value || "").toLowerCase().trim();
+        const sort_val = document.getElementById("sort_select").value;
+
+        // filter by type and search
+        let filtered_list = project_list.filter((p) => {
+          const types_arr = Array.isArray(p.type) ? p.type : [p.type];
+          const match_type = active_type === "all" || types_arr.includes(active_type);
+          const blob = `${p.name} ${p.desc} ${p.tag} ${Array.isArray(p.type) ? p.type.join(" ") : p.type}`.toLowerCase();
+          const match_query = !query_val || blob.includes(query_val);
+          return match_type && match_query;
+        });
+
+        // sort
+        if (sort_val === "name_asc") filtered_list.sort((a, b) => a.name.localeCompare(b.name));
+        if (sort_val === "name_desc") filtered_list.sort((a, b) => b.name.localeCompare(a.name));
+        if (sort_val === "type") filtered_list.sort((a, b) => (Array.isArray(a.type) ? a.type[0] : a.type).localeCompare(Array.isArray(b.type) ? b.type[0] : b.type));
+
+        RenderProjects(filtered_list);
+        UpdateCounts(filtered_list);
+      }
+
+      // Counts beside chips
+      function UpdateCounts(current_list_opt) {
+        const base = current_list_opt || project_list;
+        const count_map = { all: project_list.length, web: 0, mobile: 0, tools: 0, games: 0 };
+        project_list.forEach((p) => {
+          const types_arr = Array.isArray(p.type) ? p.type : [p.type];
+          types_arr.forEach((t) => {
+            if (count_map.hasOwnProperty(t)) count_map[t]++;
+          });
+        });
+
+        const setCount = (id, val) => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = `(${id === "count_all" ? project_list.length : val})`;
+        };
+
+        setCount("count_all", count_map.all);
+        setCount("count_web", count_map.web);
+        setCount("count_mobile", count_map.mobile);
+        setCount("count_tools", count_map.tools);
+        setCount("count_games", count_map.games);
+      }
+
+      // Lightbox
+      function OpenLightbox(src_arg, caption_arg) {
+        const box_el = document.getElementById("shot_lightbox");
+        const img_el = document.getElementById("lightbox_img");
+        const cap_el = document.getElementById("lightbox_caption");
+        img_el.src = decodeURI(src_arg);
+        cap_el.textContent = caption_arg;
+        box_el.classList.remove("hidden");
+        box_el.classList.add("flex");
+        document.addEventListener("keydown", LightboxKeyHandler);
+      }
+
+      function CloseLightbox(ev) {
+        // Allow clicking the backdrop or close button. Prevent closing when clicking the image area.
+        const box_el = document.getElementById("shot_lightbox");
+        if (ev && ev.target && ev.target.id !== "shot_lightbox" && ev.target.tagName.toLowerCase() !== "button") {
+          return;
+        }
+        box_el.classList.add("hidden");
+        box_el.classList.remove("flex");
+        document.removeEventListener("keydown", LightboxKeyHandler);
+      }
+
+      function LightboxKeyHandler(e) {
+        if (e.key === "Escape") CloseLightbox(e);
+      }
+
+      // Util
+      function escapeHtml(str) {
+        return (str || "").replace(/[&<>"']/g, (m) => ({
+          "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+        }[m]));
+      }
+    </script>
+  </section>
+
+
 
   <script>
     function toggleResume() {
@@ -636,26 +649,26 @@
   <!-- Tools Section -->
   <section id="tools" class="py-12 bg-gray-100 dark:bg-gray-900 text-center">
     <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">Tools I Love to Use</h2>
-    <div class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+    <div class="max-w-6xl p-4 mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 gap-6">
       <!-- Tool Cards -->
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/php/777BB4" class="h-8 mb-2" alt="PHP" />
+        <img src="https://cdn.simpleicons.org/php" class="h-8 mb-2" alt="PHP" />
         <span class="text-sm">PHP</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/laravel/F55247" class="h-8 mb-2" alt="Laravel" />
+        <img src="https://cdn.simpleicons.org/laravel" class="h-8 mb-2" alt="Laravel" />
         <span class="text-sm">Laravel</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/symfony/000000" class="h-8 mb-2" alt="Symfony" />
+        <img src="https://cdn.simpleicons.org/symfony" class="h-8 mb-2" alt="Symfony" />
         <span class="text-sm">Symfony</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/yii/39B54A" class="h-8 mb-2" alt="Yii" />
+        <img src="https://cdn.simpleicons.org/yii" class="h-8 mb-2" alt="Yii" />
         <span class="text-sm">Yii</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/wordpress/21759B" class="h-8 mb-2" alt="WordPress" />
+        <img src="https://cdn.simpleicons.org/wordpress" class="h-8 mb-2" alt="WordPress" />
         <span class="text-sm">WordPress</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
@@ -663,70 +676,78 @@
         <span class="text-sm">Magento</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/woocommerce/96588A" class="h-8 mb-2" alt="WooCommerce" />
+        <img src="https://cdn.simpleicons.org/woocommerce" class="h-8 mb-2" alt="WooCommerce" />
         <span class="text-sm">WooCommerce</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/wix/000000" class="h-8 mb-2" alt="Wix" />
+        <img src="https://cdn.simpleicons.org/wix" class="h-8 mb-2" alt="Wix" />
         <span class="text-sm">Wix</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/bigcommerce/000000" class="h-8 mb-2" alt="BigCommerce" />
+        <img src="https://cdn.simpleicons.org/bigcommerce" class="h-8 mb-2" alt="BigCommerce" />
         <span class="text-sm">BigCommerce</span>
       </div>
 
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/javascript/F7DF1E" class="h-8 mb-2" alt="JavaScript" />
+        <img src="https://cdn.simpleicons.org/javascript" class="h-8 mb-2" alt="JavaScript" />
         <span class="text-sm">JavaScript</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/typescript/3178C6" class="h-8 mb-2" alt="TypeScript" />
+        <img src="https://cdn.simpleicons.org/typescript" class="h-8 mb-2" alt="TypeScript" />
         <span class="text-sm">TypeScript</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/react/61DAFB" class="h-8 mb-2" alt="React" />
+        <img src="https://cdn.simpleicons.org/react" class="h-8 mb-2" alt="React" />
         <span class="text-sm">React</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/vuedotjs/61DAFB" class="h-8 mb-2" alt="vue.js" />
+        <img src="https://cdn.simpleicons.org/vuedotjs" class="h-8 mb-2" alt="vue.js" />
         <span class="text-sm">Vue</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/threedotjs/61DAFB" class="h-8 mb-2" alt="Three.js" />
+        <img src="https://cdn.simpleicons.org/threedotjs" class="h-8 mb-2" alt="Three.js" />
         <span class="text-sm">Three.js</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/react/61DAFB" class="h-8 mb-2" alt="React Native" />
+        <img src="https://cdn.simpleicons.org/tensorflow" class="h-8 mb-2" alt="Tensorflow" />
+        <span class="text-sm">Tensorflow</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/react" class="h-8 mb-2" alt="React Native" />
         <span class="text-sm">React Native</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/node.js/339933" class="h-8 mb-2" alt="Node.js" />
+        <img src="https://cdn.simpleicons.org/node.js" class="h-8 mb-2" alt="Node.js" />
         <span class="text-sm">Node.js</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/nextdotjs/000000" class="h-8 mb-2" alt="Next.js" />
+        <img src="https://cdn.simpleicons.org/nextdotjs" class="h-8 mb-2" alt="Next.js" />
         <span class="text-sm">Next.js</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/docker/2496ED" class="h-8 mb-2" alt="Docker" />
+        <img src="https://cdn.simpleicons.org/docker" class="h-8 mb-2" alt="Docker" />
         <span class="text-sm">Docker</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/kubernetes/4285F4" class="h-8 mb-2" alt="Kubernetes" />
+        <img src="https://cdn.simpleicons.org/kubernetes" class="h-8 mb-2" alt="Kubernetes" />
         <span class="text-sm">Kubernetes</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/mysql/4479A1" class="h-8 mb-2" alt="MySQL" />
+        <img src="https://cdn.simpleicons.org/ansible" class="h-8 mb-2" alt="Ansible" />
+        <span class="text-sm">Ansible</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/mysql" class="h-8 mb-2" alt="MySQL" />
         <span class="text-sm">MySQL</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/mongodb/4479A1" class="h-8 mb-2" alt="MongoDB" />
+        <img src="https://cdn.simpleicons.org/mongodb" class="h-8 mb-2" alt="MongoDB" />
         <span class="text-sm">MongoDB</span>
       </div>
 
 
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/postgresql/336791" class="h-8 mb-2" alt="PostgreSQL" />
+        <img src="https://cdn.simpleicons.org/postgresql" class="h-8 mb-2" alt="PostgreSQL" />
         <span class="text-sm">PostgreSQL</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
@@ -736,59 +757,63 @@
         <span class="text-sm">AWS</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/googlecloud/4285F4" class="h-8 mb-2" alt="GCP" />
+        <img src="https://cdn.simpleicons.org/googlecloud" class="h-8 mb-2" alt="GCP" />
         <span class="text-sm">GCP</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/vercel/000000" class="h-8 mb-2" alt="Vercel" />
+        <img src="https://cdn.simpleicons.org/vercel" class="h-8 mb-2" alt="Vercel" />
         <span class="text-sm">Vercel</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/digitalocean/0080FF" class="h-8 mb-2" alt="DigitalOcean" />
+        <img src="https://cdn.simpleicons.org/redux" class="h-8 mb-2" alt="Redux" />
+        <span class="text-sm">Redux</span>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
+        <img src="https://cdn.simpleicons.org/digitalocean" class="h-8 mb-2" alt="DigitalOcean" />
         <span class="text-sm">DigitalOcean</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/firebase/FFCA28" class="h-8 mb-2" alt="Firebase" />
+        <img src="https://cdn.simpleicons.org/firebase" class="h-8 mb-2" alt="Firebase" />
         <span class="text-sm">Firebase</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" class="h-8 mb-2" alt="Tailwind CSS" />
+        <img src="https://cdn.simpleicons.org/tailwindcss" class="h-8 mb-2" alt="Tailwind CSS" />
         <span class="text-sm">Tailwind CSS</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/sass/CC6699" class="h-8 mb-2" alt="SCSS" />
+        <img src="https://cdn.simpleicons.org/sass" class="h-8 mb-2" alt="SCSS" />
         <span class="text-sm">SCSS</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/sass/CC6699" class="h-8 mb-2" alt="Sass" />
+        <img src="https://cdn.simpleicons.org/sass" class="h-8 mb-2" alt="Sass" />
         <span class="text-sm">Sass</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/github/181717" class="h-8 mb-2" alt="GitHub" />
+        <img src="https://cdn.simpleicons.org/github" class="h-8 mb-2" alt="GitHub" />
         <span class="text-sm">GitHub</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/gitlab/FCA121" class="h-8 mb-2" alt="GitLab" />
+        <img src="https://cdn.simpleicons.org/gitlab" class="h-8 mb-2" alt="GitLab" />
         <span class="text-sm">GitLab</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/grafana/F46800" class="h-8 mb-2" alt="Grafana" />
+        <img src="https://cdn.simpleicons.org/grafana" class="h-8 mb-2" alt="Grafana" />
         <span class="text-sm">Grafana</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/googlemaps/4285F4" class="h-8 mb-2" alt="Google Maps" />
+        <img src="https://cdn.simpleicons.org/googlemaps" class="h-8 mb-2" alt="Google Maps" />
         <span class="text-sm">Google Maps</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/yaml/CB171E" class="h-8 mb-2" alt="YAML" />
+        <img src="https://cdn.simpleicons.org/yaml" class="h-8 mb-2" alt="YAML" />
         <span class="text-sm">YAML</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/cmake/064F8C" class="h-8 mb-2" alt="CMake" />
+        <img src="https://cdn.simpleicons.org/cmake" class="h-8 mb-2" alt="CMake" />
         <span class="text-sm">CMake</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/gnuemacs/7F5AB6" class="h-8 mb-2" alt="Make" />
+        <img src="https://cdn.simpleicons.org/gnuemacs" class="h-8 mb-2" alt="Make" />
         <span class="text-sm">Make</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
@@ -885,27 +910,33 @@
 
   <!-- Footer -->
   <footer class="text-center py-6 border-t dark:border-gray-700">
-    <div class="flex justify-center gap-4">
-      <a href="https://github.com/khaledalam" target="_blank" title="GitHub">
-        <img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-1-logo-black-and-white.png"
-          class="h-6 bg-white rounded-xl" />
-      </a>
-      <a href="https://linkedin.com/in/khaledalam" target="_blank" title="LinkedIn">
-        <img
-          src="https://cdn3.iconfinder.com/data/icons/2018-social-media-black-and-white-logos/1000/2018_social_media_popular_app_logo_linkedin-512.png"
-          class="h-6 bg-gray" />
-      </a>
-      <a href="https://blog.khaledalam.net" title="Blog">
-        <img src="https://www.freeiconspng.com/uploads/blogger-logo-icon-png-22.png" class="h-6 bg-gray" />
-      </a>
-      <a href="http://wa.me/971582936628" title="WhatsApp">
-        +971 58 293 6628
-      </a>
-      <a href="mailto:khaledalam.net@gmail.com" title="WhatsApp">
-        khaledalam.net@gmail.com
-      </a>
+    <div class="flex items-center justify-center gap-4 mb-3 flex-wrap" style="flex-direction: column;">
+      <div class="flex items-center justify-center gap-4">
+        <a href="https://github.com/khaledalam" target="_blank" title="GitHub">
+          <img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-1-logo-black-and-white.png"
+            class="h-6 bg-white rounded-xl" />
+        </a>
+        <a href="https://linkedin.com/in/khaledalam" target="_blank" title="LinkedIn">
+          <img
+            src="https://cdn3.iconfinder.com/data/icons/2018-social-media-black-and-white-logos/1000/2018_social_media_popular_app_logo_linkedin-512.png"
+            class="h-6 bg-gray" />
+        </a>
+        <a href="https://blog.khaledalam.net" title="Blog">
+          <img src="https://www.freeiconspng.com/uploads/blogger-logo-icon-png-22.png" class="h-6 bg-gray" />
+        </a>
+      </div>
+      <div class="flex items-center justify-center gap-4">
+        <a href="http://wa.me/971582936628" title="WhatsApp">
+          +971 58 293 6628
+        </a>
+      </div>
+      <div class="flex items-center justify-center gap-4">
+        <a href="mailto:khaledalam.net@gmail.com" title="WhatsApp">
+          khaledalam.net@gmail.com
+        </a>
+      </div>
     </div>
-    
+
     <p class="text-sm my-3">© 2025 Khaled Alam</p>
   </footer>
 
