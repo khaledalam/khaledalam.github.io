@@ -42,8 +42,6 @@
         transform: translate(-50%, 10px);
       }
     }
-
-    #
   </style>
   <script>
     // Check localStorage and set initial theme class before page renders
@@ -102,16 +100,23 @@
       <div class="flex-1">
         <div class="flex items-center gap-4 mb-4">
           <img src="./DP_Khaled.jpg" alt="Khaled Alam"
-            class="w-20 h-20 rounded-full border-2 border-white dark:border-gray-800" />
+            class="w-20 h-20 object-cover rounded-full border-2 border-white dark:border-gray-800" />
           <h1 class="text-3xl md:text-4xl font-bold">Hey, I am Khaled</h1>
         </div>
         <p class="text-lg text-gray-700 dark:text-gray-300">
-          Software Engineer | PHP, React, React Native, C++ | SaaS, FinTech, PropTech | Cloud-Native Systems
+          Software Engineer | PHP, React, React Native, C++ | SaaS, FinTech, PropTech, Prop Trading, EdTech |
+          Cloud-Native Systems
         </p>
+        <hr class="relative w-[200px] my-[20px] border-gray-500" />
+
+        <ul class="text-sm text-gray-700 dark:text-gray-300">
+          <li>Master's Degree in Financial Engineering (In Progress) - Washington, USA</li>
+          <li>Bachelor's Degree in Computer Science - Mansoura, Egypt</li>
+          </p>
       </div>
 
       <!-- Right: Cards -->
-      <div class="flex-1 grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div class="flex-1 grid gap-4 grid-cols-1">
         <a href="#projects"
           class="dark:bg-gray-900 dark:text-white border border-gray-700 p-4 rounded-lg hover:bg-gray-800 transition">
           <h2 class="text-lg font-semibold">📦 Projects</h2>
@@ -123,31 +128,44 @@
           <p class="text-sm dark:text-gray-400">Tech and tools I use to build apps, solve problems, and make life
             easier.</p>
         </a>
+
+        <!-- Resume Section -->
+        <section id="resume" class="flex mx-auto text-center w-full gap-4">
+          <h2 class="text-3xl font-bold mb-4">CV:</h2>
+          <button onclick="toggleResume()" class="px-4 py-2 bg-blue-600 text-white rounded mb-4">Expand here</button>
+          <button
+            onclick="window.open('https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view', '_blank')"
+            class="px-4 py-2 bg-blue-600 text-white rounded mb-4">
+            Open in a new tab
+          </button>
+
+
+        </section>
+
+
       </div>
+
+
+    </div>
+
+    <div id="resumeEmbed" class="hidden">
+      <iframe src="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/preview" width="100%" height="600"
+        allow="autoplay"></iframe>
     </div>
 
 
-   <p>
-  Discover <a href="https://canvamagnet.com/products/fridge-photo-magnets" class="underline" title="Fridge Photo Magnets Dubai UAE" target="_blank" rel="noopener">Fridge Photo Magnets in Dubai, UAE</a> by CanvaMagnet.
-</p>
 
-    <!-- Resume Section -->
-    <section id="resume" class="py-8 px-4 max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">My Resume</h2>
-      <button onclick="toggleResume()" class="px-4 py-2 bg-blue-600 text-white rounded mb-4">Expand Here</button>
-      <button onclick="window.open('https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view', '_blank')"
-        class="px-4 py-2 bg-blue-600 text-white rounded mb-4">
-        Open in New Tab
-      </button>
+    <p>
+      Discover <a href="https://canvamagnet.com/products/fridge-photo-magnets" class="underline"
+        title="Fridge Photo Magnets Dubai UAE" target="_blank" rel="noopener">Fridge Photo Magnets in Dubai, UAE</a> by
+      CanvaMagnet.
+    </p>
 
-      <div id="resumeEmbed" class="hidden">
-        <iframe src="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/preview" width="100%"
-          height="600" allow="autoplay"></iframe>
-      </div>
-    </section>
+
+    <hr class="relative w-[200px] my-[20px] border-gray-500" />
 
     <!-- Recent Blog Posts -->
-    <section id="blog" class="py-8 px-4 max-w-4xl mx-auto text-center">
+    <section id="blog" class="flex my-10 flex-col md:flex-row items-start gap-10 max-w-6xl w-full ">
       <h2 class="text-3xl font-bold mb-6">Latest Blog Posts</h2>
       <ul id="rssFeedList" class="space-y-4 text-left"></ul>
     </section>
@@ -160,6 +178,7 @@
           <img src="https://m.media-amazon.com/images/I/61+nI2GbVCL.png" class="h-12 mb-2" alt="Amazon AWS" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Amazon AWS</p>
         </div>
+
         <div class="flex flex-col items-center">
           <img src="https://1000logos.net/wp-content/uploads/2023/02/STC-logo.png" class="h-12 mb-2" alt="STC" />
           <p class="text-sm text-gray-600 dark:text-gray-400">STC</p>
@@ -169,6 +188,13 @@
             alt="Victoria's Secret" class="h-10 mb-2" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Victoria's Secret</p>
         </div>
+
+        <div class="flex flex-col items-center">
+          <img src="https://www.bitfunded.com/wp-content/uploads/2025/10/Group-512462-2.png" class="h-10 mb-2"
+            alt="BitFunded" />
+          <p class="text-sm text-gray-600 dark:text-gray-400">BitFunded</p>
+        </div>
+
         <div class="flex flex-col items-center">
           <img src="https://ucarecdn.com/44b17637-1d88-4b95-bad1-beaa36b866f1/cafe-image-6890" class="h-10 mb-2"
             alt="CoffeePlanet" />
@@ -181,13 +207,11 @@
           <p class="text-sm text-gray-600 dark:text-gray-400">MISK</p>
         </div>
         <div class="flex flex-col items-center">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxIUmyFJfAdCU9u-CLaFglCcdhpgCJczU_SILDkU-m7zcfYx4-ZiD3gSy8rDVLHaTRbxA&usqp=CAU"
-            class="h-10 mb-2" alt="custom marine" />
+          <img src="https://www.custommarine.ae/assets/cm-logo.png" class="h-10 mb-2" alt="custom marine" />
           <p class="text-sm text-gray-600 dark:text-gray-400">CustomMarine</p>
         </div>
         <div class="flex flex-col items-center">
-          <img src="https://logos-world.net/wp-content/uploads/2023/05/Cohere-Logo.png" class="h-10 mb-2"
+          <img src="https://entrepreneurs.utoronto.ca/wp-content/uploads/2021/09/Cohere-Logo.png" class="h-10 mb-2"
             alt="cohere" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Cohere</p>
         </div>
@@ -312,6 +336,15 @@
       // Data
       const project_list = [
         {
+          name: "BitFunded.com",
+          type: "web",
+          desc: "Innovative UAE-based trading and investment platform. Worked on backend integrations, WordPress performance optimization, and secure API connectivity for affiliate tracking and Zoho CRM.",
+          tag: "PHP/WordPress",
+          link: "https://bitfunded.com",
+          logo: "https://www.bitfunded.com/wp-content/uploads/2025/10/Group-512462-2.png",
+          shot: "screenshots/bitfunded.png"
+        },
+        {
           name: "CustomMarine.ae",
           type: "web",
           desc: "Premium UAE-based marine services and products platform. Custom PHP features, UI/UX polish, and performance work.",
@@ -333,7 +366,7 @@
           name: "Khardl",
           type: "web",
           desc: "Restaurant management system with multi-tenant, roles, branches, TAP, SMS, push, delivery, webhooks, APIs.",
-          tag: "PHP",
+          tag: "PHP/React.js",
           link: "https://github.com/khaledalam/khardl",
           logo: "./logo.png",
           shot: "screenshots/khardl.png"
@@ -528,7 +561,7 @@
 
           card_el.innerHTML = `
           ${shot_html}
-          <div class="p-4 flex flex-col gap-3">
+          <div class="p-4 flex flex-col gap-3 justify-between min-h-[200px]">
             <div class="flex items-start justify-between gap-3">
               <div class="flex items-center gap-2">
                 ${p.logo ? `<img src="${p.logo}" class="h-7 w-7 rounded bg-white p-0.5 object-contain border" alt="${escapeHtml(p.name)} logo" loading="lazy">` : ""}
@@ -825,67 +858,67 @@
         <span class="text-sm">Make</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/cloudflare/F38020" class="h-8 mb-2" alt="Cloudflare" />
+        <img src="https://cdn.simpleicons.org/cloudflare" class="h-8 mb-2" alt="Cloudflare" />
         <span class="text-sm">Cloudflare</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/cpanel/FF6C2C" class="h-8 mb-2" alt="cPanel" />
+        <img src="https://cdn.simpleicons.org/cpanel" class="h-8 mb-2" alt="cPanel" />
         <span class="text-sm">cPanel</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/jest/C21325" class="h-8 mb-2" alt="Jest" />
+        <img src="https://cdn.simpleicons.org/jest" class="h-8 mb-2" alt="Jest" />
         <span class="text-sm">Jest</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/zoho/C8202B" class="h-8 mb-2" alt="Zoho" />
+        <img src="https://cdn.simpleicons.org/zoho" class="h-8 mb-2" alt="Zoho" />
         <span class="text-sm">Zoho</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/yarn/2C8EBB" class="h-8 mb-2" alt="Yarn" />
+        <img src="https://cdn.simpleicons.org/yarn" class="h-8 mb-2" alt="Yarn" />
         <span class="text-sm">Yarn</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/xampp/FB7A24" class="h-8 mb-2" alt="XAMPP" />
+        <img src="https://cdn.simpleicons.org/xampp" class="h-8 mb-2" alt="XAMPP" />
         <span class="text-sm">XAMPP</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/xcode/147EFB" class="h-8 mb-2" alt="Xcode" />
+        <img src="https://cdn.simpleicons.org/xcode" class="h-8 mb-2" alt="Xcode" />
         <span class="text-sm">Xcode</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/swagger/85EA2D" class="h-8 mb-2" alt="Swagger" />
+        <img src="https://cdn.simpleicons.org/swagger" class="h-8 mb-2" alt="Swagger" />
         <span class="text-sm">Swagger</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/strapi/2E7EEA" class="h-8 mb-2" alt="Strapi" />
+        <img src="https://cdn.simpleicons.org/strapi" class="h-8 mb-2" alt="Strapi" />
         <span class="text-sm">Strapi</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/stripe/008CDD" class="h-8 mb-2" alt="Stripe" />
+        <img src="https://cdn.simpleicons.org/stripe" class="h-8 mb-2" alt="Stripe" />
         <span class="text-sm">Stripe</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/paypal/00457C" class="h-8 mb-2" alt="PayPal" />
+        <img src="https://cdn.simpleicons.org/paypal" class="h-8 mb-2" alt="PayPal" />
         <span class="text-sm">PayPal</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/langchain/1ABC9C" class="h-8 mb-2" alt="LangChain" />
+        <img src="https://cdn.simpleicons.org/langchain" class="h-8 mb-2" alt="LangChain" />
         <span class="text-sm">LangChain</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/opensearch/147EFB" class="h-8 mb-2" alt="OpenSearch" />
+        <img src="https://cdn.simpleicons.org/opensearch" class="h-8 mb-2" alt="OpenSearch" />
         <span class="text-sm">OpenSearch</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/ethereum/147EFB" class="h-8 mb-2" alt="Ethereum" />
+        <img src="https://cdn.simpleicons.org/ethereum" class="h-8 mb-2" alt="Ethereum" />
         <span class="text-sm">Ethereum</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/solana/147EFB" class="h-8 mb-2" alt="Solana" />
+        <img src="https://cdn.simpleicons.org/solana" class="h-8 mb-2" alt="Solana" />
         <span class="text-sm">Solana</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/solidity/147EFB" class="h-8 mb-2" alt="Solidity" />
+        <img src="https://cdn.simpleicons.org/solidity" class="h-8 mb-2" alt="Solidity" />
         <span class="text-sm">Solidity</span>
       </div>
 
