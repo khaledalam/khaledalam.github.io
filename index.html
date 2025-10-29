@@ -13,6 +13,26 @@
     tailwind.config = { darkMode: "class" };
   </script>
   <style>
+    /* Smooth show/hide without layout shift */
+    #goToTopBtn {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #goToTopBtn.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      /* you currently have smooth globally */
+    }
+
     html {
       scroll-behavior: smooth;
     }
@@ -113,7 +133,7 @@
           <li class="my-3">⏳ Master's Degree in Financial Engineering - Washington, USA</li>
           <li class="my-3">✅ Bachelor's Degree in Computer Science - Mansoura, Egypt</li>
           <li class="my-3">📍 Based in Dubai, UAE 🇦🇪</li>
-          
+
           </p>
       </div>
 
@@ -122,7 +142,8 @@
         <a href="#projects"
           class="dark:bg-gray-900 dark:text-white border border-gray-700 p-4 rounded-lg hover:bg-gray-800 transition">
           <h2 class="text-lg font-semibold">📦 Projects</h2>
-          <p class="text-sm dark:text-gray-400 mt-2">SaaS, PropTech, FinTech, Prop trading, Ecommerce, CMS, open source, and more.</p>
+          <p class="text-sm dark:text-gray-400 mt-2">SaaS, PropTech, FinTech, Prop trading, Ecommerce, CMS, open source,
+            and more.</p>
         </a>
         <a href="#tools"
           class="dark:bg-gray-900 dark:text-white border border-gray-700 p-4 rounded-lg hover:bg-gray-800 transition">
@@ -174,8 +195,8 @@
 
     <!-- Companies Section -->
     <section id="companies" class="py-12 text-center">
-      <h2 class="text-3xl font-bold mb-10">Some Amazing Companies I've Worked With</h2>
-      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 px-6">
+      <h2 class="sm:text-3xl text-2xl font-bold mb-10">Some Amazing Companies I've Worked With</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 px-6">
         <div class="flex flex-col items-center">
           <img src="https://m.media-amazon.com/images/I/61+nI2GbVCL.png" class="h-12 mb-2" alt="Amazon AWS" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Amazon AWS</p>
@@ -321,7 +342,7 @@
     </div>
 
     <!-- Grid -->
-    <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-6" id="project_grid"></div>
+    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6" id="project_grid"></div>
 
     <!-- Lightbox -->
     <div id="shot_lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4"
@@ -692,7 +713,7 @@
   <!-- Tools Section -->
   <section id="tools" class="py-12 bg-gray-100 dark:bg-gray-900 text-center">
     <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">Tools I Love to Use</h2>
-    <div class="max-w-6xl p-4 mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 gap-6">
+    <div class="max-w-6xl p-4 mx-auto grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-6">
       <!-- Tool Cards -->
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
         <img src="https://cdn.simpleicons.org/php" class="h-8 mb-2" alt="PHP" />
@@ -983,6 +1004,18 @@
     <p class="text-sm my-3">© 2025 Khaled Alam</p>
   </footer>
 
+  <!-- Go to Top -->
+  <button id="goToTopBtn" aria-label="Go to top" class="flex fixed bottom-10 left-10 z-50 hidden items-center justify-center
+         h-10 w-10 rounded-full border bg-white/90 text-gray-800
+         dark:bg-gray-900/90 dark:text-gray-100 dark:border-gray-700
+         shadow transition-opacity" type="button">
+    <!-- Up Arrow -->
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path d="M12 5l-7 7h4v7h6v-7h4z" fill="currentColor" />
+    </svg>
+  </button>
+
+
   <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function () {
@@ -1006,6 +1039,32 @@
         panel.classList.toggle('hidden');
         btn.setAttribute('aria-expanded', String(isHidden));
         btn.textContent = isHidden ? 'Hide featured video' : 'Show featured video';
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const btn = document.getElementById('goToTopBtn');
+      if (!btn) return;
+
+      const showAfter = 300; // px scrolled before showing the button
+      const onScroll = () => {
+        if (window.scrollY > showAfter) {
+          btn.classList.add('is-visible');
+          btn.classList.remove('hidden');
+        } else {
+          btn.classList.remove('is-visible');
+        }
+      };
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll(); // initial state
+
+      btn.addEventListener('click', () => {
+        // Smooth scroll if allowed, otherwise jump
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
       });
     })();
   </script>
