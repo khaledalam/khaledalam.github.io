@@ -6,14 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hello, I am Khaled Alam</title>
   <link rel="icon" href="./logo.png" />
-  <meta name="description"
-    content="Khaled Alam – Full-Stack Software Engineer in Dubai specialized in PHP, Laravel, React, and SaaS development." />
+  <meta name="description" content="Khaled Alam, Software Engineer, خالد علام" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { darkMode: "class" };
-  </script>
   <style>
-    /* Smooth show/hide without layout shift */
     #goToTopBtn {
       opacity: 0;
       pointer-events: none;
@@ -24,17 +19,19 @@
       pointer-events: auto;
     }
 
-    /* Respect reduced motion */
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
       }
 
-      /* you currently have smooth globally */
     }
 
     html {
       scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: monospace;
     }
 
     .filter-btn.active {
@@ -52,7 +49,6 @@
     }
 
     @keyframes bounce {
-
       0%,
       100% {
         transform: translate(-50%, 0);
@@ -64,7 +60,7 @@
     }
   </style>
   <script>
-    // Check localStorage and set initial theme class before page renders
+    tailwind.config = { darkMode: "class" };
     if (localStorage.getItem("theme") === "light") {
       document.documentElement.classList.add("light");
     } else {
@@ -89,14 +85,14 @@
       </a>
       <div class="space-x-4 hidden md:flex">
         <a href="#projects" class="text-sm hover:underline">Projects</a>
-        <a href="#tools" class="text-sm hover:underline">Tools</a>
         <a href="#companies" class="text-sm hover:underline">Companies</a>
-        <a href="#resume" class="text-sm hover:underline">Resume</a>
-        <a href="#blog" class="text-sm hover:underline">Blog</a>
+        <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" class="text-sm hover:underline"
+          target="_blank">⤴Resume</a>
+        <a href="https://blog.khaledalam.net" target="_blank" class="text-sm hover:underline">⤴Blog</a>
         <!-- Toggle -->
         <div class="">
-          <button onclick="toggleTheme()" class="px-2 py-0 border rounded text-sm dark:border-white border-black">Toggle
-            View</button>
+          <button onclick="toggleTheme()" class="px-2 py-0 border rounded text-sm dark:border-white border-black">
+            👀 Mode</button>
         </div>
       </div>
       <button class="md:hidden" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">☰</button>
@@ -115,8 +111,8 @@
 
   <section id="hero"
     class="flex items-center pt-20 min-h-screen flex flex-col justify-center px-4 md:px-20 dark:bg-black bg-white">
-    <div class="flex my-4 flex-col md:flex-row items-start gap-10 max-w-6xl w-full">
-      <!-- Left: Image + Text -->
+
+    <div class="flex flex-col my-4 items-start max-w-6xl w-full">
       <div class="flex-1">
         <div class="flex items-center gap-4 mb-4">
           <img src="./DP_Khaled.jpg" alt="Khaled Alam"
@@ -124,79 +120,60 @@
           <h1 class="text-3xl md:text-4xl font-bold">Hey, I am Khaled</h1>
         </div>
         <p class="text-lg text-gray-700 dark:text-gray-300">
-          Software Engineer | PHP, React, React Native, C++ | SaaS, FinTech, PropTech, Prop Trading, EdTech |
-          Cloud-Native Systems
+          Software Engineer | PHP, C++, React, Next.js, React Native, Python | SaaS, FinTech, PropTech, Prop Trading,
+          EdTech |
+          Cloud-Native Systems.
         </p>
+
         <hr class="relative w-[200px] my-[20px] border-gray-500" />
 
         <ul class="text-sm text-gray-700 dark:text-gray-300">
-          <li class="my-3">⏳ Master's Degree in Financial Engineering - Washington, USA</li>
-          <li class="my-3">✅ Bachelor's Degree in Computer Science - Mansoura, Egypt</li>
+          <li class="my-3">⏳ Master's Degree in Financial Engineering - Washington, D.C., USA 🇺🇸</li>
+          <li class="my-3">✅ Bachelor's Degree in Computer Science - Mansoura, Egypt 🇪🇬</li>
           <li class="my-3">📍 Based in Dubai, UAE 🇦🇪</li>
-
           </p>
-      </div>
-
-      <!-- Right: Cards -->
-      <div class="flex-1 grid gap-4 grid-cols-1">
-        <a href="#projects"
-          class="dark:bg-gray-900 dark:text-white border border-gray-700 p-4 rounded-lg hover:bg-gray-800 transition">
-          <h2 class="text-lg font-semibold">📦 Projects</h2>
-          <p class="text-sm dark:text-gray-400 mt-2">SaaS, PropTech, FinTech, Prop trading, Ecommerce, CMS, open source,
-            and more.</p>
-        </a>
-        <a href="#tools"
-          class="dark:bg-gray-900 dark:text-white border border-gray-700 p-4 rounded-lg hover:bg-gray-800 transition">
-          <h2 class="text-lg font-semibold">🛠 Tools</h2>
-          <p class="text-sm dark:text-gray-400 mt-2">Tech and tools I use to build apps, solve problems, and make life
-            easier.</p>
-        </a>
-
-        <!-- Resume Section -->
-        <section id="resume" class="flex mx-auto text-center w-full gap-4 items-center">
-          <h2 class="text-3xl font-bold mb-4">CV:</h2>
-          <button onclick="toggleResume()" class="p-2 bg-blue-600 text-white rounded mb-4">Expand here</button>
-          <button
-            onclick="window.open('https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view', '_blank')"
-            class="p-2 bg-blue-600 text-white rounded mb-4">
-            Open in a new tab
-          </button>
-
-
-        </section>
-
 
       </div>
-
-
-    </div>
-
-    <div id="resumeEmbed" class="hidden">
-      <iframe src="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/preview" width="100%" height="600"
-        allow="autoplay"></iframe>
+      <hr class="relative w-[200px] my-[20px] border-gray-500" />
     </div>
 
 
+    <div class="flex flex-col md:flex-row items-start gap-10 max-w-6xl w-full">
 
-    <p class="my-5">
-      🧲 📸 Discover <a href="https://canvamagnet.com/products/fridge-photo-magnets" class="underline"
-        title="Fridge Photo Magnets Dubai UAE" target="_blank" rel="noopener">Fridge Photo Magnets in Dubai, UAE</a> by
-      CanvaMagnet.
-    </p>
+      <h2 class="text-3xl font-bold">Highlights</h2>
+      <ul class="space-y-3 leading-relaxed">
+        <li>
+          ➤ Successfully solved IBM Research's
+          <a href="https://research.ibm.com/haifa/ponderthis/challenges/October2025.html" target="_blank" rel="noopener"
+            class="underline" title="IBM Research - Ponder This, October 2025">
+            "Ponder This" Challenge (October 2025)</a>, and my name is listed among the official solvers.
+        </li>
+        <li>
+          ➤ Contributed to several widely used open-source projects, including
+          <strong>phpMyAdmin</strong>, <strong>Symfony</strong>, <strong>AWS SDK for PHP</strong>, and others.
+        </li>
+        <!-- <li>
+          ➤ Founded my own LLC in Dubai, UAE:
+          <a href="https://www.linkedin.com/company/canvamagnet" class="underline"
+            title="Fridge Photo Magnets Dubai UAE" target="_blank" rel="noopener">
+            CanvaMagnet (Fridge Photo Magnets)</a>, a brand listed on Amazon UAE, integrated with payment partners such
+          as Tabby and Tamara, and
+          has collaborated with Gillette Arabia.
+        </li> -->
+      </ul>
+    </div>
 
-
-    <hr class="relative w-[200px] my-[20px] border-gray-500" />
 
     <!-- Recent Blog Posts -->
     <section id="blog" class="flex my-10 flex-col md:flex-row items-start gap-10 max-w-6xl w-full ">
-      <h2 class="text-3xl font-bold">Latest Blog Posts</h2>
-      <ul id="rssFeedList" class="space-y-4 text-left"></ul>
+      <h2 class="text-3xl font-bold">Recent Posts</h2>
+      <ul id="rssFeedList" class="space-y-3 leading-relaxed"></ul>
     </section>
 
     <!-- Companies Section -->
     <section id="companies" class="py-12 text-center">
-      <h2 class="sm:text-3xl text-2xl font-bold mb-10">Some Amazing Companies I've Worked With</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 px-6">
+      <h2 class="sm:text-3xl text-2xl font-bold mb-10 py-4 text-left">Some Companies I've Worked With</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 px-6">
         <div class="flex flex-col items-center">
           <img src="https://m.media-amazon.com/images/I/61+nI2GbVCL.png" class="h-12 mb-2" alt="Amazon AWS" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Amazon AWS</p>
@@ -300,7 +277,7 @@
   <!-- Filter + Projects -->
   <section id="projects" class="py-12 px-4 max-w-7xl mx-auto">
     <div class="flex items-end justify-between gap-4 flex-wrap">
-      <h2 class="text-3xl font-bold">Projects I Worked On</h2>
+      <h2 class="text-3xl font-bold py-4">Projects I Worked On</h2>
 
       <!-- Controls -->
       <div class="flex items-center gap-2 w-full md:w-auto">
@@ -703,13 +680,6 @@
 
 
 
-  <script>
-    function toggleResume() {
-      const embed = document.getElementById("resumeEmbed");
-      embed.classList.toggle("hidden");
-    }
-  </script>
-
   <!-- Tools Section -->
   <section id="tools" class="py-12 bg-gray-100 dark:bg-gray-900 text-center">
     <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">Tools I Love to Use</h2>
@@ -961,7 +931,7 @@
 
         data.items.slice(0, 5).forEach((item) => {
           const li = document.createElement("li");
-          li.innerHTML = `<a href="${item.link}" target="_blank" class="text-blue-600 hover:underline font-semibold">${item.title}</a>
+          li.innerHTML = `➤ <a href="${item.link}" target="_blank" class="underline">${item.title}</a>
         <p class="text-sm text-gray-600 dark:text-gray-300">${new Date(item.pubDate).toLocaleDateString()}</p>`;
           list.appendChild(li);
         });
@@ -1016,7 +986,7 @@
   </button>
 
 
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function () {
       var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
@@ -1041,7 +1011,7 @@
         btn.textContent = isHidden ? 'Hide featured video' : 'Show featured video';
       });
     })();
-  </script>
+  </script> -->
 
   <script>
     (function () {
