@@ -3,9 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello, I am Khaled Alam</title>
+  <title>Khaled Alam — Ex-CTO & Full-Stack Engineer</title>
   <link rel="icon" href="./logo.png" />
-  <meta name="description" content="Khaled Alam, Software Engineer, خالد علام" />
+  <meta name="description" content="Ex-CTO & Full-Stack Engineer with 10+ years shipping production systems across SaaS, PropTech, and AI-enabled platforms. Open-source contributor and system architect." />
+  <meta name="keywords" content="Khaled Alam, Software Engineer, Full-Stack Developer, CTO, PHP, React, Laravel, Symfony, Dubai, UAE" />
+  <meta name="author" content="Khaled Alam" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://khaledalam.net/" />
+  <meta property="og:title" content="Khaled Alam — Ex-CTO & Full-Stack Engineer" />
+  <meta property="og:description" content="Ex-CTO & Full-Stack Engineer with 10+ years shipping production systems across SaaS, PropTech, and AI-enabled platforms." />
+  <meta property="og:image" content="https://khaledalam.net/DP_Khaled.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@KhaledAlamXYZ" />
+  <meta name="twitter:title" content="Khaled Alam — Ex-CTO & Full-Stack Engineer" />
+  <meta name="twitter:description" content="Ex-CTO & Full-Stack Engineer with 10+ years shipping production systems across SaaS, PropTech, and AI-enabled platforms." />
+  <meta name="twitter:image" content="https://khaledalam.net/DP_Khaled.jpg" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://khaledalam.net/" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Khaled Alam",
+    "alternateName": "خالد علام",
+    "url": "https://khaledalam.net",
+    "image": "https://khaledalam.net/DP_Khaled.jpg",
+    "jobTitle": "Full-Stack Software Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Self-employed"
+    },
+    "sameAs": [
+      "https://github.com/khaledalam",
+      "https://linkedin.com/in/khaledalam",
+      "https://twitter.com/KhaledAlamXYZ",
+      "https://www.youtube.com/NinjoCoding",
+      "https://blog.khaledalam.net"
+    ],
+    "knowsAbout": ["PHP", "Laravel", "Symfony", "React", "TypeScript", "AWS", "Docker", "System Architecture"],
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Mansoura University",
+        "location": "Egypt"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dubai",
+      "addressCountry": "UAE"
+    }
+  }
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     #goToTopBtn {
@@ -57,6 +114,26 @@
         transform: translate(-50%, 10px);
       }
     }
+
+    /* Scroll animations */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in-section {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
   </style>
   <script>
     tailwind.config = { darkMode: "class" };
@@ -100,10 +177,12 @@
       <a href="#projects" class="block py-2 text-sm">Projects</a>
       <a href="#tools" class="block py-2 text-sm">Tools</a>
       <a href="#companies" class="block py-2 text-sm">Companies</a>
+      <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" target="_blank" class="block py-2 text-sm">⤴ Resume</a>
+      <a href="https://blog.khaledalam.net" target="_blank" class="block py-2 text-sm">⤴ Blog</a>
       <!-- Toggle -->
-      <div class="fixed top-2 right-2 z-50 mt-16">
-        <button onclick="toggleTheme()" class="px-2 py-0 border rounded text-sm dark:border-white border-black">Toggle
-          View</button>
+      <div class="py-2">
+        <button onclick="toggleTheme()" class="px-2 py-1 border rounded text-sm dark:border-white border-black">
+          👀 Toggle Mode</button>
       </div>
     </div>
   </header>
@@ -118,17 +197,38 @@
             class="w-20 h-20 object-cover rounded-full border-2 border-white dark:border-gray-800" />
           <h1 class="text-3xl md:text-4xl font-bold">Hey, I am Khaled</h1>
         </div>
-        <p class="text-lg text-gray-700 dark:text-gray-300">
-          Software Engineer  •  Ex-CTO & Founder  •  10+ Years Shipping Production Systems  •  Language Engine Contributor
+        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl">
+          Ex-CTO & Full-Stack Engineer with 10+ years shipping production systems across SaaS, PropTech, and AI-enabled platforms.
+          Led teams end-to-end and rebuilt legacy backends into scalable modular architectures.
         </p>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+          Language Engine Contributor • Open Source Maintainer • System Architect
+        </p>
+
+        <div class="flex gap-3 mt-6">
+          <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" target="_blank"
+            class="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-black rounded-lg text-sm font-medium hover:bg-gray-700 dark:hover:bg-gray-200 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Download Resume
+          </a>
+          <a href="mailto:khaledalam.net@gmail.com"
+            class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            Contact Me
+          </a>
+        </div>
 
         <hr class="relative w-[200px] my-[20px] border-gray-500" />
 
         <ul class="text-sm text-gray-700 dark:text-gray-300">
-          <li class="my-3">⏳ Master's Degree in Financial Engineering - Washington, D.C., USA 🇺🇸</li>
-          <li class="my-3">✅ Bachelor's Degree in Computer Science - Mansoura, Egypt 🇪🇬</li>
+          <li class="my-3">⏳ Master's Degree in Financial Engineering — Washington, D.C., USA 🇺🇸</li>
+          <li class="my-3">🎓 Bachelor's Degree in Computer Science — Mansoura, Egypt 🇪🇬</li>
           <li class="my-3">📍 Based in Dubai, UAE 🇦🇪</li>
-          </p>
+        </ul>
 
       </div>
       <hr class="relative w-[200px] my-[20px] border-gray-500" />
@@ -145,8 +245,20 @@
             "Ponder This" Challenge (October 2025)</a>, and my name is listed among the official solvers.
         </li>
         <li>
-          ➤ Contributed to several widely used open-source projects, including
-          <strong>phpMyAdmin</strong>, <strong>Symfony</strong>, <strong>AWS SDK for PHP</strong>, and others.
+          ➤ Open-source contributor with work spanning multiple levels:
+          <ul class="ml-6 mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400">
+            <li>• <strong>Language Engine / Compiler</strong> — contributions to core compilation behavior (Zend Engine level)</li>
+            <li>• <strong>Core Runtime / Standard Library</strong> — developer-facing runtime API improvements (Reflection-level)</li>
+            <li>• <strong>Ecosystem Tooling</strong> — contributions to widely used tools like <strong>phpMyAdmin</strong>, <strong>Symfony</strong>, <strong>AWS SDK for PHP</strong></li>
+          </ul>
+        </li>
+        <li>
+          ➤ Created <a href="https://github.com/khaledalam/worktools" target="_blank" rel="noopener" class="underline"><strong>WorkTools</strong></a> —
+          a developer productivity toolkit for JIRA, GitHub, Slack, and more. Available as browser extensions (Chrome/Firefox) and a native macOS app via Homebrew.
+        </li>
+        <li>
+          ➤ Authored <a href="https://codeforces.com/blog/entry/66444" target="_blank" rel="noopener" class="underline">"Power Of Randomization"</a> (2019) —
+          a Codeforces blog post sharing my solution approach using randomization techniques for Google Code Jam problems, with engagement from top competitive programmers.
         </li>
         <!-- <li>
           ➤ Founded my own LLC in Dubai, UAE:
@@ -262,7 +374,7 @@
           <p class="text-sm text-gray-600 dark:text-gray-400">Amplify Marketing Agency</p>
         </div>
         <div class="flex flex-col items-center">
-          <img src="https://fosterclark.com/wp-content/uploads/2016/05/fc-blue_2.png" class="h-10 mb-2"
+          <img src="https://fosterclark.com/wp-content/uploads/2025/11/fcpl_logo-1.png" class="h-10 mb-2"
             alt="Foster Clark" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Foster Clark</p>
         </div>
@@ -331,6 +443,15 @@
     <script>
       // Data
       const project_list = [
+        {
+          name: "WorkTools",
+          type: "tools",
+          desc: "Developer productivity toolkit for JIRA, GitHub, and Slack. Quick ticket access via keyboard shortcuts, RTL support for Hebrew/Arabic, GitHub PR links in JIRA, and searchable ticket history. Available as Chrome/Firefox extensions and macOS app.",
+          tag: "TypeScript/Electron",
+          link: "https://github.com/khaledalam/worktools",
+          logo: "./logo.png",
+          shot: "https://raw.githubusercontent.com/khaledalam/worktools/master/assets/screenshots/popup.png"
+        },
         {
           name: "BitFunded.com",
           type: "web",
@@ -951,8 +1072,17 @@
             src="https://cdn3.iconfinder.com/data/icons/2018-social-media-black-and-white-logos/1000/2018_social_media_popular_app_logo_linkedin-512.png"
             class="h-6 bg-gray" />
         </a>
+        <a href="https://twitter.com/KhaledAlamXYZ" target="_blank" title="Twitter">
+          <img src="https://cdn.simpleicons.org/x" class="h-6 bg-white rounded-xl p-0.5" />
+        </a>
+        <a href="https://www.youtube.com/NinjoCoding" target="_blank" title="YouTube">
+          <img src="https://cdn.simpleicons.org/youtube" class="h-6" />
+        </a>
         <a href="https://blog.khaledalam.net" title="Blog">
           <img src="https://www.freeiconspng.com/uploads/blogger-logo-icon-png-22.png" class="h-6 bg-gray" />
+        </a>
+        <a href="https://stats.uptimerobot.com/QLORrQ7Nsm" target="_blank" title="Uptime Status">
+          <img src="https://uptimerobot.com/favicon.ico" class="h-6" />
         </a>
       </div>
       <div class="flex items-center justify-center gap-4">
@@ -961,13 +1091,13 @@
         </a>
       </div>
       <div class="flex items-center justify-center gap-4">
-        <a href="mailto:khaledalam.net@gmail.com" title="WhatsApp">
+        <a href="mailto:khaledalam.net@gmail.com" title="Email">
           khaledalam.net@gmail.com
         </a>
       </div>
     </div>
 
-    <p class="text-sm my-3">© 2025 Khaled Alam</p>
+    <p class="text-sm my-3">© 2015–2026 Khaled Alam</p>
   </footer>
 
   <!-- Go to Top -->
@@ -1031,6 +1161,32 @@
         // Smooth scroll if allowed, otherwise jump
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+      });
+    })();
+  </script>
+
+  <!-- Scroll animations -->
+  <script>
+    (function () {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+
+      const sections = document.querySelectorAll('section, .fade-in-section');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      sections.forEach(section => {
+        section.classList.add('fade-in-section');
+        observer.observe(section);
       });
     })();
   </script>
