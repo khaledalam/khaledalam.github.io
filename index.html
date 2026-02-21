@@ -303,8 +303,8 @@
         </div>
 
         <div class="flex flex-col items-center">
-          <img src="./img/companies/bitfunded.webp" class="h-10 w-auto mb-2"
-            alt="BitFunded" width="160" height="40" loading="lazy" decoding="async" />
+          <img src="./img/companies/bitfunded.webp" class="h-10 w-full object-contain mb-2"
+            alt="BitFunded" width="80" height="20" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">BitFunded</p>
         </div>
 
@@ -378,8 +378,8 @@
           <p class="text-sm text-gray-600 dark:text-gray-400">Amplify Marketing Agency</p>
         </div>
         <div class="flex flex-col items-center">
-          <img src="./img/companies/fosterclark.webp" class="h-10 w-auto mb-2"
-            alt="Foster Clark" width="213" height="40" loading="lazy" decoding="async" />
+          <img src="./img/companies/fosterclark.webp" class="h-10 w-full object-contain mb-2"
+            alt="Foster Clark" width="80" height="15" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Foster Clark</p>
         </div>
       </div>
@@ -1155,7 +1155,7 @@
       };
 
       window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll(); // initial state
+      requestAnimationFrame(onScroll); // initial state, avoid forced reflow
 
       btn.addEventListener('click', () => {
         // Smooth scroll if allowed, otherwise jump
