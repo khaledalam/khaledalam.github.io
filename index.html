@@ -12,6 +12,8 @@
   <!-- Preconnect to critical origins -->
   <link rel="preconnect" href="https://api.rss2json.com" crossorigin />
   <link rel="dns-prefetch" href="https://embed.tawk.to" />
+  <!-- Preload hero image (LCP element) -->
+  <link rel="preload" as="image" href="./DP_Khaled.webp" type="image/webp" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -154,6 +156,7 @@
 </head>
  
 <body class="bg-white text-black dark:bg-black dark:text-white font-sans">
+  <a href="#hero" class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:text-black">Skip to content</a>
   <!-- Navbar -->
   <header
     class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
@@ -166,25 +169,25 @@
         <a href="#projects" class="text-sm hover:underline">Projects</a>
         <a href="#companies" class="text-sm hover:underline">Companies</a>
         <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" class="text-sm hover:underline"
-          target="_blank">⤴Resume</a>
-        <a href="https://blog.khaledalam.net" target="_blank" class="text-sm hover:underline">⤴Blog</a>
+          target="_blank" rel="noopener">⤴Resume</a>
+        <a href="https://blog.khaledalam.net" target="_blank" rel="noopener" class="text-sm hover:underline">⤴Blog</a>
         <!-- Toggle -->
-        <div class="">
-          <button onclick="toggleTheme()" class="px-2 py-0 border rounded text-sm dark:border-white border-black">
+        <div>
+          <button onclick="toggleTheme()" aria-label="Toggle dark mode" class="px-2 py-0 border rounded text-sm dark:border-white border-black">
             👀 Mode</button>
         </div>
       </div>
-      <button class="md:hidden" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">☰</button>
+      <button class="md:hidden" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" aria-label="Open menu" aria-expanded="false">☰</button>
     </nav>
     <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
       <a href="#projects" class="block py-2 text-sm">Projects</a>
       <a href="#tools" class="block py-2 text-sm">Tools</a>
       <a href="#companies" class="block py-2 text-sm">Companies</a>
-      <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" target="_blank" class="block py-2 text-sm">⤴ Resume</a>
-      <a href="https://blog.khaledalam.net" target="_blank" class="block py-2 text-sm">⤴ Blog</a>
+      <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" target="_blank" rel="noopener" class="block py-2 text-sm">⤴ Resume</a>
+      <a href="https://blog.khaledalam.net" target="_blank" rel="noopener" class="block py-2 text-sm">⤴ Blog</a>
       <!-- Toggle -->
       <div class="py-2">
-        <button onclick="toggleTheme()" class="px-2 py-1 border rounded text-sm dark:border-white border-black">
+        <button onclick="toggleTheme()" aria-label="Toggle dark mode" class="px-2 py-1 border rounded text-sm dark:border-white border-black">
           👀 Toggle Mode</button>
       </div>
     </div>
@@ -205,12 +208,12 @@
           Ex-CTO & Full-Stack Engineer with 10+ years shipping production systems across SaaS, PropTech, and AI-enabled platforms.
           Led teams end-to-end and rebuilt legacy backends into scalable modular architectures.
         </p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
           Language Engine Contributor • Open Source Maintainer • System Architect
         </p>
 
         <div class="flex gap-3 mt-6">
-          <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" target="_blank"
+          <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" target="_blank" rel="noopener"
             class="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-black rounded-lg text-sm font-medium hover:bg-gray-700 dark:hover:bg-gray-200 transition">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -432,7 +435,7 @@
     <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6" id="project_grid"></div>
 
     <!-- Lightbox -->
-    <div id="shot_lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4"
+    <div id="shot_lightbox" role="dialog" aria-label="Project screenshot" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4"
       onclick="CloseLightbox(event)">
       <figure class="max-w-5xl w-full">
         <img id="lightbox_img" src="" alt="Project screenshot" class="w-full rounded-lg shadow-2xl" />
@@ -1046,11 +1049,9 @@
         const data = await res.json();
         const list = document.getElementById("rssFeedList");
 
-        const li_tmp = document.createElement("li");
-
         data.items.slice(0, 5).forEach((item) => {
           const li = document.createElement("li");
-          li.innerHTML = `➤ <a href="${item.link}" target="_blank" class="underline">${item.title}</a>
+          li.innerHTML = `➤ <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener" class="underline">${escapeHtml(item.title)}</a>
         <p class="text-sm text-gray-600 dark:text-gray-300">${new Date(item.pubDate).toLocaleDateString()}</p>`;
           list.appendChild(li);
         });
@@ -1058,7 +1059,8 @@
         console.error("Failed to load RSS feed", err);
       }
     }
-    fetchRSS();
+    if (document.readyState === 'complete') { fetchRSS(); }
+    else { window.addEventListener('load', fetchRSS); }
   </script>
 
   </main>
@@ -1067,30 +1069,30 @@
   <footer class="text-center py-6 border-t dark:border-gray-700">
     <div class="flex items-center justify-center gap-4 mb-3 flex-wrap" style="flex-direction: column;">
       <div class="flex items-center justify-center gap-4">
-        <a href="https://github.com/khaledalam" target="_blank" title="GitHub">
+        <a href="https://github.com/khaledalam" target="_blank" rel="noopener" aria-label="GitHub profile">
           <img src="./img/social/github.webp"
             class="h-6 bg-white rounded-xl" alt="GitHub" width="24" height="24" loading="lazy" />
         </a>
-        <a href="https://linkedin.com/in/khaledalam" target="_blank" title="LinkedIn">
+        <a href="https://linkedin.com/in/khaledalam" target="_blank" rel="noopener" aria-label="LinkedIn profile">
           <img
             src="./img/social/linkedin.webp"
             class="h-6 bg-gray" alt="LinkedIn" width="24" height="24" loading="lazy" />
         </a>
-        <a href="https://twitter.com/KhaledAlamXYZ" target="_blank" title="Twitter">
+        <a href="https://twitter.com/KhaledAlamXYZ" target="_blank" rel="noopener" aria-label="X (Twitter) profile">
           <img src="./img/tools/x.svg" class="h-6 bg-white rounded-xl p-0.5" alt="X (Twitter)" width="24" height="24" loading="lazy" />
         </a>
-        <a href="https://www.youtube.com/NinjoCoding" target="_blank" title="YouTube">
+        <a href="https://www.youtube.com/NinjoCoding" target="_blank" rel="noopener" aria-label="YouTube channel">
           <img src="./img/tools/youtube.svg" class="h-6" alt="YouTube" width="24" height="24" loading="lazy" />
         </a>
-        <a href="https://blog.khaledalam.net" title="Blog">
+        <a href="https://blog.khaledalam.net" rel="noopener" aria-label="Blog">
           <img src="./img/social/blogger.webp" class="h-6 bg-gray" alt="Blog" width="24" height="24" loading="lazy" />
         </a>
-        <a href="https://stats.uptimerobot.com/QLORrQ7Nsm" target="_blank" title="Uptime Status">
+        <a href="https://stats.uptimerobot.com/QLORrQ7Nsm" target="_blank" rel="noopener" aria-label="Uptime status page">
           <img src="./img/social/uptimerobot.webp" class="h-6" alt="Uptime Status" width="24" height="24" loading="lazy" />
         </a>
       </div>
       <div class="flex items-center justify-center gap-4">
-        <a href="http://wa.me/971582936628" title="WhatsApp">
+        <a href="https://wa.me/971582936628" title="WhatsApp">
           +971 58 293 6628
         </a>
       </div>
@@ -1127,22 +1129,15 @@
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
     }
-    if (document.readyState === 'complete') { loadTawk(); }
-    else { window.addEventListener('load', loadTawk); }
+    // Load Tawk.to after everything else is done (low priority)
+    function scheduleTawk() {
+      if ('requestIdleCallback' in window) { requestIdleCallback(loadTawk); }
+      else { setTimeout(loadTawk, 3000); }
+    }
+    if (document.readyState === 'complete') { scheduleTawk(); }
+    else { window.addEventListener('load', scheduleTawk); }
 
 
-    (function () {
-      var btn = document.getElementById('toggleVideoBtn');
-      var panel = document.getElementById('videoPanel');
-      if (!btn || !panel) return;
-
-      btn.addEventListener('click', function () {
-        var isHidden = panel.classList.contains('hidden');
-        panel.classList.toggle('hidden');
-        btn.setAttribute('aria-expanded', String(isHidden));
-        btn.textContent = isHidden ? 'Hide featured video' : 'Show featured video';
-      });
-    })();
   </script>
 
   <script>
