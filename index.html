@@ -9,6 +9,10 @@
   <meta name="keywords" content="Khaled Alam, Software Engineer, Full-Stack Developer, CTO, PHP, React, Laravel, Symfony, Dubai, UAE" />
   <meta name="author" content="Khaled Alam" />
 
+  <!-- Preconnect to critical origins -->
+  <link rel="preconnect" href="https://api.rss2json.com" crossorigin />
+  <link rel="dns-prefetch" href="https://embed.tawk.to" />
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://khaledalam.net/" />
@@ -63,7 +67,7 @@
   }
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./tailwind.min.css" />
   <style>
     #goToTopBtn {
       opacity: 0;
@@ -136,7 +140,6 @@
     }
   </style>
   <script>
-    tailwind.config = { darkMode: "class" };
     if (localStorage.getItem("theme") === "light") {
       document.documentElement.classList.add("light");
     } else {
@@ -149,14 +152,14 @@
     }
   </script>
 </head>
-
+ 
 <body class="bg-white text-black dark:bg-black dark:text-white font-sans">
   <!-- Navbar -->
   <header
     class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
       <a href="/" class="flex items-center space-x-2 text-lg font-bold">
-        <img src="./logo.png" alt="Logo" class="w-6 h-6" />
+        <img src="./logo.webp" alt="Logo" class="w-6 h-6" width="24" height="24" />
         <span>Khaled Alam</span>
       </a>
       <div class="space-x-4 hidden md:flex">
@@ -187,13 +190,14 @@
     </div>
   </header>
 
+  <main>
   <section id="hero"
     class="flex items-center pt-20 min-h-screen flex flex-col justify-center px-4 md:px-20 dark:bg-black bg-white">
 
     <div class="flex flex-col my-4 items-start max-w-6xl w-full">
       <div class="flex-1">
         <div class="flex items-center gap-4 mb-4">
-          <img src="./DP_Khaled.jpg" alt="Khaled Alam"
+          <img src="./DP_Khaled.webp" alt="Khaled Alam" width="80" height="80" fetchpriority="high"
             class="w-20 h-20 object-cover rounded-full border-2 border-white dark:border-gray-800" />
           <h1 class="text-3xl md:text-4xl font-bold">Hey, I am Khaled</h1>
         </div>
@@ -260,14 +264,12 @@
           ➤ Authored <a href="https://codeforces.com/blog/entry/66444" target="_blank" rel="noopener" class="underline">"Power Of Randomization"</a> (2019) —
           a Codeforces blog post sharing my solution approach using randomization techniques for Google Code Jam problems, with engagement from top competitive programmers.
         </li>
-        <!-- <li>
-          ➤ Founded my own LLC in Dubai, UAE:
+        <li>
+          ➤ Built and operated my own UAE-based LLC —
           <a href="https://www.linkedin.com/company/canvamagnet" class="underline"
-            title="Fridge Photo Magnets Dubai UAE" target="_blank" rel="noopener">
-            CanvaMagnet (Fridge Photo Magnets)</a>, a brand listed on Amazon UAE, integrated with payment partners such
-          as Tabby and Tamara, and
-          has collaborated with Gillette Arabia.
-        </li> -->
+            title="Fridge Photo Magnets Dubai UAE" target="_blank" rel="noopener"><strong>CanvaMagnet</strong></a>,
+          an e-commerce brand listed on Amazon UAE with end-to-end execution: product development, payment integration (Tabby, Tamara), and brand partnerships including Gillette Arabia.
+        </li>
       </ul>
     </div>
 
@@ -283,99 +285,98 @@
       <h2 class="sm:text-3xl text-2xl font-bold mb-10 py-4 text-left">Some Companies I've Worked With</h2>
       <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 px-6">
         <div class="flex flex-col items-center">
-          <img src="https://m.media-amazon.com/images/I/61+nI2GbVCL.png" class="h-12 mb-2" alt="Amazon AWS" />
+          <img src="./img/companies/amazon-aws.webp" class="h-12 mb-2" alt="Amazon AWS" width="48" height="48" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Amazon AWS</p>
         </div>
 
         <div class="flex flex-col items-center">
-          <img src="https://1000logos.net/wp-content/uploads/2023/02/STC-logo.png" class="h-12 mb-2" alt="STC" />
+          <img src="./img/companies/stc.webp" class="h-12 mb-2" alt="STC" width="48" height="48" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">STC</p>
         </div>
         <div class="flex flex-col items-center">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Victoria%27s_Secret_PINK_logo.png"
-            alt="Victoria's Secret" class="h-10 mb-2" />
+          <img src="./img/companies/victorias-secret.webp"
+            alt="Victoria's Secret" class="h-10 mb-2" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Victoria's Secret</p>
         </div>
 
         <div class="flex flex-col items-center">
-          <img src="https://www.bitfunded.com/wp-content/uploads/2025/10/Group-512462-2.png" class="h-10 mb-2"
-            alt="BitFunded" />
+          <img src="./img/companies/bitfunded.webp" class="h-10 mb-2"
+            alt="BitFunded" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">BitFunded</p>
         </div>
 
         <div class="flex flex-col items-center">
-          <img src="https://ucarecdn.com/44b17637-1d88-4b95-bad1-beaa36b866f1/cafe-image-6890" class="h-10 mb-2"
-            alt="CoffeePlanet" />
+          <img src="./img/companies/coffeeplanet.webp" class="h-10 mb-2"
+            alt="CoffeePlanet" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">CoffeePlanet</p>
         </div>
         <div class="flex flex-col items-center">
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/5a573aade45a7c861137d973/dce6a40f-750a-4b4a-b9d0-af1fdbfe47ae/misk-21-logo-light-1024x588.png"
-            class="h-10 mb-2" alt="Misk" />
+          <img src="./img/companies/misk.webp"
+            class="h-10 mb-2" alt="Misk" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">MISK</p>
         </div>
         <div class="flex flex-col items-center">
-          <img src="https://www.custommarine.ae/assets/cm-logo.png" class="h-10 mb-2" alt="custom marine" />
+          <img src="./img/companies/custommarine.webp" class="h-10 mb-2" alt="CustomMarine" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">CustomMarine</p>
         </div>
         <div class="flex flex-col items-center">
-          <img src="https://entrepreneurs.utoronto.ca/wp-content/uploads/2021/09/Cohere-Logo.png" class="h-10 mb-2"
-            alt="cohere" />
+          <img src="./img/companies/cohere.webp" class="h-10 mb-2"
+            alt="Cohere" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Cohere</p>
         </div>
         <div class="flex flex-col items-center">
-          <img src="https://s1.coincarp.com/logo/1/mintme-com-coin.png" class="h-10 mb-2" alt="mintme" />
+          <img src="./img/companies/mintme.webp" class="h-10 mb-2" alt="MintMe" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">MintMe Crypto Exchange</p>
         </div>
         <div class="flex flex-col items-center">
           <img
-            src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_8943fa7e4e1dce960ce9b8456f13f271/coinimp.jpg"
-            class="h-10 bg-white rounded mb-2" alt="coinimp" />
+            src="./img/companies/coinimp.webp"
+            class="h-10 bg-white rounded mb-2" alt="CoinIMP" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">CoinIMP Miner</p>
         </div>
         <div class="flex flex-col items-center">
           <img
-            src="https://neom.directory/media/com_jbusinessdirectory/pictures/companies/627/sourcetoad_logo_rgb_1672176463.png"
-            class="h-10 mb-2" alt="sourcetoad" />
+            src="./img/companies/sourcetoad.webp"
+            class="h-10 mb-2" alt="Sourcetoad" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Sourcetoad</p>
         </div>
         <div class="flex flex-col items-center">
           <img
-            src="https://images.yourstory.com/cs/images/companies/jdnypgntjxomydkx-1717068500813.jpg?fm=auto&ar=1:1&mode=fill&fill=solid&fill-color=fff"
-            class="h-10 mb-2" alt="makyee" />
+            src="./img/companies/makyee.webp"
+            class="h-10 mb-2" alt="Makyee" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Makyee</p>
         </div>
         <div class="flex flex-col items-center">
           <img
-            src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_995ba759636581271a0ee49f741d973d/lead-liaison.png"
-            class="h-10 mb-2" alt="LeadLiaison" />
+            src="./img/companies/leadliaison.webp"
+            class="h-10 mb-2" alt="LeadLiaison" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">LeadLiaison</p>
         </div>
         <div class="flex flex-col items-center">
           <img
-            src="https://media.licdn.com/dms/image/v2/D4D0BAQHNXhM6lT2HBA/company-logo_200_200/company-logo_200_200/0/1736835412281/prepaire_labs_logo?e=2147483647&v=beta&t=Lz_kC249G1GqQ0d8HOgUXlHyuYF-G-qQHx9U0C0ObIo"
-            class="h-10 mb-2" alt="prepaire" />
+            src="./img/companies/prepaire.webp"
+            class="h-10 mb-2" alt="Prepaire Labs" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Prepaire Labs</p>
         </div>
         <div class="flex flex-col items-center">
           <img
-            src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Arla_Foods_logo.svg/640px-Arla_Foods_logo.svg.png"
-            class="h-10 mb-2" alt="arla foods" />
+            src="./img/companies/arla.webp"
+            class="h-10 mb-2" alt="Arla Foods" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Arla Foods</p>
         </div>
         <div class="flex flex-col items-center">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2k9pbVyi5iu_hi-YtnJmTH8BtYdrUq1HK3Q&s"
-            class="h-10 mb-2" alt="9h digital" />
+          <img src="./img/companies/9h-digital.webp"
+            class="h-10 mb-2" alt="9H Digital" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">9H Digital</p>
         </div>
         <div class="flex flex-col items-center">
-          <img src="https://amplifydubai.com/wp-content/uploads/2020/06/Amplify-Marketing-Agency-Dubai_Logo.png"
-            class="h-10 mb-2" alt="amplify marketing agency dubai" />
+          <img src="./img/companies/amplify.webp"
+            class="h-10 mb-2" alt="Amplify Marketing Agency" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Amplify Marketing Agency</p>
         </div>
         <div class="flex flex-col items-center">
-          <img src="https://fosterclark.com/wp-content/uploads/2025/11/fcpl_logo-1.png" class="h-10 mb-2"
-            alt="Foster Clark" />
+          <img src="./img/companies/fosterclark.webp" class="h-10 mb-2"
+            alt="Foster Clark" width="40" height="40" loading="lazy" decoding="async" />
           <p class="text-sm text-gray-600 dark:text-gray-400">Foster Clark</p>
         </div>
       </div>
@@ -399,6 +400,7 @@
           </svg>
         </div>
 
+        <label for="sort_select" class="sr-only">Sort projects</label>
         <select id="sort_select" class="rounded-lg border px-3 py-2 dark:bg-gray-800" onchange="ApplyFilters()">
           <option value="name_asc">Sort: Name A→Z</option>
           <option value="name_desc">Sort: Name Z→A</option>
@@ -449,8 +451,8 @@
           desc: "Developer productivity toolkit for JIRA, GitHub, and Slack. Quick ticket access via keyboard shortcuts, RTL support for Hebrew/Arabic, GitHub PR links in JIRA, and searchable ticket history. Available as Chrome/Firefox extensions and macOS app.",
           tag: "TypeScript/Electron",
           link: "https://github.com/khaledalam/worktools",
-          logo: "./logo.png",
-          shot: "https://raw.githubusercontent.com/khaledalam/worktools/master/assets/screenshots/popup.png"
+          logo: "./logo.webp",
+          shot: "screenshots/worktools.webp"
         },
         {
           name: "BitFunded.com",
@@ -458,8 +460,8 @@
           desc: "Innovative UAE-based trading and investment platform. Worked on backend integrations, WordPress performance optimization, and secure API connectivity for affiliate tracking and Zoho CRM.",
           tag: "PHP/WordPress",
           link: "https://bitfunded.com",
-          logo: "https://www.bitfunded.com/wp-content/uploads/2025/10/Group-512462-2.png",
-          shot: "screenshots/bitfunded.png"
+          logo: "./img/companies/bitfunded.webp",
+          shot: "screenshots/bitfunded.webp"
         },
         {
           name: "CustomMarine.ae",
@@ -467,8 +469,8 @@
           desc: "Premium UAE-based marine services and products platform. Custom PHP features, UI/UX polish, and performance work.",
           tag: "HTML/CSS",
           link: "https://www.custommarine.ae",
-          logo: "https://www.custommarine.ae/assets/img/logo.png",
-          shot: "screenshots/custommarine.png"
+          logo: "./img/companies/custommarine-logo.webp",
+          shot: "screenshots/custommarine.webp"
         },
         {
           name: "CBA.pl",
@@ -476,8 +478,8 @@
           desc: "High-traffic Polish free hosting platform. Backend improvements and MySQL performance tuning.",
           tag: "PHP",
           link: "https://www.cba.pl",
-          logo: "https://www.cba.pl/img/logo_cba.png",
-          shot: "screenshots/cba.pl.png"
+          logo: "./img/companies/cba.webp",
+          shot: "screenshots/cba.pl.webp"
         },
         {
           name: "Khardl",
@@ -485,8 +487,8 @@
           desc: "Restaurant management system with multi-tenant, roles, branches, TAP, SMS, push, delivery, webhooks, APIs.",
           tag: "PHP/React.js",
           link: "https://github.com/khaledalam/khardl",
-          logo: "./logo.png",
-          shot: "screenshots/khardl.png"
+          logo: "./logo.webp",
+          shot: "screenshots/khardl.webp"
         },
         {
           name: "MintMe",
@@ -494,8 +496,8 @@
           desc: "Decentralized token exchange with Symfony + Vue. Real-time book, wallets, trading UI, charts.",
           tag: "PHP",
           link: "https://mintme.com",
-          logo: "https://avatars.githubusercontent.com/u/38435289?s=280&v=4",
-          shot: "screenshots/mintme.png"
+          logo: "./img/companies/mintme-avatar.webp",
+          shot: "screenshots/mintme.webp"
         },
         {
           name: "CoinIMP",
@@ -503,8 +505,8 @@
           desc: "Browser mining platform with Symfony backend, WebAssembly miner, analytics and campaigns.",
           tag: "PHP",
           link: "https://coinimp.com",
-          logo: "https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_8943fa7e4e1dce960ce9b8456f13f271/coinimp.jpg",
-          shot: "screenshots/coinimp.png"
+          logo: "./img/companies/coinimp.webp",
+          shot: "screenshots/coinimp.webp"
         },
         {
           name: "CoffeePlanet",
@@ -512,8 +514,8 @@
           desc: "Shopify Liquid build for Coffee Planet UAE. Product pages, subscriptions, GTM integration.",
           tag: "Liquid",
           link: "https://coffeeplanet.com/",
-          logo: "https://ucarecdn.com/44b17637-1d88-4b95-bad1-beaa36b866f1/cafe-image-6890",
-          shot: "screenshots/coffeeplanet.png"
+          logo: "./img/companies/coffeeplanet.webp",
+          shot: "screenshots/coffeeplanet.webp"
         },
         {
           name: "Misk Events",
@@ -521,8 +523,8 @@
           desc: "WordPress solution for event management, sessions, localization, accessibility and performance.",
           tag: "PHP",
           link: "https://hub.misk.org.sa/events",
-          logo: "https://images.squarespace-cdn.com/content/v1/5a573aade45a7c861137d973/dce6a40f-750a-4b4a-b9d0-af1fdbfe47ae/misk-21-logo-light-1024x588.png",
-          shot: "screenshots/misk.png"
+          logo: "./img/companies/misk.webp",
+          shot: "screenshots/misk.webp"
         },
         {
           name: "Prima International",
@@ -530,8 +532,8 @@
           desc: "Next.js site with CMS, SEO and light animations. Hosted on Vercel with instant deploys.",
           tag: "TypeScript",
           link: "https://www.primainternational.com/",
-          logo: "https://horecaway.com/userfiles/b46c3f34a7cf6fe0eee68ac9c38c7e7d.png",
-          shot: "screenshots/prima.png"
+          logo: "./img/companies/prima.webp",
+          shot: "screenshots/prima.webp"
         },
         {
           name: "Makyee",
@@ -540,8 +542,8 @@
           tag: "PHP",
           link: "https://makyee.com",
           mobileapp: "https://apps.apple.com/ae/app/makyee/id6504030415",
-          logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwKHpL37ZH_zyZY43pTo24lBuj-J3Ee-rA5w&s",
-          shot: "screenshots/makyee.png"
+          logo: "./img/companies/makyee-logo.webp",
+          shot: "screenshots/makyee.webp"
         },
         {
           name: "SoftCropper",
@@ -549,8 +551,8 @@
           desc: "Python CLI to square photos with blurred borders. Pip package.",
           tag: "Python",
           link: "https://github.com/khaledalam/softcropper",
-          logo: "./logo.png",
-          shot: "https://raw.githubusercontent.com/khaledalam/softcropper/main/tests/softcropper.png"
+          logo: "./logo.webp",
+          shot: "screenshots/softcropper.webp"
         },
         {
           name: "OrdersAnalytics",
@@ -558,16 +560,16 @@
           desc: "Laravel + React analytics app for BigCommerce sellers. Trends, cohorts, performance.",
           tag: "PHP",
           link: "https://www.bigcommerce.com/apps/orders-analytics/",
-          logo: "./logo.png",
-          shot: "screenshots/orders-analytics.png"
+          logo: "./logo.webp",
+          shot: "screenshots/orders-analytics.webp"
         },
         {
           name: "Arla Food",
           type: "mobile",
           desc: "React Native app for inspections. Offline sync, barcode scan, admin portal integration.",
           tag: "React Native",
-          logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Arla_Foods_logo.svg/640px-Arla_Foods_logo.svg.png",
-          shot: "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/21768_Arla%20Foods%20Header%20Image?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1900&hei=550&qlt=100&fmt=png-alpha&fit=crop"
+          logo: "./img/companies/arla.webp",
+          shot: "screenshots/arla-shot.webp"
         },
         {
           name: "Sourcetoad Core",
@@ -575,16 +577,16 @@
           desc: "Cruise ship management SaaS (Yii2). Crew scheduling, passenger info, integrations.",
           tag: "PHP",
           link: "https://ondecksoftware.com/cruise-director-platform/",
-          logo: "https://neom.directory/media/com_jbusinessdirectory/pictures/companies/627/sourcetoad_logo_rgb_1672176463.png",
-          shot: "https://ondecksoftware.com/wp-content/uploads/2025/05/Cruise-Director-Shoreside-Shipboard-sync-e1748358948494-1290x1536.png"
+          logo: "./img/companies/sourcetoad.webp",
+          shot: "screenshots/sourcetoad-shot.webp"
         },
         {
           name: "Gibson",
           type: "mobile",
           desc: "Cross-platform medical mobile applications that help doctors, patients, ambulance drivers. using React Native, JS, GeoFire, Google APIs, Expo.",
           tag: "React Native",
-          logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Arla_Foods_logo.svg/640px-Arla_Foods_logo.svg.png",
-          shot: "https://github.com/khaledalam/Gibson/blob/master/Screenshots/emergency/request.jpg?raw=true"
+          logo: "./img/companies/arla.webp",
+          shot: "screenshots/gibson-shot.webp"
         },
         {
           name: "SpeakTextOnline",
@@ -592,24 +594,24 @@
           desc: "Laravel + React TTS SaaS. Multi-voice, doc upload, auto publish to TikTok and Instagram.",
           tag: "PHP",
           link: "https://speaktextonline.com",
-          logo: "./logo.png",
-          shot: "screenshots/speaktextonline.png"
+          logo: "./logo.webp",
+          shot: "screenshots/speaktextonline.webp"
         },
         {
           name: "Digital Twin",
           type: "web",
           desc: "React + Three.js 3D avatar with health insights and real-time chat and voice.",
           tag: "React",
-          logo: "./logo.png",
-          shot: "https://framerusercontent.com/images/NvpfWZO9xOmBeZ2frUBBZG9uXxw.png"
+          logo: "./logo.webp",
+          shot: "screenshots/digitaltwin-shot.webp"
         },
         {
           name: "Rugby Game",
           type: "web",
           desc: "Laravel-driven match scheduling, formations, live updates, stats.",
           tag: "PHP",
-          logo: "./logo.png",
-          shot: "screenshots/rugby.png"
+          logo: "./logo.webp",
+          shot: "screenshots/rugby.webp"
         },
         {
           name: "Redis",
@@ -617,8 +619,8 @@
           desc: "CLI real-time chat client example via Redis pub/sub PR.",
           tag: "C",
           link: "https://github.com/redis/redis/pull/12215",
-          logo: "./logo.png",
-          shot: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqyKcS7unXuTQ-bE-i2itRVl1mV-xEuaT5wg&s"
+          logo: "./logo.webp",
+          shot: "screenshots/redis-shot.webp"
         },
         {
           name: "Arrow Shooting",
@@ -626,8 +628,8 @@
           desc: "C++ OpenGL-based 2D training game with projectile physics.",
           tag: "C++",
           link: "https://github.com/khaledalam/arrow-shooting",
-          logo: "./logo.png",
-          shot: "https://github.com/khaledalam/arrow-shooting/raw/master/imgs/arrow.jpg"
+          logo: "./logo.webp",
+          shot: "screenshots/arrow-shot.webp"
         },
         {
           name: "PHP SDK/API for Google Bard",
@@ -635,8 +637,8 @@
           desc: "Unofficial PHP SDK for Bard. Sessions, formatting, parsing.",
           tag: "PHP",
           link: "https://github.com/khaledalam/bard-sdk-php",
-          logo: "./logo.png",
-          shot: "https://github.com/khaledalam/bard-sdk-php/raw/master/get_cookie_value.png"
+          logo: "./logo.webp",
+          shot: "screenshots/bard-shot.webp"
         }
       ];
 
@@ -803,232 +805,232 @@
     <div class="max-w-6xl p-4 mx-auto grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-6">
       <!-- Tool Cards -->
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/php" class="h-8 mb-2" alt="PHP" />
+        <img src="./img/tools/php.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="PHP" />
         <span class="text-sm">PHP</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/laravel" class="h-8 mb-2" alt="Laravel" />
+        <img src="./img/tools/laravel.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Laravel" />
         <span class="text-sm">Laravel</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/symfony" class="h-8 mb-2" alt="Symfony" />
+        <img src="./img/tools/symfony.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Symfony" />
         <span class="text-sm">Symfony</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/yii" class="h-8 mb-2" alt="Yii" />
+        <img src="./img/tools/yii.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Yii" />
         <span class="text-sm">Yii</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/wordpress" class="h-8 mb-2" alt="WordPress" />
+        <img src="./img/tools/wordpress.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="WordPress" />
         <span class="text-sm">WordPress</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/825/825535.png" class="h-8 mb-2" alt="Magento" />
+        <img src="./img/tools/magento.webp" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Magento" />
         <span class="text-sm">Magento</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/woocommerce" class="h-8 mb-2" alt="WooCommerce" />
+        <img src="./img/tools/woocommerce.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="WooCommerce" />
         <span class="text-sm">WooCommerce</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/wix" class="h-8 mb-2" alt="Wix" />
+        <img src="./img/tools/wix.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Wix" />
         <span class="text-sm">Wix</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/bigcommerce" class="h-8 mb-2" alt="BigCommerce" />
+        <img src="./img/tools/bigcommerce.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="BigCommerce" />
         <span class="text-sm">BigCommerce</span>
       </div>
 
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/javascript" class="h-8 mb-2" alt="JavaScript" />
+        <img src="./img/tools/javascript.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="JavaScript" />
         <span class="text-sm">JavaScript</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/typescript" class="h-8 mb-2" alt="TypeScript" />
+        <img src="./img/tools/typescript.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="TypeScript" />
         <span class="text-sm">TypeScript</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/react" class="h-8 mb-2" alt="React" />
+        <img src="./img/tools/react.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="React" />
         <span class="text-sm">React</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/vuedotjs" class="h-8 mb-2" alt="vue.js" />
+        <img src="./img/tools/vuedotjs.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="vue.js" />
         <span class="text-sm">Vue</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/threedotjs" class="h-8 mb-2" alt="Three.js" />
+        <img src="./img/tools/threedotjs.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Three.js" />
         <span class="text-sm">Three.js</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/tensorflow" class="h-8 mb-2" alt="Tensorflow" />
+        <img src="./img/tools/tensorflow.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Tensorflow" />
         <span class="text-sm">Tensorflow</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/react" class="h-8 mb-2" alt="React Native" />
+        <img src="./img/tools/react.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="React Native" />
         <span class="text-sm">React Native</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/node.js" class="h-8 mb-2" alt="Node.js" />
+        <img src="./img/tools/node.js.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Node.js" />
         <span class="text-sm">Node.js</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/nextdotjs" class="h-8 mb-2" alt="Next.js" />
+        <img src="./img/tools/nextdotjs.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Next.js" />
         <span class="text-sm">Next.js</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/docker" class="h-8 mb-2" alt="Docker" />
+        <img src="./img/tools/docker.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Docker" />
         <span class="text-sm">Docker</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/kubernetes" class="h-8 mb-2" alt="Kubernetes" />
+        <img src="./img/tools/kubernetes.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Kubernetes" />
         <span class="text-sm">Kubernetes</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/ansible" class="h-8 mb-2" alt="Ansible" />
+        <img src="./img/tools/ansible.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Ansible" />
         <span class="text-sm">Ansible</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/mysql" class="h-8 mb-2" alt="MySQL" />
+        <img src="./img/tools/mysql.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="MySQL" />
         <span class="text-sm">MySQL</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/mongodb" class="h-8 mb-2" alt="MongoDB" />
+        <img src="./img/tools/mongodb.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="MongoDB" />
         <span class="text-sm">MongoDB</span>
       </div>
 
 
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/postgresql" class="h-8 mb-2" alt="PostgreSQL" />
+        <img src="./img/tools/postgresql.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="PostgreSQL" />
         <span class="text-sm">PostgreSQL</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png"
-          class="h-8 mb-2" alt="AWS" />
+          src="./img/tools/aws.webp"
+          class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="AWS"  />
         <span class="text-sm">AWS</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/googlecloud" class="h-8 mb-2" alt="GCP" />
+        <img src="./img/tools/googlecloud.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="GCP" />
         <span class="text-sm">GCP</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/vercel" class="h-8 mb-2" alt="Vercel" />
+        <img src="./img/tools/vercel.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Vercel" />
         <span class="text-sm">Vercel</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/redux" class="h-8 mb-2" alt="Redux" />
+        <img src="./img/tools/redux.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Redux" />
         <span class="text-sm">Redux</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/digitalocean" class="h-8 mb-2" alt="DigitalOcean" />
+        <img src="./img/tools/digitalocean.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="DigitalOcean" />
         <span class="text-sm">DigitalOcean</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/firebase" class="h-8 mb-2" alt="Firebase" />
+        <img src="./img/tools/firebase.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Firebase" />
         <span class="text-sm">Firebase</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/tailwindcss" class="h-8 mb-2" alt="Tailwind CSS" />
+        <img src="./img/tools/tailwindcss.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Tailwind CSS" />
         <span class="text-sm">Tailwind CSS</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/sass" class="h-8 mb-2" alt="SCSS" />
+        <img src="./img/tools/sass.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="SCSS" />
         <span class="text-sm">SCSS</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/sass" class="h-8 mb-2" alt="Sass" />
+        <img src="./img/tools/sass.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Sass" />
         <span class="text-sm">Sass</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/github" class="h-8 mb-2" alt="GitHub" />
+        <img src="./img/tools/github.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="GitHub" />
         <span class="text-sm">GitHub</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/gitlab" class="h-8 mb-2" alt="GitLab" />
+        <img src="./img/tools/gitlab.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="GitLab" />
         <span class="text-sm">GitLab</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/grafana" class="h-8 mb-2" alt="Grafana" />
+        <img src="./img/tools/grafana.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Grafana" />
         <span class="text-sm">Grafana</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/googlemaps" class="h-8 mb-2" alt="Google Maps" />
+        <img src="./img/tools/googlemaps.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Google Maps" />
         <span class="text-sm">Google Maps</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/yaml" class="h-8 mb-2" alt="YAML" />
+        <img src="./img/tools/yaml.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="YAML" />
         <span class="text-sm">YAML</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/cmake" class="h-8 mb-2" alt="CMake" />
+        <img src="./img/tools/cmake.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="CMake" />
         <span class="text-sm">CMake</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/gnuemacs" class="h-8 mb-2" alt="Make" />
+        <img src="./img/tools/gnuemacs.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Make" />
         <span class="text-sm">Make</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/cloudflare" class="h-8 mb-2" alt="Cloudflare" />
+        <img src="./img/tools/cloudflare.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Cloudflare" />
         <span class="text-sm">Cloudflare</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/cpanel" class="h-8 mb-2" alt="cPanel" />
+        <img src="./img/tools/cpanel.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="cPanel" />
         <span class="text-sm">cPanel</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/jest" class="h-8 mb-2" alt="Jest" />
+        <img src="./img/tools/jest.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Jest" />
         <span class="text-sm">Jest</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/zoho" class="h-8 mb-2" alt="Zoho" />
+        <img src="./img/tools/zoho.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Zoho" />
         <span class="text-sm">Zoho</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/yarn" class="h-8 mb-2" alt="Yarn" />
+        <img src="./img/tools/yarn.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Yarn" />
         <span class="text-sm">Yarn</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/xampp" class="h-8 mb-2" alt="XAMPP" />
+        <img src="./img/tools/xampp.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="XAMPP" />
         <span class="text-sm">XAMPP</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/xcode" class="h-8 mb-2" alt="Xcode" />
+        <img src="./img/tools/xcode.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Xcode" />
         <span class="text-sm">Xcode</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/swagger" class="h-8 mb-2" alt="Swagger" />
+        <img src="./img/tools/swagger.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Swagger" />
         <span class="text-sm">Swagger</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/strapi" class="h-8 mb-2" alt="Strapi" />
+        <img src="./img/tools/strapi.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Strapi" />
         <span class="text-sm">Strapi</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/stripe" class="h-8 mb-2" alt="Stripe" />
+        <img src="./img/tools/stripe.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Stripe" />
         <span class="text-sm">Stripe</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/paypal" class="h-8 mb-2" alt="PayPal" />
+        <img src="./img/tools/paypal.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="PayPal" />
         <span class="text-sm">PayPal</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/langchain" class="h-8 mb-2" alt="LangChain" />
+        <img src="./img/tools/langchain.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="LangChain" />
         <span class="text-sm">LangChain</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/opensearch" class="h-8 mb-2" alt="OpenSearch" />
+        <img src="./img/tools/opensearch.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="OpenSearch" />
         <span class="text-sm">OpenSearch</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/ethereum" class="h-8 mb-2" alt="Ethereum" />
+        <img src="./img/tools/ethereum.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Ethereum" />
         <span class="text-sm">Ethereum</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/solana" class="h-8 mb-2" alt="Solana" />
+        <img src="./img/tools/solana.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Solana" />
         <span class="text-sm">Solana</span>
       </div>
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="https://cdn.simpleicons.org/solidity" class="h-8 mb-2" alt="Solidity" />
+        <img src="./img/tools/solidity.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Solidity" />
         <span class="text-sm">Solidity</span>
       </div>
 
@@ -1059,30 +1061,32 @@
     fetchRSS();
   </script>
 
+  </main>
+
   <!-- Footer -->
   <footer class="text-center py-6 border-t dark:border-gray-700">
     <div class="flex items-center justify-center gap-4 mb-3 flex-wrap" style="flex-direction: column;">
       <div class="flex items-center justify-center gap-4">
         <a href="https://github.com/khaledalam" target="_blank" title="GitHub">
-          <img src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-1-logo-black-and-white.png"
-            class="h-6 bg-white rounded-xl" />
+          <img src="./img/social/github.webp"
+            class="h-6 bg-white rounded-xl" alt="GitHub" width="24" height="24" loading="lazy" />
         </a>
         <a href="https://linkedin.com/in/khaledalam" target="_blank" title="LinkedIn">
           <img
-            src="https://cdn3.iconfinder.com/data/icons/2018-social-media-black-and-white-logos/1000/2018_social_media_popular_app_logo_linkedin-512.png"
-            class="h-6 bg-gray" />
+            src="./img/social/linkedin.webp"
+            class="h-6 bg-gray" alt="LinkedIn" width="24" height="24" loading="lazy" />
         </a>
         <a href="https://twitter.com/KhaledAlamXYZ" target="_blank" title="Twitter">
-          <img src="https://cdn.simpleicons.org/x" class="h-6 bg-white rounded-xl p-0.5" />
+          <img src="./img/tools/x.svg" class="h-6 bg-white rounded-xl p-0.5" alt="X (Twitter)" width="24" height="24" loading="lazy" />
         </a>
         <a href="https://www.youtube.com/NinjoCoding" target="_blank" title="YouTube">
-          <img src="https://cdn.simpleicons.org/youtube" class="h-6" />
+          <img src="./img/tools/youtube.svg" class="h-6" alt="YouTube" width="24" height="24" loading="lazy" />
         </a>
         <a href="https://blog.khaledalam.net" title="Blog">
-          <img src="https://www.freeiconspng.com/uploads/blogger-logo-icon-png-22.png" class="h-6 bg-gray" />
+          <img src="./img/social/blogger.webp" class="h-6 bg-gray" alt="Blog" width="24" height="24" loading="lazy" />
         </a>
         <a href="https://stats.uptimerobot.com/QLORrQ7Nsm" target="_blank" title="Uptime Status">
-          <img src="https://uptimerobot.com/favicon.ico" class="h-6" />
+          <img src="./img/social/uptimerobot.webp" class="h-6" alt="Uptime Status" width="24" height="24" loading="lazy" />
         </a>
       </div>
       <div class="flex items-center justify-center gap-4">
@@ -1114,15 +1118,17 @@
 
   <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
+    // Defer Tawk.to loading until after page is interactive
+    function loadTawk() {
       var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
       s1.async = true;
       s1.src = 'https://embed.tawk.to/6423c59431ebfa0fe7f542fd/1gslrnke5';
       s1.charset = 'UTF-8';
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
-
-    })();
+    }
+    if (document.readyState === 'complete') { loadTawk(); }
+    else { window.addEventListener('load', loadTawk); }
 
 
     (function () {
