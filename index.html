@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Khaled Alam — Ex-CTO & Full-Stack Engineer</title>
+  <title>Khaled Alam — Software Engineer</title>
   <link rel="icon" href="./logo.png" />
-  <meta name="description" content="Ex-CTO & Full-Stack Engineer with 10+ years shipping production systems across SaaS, PropTech, and AI-enabled platforms. Open-source contributor and system architect." />
+  <meta name="description" content="Software Engineer with 10+ years shipping production systems. Ex-CTO & Founder. Language Engine Contributor. Open-source maintainer." />
   <meta name="keywords" content="Khaled Alam, Software Engineer, Full-Stack Developer, CTO, PHP, React, Laravel, Symfony, Dubai, UAE" />
   <meta name="author" content="Khaled Alam" />
 
@@ -18,15 +18,15 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://khaledalam.net/" />
-  <meta property="og:title" content="Khaled Alam — Ex-CTO & Full-Stack Engineer" />
-  <meta property="og:description" content="Ex-CTO & Full-Stack Engineer with 10+ years shipping production systems across SaaS, PropTech, and AI-enabled platforms." />
+  <meta property="og:title" content="Khaled Alam — Software Engineer" />
+  <meta property="og:description" content="Software Engineer with 10+ years shipping production systems. Ex-CTO & Founder. Language Engine Contributor." />
   <meta property="og:image" content="https://khaledalam.net/DP_Khaled.jpg" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@KhaledAlamXYZ" />
-  <meta name="twitter:title" content="Khaled Alam — Ex-CTO & Full-Stack Engineer" />
-  <meta name="twitter:description" content="Ex-CTO & Full-Stack Engineer with 10+ years shipping production systems across SaaS, PropTech, and AI-enabled platforms." />
+  <meta name="twitter:title" content="Khaled Alam — Software Engineer" />
+  <meta name="twitter:description" content="Software Engineer with 10+ years shipping production systems. Ex-CTO & Founder. Language Engine Contributor." />
   <meta name="twitter:image" content="https://khaledalam.net/DP_Khaled.jpg" />
 
   <!-- Canonical URL -->
@@ -41,7 +41,7 @@
     "alternateName": "خالد علام",
     "url": "https://khaledalam.net",
     "image": "https://khaledalam.net/DP_Khaled.jpg",
-    "jobTitle": "Full-Stack Software Engineer",
+    "jobTitle": "Software Engineer",
     "worksFor": {
       "@type": "Organization",
       "name": "Self-employed"
@@ -85,7 +85,6 @@
       html {
         scroll-behavior: auto;
       }
-
     }
 
     html {
@@ -93,32 +92,14 @@
     }
 
     body {
-      font-family: monospace;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      letter-spacing: -0.01em;
     }
 
     .filter-btn.active {
       background-color: #3b83f65c;
       color: white;
       border-color: #3b82f6;
-    }
-
-    .arrow-down {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%,
-      100% {
-        transform: translate(-50%, 0);
-      }
-
-      50% {
-        transform: translate(-50%, 10px);
-      }
     }
 
     /* Scroll animations */
@@ -140,6 +121,26 @@
         transition: none;
       }
     }
+
+    /* Subtle gradient accent */
+    .accent-line {
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      border-radius: 2px;
+    }
+
+    /* Section headings */
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+    .dark .section-title {
+      color: #9ca3af;
+    }
   </style>
   <script>
     if (localStorage.getItem("theme") === "light") {
@@ -154,901 +155,610 @@
     }
   </script>
 </head>
- 
-<body class="bg-white text-black dark:bg-black dark:text-white font-sans">
+
+<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100">
   <a href="#hero" class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:text-black">Skip to content</a>
+
   <!-- Navbar -->
-  <header
-    class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur border-b border-gray-200 dark:border-gray-800">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-      <a href="/" class="flex items-center space-x-2 text-lg font-bold">
-        <img src="./logo.webp" alt="Logo" class="w-6 h-6" width="24" height="24" />
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800/50">
+    <nav class="max-w-4xl mx-auto px-6 flex justify-between items-center h-14">
+      <a href="/" class="flex items-center gap-2 text-base font-semibold tracking-tight">
+        <img src="./logo.webp" alt="Logo" class="w-5 h-5" width="20" height="20" />
         <span>Khaled Alam</span>
       </a>
-      <div class="space-x-4 hidden md:flex">
-        <a href="#projects" class="text-sm hover:underline">Projects</a>
-        <a href="#companies" class="text-sm hover:underline">Companies</a>
-        <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" class="text-sm hover:underline"
-          target="_blank" rel="noopener">⤴Resume</a>
-        <a href="https://blog.khaledalam.net" target="_blank" rel="noopener" class="text-sm hover:underline">⤴Blog</a>
-        <!-- Toggle -->
-        <div>
-          <button onclick="toggleTheme()" aria-label="Toggle dark mode" class="px-2 py-0 border rounded text-sm dark:border-white border-black">
-            👀 Mode</button>
-        </div>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#projects" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">Projects</a>
+        <a href="#companies" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">Experience</a>
+        <a href="https://blog.khaledalam.net" target="_blank" rel="noopener" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">Blog</a>
+        <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" target="_blank" rel="noopener"
+          class="text-sm px-3 py-1.5 rounded-md bg-gray-900 text-white dark:bg-white dark:text-gray-900 font-medium hover:opacity-90 transition">Resume</a>
+        <button onclick="toggleTheme()" aria-label="Toggle dark mode" class="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646Z" /></svg>
+        </button>
       </div>
-      <button class="md:hidden" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" aria-label="Open menu" aria-expanded="false">☰</button>
+      <button class="md:hidden text-gray-600 dark:text-gray-400" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" aria-label="Open menu" aria-expanded="false">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
     </nav>
-    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
-      <a href="#projects" class="block py-2 text-sm">Projects</a>
-      <a href="#tools" class="block py-2 text-sm">Tools</a>
-      <a href="#companies" class="block py-2 text-sm">Companies</a>
-      <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" target="_blank" rel="noopener" class="block py-2 text-sm">⤴ Resume</a>
-      <a href="https://blog.khaledalam.net" target="_blank" rel="noopener" class="block py-2 text-sm">⤴ Blog</a>
-      <!-- Toggle -->
-      <div class="py-2">
-        <button onclick="toggleTheme()" aria-label="Toggle dark mode" class="px-2 py-1 border rounded text-sm dark:border-white border-black">
-          👀 Toggle Mode</button>
-      </div>
+    <div id="mobileMenu" class="md:hidden hidden px-6 pb-4 space-y-3">
+      <a href="#projects" class="block text-sm text-gray-600 dark:text-gray-400">Projects</a>
+      <a href="#companies" class="block text-sm text-gray-600 dark:text-gray-400">Experience</a>
+      <a href="https://blog.khaledalam.net" target="_blank" rel="noopener" class="block text-sm text-gray-600 dark:text-gray-400">Blog</a>
+      <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" target="_blank" rel="noopener" class="block text-sm text-gray-600 dark:text-gray-400">Resume</a>
+      <button onclick="toggleTheme()" aria-label="Toggle dark mode" class="text-sm text-gray-500 dark:text-gray-400">Toggle Theme</button>
     </div>
   </header>
 
   <main>
-  <section id="hero"
-    class="flex items-center pt-20 min-h-screen flex flex-col justify-center px-4 md:px-20 dark:bg-black bg-white">
 
-    <div class="flex flex-col my-4 items-start max-w-6xl w-full">
-      <div class="flex-1">
-        <div class="flex items-center gap-4 mb-4">
-          <img src="./DP_Khaled.webp" alt="Khaled Alam" width="80" height="80" fetchpriority="high"
-            class="w-20 h-20 object-cover rounded-full border-2 border-white dark:border-gray-800" />
-          <h1 class="text-3xl md:text-4xl font-bold">Hey, I am Khaled</h1>
-        </div>
-        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl">
-          Ex-CTO & Full-Stack Engineer with 10+ years shipping production systems across SaaS, PropTech, and AI-enabled platforms.
-          Led teams end-to-end and rebuilt legacy backends into scalable modular architectures.
-        </p>
-        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-          Language Engine Contributor • Open Source Maintainer • System Architect
-        </p>
-
-        <div class="flex gap-3 mt-6">
-          <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" target="_blank" rel="noopener"
-            class="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-black rounded-lg text-sm font-medium hover:bg-gray-700 dark:hover:bg-gray-200 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            Download Resume
-          </a>
-          <a href="mailto:khaledalam.net@gmail.com"
-            class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            Contact Me
-          </a>
-        </div>
-
-        <hr class="relative w-[200px] my-[20px] border-gray-500" />
-
-        <ul class="text-sm text-gray-700 dark:text-gray-300">
-          <li class="my-3">⏳ Master's Degree in Financial Engineering — Washington, D.C., USA 🇺🇸</li>
-          <li class="my-3">🎓 Bachelor's Degree in Computer Science — Mansoura, Egypt 🇪🇬</li>
-          <li class="my-3">📍 Based in Dubai, UAE 🇦🇪</li>
-        </ul>
-
-      </div>
-      <hr class="relative w-[200px] my-[20px] border-gray-500" />
-    </div>
-
-    <div class="flex flex-col md:flex-row items-start gap-10 max-w-6xl w-full">
-
-      <h2 class="text-3xl font-bold">Highlights</h2>
-      <ul class="space-y-3 leading-relaxed">
-        <li>
-          ➤ Successfully solved IBM Research's
-          <a href="https://research.ibm.com/haifa/ponderthis/challenges/October2025.html" target="_blank" rel="noopener"
-            class="underline" title="IBM Research - Ponder This, October 2025">
-            "Ponder This" Challenge (October 2025)</a>, and my name is listed among the official solvers.
-        </li>
-        <li>
-          ➤ Open-source contributor with work spanning multiple levels:
-          <ul class="ml-6 mt-2 space-y-1 text-sm text-gray-600 dark:text-gray-400">
-            <li>• <strong>Language Engine / Compiler</strong> — contributions to core compilation behavior (Zend Engine level)</li>
-            <li>• <strong>Core Runtime / Standard Library</strong> — developer-facing runtime API improvements (Reflection-level)</li>
-            <li>• <strong>Ecosystem Tooling</strong> — contributions to widely used tools like <strong>phpMyAdmin</strong>, <strong>Symfony</strong>, <strong>AWS SDK for PHP</strong></li>
-          </ul>
-          <p class="ml-6 mt-3 text-sm text-gray-600 dark:text-gray-400 font-semibold">Selected contributions:</p>
-          <ul class="ml-6 mt-1 space-y-1 text-sm text-gray-600 dark:text-gray-400">
-            <li>• (php-src) <a href="https://github.com/php/php-src/pull/20902" target="_blank" rel="noopener" class="underline font-semibold">#20902</a> (merged): Added ReflectionConstant::inNamespace().</li>
-            <li>• (php-src) <a href="https://github.com/php/php-src/pull/20983" target="_blank" rel="noopener" class="underline font-semibold">#20983</a> (merged): Removed unreachable code after zend_error_noreturn()</li>
-            <li>• (php-src) <a href="https://github.com/php/php-src/pull/21085" target="_blank" rel="noopener" class="underline font-semibold">#21085</a> (merged): Cleaned duplicate #include statements across Zend/main/SAPI/ext.</li>
-            <li>• (phpMyAdmin) <a href="https://github.com/phpmyadmin/phpmyadmin/pull/19564" target="_blank" rel="noopener" class="underline font-semibold">#19564</a> (merged): Changed the table comment field to a textarea.</li>
-            <li>• (redis) <a href="https://github.com/redis/redis/pull/12215" target="_blank" rel="noopener" class="underline font-semibold">#12215</a> (open): Proposed richer redis-cli GET hints by showing suggested keys' values.</li>
-            <li>• (mysql-server) <a href="https://github.com/mysql/mysql-server/pull/644" target="_blank" rel="noopener" class="underline font-semibold">#644</a> (via <a href="https://oca.opensource.oracle.com" target="_blank" rel="noopener" class="underline">OCA</a>): Fix for incorrect results in BETWEEN … AND NULL with mixed temporal types. (<a href="https://bugs.mysql.com/bug.php?id=119727" target="_blank" rel="noopener" class="underline">Bug #119727</a>)</li>
-          </ul>
-        </li>
-        <li>
-          ➤ Created <a href="https://github.com/khaledalam/worktools" target="_blank" rel="noopener" class="underline"><strong>WorkTools</strong></a> —
-          a developer productivity toolkit for JIRA, GitHub, Slack, and more. Available as browser extensions (Chrome/Firefox) and a native macOS app via Homebrew.
-        </li>
-        <li>
-          ➤ Authored <a href="https://codeforces.com/blog/entry/66444" target="_blank" rel="noopener" class="underline">"Power Of Randomization"</a> (2019) —
-          a Codeforces blog post sharing my solution approach using randomization techniques for Google Code Jam problems, with engagement from top competitive programmers.
-        </li>
-        <li>
-          ➤ Built and operated my own UAE-based LLC —
-          <a href="https://www.linkedin.com/company/canvamagnet" class="underline"
-            title="Fridge Photo Magnets Dubai UAE" target="_blank" rel="noopener"><strong>CanvaMagnet</strong></a>,
-          an e-commerce brand listed on Amazon UAE with end-to-end execution: product development, payment integration (Tabby, Tamara), and brand partnerships including Gillette Arabia.
-        </li>
-      </ul>
-    </div>
-
-
-    <!-- Recent Blog Posts -->
-    <section id="blog" class="flex my-10 flex-col md:flex-row items-start gap-10 max-w-6xl w-full ">
-      <h2 class="text-3xl font-bold">Recent Posts</h2>
-      <ul id="rssFeedList" class="space-y-3 leading-relaxed"></ul>
-    </section>
-
-    <!-- Companies Section -->
-    <section id="companies" class="py-12 text-center">
-      <h2 class="sm:text-3xl text-2xl font-bold mb-10 py-4 text-left">Some Companies I've Worked With</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 px-6">
-        <div class="flex flex-col items-center">
-          <img src="./img/companies/amazon-aws.webp" class="h-12 mb-2" alt="Amazon AWS" width="63" height="48" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">Amazon AWS</p>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <img src="./img/companies/stc.webp" class="h-12 mb-2" alt="STC" width="85" height="48" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">STC</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="./img/companies/victorias-secret.webp"
-            alt="Victoria's Secret" class="h-10 mb-2" width="94" height="40" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">Victoria's Secret</p>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <img src="./img/companies/bitfunded.webp" class="h-10 w-full object-contain mb-2"
-            alt="BitFunded" width="80" height="20" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">BitFunded</p>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <img src="./img/companies/coffeeplanet.webp" class="h-10 mb-2"
-            alt="CoffeePlanet" width="40" height="40" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">CoffeePlanet</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="./img/companies/misk.webp"
-            class="h-10 mb-2" alt="Misk" width="70" height="40" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">MISK</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="./img/companies/custommarine.webp" class="h-10 mb-2" alt="CustomMarine" width="40" height="40" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">CustomMarine</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="./img/companies/cohere.webp" class="h-10 mb-2"
-            alt="Cohere" width="71" height="40" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">Cohere</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="./img/companies/mintme.webp" class="h-10 mb-2" alt="MintMe" width="40" height="40" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">MintMe Crypto Exchange</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img
-            src="./img/companies/coinimp.webp"
-            class="h-10 bg-white rounded mb-2" alt="CoinIMP" width="40" height="40" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">CoinIMP Miner</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img
-            src="./img/companies/sourcetoad.webp"
-            class="h-10 mb-2" alt="Sourcetoad" width="62" height="40" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">Sourcetoad</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img
-            src="./img/companies/makyee.webp"
-            class="h-10 mb-2" alt="Makyee" width="40" height="40" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">Makyee</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img
-            src="./img/companies/leadliaison.webp"
-            class="h-10 mb-2" alt="LeadLiaison" width="40" height="40" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">LeadLiaison</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img
-            src="./img/companies/prepaire.webp"
-            class="h-10 mb-2" alt="Prepaire Labs" width="40" height="40" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">Prepaire Labs</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img
-            src="./img/companies/arla.webp"
-            class="h-10 mb-2" alt="Arla Foods" width="59" height="40" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">Arla Foods</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="./img/companies/9h-digital.webp"
-            class="h-10 mb-2" alt="9H Digital" width="40" height="40" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">9H Digital</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="./img/companies/amplify.webp"
-            class="h-10 mb-2" alt="Amplify Marketing Agency" width="133" height="40" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">Amplify Marketing Agency</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <img src="./img/companies/fosterclark.webp" class="h-10 w-full object-contain mb-2"
-            alt="Foster Clark" width="80" height="15" loading="lazy" decoding="async" />
-          <p class="text-sm text-gray-600 dark:text-gray-400">Foster Clark</p>
+  <!-- Hero -->
+  <section id="hero" class="min-h-screen flex items-center justify-center px-6">
+    <div class="max-w-2xl w-full pt-20 pb-16">
+      <!-- Photo + Name -->
+      <div class="flex items-center gap-5 mb-8">
+        <img src="./DP_Khaled.webp" alt="Khaled Alam" width="72" height="72" fetchpriority="high"
+          class="w-[72px] h-[72px] rounded-full object-cover ring-2 ring-gray-200 dark:ring-gray-700" />
+        <div>
+          <h1 class="text-2xl md:text-3xl font-bold tracking-tight">Khaled Alam</h1>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mt-0.5">Dubai, UAE</p>
         </div>
       </div>
-    </section>
+
+      <!-- Headline -->
+      <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
+        Software Engineer &middot; Ex-CTO &amp; Founder &middot; 10+ Years Shipping Production Systems &middot; Language Engine Contributor
+      </p>
+
+      <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8">
+        M.S. Financial Engineering (Washington, D.C.) &middot; B.S. Computer Science (Egypt)
+      </p>
+
+      <!-- CTA -->
+      <div class="flex flex-wrap gap-3 mb-16">
+        <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" target="_blank" rel="noopener"
+          class="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg text-sm font-medium hover:opacity-90 transition">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+          Download Resume
+        </a>
+        <a href="mailto:khaledalam.net@gmail.com"
+          class="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800/50 transition">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+          Get in Touch
+        </a>
+        <a href="https://github.com/khaledalam" target="_blank" rel="noopener"
+          class="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800/50 transition">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+
+      <!-- Highlights -->
+      <div class="space-y-10">
+        <div>
+          <div class="accent-line mb-4"></div>
+          <h2 class="section-title mb-6">Notable Work</h2>
+          <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            <li class="flex gap-3">
+              <span class="text-gray-400 dark:text-gray-600 mt-0.5 shrink-0">&bull;</span>
+              <span>Contributor to <strong class="text-gray-900 dark:text-gray-200">PHP language engine</strong> (php-src) — merged PRs at the Zend Engine and Reflection API level
+                (<a href="https://github.com/php/php-src/pull/20902" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white">#20902</a>,
+                <a href="https://github.com/php/php-src/pull/20983" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white">#20983</a>,
+                <a href="https://github.com/php/php-src/pull/21085" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white">#21085</a>)</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gray-400 dark:text-gray-600 mt-0.5 shrink-0">&bull;</span>
+              <span>Open-source contributions to <strong class="text-gray-900 dark:text-gray-200">phpMyAdmin</strong>, <strong class="text-gray-900 dark:text-gray-200">Redis</strong>, <strong class="text-gray-900 dark:text-gray-200">MySQL Server</strong>, <strong class="text-gray-900 dark:text-gray-200">Symfony</strong>, and <strong class="text-gray-900 dark:text-gray-200">AWS SDK for PHP</strong></span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gray-400 dark:text-gray-600 mt-0.5 shrink-0">&bull;</span>
+              <span>Solved IBM Research's <a href="https://research.ibm.com/haifa/ponderthis/challenges/October2025.html" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white">"Ponder This" Challenge (Oct 2025)</a> — listed among official solvers</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gray-400 dark:text-gray-600 mt-0.5 shrink-0">&bull;</span>
+              <span>Built <a href="https://github.com/khaledalam/worktools" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white"><strong class="text-gray-900 dark:text-gray-200">WorkTools</strong></a> — developer productivity toolkit for JIRA, GitHub, and Slack (Chrome, Firefox, macOS)</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-gray-400 dark:text-gray-600 mt-0.5 shrink-0">&bull;</span>
+              <span>Founded <a href="https://www.linkedin.com/company/canvamagnet" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white"><strong class="text-gray-900 dark:text-gray-200">CanvaMagnet</strong></a> — UAE LLC on Amazon with payment integrations (Tabby, Tamara) and brand partnerships</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Recent Posts -->
+        <div id="blog">
+          <div class="accent-line mb-4"></div>
+          <h2 class="section-title mb-6">Recent Posts</h2>
+          <ul id="rssFeedList" class="space-y-3 text-sm"></ul>
+        </div>
+
+        <!-- Tech Stack -->
+        <div>
+          <div class="accent-line mb-4"></div>
+          <h2 class="section-title mb-6">Core Stack</h2>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">PHP</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Laravel</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Symfony</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">React</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">TypeScript</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Node.js</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Next.js</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">React Native</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">MySQL</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">PostgreSQL</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Docker</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">AWS</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Kubernetes</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Redis</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Tailwind CSS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Companies Section -->
+  <section id="companies" class="py-20 px-6 border-t border-gray-100 dark:border-gray-800/50">
+    <div class="max-w-4xl mx-auto">
+      <div class="accent-line mb-4"></div>
+      <h2 class="section-title mb-10">Companies I've Worked With</h2>
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8">
+        <div class="flex flex-col items-center gap-2">
+          <img src="./img/companies/amazon-aws.webp" class="h-10 object-contain" alt="Amazon AWS" width="63" height="48" loading="lazy" decoding="async" />
+          <p class="text-xs text-gray-500 dark:text-gray-500">Amazon AWS</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <img src="./img/companies/stc.webp" class="h-10 object-contain" alt="STC" width="85" height="48" loading="lazy" decoding="async" />
+          <p class="text-xs text-gray-500 dark:text-gray-500">STC</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <img src="./img/companies/victorias-secret.webp" class="h-8 object-contain" alt="Victoria's Secret" width="94" height="40" loading="lazy" decoding="async" />
+          <p class="text-xs text-gray-500 dark:text-gray-500">Victoria's Secret</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <img src="./img/companies/misk.webp" class="h-8 object-contain" alt="Misk" width="70" height="40" loading="lazy" decoding="async" />
+          <p class="text-xs text-gray-500 dark:text-gray-500">MISK</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <img src="./img/companies/cohere.webp" class="h-8 object-contain" alt="Cohere" width="71" height="40" loading="lazy" decoding="async" />
+          <p class="text-xs text-gray-500 dark:text-gray-500">Cohere</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <img src="./img/companies/bitfunded.webp" class="h-8 object-contain" alt="BitFunded" width="80" height="20" loading="lazy" decoding="async" />
+          <p class="text-xs text-gray-500 dark:text-gray-500">BitFunded</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <img src="./img/companies/coffeeplanet.webp" class="h-8 object-contain" alt="CoffeePlanet" width="40" height="40" loading="lazy" decoding="async" />
+          <p class="text-xs text-gray-500 dark:text-gray-500">CoffeePlanet</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <img src="./img/companies/sourcetoad.webp" class="h-8 object-contain" alt="Sourcetoad" width="62" height="40" loading="lazy" decoding="async" />
+          <p class="text-xs text-gray-500 dark:text-gray-500">Sourcetoad</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <img src="./img/companies/mintme.webp" class="h-8 object-contain" alt="MintMe" width="40" height="40" loading="lazy" decoding="async" />
+          <p class="text-xs text-gray-500 dark:text-gray-500">MintMe</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <img src="./img/companies/arla.webp" class="h-8 object-contain" alt="Arla Foods" width="59" height="40" loading="lazy" decoding="async" />
+          <p class="text-xs text-gray-500 dark:text-gray-500">Arla Foods</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <img src="./img/companies/makyee.webp" class="h-8 object-contain" alt="Makyee" width="40" height="40" loading="lazy" decoding="async" />
+          <p class="text-xs text-gray-500 dark:text-gray-500">Makyee</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <img src="./img/companies/prepaire.webp" class="h-8 object-contain" alt="Prepaire Labs" width="40" height="40" loading="lazy" decoding="async" />
+          <p class="text-xs text-gray-500 dark:text-gray-500">Prepaire Labs</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Filter + Projects -->
-  <section id="projects" class="py-12 px-4 max-w-7xl mx-auto">
-    <div class="flex items-end justify-between gap-4 flex-wrap">
-      <h2 class="text-3xl font-bold py-4">Projects I Worked On</h2>
-
-      <!-- Controls -->
-      <div class="flex items-center gap-2 w-full md:w-auto">
-        <div class="relative flex-1 md:flex-none">
-          <input id="search_input" type="text" placeholder="Search projects or tech"
-            class="w-full dark:bg-gray-800 md:w-72 rounded-lg border px-3 py-2 pl-9 outline-none focus:ring"
-            oninput="ApplyFilters()" />
-          <svg class="absolute left-2 top-2.5 h-5 w-5 text-gray-400" viewBox="0 0 24 24" fill="none">
-            <path d="M21 21l-4.3-4.3M17 10.5A6.5 6.5 0 1 1 4 10.5a6.5 6.5 0 0 1 13 0Z" stroke="currentColor"
-              stroke-width="2" />
-          </svg>
+  <section id="projects" class="py-20 px-6 border-t border-gray-100 dark:border-gray-800/50">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex items-end justify-between gap-4 flex-wrap mb-8">
+        <div>
+          <div class="accent-line mb-4"></div>
+          <h2 class="section-title">Projects</h2>
         </div>
 
-        <label for="sort_select" class="sr-only">Sort projects</label>
-        <select id="sort_select" class="rounded-lg border px-3 py-2 dark:bg-gray-800" onchange="ApplyFilters()">
-          <option value="name_asc">Sort: Name A→Z</option>
-          <option value="name_desc">Sort: Name Z→A</option>
-          <option value="type">Sort: Type</option>
-        </select>
+        <!-- Controls -->
+        <div class="flex items-center gap-2 w-full md:w-auto">
+          <div class="relative flex-1 md:flex-none">
+            <input id="search_input" type="text" placeholder="Search projects or tech"
+              class="w-full md:w-64 rounded-lg border border-gray-200 dark:border-gray-700 dark:bg-gray-800/50 px-3 py-2 pl-9 text-sm outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"
+              oninput="ApplyFilters()" />
+            <svg class="absolute left-2.5 top-2.5 h-4 w-4 text-gray-400" viewBox="0 0 24 24" fill="none">
+              <path d="M21 21l-4.3-4.3M17 10.5A6.5 6.5 0 1 1 4 10.5a6.5 6.5 0 0 1 13 0Z" stroke="currentColor" stroke-width="2" />
+            </svg>
+          </div>
+
+          <label for="sort_select" class="sr-only">Sort projects</label>
+          <select id="sort_select" class="rounded-lg border border-gray-200 dark:border-gray-700 px-3 py-2 text-sm dark:bg-gray-800/50" onchange="ApplyFilters()">
+            <option value="name_asc">A &rarr; Z</option>
+            <option value="name_desc">Z &rarr; A</option>
+            <option value="type">Type</option>
+          </select>
+        </div>
       </div>
-    </div>
 
-    <!-- Filter chips -->
-    <div class="mt-6 flex flex-wrap gap-2" id="filter_chips">
-      <button
-        class="filter-btn px-3 py-1 rounded-full border data-[active=true]:bg-gray-900 data-[active=true]:text-white"
-        data-type="all" onclick="FilterProjects('all', event)" data-active="true">All <span
-          class="ml-1 text-xs opacity-70" id="count_all"></span></button>
-      <button class="filter-btn px-3 py-1 rounded-full border" data-type="web"
-        onclick="FilterProjects('web', event)">Web <span class="ml-1 text-xs opacity-70" id="count_web"></span></button>
-      <button class="filter-btn px-3 py-1 rounded-full border" data-type="mobile"
-        onclick="FilterProjects('mobile', event)">Mobile <span class="ml-1 text-xs opacity-70"
-          id="count_mobile"></span></button>
-      <button class="filter-btn px-3 py-1 rounded-full border" data-type="tools"
-        onclick="FilterProjects('tools', event)">Tools <span class="ml-1 text-xs opacity-70"
-          id="count_tools"></span></button>
-      <button class="filter-btn px-3 py-1 rounded-full border" data-type="games"
-        onclick="FilterProjects('games', event)">Games <span class="ml-1 text-xs opacity-70"
-          id="count_games"></span></button>
-    </div>
+      <!-- Filter chips -->
+      <div class="flex flex-wrap gap-2 mb-8" id="filter_chips">
+        <button class="filter-btn px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-sm data-[active=true]:bg-gray-900 data-[active=true]:text-white dark:data-[active=true]:bg-white dark:data-[active=true]:text-gray-900"
+          data-type="all" onclick="FilterProjects('all', event)" data-active="true">All <span class="ml-1 text-xs opacity-60" id="count_all"></span></button>
+        <button class="filter-btn px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-sm" data-type="web"
+          onclick="FilterProjects('web', event)">Web <span class="ml-1 text-xs opacity-60" id="count_web"></span></button>
+        <button class="filter-btn px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-sm" data-type="mobile"
+          onclick="FilterProjects('mobile', event)">Mobile <span class="ml-1 text-xs opacity-60" id="count_mobile"></span></button>
+        <button class="filter-btn px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-sm" data-type="tools"
+          onclick="FilterProjects('tools', event)">Tools <span class="ml-1 text-xs opacity-60" id="count_tools"></span></button>
+        <button class="filter-btn px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-sm" data-type="games"
+          onclick="FilterProjects('games', event)">Games <span class="ml-1 text-xs opacity-60" id="count_games"></span></button>
+      </div>
 
-    <!-- Grid -->
-    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6" id="project_grid"></div>
+      <!-- Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5" id="project_grid"></div>
 
-    <!-- Lightbox -->
-    <div id="shot_lightbox" role="dialog" aria-label="Project screenshot" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4"
-      onclick="CloseLightbox(event)">
-      <figure class="max-w-5xl w-full">
-        <img id="lightbox_img" src="" alt="Project screenshot" class="w-full rounded-lg shadow-2xl" />
-        <figcaption id="lightbox_caption" class="mt-3 text-sm text-gray-200"></figcaption>
-      </figure>
-      <button class="absolute top-4 right-4 rounded-full bg-white/10 px-3 py-1 text-white backdrop-blur"
-        onclick="CloseLightbox(event)">Close</button>
-    </div>
+      <!-- Lightbox -->
+      <div id="shot_lightbox" role="dialog" aria-label="Project screenshot" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4"
+        onclick="CloseLightbox(event)">
+        <figure class="max-w-5xl w-full">
+          <img id="lightbox_img" src="" alt="Project screenshot" class="w-full rounded-lg shadow-2xl" />
+          <figcaption id="lightbox_caption" class="mt-3 text-sm text-gray-200"></figcaption>
+        </figure>
+        <button class="absolute top-4 right-4 rounded-full bg-white/10 px-3 py-1 text-white backdrop-blur"
+          onclick="CloseLightbox(event)">Close</button>
+      </div>
 
-    <script>
-      // Data
-      const project_list = [
-        {
-          name: "WorkTools",
-          type: "tools",
-          desc: "Developer productivity toolkit for JIRA, GitHub, and Slack. Quick ticket access via keyboard shortcuts, RTL support for Hebrew/Arabic, GitHub PR links in JIRA, and searchable ticket history. Available as Chrome/Firefox extensions and macOS app.",
-          tag: "TypeScript/Electron",
-          link: "https://github.com/khaledalam/worktools",
-          logo: "./logo.webp",
-          shot: "screenshots/worktools.webp"
-        },
-        {
-          name: "BitFunded.com",
-          type: "web",
-          desc: "Innovative UAE-based trading and investment platform. Worked on backend integrations, WordPress performance optimization, and secure API connectivity for affiliate tracking and Zoho CRM.",
-          tag: "PHP/WordPress",
-          link: "https://bitfunded.com",
-          logo: "./img/companies/bitfunded.webp",
-          shot: "screenshots/bitfunded.webp"
-        },
-        {
-          name: "CustomMarine.ae",
-          type: "web",
-          desc: "Premium UAE-based marine services and products platform. Custom PHP features, UI/UX polish, and performance work.",
-          tag: "HTML/CSS",
-          link: "https://www.custommarine.ae",
-          logo: "./img/companies/custommarine-logo.webp",
-          shot: "screenshots/custommarine.webp"
-        },
-        {
-          name: "CBA.pl",
-          type: "web",
-          desc: "High-traffic Polish free hosting platform. Backend improvements and MySQL performance tuning.",
-          tag: "PHP",
-          link: "https://www.cba.pl",
-          logo: "./img/companies/cba.webp",
-          shot: "screenshots/cba.pl.webp"
-        },
-        {
-          name: "Khardl",
-          type: "web",
-          desc: "Restaurant management system with multi-tenant, roles, branches, TAP, SMS, push, delivery, webhooks, APIs.",
-          tag: "PHP/React.js",
-          link: "https://github.com/khaledalam/khardl",
-          logo: "./logo.webp",
-          shot: "screenshots/khardl.webp"
-        },
-        {
-          name: "MintMe",
-          type: "web",
-          desc: "Decentralized token exchange with Symfony + Vue. Real-time book, wallets, trading UI, charts.",
-          tag: "PHP",
-          link: "https://mintme.com",
-          logo: "./img/companies/mintme-avatar.webp",
-          shot: "screenshots/mintme.webp"
-        },
-        {
-          name: "CoinIMP",
-          type: "web",
-          desc: "Browser mining platform with Symfony backend, WebAssembly miner, analytics and campaigns.",
-          tag: "PHP",
-          link: "https://coinimp.com",
-          logo: "./img/companies/coinimp.webp",
-          shot: "screenshots/coinimp.webp"
-        },
-        {
-          name: "CoffeePlanet",
-          type: "web",
-          desc: "Shopify Liquid build for Coffee Planet UAE. Product pages, subscriptions, GTM integration.",
-          tag: "Liquid",
-          link: "https://coffeeplanet.com/",
-          logo: "./img/companies/coffeeplanet.webp",
-          shot: "screenshots/coffeeplanet.webp"
-        },
-        {
-          name: "Misk Events",
-          type: "web",
-          desc: "WordPress solution for event management, sessions, localization, accessibility and performance.",
-          tag: "PHP",
-          link: "https://hub.misk.org.sa/events",
-          logo: "./img/companies/misk.webp",
-          shot: "screenshots/misk.webp"
-        },
-        {
-          name: "Prima International",
-          type: "web",
-          desc: "Next.js site with CMS, SEO and light animations. Hosted on Vercel with instant deploys.",
-          tag: "TypeScript",
-          link: "https://www.primainternational.com/",
-          logo: "./img/companies/prima.webp",
-          shot: "screenshots/prima.webp"
-        },
-        {
-          name: "Makyee",
-          type: ["web", "mobile"],
-          desc: "PropTech platform with Yii 1.1 backend and React Native apps. Listings, CRM, maps, sharing, multilingual.",
-          tag: "PHP",
-          link: "https://makyee.com",
-          mobileapp: "https://apps.apple.com/ae/app/makyee/id6504030415",
-          logo: "./img/companies/makyee-logo.webp",
-          shot: "screenshots/makyee.webp"
-        },
-        {
-          name: "SoftCropper",
-          type: "tools",
-          desc: "Python CLI to square photos with blurred borders. Pip package.",
-          tag: "Python",
-          link: "https://github.com/khaledalam/softcropper",
-          logo: "./logo.webp",
-          shot: "screenshots/softcropper.webp"
-        },
-        {
-          name: "OrdersAnalytics",
-          type: "web",
-          desc: "Laravel + React analytics app for BigCommerce sellers. Trends, cohorts, performance.",
-          tag: "PHP",
-          link: "https://www.bigcommerce.com/apps/orders-analytics/",
-          logo: "./logo.webp",
-          shot: "screenshots/orders-analytics.webp"
-        },
-        {
-          name: "Arla Food",
-          type: "mobile",
-          desc: "React Native app for inspections. Offline sync, barcode scan, admin portal integration.",
-          tag: "React Native",
-          logo: "./img/companies/arla.webp",
-          shot: "screenshots/arla-shot.webp"
-        },
-        {
-          name: "Sourcetoad Core",
-          type: "web",
-          desc: "Cruise ship management SaaS (Yii2). Crew scheduling, passenger info, integrations.",
-          tag: "PHP",
-          link: "https://ondecksoftware.com/cruise-director-platform/",
-          logo: "./img/companies/sourcetoad.webp",
-          shot: "screenshots/sourcetoad-shot.webp"
-        },
-        {
-          name: "Gibson",
-          type: "mobile",
-          desc: "Cross-platform medical mobile applications that help doctors, patients, ambulance drivers. using React Native, JS, GeoFire, Google APIs, Expo.",
-          tag: "React Native",
-          logo: "./img/companies/arla.webp",
-          shot: "screenshots/gibson-shot.webp"
-        },
-        {
-          name: "SpeakTextOnline",
-          type: "web",
-          desc: "Laravel + React TTS SaaS. Multi-voice, doc upload, auto publish to TikTok and Instagram.",
-          tag: "PHP",
-          link: "https://speaktextonline.com",
-          logo: "./logo.webp",
-          shot: "screenshots/speaktextonline.webp"
-        },
-        {
-          name: "Digital Twin",
-          type: "web",
-          desc: "React + Three.js 3D avatar with health insights and real-time chat and voice.",
-          tag: "React",
-          logo: "./logo.webp",
-          shot: "screenshots/digitaltwin-shot.webp"
-        },
-        {
-          name: "Rugby Game",
-          type: "web",
-          desc: "Laravel-driven match scheduling, formations, live updates, stats.",
-          tag: "PHP",
-          logo: "./logo.webp",
-          shot: "screenshots/rugby.webp"
-        },
-        {
-          name: "Redis",
-          type: "tools",
-          desc: "CLI real-time chat client example via Redis pub/sub PR.",
-          tag: "C",
-          link: "https://github.com/redis/redis/pull/12215",
-          logo: "./logo.webp",
-          shot: "screenshots/redis-shot.webp"
-        },
-        {
-          name: "Arrow Shooting",
-          type: "games",
-          desc: "C++ OpenGL-based 2D training game with projectile physics.",
-          tag: "C++",
-          link: "https://github.com/khaledalam/arrow-shooting",
-          logo: "./logo.webp",
-          shot: "screenshots/arrow-shot.webp"
-        },
-        {
-          name: "PHP SDK/API for Google Bard",
-          type: "tools",
-          desc: "Unofficial PHP SDK for Bard. Sessions, formatting, parsing.",
-          tag: "PHP",
-          link: "https://github.com/khaledalam/bard-sdk-php",
-          logo: "./logo.webp",
-          shot: "screenshots/bard-shot.webp"
-        }
-      ];
+      <script>
+        // Data
+        const project_list = [
+          {
+            name: "WorkTools",
+            type: "tools",
+            desc: "Developer productivity toolkit for JIRA, GitHub, and Slack. Quick ticket access via keyboard shortcuts, RTL support for Hebrew/Arabic, GitHub PR links in JIRA, and searchable ticket history. Available as Chrome/Firefox extensions and macOS app.",
+            tag: "TypeScript/Electron",
+            link: "https://github.com/khaledalam/worktools",
+            logo: "./logo.webp",
+            shot: "screenshots/worktools.webp"
+          },
+          {
+            name: "BitFunded.com",
+            type: "web",
+            desc: "Innovative UAE-based trading and investment platform. Worked on backend integrations, WordPress performance optimization, and secure API connectivity for affiliate tracking and Zoho CRM.",
+            tag: "PHP/WordPress",
+            link: "https://bitfunded.com",
+            logo: "./img/companies/bitfunded.webp",
+            shot: "screenshots/bitfunded.webp"
+          },
+          {
+            name: "CustomMarine.ae",
+            type: "web",
+            desc: "Premium UAE-based marine services and products platform. Custom PHP features, UI/UX polish, and performance work.",
+            tag: "HTML/CSS",
+            link: "https://www.custommarine.ae",
+            logo: "./img/companies/custommarine-logo.webp",
+            shot: "screenshots/custommarine.webp"
+          },
+          {
+            name: "CBA.pl",
+            type: "web",
+            desc: "High-traffic Polish free hosting platform. Backend improvements and MySQL performance tuning.",
+            tag: "PHP",
+            link: "https://www.cba.pl",
+            logo: "./img/companies/cba.webp",
+            shot: "screenshots/cba.pl.webp"
+          },
+          {
+            name: "Khardl",
+            type: "web",
+            desc: "Restaurant management system with multi-tenant, roles, branches, TAP, SMS, push, delivery, webhooks, APIs.",
+            tag: "PHP/React.js",
+            link: "https://github.com/khaledalam/khardl",
+            logo: "./logo.webp",
+            shot: "screenshots/khardl.webp"
+          },
+          {
+            name: "MintMe",
+            type: "web",
+            desc: "Decentralized token exchange with Symfony + Vue. Real-time book, wallets, trading UI, charts.",
+            tag: "PHP",
+            link: "https://mintme.com",
+            logo: "./img/companies/mintme-avatar.webp",
+            shot: "screenshots/mintme.webp"
+          },
+          {
+            name: "CoinIMP",
+            type: "web",
+            desc: "Browser mining platform with Symfony backend, WebAssembly miner, analytics and campaigns.",
+            tag: "PHP",
+            link: "https://coinimp.com",
+            logo: "./img/companies/coinimp.webp",
+            shot: "screenshots/coinimp.webp"
+          },
+          {
+            name: "CoffeePlanet",
+            type: "web",
+            desc: "Shopify Liquid build for Coffee Planet UAE. Product pages, subscriptions, GTM integration.",
+            tag: "Liquid",
+            link: "https://coffeeplanet.com/",
+            logo: "./img/companies/coffeeplanet.webp",
+            shot: "screenshots/coffeeplanet.webp"
+          },
+          {
+            name: "Misk Events",
+            type: "web",
+            desc: "WordPress solution for event management, sessions, localization, accessibility and performance.",
+            tag: "PHP",
+            link: "https://hub.misk.org.sa/events",
+            logo: "./img/companies/misk.webp",
+            shot: "screenshots/misk.webp"
+          },
+          {
+            name: "Prima International",
+            type: "web",
+            desc: "Next.js site with CMS, SEO and light animations. Hosted on Vercel with instant deploys.",
+            tag: "TypeScript",
+            link: "https://www.primainternational.com/",
+            logo: "./img/companies/prima.webp",
+            shot: "screenshots/prima.webp"
+          },
+          {
+            name: "Makyee",
+            type: ["web", "mobile"],
+            desc: "PropTech platform with Yii 1.1 backend and React Native apps. Listings, CRM, maps, sharing, multilingual.",
+            tag: "PHP",
+            link: "https://makyee.com",
+            mobileapp: "https://apps.apple.com/ae/app/makyee/id6504030415",
+            logo: "./img/companies/makyee-logo.webp",
+            shot: "screenshots/makyee.webp"
+          },
+          {
+            name: "SoftCropper",
+            type: "tools",
+            desc: "Python CLI to square photos with blurred borders. Pip package.",
+            tag: "Python",
+            link: "https://github.com/khaledalam/softcropper",
+            logo: "./logo.webp",
+            shot: "screenshots/softcropper.webp"
+          },
+          {
+            name: "OrdersAnalytics",
+            type: "web",
+            desc: "Laravel + React analytics app for BigCommerce sellers. Trends, cohorts, performance.",
+            tag: "PHP",
+            link: "https://www.bigcommerce.com/apps/orders-analytics/",
+            logo: "./logo.webp",
+            shot: "screenshots/orders-analytics.webp"
+          },
+          {
+            name: "Arla Food",
+            type: "mobile",
+            desc: "React Native app for inspections. Offline sync, barcode scan, admin portal integration.",
+            tag: "React Native",
+            logo: "./img/companies/arla.webp",
+            shot: "screenshots/arla-shot.webp"
+          },
+          {
+            name: "Sourcetoad Core",
+            type: "web",
+            desc: "Cruise ship management SaaS (Yii2). Crew scheduling, passenger info, integrations.",
+            tag: "PHP",
+            link: "https://ondecksoftware.com/cruise-director-platform/",
+            logo: "./img/companies/sourcetoad.webp",
+            shot: "screenshots/sourcetoad-shot.webp"
+          },
+          {
+            name: "Gibson",
+            type: "mobile",
+            desc: "Cross-platform medical mobile applications that help doctors, patients, ambulance drivers. using React Native, JS, GeoFire, Google APIs, Expo.",
+            tag: "React Native",
+            logo: "./img/companies/arla.webp",
+            shot: "screenshots/gibson-shot.webp"
+          },
+          {
+            name: "SpeakTextOnline",
+            type: "web",
+            desc: "Laravel + React TTS SaaS. Multi-voice, doc upload, auto publish to TikTok and Instagram.",
+            tag: "PHP",
+            link: "https://speaktextonline.com",
+            logo: "./logo.webp",
+            shot: "screenshots/speaktextonline.webp"
+          },
+          {
+            name: "Digital Twin",
+            type: "web",
+            desc: "React + Three.js 3D avatar with health insights and real-time chat and voice.",
+            tag: "React",
+            logo: "./logo.webp",
+            shot: "screenshots/digitaltwin-shot.webp"
+          },
+          {
+            name: "Rugby Game",
+            type: "web",
+            desc: "Laravel-driven match scheduling, formations, live updates, stats.",
+            tag: "PHP",
+            logo: "./logo.webp",
+            shot: "screenshots/rugby.webp"
+          },
+          {
+            name: "Redis",
+            type: "tools",
+            desc: "CLI real-time chat client example via Redis pub/sub PR.",
+            tag: "C",
+            link: "https://github.com/redis/redis/pull/12215",
+            logo: "./logo.webp",
+            shot: "screenshots/redis-shot.webp"
+          },
+          {
+            name: "Arrow Shooting",
+            type: "games",
+            desc: "C++ OpenGL-based 2D training game with projectile physics.",
+            tag: "C++",
+            link: "https://github.com/khaledalam/arrow-shooting",
+            logo: "./logo.webp",
+            shot: "screenshots/arrow-shot.webp"
+          },
+          {
+            name: "PHP SDK/API for Google Bard",
+            type: "tools",
+            desc: "Unofficial PHP SDK for Bard. Sessions, formatting, parsing.",
+            tag: "PHP",
+            link: "https://github.com/khaledalam/bard-sdk-php",
+            logo: "./logo.webp",
+            shot: "screenshots/bard-shot.webp"
+          }
+        ];
 
-      // Render
-      document.addEventListener("DOMContentLoaded", () => {
-        RenderProjects(project_list);
-        UpdateCounts();
-      });
+        // Render
+        document.addEventListener("DOMContentLoaded", () => {
+          RenderProjects(project_list);
+          UpdateCounts();
+        });
 
-      function RenderProjects(list_input) {
-        const grid_el = document.getElementById("project_grid");
-        grid_el.innerHTML = "";
+        function RenderProjects(list_input) {
+          const grid_el = document.getElementById("project_grid");
+          grid_el.innerHTML = "";
 
-        list_input.forEach((p) => {
-          const types_arr = Array.isArray(p.type) ? p.type : [p.type];
-          const type_badge = types_arr.map(t => `<span class="text-[11px] px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 border">${t}</span>`).join(" ");
+          list_input.forEach((p) => {
+            const types_arr = Array.isArray(p.type) ? p.type : [p.type];
+            const type_badge = types_arr.map(t => `<span class="text-[11px] px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">${t}</span>`).join(" ");
 
-          // Card
-          const card_el = document.createElement("article");
-          card_el.className =
-            "project-card group rounded-2xl border overflow-hidden bg-white dark:bg-gray-900 dark:border-gray-800 shadow-sm hover:shadow-lg transition";
-          card_el.dataset.types = types_arr.join(",");
+            const card_el = document.createElement("article");
+            card_el.className =
+              "project-card group rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-900/50 hover:shadow-md transition-shadow";
+            card_el.dataset.types = types_arr.join(",");
 
-          // Screenshot area
-          const shot_html = p.shot
-            ? `
-            <button class="relative block w-full aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-gray-800"
-                    onclick="OpenLightbox('${encodeURI(p.shot)}', '${escapeHtml(p.name)}')" aria-label="Open screenshot">
-              <img src="${p.shot}" alt="${escapeHtml(p.name)} screenshot"
-                   class="h-full w-full object-cover transition group-hover:scale-[1.02]" loading="lazy" />
-              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"></div>
-            </button>
-          `
-            : `
-            <div class="flex items-center justify-center w-full aspect-[16/9] bg-gray-100 dark:bg-gray-800 text-xs text-gray-500">
-              No screenshot provided
+            const shot_html = p.shot
+              ? `
+              <button class="relative block w-full aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-gray-800"
+                      onclick="OpenLightbox('${encodeURI(p.shot)}', '${escapeHtml(p.name)}')" aria-label="Open screenshot">
+                <img src="${p.shot}" alt="${escapeHtml(p.name)} screenshot"
+                     class="h-full w-full object-cover transition group-hover:scale-[1.02]" loading="lazy" />
+              </button>
+            `
+              : `
+              <div class="flex items-center justify-center w-full aspect-[16/9] bg-gray-50 dark:bg-gray-800 text-xs text-gray-400">
+                No screenshot
+              </div>
+            `;
+
+            card_el.innerHTML = `
+            ${shot_html}
+            <div class="p-4 flex flex-col gap-3 justify-between min-h-[180px]">
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  ${p.logo ? `<img src="${p.logo}" class="h-6 w-6 rounded bg-white p-0.5 object-contain border border-gray-100 dark:border-gray-700" alt="${escapeHtml(p.name)} logo" loading="lazy">` : ""}
+                  <h3 class="text-sm font-semibold">${p.name}</h3>
+                </div>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-900 text-white dark:bg-gray-700 shrink-0">${p.tag}</span>
+              </div>
+
+              <p class="text-xs text-gray-500 dark:text-gray-400 leading-5 line-clamp-3">${p.desc}</p>
+
+              <div class="flex items-center justify-between mt-auto">
+                <div class="flex flex-wrap gap-1">${type_badge}</div>
+                <div class="flex items-center gap-3">
+                  ${p.link ? `<a class="text-xs text-gray-500 hover:text-gray-900 dark:hover:text-white underline underline-offset-2" target="_blank" rel="noreferrer" href="${p.link}">Preview</a>` : ""}
+                  ${p.mobileapp ? `<a class="text-xs text-gray-500 hover:text-gray-900 dark:hover:text-white underline underline-offset-2" target="_blank" rel="noreferrer" href="${p.mobileapp}">App</a>` : ""}
+                </div>
+              </div>
             </div>
           `;
 
-          card_el.innerHTML = `
-          ${shot_html}
-          <div class="p-4 flex flex-col gap-3 justify-between min-h-[200px]">
-            <div class="flex items-start justify-between gap-3">
-              <div class="flex items-center gap-2">
-                ${p.logo ? `<img src="${p.logo}" class="h-7 w-7 rounded bg-white p-0.5 object-contain border" alt="${escapeHtml(p.name)} logo" loading="lazy">` : ""}
-                <h3 class="text-base font-semibold">${p.name}</h3>
-              </div>
-              <span class="text-[11px] px-2 py-0.5 rounded-full bg-gray-900 text-white">${p.tag}</span>
-            </div>
-
-            <p class="text-sm text-gray-600 dark:text-gray-300 leading-6 line-clamp-4">${p.desc}</p>
-
-            <div class="flex items-center justify-between">
-              <div class="flex flex-wrap gap-1">${type_badge}</div>
-              <div class="flex items-center gap-3">
-                ${p.link ? `<a class="text-sm underline underline-offset-4" target="_blank" rel="noreferrer" href="${p.link}">Preview</a>` : ""}
-                ${p.mobileapp ? `<a class="text-sm underline underline-offset-4" target="_blank" rel="noreferrer" href="${p.mobileapp}">App</a>` : ""}
-              </div>
-            </div>
-          </div>
-        `;
-
-          grid_el.appendChild(card_el);
-        });
-      }
-
-      // Filters
-      let active_type = "all";
-
-      function FilterProjects(type_arg, ev) {
-        active_type = type_arg;
-        document.querySelectorAll("#filter_chips .filter-btn").forEach((btn) => {
-          btn.dataset.active = (btn.getAttribute("data-type") === type_arg) || (type_arg === "all" && btn.getAttribute("data-type") === "all");
-        });
-        ApplyFilters();
-      }
-
-      function ApplyFilters() {
-        const query_val = (document.getElementById("search_input").value || "").toLowerCase().trim();
-        const sort_val = document.getElementById("sort_select").value;
-
-        // filter by type and search
-        let filtered_list = project_list.filter((p) => {
-          const types_arr = Array.isArray(p.type) ? p.type : [p.type];
-          const match_type = active_type === "all" || types_arr.includes(active_type);
-          const blob = `${p.name} ${p.desc} ${p.tag} ${Array.isArray(p.type) ? p.type.join(" ") : p.type}`.toLowerCase();
-          const match_query = !query_val || blob.includes(query_val);
-          return match_type && match_query;
-        });
-
-        // sort
-        if (sort_val === "name_asc") filtered_list.sort((a, b) => a.name.localeCompare(b.name));
-        if (sort_val === "name_desc") filtered_list.sort((a, b) => b.name.localeCompare(a.name));
-        if (sort_val === "type") filtered_list.sort((a, b) => (Array.isArray(a.type) ? a.type[0] : a.type).localeCompare(Array.isArray(b.type) ? b.type[0] : b.type));
-
-        RenderProjects(filtered_list);
-        UpdateCounts(filtered_list);
-      }
-
-      // Counts beside chips
-      function UpdateCounts(current_list_opt) {
-        const base = current_list_opt || project_list;
-        const count_map = { all: project_list.length, web: 0, mobile: 0, tools: 0, games: 0 };
-        project_list.forEach((p) => {
-          const types_arr = Array.isArray(p.type) ? p.type : [p.type];
-          types_arr.forEach((t) => {
-            if (count_map.hasOwnProperty(t)) count_map[t]++;
+            grid_el.appendChild(card_el);
           });
-        });
-
-        const setCount = (id, val) => {
-          const el = document.getElementById(id);
-          if (el) el.textContent = `(${id === "count_all" ? project_list.length : val})`;
-        };
-
-        setCount("count_all", count_map.all);
-        setCount("count_web", count_map.web);
-        setCount("count_mobile", count_map.mobile);
-        setCount("count_tools", count_map.tools);
-        setCount("count_games", count_map.games);
-      }
-
-      // Lightbox
-      function OpenLightbox(src_arg, caption_arg) {
-        const box_el = document.getElementById("shot_lightbox");
-        const img_el = document.getElementById("lightbox_img");
-        const cap_el = document.getElementById("lightbox_caption");
-        img_el.src = decodeURI(src_arg);
-        cap_el.textContent = caption_arg;
-        box_el.classList.remove("hidden");
-        box_el.classList.add("flex");
-        document.addEventListener("keydown", LightboxKeyHandler);
-      }
-
-      function CloseLightbox(ev) {
-        // Allow clicking the backdrop or close button. Prevent closing when clicking the image area.
-        const box_el = document.getElementById("shot_lightbox");
-        if (ev && ev.target && ev.target.id !== "shot_lightbox" && ev.target.tagName.toLowerCase() !== "button") {
-          return;
         }
-        box_el.classList.add("hidden");
-        box_el.classList.remove("flex");
-        document.removeEventListener("keydown", LightboxKeyHandler);
-      }
 
-      function LightboxKeyHandler(e) {
-        if (e.key === "Escape") CloseLightbox(e);
-      }
+        // Filters
+        let active_type = "all";
 
-      // Util
-      function escapeHtml(str) {
-        return (str || "").replace(/[&<>"']/g, (m) => ({
-          "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
-        }[m]));
-      }
-    </script>
-  </section>
+        function FilterProjects(type_arg, ev) {
+          active_type = type_arg;
+          document.querySelectorAll("#filter_chips .filter-btn").forEach((btn) => {
+            btn.dataset.active = (btn.getAttribute("data-type") === type_arg) || (type_arg === "all" && btn.getAttribute("data-type") === "all");
+          });
+          ApplyFilters();
+        }
 
+        function ApplyFilters() {
+          const query_val = (document.getElementById("search_input").value || "").toLowerCase().trim();
+          const sort_val = document.getElementById("sort_select").value;
 
+          let filtered_list = project_list.filter((p) => {
+            const types_arr = Array.isArray(p.type) ? p.type : [p.type];
+            const match_type = active_type === "all" || types_arr.includes(active_type);
+            const blob = `${p.name} ${p.desc} ${p.tag} ${Array.isArray(p.type) ? p.type.join(" ") : p.type}`.toLowerCase();
+            const match_query = !query_val || blob.includes(query_val);
+            return match_type && match_query;
+          });
 
-  <!-- Tools Section -->
-  <section id="tools" class="py-12 bg-gray-100 dark:bg-gray-900 text-center">
-    <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">Tools I Love to Use</h2>
-    <div class="max-w-6xl p-4 mx-auto grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-6">
-      <!-- Tool Cards -->
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/php.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="PHP" />
-        <span class="text-sm">PHP</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/laravel.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Laravel" />
-        <span class="text-sm">Laravel</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/symfony.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Symfony" />
-        <span class="text-sm">Symfony</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/yii.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Yii" />
-        <span class="text-sm">Yii</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/wordpress.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="WordPress" />
-        <span class="text-sm">WordPress</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/magento.webp" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Magento" />
-        <span class="text-sm">Magento</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/woocommerce.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="WooCommerce" />
-        <span class="text-sm">WooCommerce</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/wix.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Wix" />
-        <span class="text-sm">Wix</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/bigcommerce.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="BigCommerce" />
-        <span class="text-sm">BigCommerce</span>
-      </div>
+          if (sort_val === "name_asc") filtered_list.sort((a, b) => a.name.localeCompare(b.name));
+          if (sort_val === "name_desc") filtered_list.sort((a, b) => b.name.localeCompare(a.name));
+          if (sort_val === "type") filtered_list.sort((a, b) => (Array.isArray(a.type) ? a.type[0] : a.type).localeCompare(Array.isArray(b.type) ? b.type[0] : b.type));
 
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/javascript.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="JavaScript" />
-        <span class="text-sm">JavaScript</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/typescript.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="TypeScript" />
-        <span class="text-sm">TypeScript</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/react.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="React" />
-        <span class="text-sm">React</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/vuedotjs.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="vue.js" />
-        <span class="text-sm">Vue</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/threedotjs.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Three.js" />
-        <span class="text-sm">Three.js</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/tensorflow.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Tensorflow" />
-        <span class="text-sm">Tensorflow</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/react.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="React Native" />
-        <span class="text-sm">React Native</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/node.js.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Node.js" />
-        <span class="text-sm">Node.js</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/nextdotjs.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Next.js" />
-        <span class="text-sm">Next.js</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/docker.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Docker" />
-        <span class="text-sm">Docker</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/kubernetes.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Kubernetes" />
-        <span class="text-sm">Kubernetes</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/ansible.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Ansible" />
-        <span class="text-sm">Ansible</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/mysql.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="MySQL" />
-        <span class="text-sm">MySQL</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/mongodb.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="MongoDB" />
-        <span class="text-sm">MongoDB</span>
-      </div>
+          RenderProjects(filtered_list);
+          UpdateCounts(filtered_list);
+        }
 
+        function UpdateCounts(current_list_opt) {
+          const base = current_list_opt || project_list;
+          const count_map = { all: project_list.length, web: 0, mobile: 0, tools: 0, games: 0 };
+          project_list.forEach((p) => {
+            const types_arr = Array.isArray(p.type) ? p.type : [p.type];
+            types_arr.forEach((t) => {
+              if (count_map.hasOwnProperty(t)) count_map[t]++;
+            });
+          });
 
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/postgresql.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="PostgreSQL" />
-        <span class="text-sm">PostgreSQL</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img
-          src="./img/tools/aws.webp"
-          class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="AWS"  />
-        <span class="text-sm">AWS</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/googlecloud.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="GCP" />
-        <span class="text-sm">GCP</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/vercel.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Vercel" />
-        <span class="text-sm">Vercel</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/redux.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Redux" />
-        <span class="text-sm">Redux</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/digitalocean.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="DigitalOcean" />
-        <span class="text-sm">DigitalOcean</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/firebase.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Firebase" />
-        <span class="text-sm">Firebase</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/tailwindcss.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Tailwind CSS" />
-        <span class="text-sm">Tailwind CSS</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/sass.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="SCSS" />
-        <span class="text-sm">SCSS</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/sass.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Sass" />
-        <span class="text-sm">Sass</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/github.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="GitHub" />
-        <span class="text-sm">GitHub</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/gitlab.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="GitLab" />
-        <span class="text-sm">GitLab</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/grafana.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Grafana" />
-        <span class="text-sm">Grafana</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/googlemaps.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Google Maps" />
-        <span class="text-sm">Google Maps</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/yaml.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="YAML" />
-        <span class="text-sm">YAML</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/cmake.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="CMake" />
-        <span class="text-sm">CMake</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/gnuemacs.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Make" />
-        <span class="text-sm">Make</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/cloudflare.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Cloudflare" />
-        <span class="text-sm">Cloudflare</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/cpanel.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="cPanel" />
-        <span class="text-sm">cPanel</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/jest.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Jest" />
-        <span class="text-sm">Jest</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/zoho.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Zoho" />
-        <span class="text-sm">Zoho</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/yarn.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Yarn" />
-        <span class="text-sm">Yarn</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/xampp.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="XAMPP" />
-        <span class="text-sm">XAMPP</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/xcode.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Xcode" />
-        <span class="text-sm">Xcode</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/swagger.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Swagger" />
-        <span class="text-sm">Swagger</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/strapi.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Strapi" />
-        <span class="text-sm">Strapi</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/stripe.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Stripe" />
-        <span class="text-sm">Stripe</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/paypal.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="PayPal" />
-        <span class="text-sm">PayPal</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/langchain.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="LangChain" />
-        <span class="text-sm">LangChain</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/opensearch.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="OpenSearch" />
-        <span class="text-sm">OpenSearch</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/ethereum.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Ethereum" />
-        <span class="text-sm">Ethereum</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/solana.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Solana" />
-        <span class="text-sm">Solana</span>
-      </div>
-      <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col items-center">
-        <img src="./img/tools/solidity.svg" class="h-8 mb-2" width="32" height="32" loading="lazy" decoding="async" alt="Solidity" />
-        <span class="text-sm">Solidity</span>
-      </div>
+          const setCount = (id, val) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = `(${id === "count_all" ? project_list.length : val})`;
+          };
 
+          setCount("count_all", count_map.all);
+          setCount("count_web", count_map.web);
+          setCount("count_mobile", count_map.mobile);
+          setCount("count_tools", count_map.tools);
+          setCount("count_games", count_map.games);
+        }
+
+        // Lightbox
+        function OpenLightbox(src_arg, caption_arg) {
+          const box_el = document.getElementById("shot_lightbox");
+          const img_el = document.getElementById("lightbox_img");
+          const cap_el = document.getElementById("lightbox_caption");
+          img_el.src = decodeURI(src_arg);
+          cap_el.textContent = caption_arg;
+          box_el.classList.remove("hidden");
+          box_el.classList.add("flex");
+          document.addEventListener("keydown", LightboxKeyHandler);
+        }
+
+        function CloseLightbox(ev) {
+          const box_el = document.getElementById("shot_lightbox");
+          if (ev && ev.target && ev.target.id !== "shot_lightbox" && ev.target.tagName.toLowerCase() !== "button") {
+            return;
+          }
+          box_el.classList.add("hidden");
+          box_el.classList.remove("flex");
+          document.removeEventListener("keydown", LightboxKeyHandler);
+        }
+
+        function LightboxKeyHandler(e) {
+          if (e.key === "Escape") CloseLightbox(e);
+        }
+
+        function escapeHtml(str) {
+          return (str || "").replace(/[&<>"']/g, (m) => ({
+            "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+          }[m]));
+        }
+      </script>
     </div>
   </section>
-
 
   <script>
     async function fetchRSS() {
@@ -1058,10 +768,15 @@
         const data = await res.json();
         const list = document.getElementById("rssFeedList");
 
-        data.items.slice(0, 5).forEach((item) => {
+        data.items.slice(0, 4).forEach((item) => {
           const li = document.createElement("li");
-          li.innerHTML = `➤ <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener" class="underline">${escapeHtml(item.title)}</a>
-        <p class="text-sm text-gray-600 dark:text-gray-300">${new Date(item.pubDate).toLocaleDateString()}</p>`;
+          li.className = "flex gap-3";
+          li.innerHTML = `
+            <span class="text-gray-400 dark:text-gray-600 mt-0.5 shrink-0">&bull;</span>
+            <div>
+              <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener" class="text-gray-700 dark:text-gray-300 underline underline-offset-2 hover:text-gray-900 dark:hover:text-white">${escapeHtml(item.title)}</a>
+              <p class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">${new Date(item.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</p>
+            </div>`;
           list.appendChild(li);
         });
       } catch (err) {
@@ -1075,61 +790,47 @@
   </main>
 
   <!-- Footer -->
-  <footer class="text-center py-6 border-t dark:border-gray-700">
-    <div class="flex items-center justify-center gap-4 mb-3 flex-wrap" style="flex-direction: column;">
-      <div class="flex items-center justify-center gap-4">
-        <a href="https://github.com/khaledalam" target="_blank" rel="noopener" aria-label="GitHub profile">
-          <img src="./img/social/github.webp"
-            class="h-6 bg-white rounded-xl" alt="GitHub" width="24" height="24" loading="lazy" />
-        </a>
-        <a href="https://linkedin.com/in/khaledalam" target="_blank" rel="noopener" aria-label="LinkedIn profile">
-          <img
-            src="./img/social/linkedin.webp"
-            class="h-6 bg-gray" alt="LinkedIn" width="24" height="24" loading="lazy" />
-        </a>
-        <a href="https://twitter.com/KhaledAlamXYZ" target="_blank" rel="noopener" aria-label="X (Twitter) profile">
-          <img src="./img/tools/x.svg" class="h-6 bg-white rounded-xl p-0.5" alt="X (Twitter)" width="24" height="24" loading="lazy" />
-        </a>
-        <a href="https://www.youtube.com/NinjoCoding" target="_blank" rel="noopener" aria-label="YouTube channel">
-          <img src="./img/tools/youtube.svg" class="h-6" alt="YouTube" width="24" height="24" loading="lazy" />
-        </a>
-        <a href="https://blog.khaledalam.net" rel="noopener" aria-label="Blog">
-          <img src="./img/social/blogger.webp" class="h-6 bg-gray" alt="Blog" width="24" height="24" loading="lazy" />
-        </a>
-        <a href="https://stats.uptimerobot.com/QLORrQ7Nsm" target="_blank" rel="noopener" aria-label="Uptime status page">
-          <img src="./img/social/uptimerobot.webp" class="h-6" alt="Uptime Status" width="24" height="24" loading="lazy" />
-        </a>
+  <footer class="border-t border-gray-100 dark:border-gray-800/50 py-10 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-5">
+          <a href="https://github.com/khaledalam" target="_blank" rel="noopener" aria-label="GitHub" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/khaledalam" target="_blank" rel="noopener" aria-label="LinkedIn" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://twitter.com/KhaledAlamXYZ" target="_blank" rel="noopener" aria-label="X (Twitter)" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/NinjoCoding" target="_blank" rel="noopener" aria-label="YouTube" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://blog.khaledalam.net" rel="noopener" aria-label="Blog" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+          </a>
+        </div>
+        <div class="flex flex-col sm:items-end gap-1 text-sm text-gray-400">
+          <a href="mailto:khaledalam.net@gmail.com" class="hover:text-gray-900 dark:hover:text-white transition">khaledalam.net@gmail.com</a>
+          <a href="https://wa.me/971582936628" class="hover:text-gray-900 dark:hover:text-white transition">+971 58 293 6628</a>
+        </div>
       </div>
-      <div class="flex items-center justify-center gap-4">
-        <a href="https://wa.me/971582936628" title="WhatsApp">
-          +971 58 293 6628
-        </a>
-      </div>
-      <div class="flex items-center justify-center gap-4">
-        <a href="mailto:khaledalam.net@gmail.com" title="Email">
-          khaledalam.net@gmail.com
-        </a>
-      </div>
+      <p class="text-center text-xs text-gray-400 mt-8">&copy; 2015&ndash;2026 Khaled Alam</p>
     </div>
-
-    <p class="text-sm my-3">© 2015–2026 Khaled Alam</p>
   </footer>
 
   <!-- Go to Top -->
-  <button id="goToTopBtn" aria-label="Go to top" class="flex fixed bottom-10 left-10 z-50 hidden items-center justify-center
-         h-10 w-10 rounded-full border bg-white/90 text-gray-800
-         dark:bg-gray-900/90 dark:text-gray-100 dark:border-gray-700
-         shadow transition-opacity" type="button">
-    <!-- Up Arrow -->
-    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+  <button id="goToTopBtn" aria-label="Go to top" class="flex fixed bottom-8 right-8 z-50 hidden items-center justify-center
+         h-9 w-9 rounded-full border border-gray-200 dark:border-gray-700 bg-white/90 text-gray-600
+         dark:bg-gray-900/90 dark:text-gray-400
+         shadow-sm transition-opacity hover:text-gray-900 dark:hover:text-white" type="button">
+    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
       <path d="M12 5l-7 7h4v7h6v-7h4z" fill="currentColor" />
     </svg>
   </button>
 
-
   <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    // Defer Tawk.to loading until after page is interactive
     function loadTawk() {
       var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
       s1.async = true;
@@ -1137,15 +838,12 @@
       s1.charset = 'UTF-8';
       s0.parentNode.insertBefore(s1, s0);
     }
-    // Load Tawk.to after everything else is done (low priority)
     function scheduleTawk() {
       if ('requestIdleCallback' in window) { requestIdleCallback(loadTawk); }
       else { setTimeout(loadTawk, 3000); }
     }
     if (document.readyState === 'complete') { scheduleTawk(); }
     else { window.addEventListener('load', scheduleTawk); }
-
-
   </script>
 
   <script>
@@ -1153,7 +851,7 @@
       const btn = document.getElementById('goToTopBtn');
       if (!btn) return;
 
-      const showAfter = 300; // px scrolled before showing the button
+      const showAfter = 300;
       const onScroll = () => {
         if (window.scrollY > showAfter) {
           btn.classList.add('is-visible');
@@ -1164,10 +862,9 @@
       };
 
       window.addEventListener('scroll', onScroll, { passive: true });
-      requestAnimationFrame(onScroll); // initial state, avoid forced reflow
+      requestAnimationFrame(onScroll);
 
       btn.addEventListener('click', () => {
-        // Smooth scroll if allowed, otherwise jump
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
       });
@@ -1199,6 +896,6 @@
       });
     })();
   </script>
-</body>
 
+</body>
 </html>
