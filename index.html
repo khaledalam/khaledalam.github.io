@@ -69,7 +69,18 @@
   }
   </script>
 
-  <link rel="stylesheet" href="./tailwind.min.css" />
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN (generates all utility classes on-the-fly) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
   <style>
     #goToTopBtn {
       opacity: 0;
@@ -93,7 +104,9 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.011em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .filter-btn.active {
@@ -122,24 +135,50 @@
       }
     }
 
-    /* Subtle gradient accent */
-    .accent-line {
-      width: 48px;
-      height: 3px;
-      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-      border-radius: 2px;
+    /* Section headings */
+    .section-label {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #3b82f6;
+      margin-bottom: 0.75rem;
     }
 
-    /* Section headings */
-    .section-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-      color: #6b7280;
+    .section-heading {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
     }
-    .dark .section-title {
-      color: #9ca3af;
+
+    /* Hero gradient glow (subtle) */
+    .hero-glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+      top: 10%;
+      right: -10%;
+      pointer-events: none;
+    }
+    .dark .hero-glow {
+      background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%);
+    }
+
+    /* Status dot animation */
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
     }
   </style>
   <script>
@@ -156,141 +195,151 @@
   </script>
 </head>
 
-<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100">
+<body class="bg-gray-50 text-gray-900 dark:bg-[#0a0a0f] dark:text-gray-100">
   <a href="#hero" class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:text-black">Skip to content</a>
 
   <!-- Navbar -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800/50">
-    <nav class="max-w-4xl mx-auto px-6 flex justify-between items-center h-14">
-      <a href="/" class="flex items-center gap-2 text-base font-semibold tracking-tight">
+  <header class="fixed top-0 left-0 w-full z-50 bg-gray-50/80 dark:bg-[#0a0a0f]/80 backdrop-blur-xl border-b border-gray-200/60 dark:border-white/[0.06]">
+    <nav class="max-w-5xl mx-auto px-6 flex justify-between items-center h-14">
+      <a href="/" class="flex items-center gap-2.5 font-semibold tracking-tight">
         <img src="./logo.webp" alt="Logo" class="w-5 h-5" width="20" height="20" />
-        <span>Khaled Alam</span>
+        <span class="text-sm">Khaled Alam</span>
       </a>
-      <div class="hidden md:flex items-center gap-6">
-        <a href="#projects" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">Projects</a>
-        <a href="#companies" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">Experience</a>
-        <a href="https://blog.khaledalam.net" target="_blank" rel="noopener" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">Blog</a>
+      <div class="hidden md:flex items-center gap-1">
+        <a href="#projects" class="text-sm px-3 py-1.5 rounded-md text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/[0.06] transition">Projects</a>
+        <a href="#companies" class="text-sm px-3 py-1.5 rounded-md text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/[0.06] transition">Experience</a>
+        <a href="https://blog.khaledalam.net" target="_blank" rel="noopener" class="text-sm px-3 py-1.5 rounded-md text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/[0.06] transition">Blog</a>
+        <div class="w-px h-4 bg-gray-200 dark:bg-white/10 mx-2"></div>
         <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" target="_blank" rel="noopener"
-          class="text-sm px-3 py-1.5 rounded-md bg-gray-900 text-white dark:bg-white dark:text-gray-900 font-medium hover:opacity-90 transition">Resume</a>
-        <button onclick="toggleTheme()" aria-label="Toggle dark mode" class="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646Z" /></svg>
+          class="text-sm px-3.5 py-1.5 rounded-md bg-gray-900 text-white dark:bg-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition">Resume</a>
+        <button onclick="toggleTheme()" aria-label="Toggle dark mode" class="ml-1 p-1.5 rounded-md text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/[0.06] transition">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646Z" /></svg>
         </button>
       </div>
-      <button class="md:hidden text-gray-600 dark:text-gray-400" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" aria-label="Open menu" aria-expanded="false">
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <button class="md:hidden text-gray-500" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" aria-label="Open menu" aria-expanded="false">
+        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </nav>
-    <div id="mobileMenu" class="md:hidden hidden px-6 pb-4 space-y-3">
-      <a href="#projects" class="block text-sm text-gray-600 dark:text-gray-400">Projects</a>
-      <a href="#companies" class="block text-sm text-gray-600 dark:text-gray-400">Experience</a>
-      <a href="https://blog.khaledalam.net" target="_blank" rel="noopener" class="block text-sm text-gray-600 dark:text-gray-400">Blog</a>
-      <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" target="_blank" rel="noopener" class="block text-sm text-gray-600 dark:text-gray-400">Resume</a>
-      <button onclick="toggleTheme()" aria-label="Toggle dark mode" class="text-sm text-gray-500 dark:text-gray-400">Toggle Theme</button>
+    <div id="mobileMenu" class="md:hidden hidden px-6 pb-4 space-y-1">
+      <a href="#projects" class="block text-sm px-3 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/[0.06]">Projects</a>
+      <a href="#companies" class="block text-sm px-3 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/[0.06]">Experience</a>
+      <a href="https://blog.khaledalam.net" target="_blank" rel="noopener" class="block text-sm px-3 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/[0.06]">Blog</a>
+      <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" target="_blank" rel="noopener" class="block text-sm px-3 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/[0.06]">Resume</a>
+      <button onclick="toggleTheme()" aria-label="Toggle dark mode" class="block text-sm px-3 py-2 text-gray-500 dark:text-gray-400">Toggle Theme</button>
     </div>
   </header>
 
   <main>
 
   <!-- Hero -->
-  <section id="hero" class="min-h-screen flex items-center justify-center px-6">
-    <div class="max-w-2xl w-full pt-20 pb-16">
+  <section id="hero" class="relative min-h-screen flex items-center justify-center px-6 bg-white dark:bg-[#0a0a0f] overflow-hidden">
+    <div class="hero-glow"></div>
+    <div class="relative max-w-2xl w-full pt-20 pb-16">
+
+      <!-- Availability badge -->
+      <div class="flex items-center gap-2 mb-8">
+        <span class="status-dot"></span>
+        <span class="text-xs font-medium text-gray-500 dark:text-gray-400">Available for opportunities</span>
+      </div>
+
       <!-- Photo + Name -->
-      <div class="flex items-center gap-5 mb-8">
-        <img src="./DP_Khaled.webp" alt="Khaled Alam" width="72" height="72" fetchpriority="high"
-          class="w-[72px] h-[72px] rounded-full object-cover ring-2 ring-gray-200 dark:ring-gray-700" />
+      <div class="flex items-center gap-5 mb-6">
+        <img src="./DP_Khaled.webp" alt="Khaled Alam" width="80" height="80" fetchpriority="high"
+          class="rounded-2xl object-cover shadow-lg" style="width:80px;height:80px" />
         <div>
-          <h1 class="text-2xl md:text-3xl font-bold tracking-tight">Khaled Alam</h1>
-          <p class="text-gray-500 dark:text-gray-400 text-sm mt-0.5">Dubai, UAE</p>
+          <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">Khaled Alam</h1>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Dubai, UAE</p>
         </div>
       </div>
 
       <!-- Headline -->
-      <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
-        Software Engineer &middot; Ex-CTO &amp; Founder &middot; 10+ Years Shipping Production Systems &middot; Language Engine Contributor
+      <h2 class="text-lg md:text-xl font-medium text-gray-800 dark:text-gray-200 leading-relaxed mb-3">
+        Software Engineer &middot; Ex-CTO &amp; Founder
+      </h2>
+      <p class="text-gray-500 dark:text-gray-400 leading-relaxed mb-3">
+        10+ years shipping production systems across SaaS, PropTech, and AI-enabled platforms. Language engine contributor and open-source maintainer.
       </p>
-
-      <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8">
+      <p class="text-gray-400 dark:text-gray-500 text-sm leading-relaxed mb-10">
         M.S. Financial Engineering (Washington, D.C.) &middot; B.S. Computer Science (Egypt)
       </p>
 
       <!-- CTA -->
-      <div class="flex flex-wrap gap-3 mb-16">
+      <div class="flex flex-wrap gap-3 mb-20">
         <a href="https://drive.google.com/file/d/1YqWiUubaoLJUSkk1VQUnThCNwD-oAThV/view" target="_blank" rel="noopener"
-          class="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg text-sm font-medium hover:opacity-90 transition">
-          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+          class="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 shadow-sm transition">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
           Download Resume
         </a>
         <a href="mailto:khaledalam.net@gmail.com"
-          class="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800/50 transition">
-          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+          class="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-white/[0.06] border border-gray-200 dark:border-white/10 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-white/[0.1] shadow-sm transition">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
           Get in Touch
         </a>
         <a href="https://github.com/khaledalam" target="_blank" rel="noopener"
-          class="inline-flex items-center gap-2 px-5 py-2.5 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800/50 transition">
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          class="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-white/[0.06] border border-gray-200 dark:border-white/10 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-white/[0.1] shadow-sm transition">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           GitHub
         </a>
       </div>
 
-      <!-- Highlights -->
-      <div class="space-y-10">
+      <!-- Notable Work -->
+      <div class="space-y-14">
         <div>
-          <div class="accent-line mb-4"></div>
-          <h2 class="section-title mb-6">Notable Work</h2>
-          <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-            <li class="flex gap-3">
-              <span class="text-gray-400 dark:text-gray-600 mt-0.5 shrink-0">&bull;</span>
-              <span>Contributor to <strong class="text-gray-900 dark:text-gray-200">PHP language engine</strong> (php-src) — merged PRs at the Zend Engine and Reflection API level
-                (<a href="https://github.com/php/php-src/pull/20902" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white">#20902</a>,
-                <a href="https://github.com/php/php-src/pull/20983" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white">#20983</a>,
-                <a href="https://github.com/php/php-src/pull/21085" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white">#21085</a>)</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-gray-400 dark:text-gray-600 mt-0.5 shrink-0">&bull;</span>
-              <span>Open-source contributions to <strong class="text-gray-900 dark:text-gray-200">phpMyAdmin</strong>, <strong class="text-gray-900 dark:text-gray-200">Redis</strong>, <strong class="text-gray-900 dark:text-gray-200">MySQL Server</strong>, <strong class="text-gray-900 dark:text-gray-200">Symfony</strong>, and <strong class="text-gray-900 dark:text-gray-200">AWS SDK for PHP</strong></span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-gray-400 dark:text-gray-600 mt-0.5 shrink-0">&bull;</span>
-              <span>Solved IBM Research's <a href="https://research.ibm.com/haifa/ponderthis/challenges/October2025.html" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white">"Ponder This" Challenge (Oct 2025)</a> — listed among official solvers</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-gray-400 dark:text-gray-600 mt-0.5 shrink-0">&bull;</span>
-              <span>Built <a href="https://github.com/khaledalam/worktools" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white"><strong class="text-gray-900 dark:text-gray-200">WorkTools</strong></a> — developer productivity toolkit for JIRA, GitHub, and Slack (Chrome, Firefox, macOS)</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-gray-400 dark:text-gray-600 mt-0.5 shrink-0">&bull;</span>
-              <span>Founded <a href="https://www.linkedin.com/company/canvamagnet" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white"><strong class="text-gray-900 dark:text-gray-200">CanvaMagnet</strong></a> — UAE LLC on Amazon with payment integrations (Tabby, Tamara) and brand partnerships</span>
-            </li>
-          </ul>
+          <span class="section-label">Notable Work</span>
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-white dark:bg-white/[0.03] border border-gray-200/80 dark:border-white/[0.06]">
+              <h3 class="text-sm font-semibold mb-1.5">PHP Language Engine Contributor</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Merged PRs to php-src at the Zend Engine and Reflection API level.
+                <a href="https://github.com/php/php-src/pull/20902" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">#20902</a>,
+                <a href="https://github.com/php/php-src/pull/20983" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">#20983</a>,
+                <a href="https://github.com/php/php-src/pull/21085" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">#21085</a></p>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-white/[0.03] border border-gray-200/80 dark:border-white/[0.06]">
+              <h3 class="text-sm font-semibold mb-1.5">Open-Source Contributions</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Contributions to phpMyAdmin, Redis, MySQL Server, Symfony, and AWS SDK for PHP.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-white/[0.03] border border-gray-200/80 dark:border-white/[0.06]">
+              <h3 class="text-sm font-semibold mb-1.5">IBM "Ponder This" Solver</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Solved the <a href="https://research.ibm.com/haifa/ponderthis/challenges/October2025.html" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">October 2025 challenge</a> and listed among official solvers.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-4 rounded-xl bg-white dark:bg-white/[0.03] border border-gray-200/80 dark:border-white/[0.06]">
+                <h3 class="text-sm font-semibold mb-1.5">WorkTools</h3>
+                <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Dev productivity toolkit for JIRA, GitHub, Slack. <a href="https://github.com/khaledalam/worktools" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">View on GitHub</a></p>
+              </div>
+              <div class="p-4 rounded-xl bg-white dark:bg-white/[0.03] border border-gray-200/80 dark:border-white/[0.06]">
+                <h3 class="text-sm font-semibold mb-1.5">CanvaMagnet</h3>
+                <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Founded UAE LLC on Amazon with Tabby/Tamara integration. <a href="https://www.linkedin.com/company/canvamagnet" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">Learn more</a></p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Recent Posts -->
         <div id="blog">
-          <div class="accent-line mb-4"></div>
-          <h2 class="section-title mb-6">Recent Posts</h2>
+          <span class="section-label">Recent Posts</span>
           <ul id="rssFeedList" class="space-y-3 text-sm"></ul>
         </div>
 
         <!-- Tech Stack -->
         <div>
-          <div class="accent-line mb-4"></div>
-          <h2 class="section-title mb-6">Core Stack</h2>
+          <span class="section-label">Core Stack</span>
           <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">PHP</span>
-            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Laravel</span>
-            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Symfony</span>
-            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">React</span>
-            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">TypeScript</span>
-            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Node.js</span>
-            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Next.js</span>
-            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">React Native</span>
-            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">MySQL</span>
-            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">PostgreSQL</span>
-            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Docker</span>
-            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">AWS</span>
-            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Kubernetes</span>
-            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Redis</span>
-            <span class="px-3 py-1.5 text-xs font-medium rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">Tailwind CSS</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-700 dark:text-gray-300 shadow-sm">PHP</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-700 dark:text-gray-300 shadow-sm">Laravel</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-700 dark:text-gray-300 shadow-sm">Symfony</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-700 dark:text-gray-300 shadow-sm">React</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-700 dark:text-gray-300 shadow-sm">TypeScript</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-700 dark:text-gray-300 shadow-sm">Node.js</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-700 dark:text-gray-300 shadow-sm">Next.js</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-700 dark:text-gray-300 shadow-sm">React Native</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-700 dark:text-gray-300 shadow-sm">MySQL</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-700 dark:text-gray-300 shadow-sm">PostgreSQL</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-700 dark:text-gray-300 shadow-sm">Docker</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-700 dark:text-gray-300 shadow-sm">AWS</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-700 dark:text-gray-300 shadow-sm">Kubernetes</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-700 dark:text-gray-300 shadow-sm">Redis</span>
+            <span class="px-3 py-1.5 text-xs font-medium rounded-lg bg-white dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-700 dark:text-gray-300 shadow-sm">Tailwind CSS</span>
           </div>
         </div>
       </div>
@@ -298,70 +347,68 @@
   </section>
 
   <!-- Companies Section -->
-  <section id="companies" class="py-20 px-6 border-t border-gray-100 dark:border-gray-800/50">
+  <section id="companies" class="py-20 px-6 bg-white dark:bg-white/[0.02] border-t border-gray-200/60 dark:border-white/[0.06]">
     <div class="max-w-4xl mx-auto">
-      <div class="accent-line mb-4"></div>
-      <h2 class="section-title mb-10">Companies I've Worked With</h2>
-      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8">
-        <div class="flex flex-col items-center gap-2">
-          <img src="./img/companies/amazon-aws.webp" class="h-10 object-contain" alt="Amazon AWS" width="63" height="48" loading="lazy" decoding="async" />
-          <p class="text-xs text-gray-500 dark:text-gray-500">Amazon AWS</p>
+      <span class="section-label">Companies I've Worked With</span>
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 mt-6">
+        <div class="flex flex-col items-center justify-center gap-2.5 p-4 rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/[0.04]">
+          <img src="./img/companies/amazon-aws.webp" class="h-8 object-contain" alt="Amazon AWS" width="63" height="48" loading="lazy" decoding="async" />
+          <p class="text-[11px] font-medium text-gray-500 dark:text-gray-500">Amazon AWS</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <img src="./img/companies/stc.webp" class="h-10 object-contain" alt="STC" width="85" height="48" loading="lazy" decoding="async" />
-          <p class="text-xs text-gray-500 dark:text-gray-500">STC</p>
+        <div class="flex flex-col items-center justify-center gap-2.5 p-4 rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/[0.04]">
+          <img src="./img/companies/stc.webp" class="h-8 object-contain" alt="STC" width="85" height="48" loading="lazy" decoding="async" />
+          <p class="text-[11px] font-medium text-gray-500 dark:text-gray-500">STC</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <img src="./img/companies/victorias-secret.webp" class="h-8 object-contain" alt="Victoria's Secret" width="94" height="40" loading="lazy" decoding="async" />
-          <p class="text-xs text-gray-500 dark:text-gray-500">Victoria's Secret</p>
+        <div class="flex flex-col items-center justify-center gap-2.5 p-4 rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/[0.04]">
+          <img src="./img/companies/victorias-secret.webp" class="h-7 object-contain" alt="Victoria's Secret" width="94" height="40" loading="lazy" decoding="async" />
+          <p class="text-[11px] font-medium text-gray-500 dark:text-gray-500">Victoria's Secret</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <img src="./img/companies/misk.webp" class="h-8 object-contain" alt="Misk" width="70" height="40" loading="lazy" decoding="async" />
-          <p class="text-xs text-gray-500 dark:text-gray-500">MISK</p>
+        <div class="flex flex-col items-center justify-center gap-2.5 p-4 rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/[0.04]">
+          <img src="./img/companies/misk.webp" class="h-7 object-contain" alt="Misk" width="70" height="40" loading="lazy" decoding="async" />
+          <p class="text-[11px] font-medium text-gray-500 dark:text-gray-500">MISK</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <img src="./img/companies/cohere.webp" class="h-8 object-contain" alt="Cohere" width="71" height="40" loading="lazy" decoding="async" />
-          <p class="text-xs text-gray-500 dark:text-gray-500">Cohere</p>
+        <div class="flex flex-col items-center justify-center gap-2.5 p-4 rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/[0.04]">
+          <img src="./img/companies/cohere.webp" class="h-7 object-contain" alt="Cohere" width="71" height="40" loading="lazy" decoding="async" />
+          <p class="text-[11px] font-medium text-gray-500 dark:text-gray-500">Cohere</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <img src="./img/companies/bitfunded.webp" class="h-8 object-contain" alt="BitFunded" width="80" height="20" loading="lazy" decoding="async" />
-          <p class="text-xs text-gray-500 dark:text-gray-500">BitFunded</p>
+        <div class="flex flex-col items-center justify-center gap-2.5 p-4 rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/[0.04]">
+          <img src="./img/companies/bitfunded.webp" class="h-7 object-contain" alt="BitFunded" width="80" height="20" loading="lazy" decoding="async" />
+          <p class="text-[11px] font-medium text-gray-500 dark:text-gray-500">BitFunded</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <img src="./img/companies/coffeeplanet.webp" class="h-8 object-contain" alt="CoffeePlanet" width="40" height="40" loading="lazy" decoding="async" />
-          <p class="text-xs text-gray-500 dark:text-gray-500">CoffeePlanet</p>
+        <div class="flex flex-col items-center justify-center gap-2.5 p-4 rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/[0.04]">
+          <img src="./img/companies/coffeeplanet.webp" class="h-7 object-contain" alt="CoffeePlanet" width="40" height="40" loading="lazy" decoding="async" />
+          <p class="text-[11px] font-medium text-gray-500 dark:text-gray-500">CoffeePlanet</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <img src="./img/companies/sourcetoad.webp" class="h-8 object-contain" alt="Sourcetoad" width="62" height="40" loading="lazy" decoding="async" />
-          <p class="text-xs text-gray-500 dark:text-gray-500">Sourcetoad</p>
+        <div class="flex flex-col items-center justify-center gap-2.5 p-4 rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/[0.04]">
+          <img src="./img/companies/sourcetoad.webp" class="h-7 object-contain" alt="Sourcetoad" width="62" height="40" loading="lazy" decoding="async" />
+          <p class="text-[11px] font-medium text-gray-500 dark:text-gray-500">Sourcetoad</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <img src="./img/companies/mintme.webp" class="h-8 object-contain" alt="MintMe" width="40" height="40" loading="lazy" decoding="async" />
-          <p class="text-xs text-gray-500 dark:text-gray-500">MintMe</p>
+        <div class="flex flex-col items-center justify-center gap-2.5 p-4 rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/[0.04]">
+          <img src="./img/companies/mintme.webp" class="h-7 object-contain" alt="MintMe" width="40" height="40" loading="lazy" decoding="async" />
+          <p class="text-[11px] font-medium text-gray-500 dark:text-gray-500">MintMe</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <img src="./img/companies/arla.webp" class="h-8 object-contain" alt="Arla Foods" width="59" height="40" loading="lazy" decoding="async" />
-          <p class="text-xs text-gray-500 dark:text-gray-500">Arla Foods</p>
+        <div class="flex flex-col items-center justify-center gap-2.5 p-4 rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/[0.04]">
+          <img src="./img/companies/arla.webp" class="h-7 object-contain" alt="Arla Foods" width="59" height="40" loading="lazy" decoding="async" />
+          <p class="text-[11px] font-medium text-gray-500 dark:text-gray-500">Arla Foods</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <img src="./img/companies/makyee.webp" class="h-8 object-contain" alt="Makyee" width="40" height="40" loading="lazy" decoding="async" />
-          <p class="text-xs text-gray-500 dark:text-gray-500">Makyee</p>
+        <div class="flex flex-col items-center justify-center gap-2.5 p-4 rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/[0.04]">
+          <img src="./img/companies/makyee.webp" class="h-7 object-contain" alt="Makyee" width="40" height="40" loading="lazy" decoding="async" />
+          <p class="text-[11px] font-medium text-gray-500 dark:text-gray-500">Makyee</p>
         </div>
-        <div class="flex flex-col items-center gap-2">
-          <img src="./img/companies/prepaire.webp" class="h-8 object-contain" alt="Prepaire Labs" width="40" height="40" loading="lazy" decoding="async" />
-          <p class="text-xs text-gray-500 dark:text-gray-500">Prepaire Labs</p>
+        <div class="flex flex-col items-center justify-center gap-2.5 p-4 rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/[0.04]">
+          <img src="./img/companies/prepaire.webp" class="h-7 object-contain" alt="Prepaire Labs" width="40" height="40" loading="lazy" decoding="async" />
+          <p class="text-[11px] font-medium text-gray-500 dark:text-gray-500">Prepaire Labs</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Filter + Projects -->
-  <section id="projects" class="py-20 px-6 border-t border-gray-100 dark:border-gray-800/50">
+  <section id="projects" class="py-20 px-6 border-t border-gray-200/60 dark:border-white/[0.06]">
     <div class="max-w-5xl mx-auto">
       <div class="flex items-end justify-between gap-4 flex-wrap mb-8">
         <div>
-          <div class="accent-line mb-4"></div>
-          <h2 class="section-title">Projects</h2>
+          <span class="section-label">Projects</span>
         </div>
 
         <!-- Controls -->
@@ -386,16 +433,16 @@
 
       <!-- Filter chips -->
       <div class="flex flex-wrap gap-2 mb-8" id="filter_chips">
-        <button class="filter-btn px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-sm data-[active=true]:bg-gray-900 data-[active=true]:text-white dark:data-[active=true]:bg-white dark:data-[active=true]:text-gray-900"
-          data-type="all" onclick="FilterProjects('all', event)" data-active="true">All <span class="ml-1 text-xs opacity-60" id="count_all"></span></button>
-        <button class="filter-btn px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-sm" data-type="web"
-          onclick="FilterProjects('web', event)">Web <span class="ml-1 text-xs opacity-60" id="count_web"></span></button>
-        <button class="filter-btn px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-sm" data-type="mobile"
-          onclick="FilterProjects('mobile', event)">Mobile <span class="ml-1 text-xs opacity-60" id="count_mobile"></span></button>
-        <button class="filter-btn px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-sm" data-type="tools"
-          onclick="FilterProjects('tools', event)">Tools <span class="ml-1 text-xs opacity-60" id="count_tools"></span></button>
-        <button class="filter-btn px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-sm" data-type="games"
-          onclick="FilterProjects('games', event)">Games <span class="ml-1 text-xs opacity-60" id="count_games"></span></button>
+        <button class="filter-btn px-3.5 py-1.5 rounded-lg border border-gray-200 dark:border-white/10 text-xs font-medium bg-white dark:bg-white/[0.06] hover:bg-gray-50 dark:hover:bg-white/[0.1] data-[active=true]:bg-gray-900 data-[active=true]:text-white data-[active=true]:border-gray-900 dark:data-[active=true]:bg-white dark:data-[active=true]:text-gray-900 dark:data-[active=true]:border-white transition"
+          data-type="all" onclick="FilterProjects('all', event)" data-active="true">All <span class="ml-1 opacity-60" id="count_all"></span></button>
+        <button class="filter-btn px-3.5 py-1.5 rounded-lg border border-gray-200 dark:border-white/10 text-xs font-medium bg-white dark:bg-white/[0.06] hover:bg-gray-50 dark:hover:bg-white/[0.1] data-[active=true]:bg-gray-900 data-[active=true]:text-white data-[active=true]:border-gray-900 dark:data-[active=true]:bg-white dark:data-[active=true]:text-gray-900 dark:data-[active=true]:border-white transition" data-type="web"
+          onclick="FilterProjects('web', event)">Web <span class="ml-1 opacity-60" id="count_web"></span></button>
+        <button class="filter-btn px-3.5 py-1.5 rounded-lg border border-gray-200 dark:border-white/10 text-xs font-medium bg-white dark:bg-white/[0.06] hover:bg-gray-50 dark:hover:bg-white/[0.1] data-[active=true]:bg-gray-900 data-[active=true]:text-white data-[active=true]:border-gray-900 dark:data-[active=true]:bg-white dark:data-[active=true]:text-gray-900 dark:data-[active=true]:border-white transition" data-type="mobile"
+          onclick="FilterProjects('mobile', event)">Mobile <span class="ml-1 opacity-60" id="count_mobile"></span></button>
+        <button class="filter-btn px-3.5 py-1.5 rounded-lg border border-gray-200 dark:border-white/10 text-xs font-medium bg-white dark:bg-white/[0.06] hover:bg-gray-50 dark:hover:bg-white/[0.1] data-[active=true]:bg-gray-900 data-[active=true]:text-white data-[active=true]:border-gray-900 dark:data-[active=true]:bg-white dark:data-[active=true]:text-gray-900 dark:data-[active=true]:border-white transition" data-type="tools"
+          onclick="FilterProjects('tools', event)">Tools <span class="ml-1 opacity-60" id="count_tools"></span></button>
+        <button class="filter-btn px-3.5 py-1.5 rounded-lg border border-gray-200 dark:border-white/10 text-xs font-medium bg-white dark:bg-white/[0.06] hover:bg-gray-50 dark:hover:bg-white/[0.1] data-[active=true]:bg-gray-900 data-[active=true]:text-white data-[active=true]:border-gray-900 dark:data-[active=true]:bg-white dark:data-[active=true]:text-gray-900 dark:data-[active=true]:border-white transition" data-type="games"
+          onclick="FilterProjects('games', event)">Games <span class="ml-1 opacity-60" id="count_games"></span></button>
       </div>
 
       <!-- Grid -->
@@ -624,11 +671,11 @@
 
           list_input.forEach((p) => {
             const types_arr = Array.isArray(p.type) ? p.type : [p.type];
-            const type_badge = types_arr.map(t => `<span class="text-[11px] px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">${t}</span>`).join(" ");
+            const type_badge = types_arr.map(t => `<span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-gray-100 dark:bg-white/[0.06] border border-gray-200/80 dark:border-white/[0.06] text-gray-500 dark:text-gray-400">${t}</span>`).join(" ");
 
             const card_el = document.createElement("article");
             card_el.className =
-              "project-card group rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-900/50 hover:shadow-md transition-shadow";
+              "project-card group rounded-xl border border-gray-200/80 dark:border-white/[0.06] overflow-hidden bg-white dark:bg-white/[0.03] hover:shadow-lg hover:border-gray-300 dark:hover:border-white/[0.12] transition-all";
             card_el.dataset.types = types_arr.join(",");
 
             const shot_html = p.shot
@@ -636,11 +683,11 @@
               <button class="relative block w-full aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-gray-800"
                       onclick="OpenLightbox('${encodeURI(p.shot)}', '${escapeHtml(p.name)}')" aria-label="Open screenshot">
                 <img src="${p.shot}" alt="${escapeHtml(p.name)} screenshot"
-                     class="h-full w-full object-cover transition group-hover:scale-[1.02]" loading="lazy" />
+                     class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" loading="lazy" />
               </button>
             `
               : `
-              <div class="flex items-center justify-center w-full aspect-[16/9] bg-gray-50 dark:bg-gray-800 text-xs text-gray-400">
+              <div class="flex items-center justify-center w-full aspect-[16/9] bg-gray-50 dark:bg-white/[0.02] text-xs text-gray-400">
                 No screenshot
               </div>
             `;
@@ -650,10 +697,10 @@
             <div class="p-4 flex flex-col gap-3 justify-between min-h-[180px]">
               <div class="flex items-start justify-between gap-3">
                 <div class="flex items-center gap-2">
-                  ${p.logo ? `<img src="${p.logo}" class="h-6 w-6 rounded bg-white p-0.5 object-contain border border-gray-100 dark:border-gray-700" alt="${escapeHtml(p.name)} logo" loading="lazy">` : ""}
+                  ${p.logo ? `<img src="${p.logo}" class="h-6 w-6 rounded-md bg-white p-0.5 object-contain border border-gray-100 dark:border-white/10" alt="${escapeHtml(p.name)} logo" loading="lazy">` : ""}
                   <h3 class="text-sm font-semibold">${p.name}</h3>
                 </div>
-                <span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-900 text-white dark:bg-gray-700 shrink-0">${p.tag}</span>
+                <span class="text-[10px] px-2 py-0.5 rounded-md bg-gray-900 text-white dark:bg-white/10 dark:text-gray-300 shrink-0 font-medium">${p.tag}</span>
               </div>
 
               <p class="text-xs text-gray-500 dark:text-gray-400 leading-5 line-clamp-3">${p.desc}</p>
@@ -661,8 +708,8 @@
               <div class="flex items-center justify-between mt-auto">
                 <div class="flex flex-wrap gap-1">${type_badge}</div>
                 <div class="flex items-center gap-3">
-                  ${p.link ? `<a class="text-xs text-gray-500 hover:text-gray-900 dark:hover:text-white underline underline-offset-2" target="_blank" rel="noreferrer" href="${p.link}">Preview</a>` : ""}
-                  ${p.mobileapp ? `<a class="text-xs text-gray-500 hover:text-gray-900 dark:hover:text-white underline underline-offset-2" target="_blank" rel="noreferrer" href="${p.mobileapp}">App</a>` : ""}
+                  ${p.link ? `<a class="text-xs font-medium text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noreferrer" href="${p.link}">Preview</a>` : ""}
+                  ${p.mobileapp ? `<a class="text-xs font-medium text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noreferrer" href="${p.mobileapp}">App</a>` : ""}
                 </div>
               </div>
             </div>
@@ -770,13 +817,11 @@
 
         data.items.slice(0, 4).forEach((item) => {
           const li = document.createElement("li");
-          li.className = "flex gap-3";
           li.innerHTML = `
-            <span class="text-gray-400 dark:text-gray-600 mt-0.5 shrink-0">&bull;</span>
-            <div>
-              <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener" class="text-gray-700 dark:text-gray-300 underline underline-offset-2 hover:text-gray-900 dark:hover:text-white">${escapeHtml(item.title)}</a>
-              <p class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">${new Date(item.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</p>
-            </div>`;
+            <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener" class="block p-3.5 rounded-xl bg-white dark:bg-white/[0.03] border border-gray-200/80 dark:border-white/[0.06] hover:border-gray-300 dark:hover:border-white/[0.12] transition-all group">
+              <p class="text-sm font-medium text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">${escapeHtml(item.title)}</p>
+              <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">${new Date(item.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</p>
+            </a>`;
           list.appendChild(li);
         });
       } catch (err) {
@@ -790,7 +835,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-gray-100 dark:border-gray-800/50 py-10 px-6">
+  <footer class="border-t border-gray-200/60 dark:border-white/[0.06] py-12 px-6 bg-white dark:bg-white/[0.02]">
     <div class="max-w-4xl mx-auto">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-5">
