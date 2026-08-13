@@ -30,18 +30,40 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Khaled Alam",
-    "alternateName": "خالد علام",
-    "url": "https://khaledalam.net",
-    "image": "https://khaledalam.net/DP_Khaled.jpg",
-    "jobTitle": "Software Specialist",
-    "sameAs": [
-      "https://github.com/khaledalam",
-      "https://linkedin.com/in/khaledalam",
-      "https://twitter.com/KhaledAlamXYZ",
-      "https://www.youtube.com/NinjoCoding",
-      "https://blog.khaledalam.net"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://khaledalam.net/#website",
+        "url": "https://khaledalam.net/",
+        "name": "Khaled Alam",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://khaledalam.net/#person" }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://khaledalam.net/#profilepage",
+        "url": "https://khaledalam.net/",
+        "name": "Khaled Alam — Software Specialist",
+        "isPartOf": { "@id": "https://khaledalam.net/#website" },
+        "mainEntity": { "@id": "https://khaledalam.net/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://khaledalam.net/#person",
+        "name": "Khaled Alam",
+        "alternateName": "خالد علام",
+        "url": "https://khaledalam.net",
+        "image": "https://khaledalam.net/DP_Khaled.jpg",
+        "jobTitle": "Software Specialist",
+        "mainEntityOfPage": { "@id": "https://khaledalam.net/#profilepage" },
+        "sameAs": [
+          "https://github.com/khaledalam",
+          "https://linkedin.com/in/khaledalam",
+          "https://twitter.com/KhaledAlamXYZ",
+          "https://www.youtube.com/NinjoCoding",
+          "https://blog.khaledalam.net"
+        ]
+      }
     ]
   }
   </script>
