@@ -56,6 +56,29 @@
         "image": "https://khaledalam.net/DP_Khaled.jpg",
         "jobTitle": "Software Specialist",
         "mainEntityOfPage": { "@id": "https://khaledalam.net/#profilepage" },
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Mansoura University",
+            "address": { "@type": "PostalAddress", "addressCountry": "EG" }
+          }
+        ],
+        "knowsAbout": [
+          "PHP",
+          "PHP internals",
+          "Laravel",
+          "Symfony",
+          "React",
+          "TypeScript",
+          "AWS",
+          "Docker",
+          "System architecture"
+        ],
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "PHP RFC: Allow Object Property Writes on Objects Referenced by Constants",
+          "url": "https://wiki.php.net/rfc/const_object_property_write"
+        },
         "sameAs": [
           "https://github.com/khaledalam",
           "https://linkedin.com/in/khaledalam",
@@ -109,7 +132,8 @@
 
     main {
       width: 100%;
-      max-width: 30rem;
+      max-width: 34rem;
+      margin: auto;
       text-align: center;
     }
 
@@ -162,24 +186,44 @@
       border-bottom-color: var(--accent);
     }
 
-    .note {
-      margin-top: 2.5rem;
+    .facts {
+      margin: 2.5rem 0 0;
       padding-top: 1.5rem;
       border-top: 1px solid var(--rule);
+      display: grid;
+      gap: 0.875rem;
+      text-align: left;
       font-size: 0.8125rem;
-      line-height: 1.6;
+      line-height: 1.65;
       color: var(--muted);
     }
 
-    .note a {
+    .facts > div {
+      display: grid;
+      grid-template-columns: 5.5rem 1fr;
+      gap: 0.125rem 1rem;
+    }
+
+    .facts dt {
+      color: var(--fg);
+      font-weight: 500;
+    }
+
+    .facts dd { margin: 0; }
+
+    .facts a {
       color: var(--muted);
       text-decoration: underline;
       text-underline-offset: 2px;
       text-decoration-thickness: 1px;
     }
 
-    .note a:hover,
-    .note a:focus-visible { color: var(--accent); }
+    .facts a:hover,
+    .facts a:focus-visible { color: var(--accent); }
+
+    @media (max-width: 34rem) {
+      .facts > div { grid-template-columns: 1fr; }
+    }
 
     .theme-toggle {
       position: fixed;
@@ -240,11 +284,39 @@
       <a href="mailto:khaledalam.net@gmail.com">Email</a>
     </nav>
 
-    <p class="note">
-      Author of the
-      <a href="https://wiki.php.net/rfc/const_object_property_write" target="_blank" rel="noopener">object property writes on constants</a>
-      RFC, <a href="https://github.com/php/php-src/commit/b16cab7da8e5748b173542da42fc8b602ae59dea" target="_blank" rel="noopener">merged into PHP 8.6</a>.
-    </p>
+    <dl class="facts">
+      <div>
+        <dt>PHP core</dt>
+        <dd>
+          Author of the
+          <a href="https://wiki.php.net/rfc/const_object_property_write" target="_blank" rel="noopener">object property writes on constants</a>
+          RFC, <a href="https://github.com/php/php-src/commit/b16cab7da8e5748b173542da42fc8b602ae59dea" target="_blank" rel="noopener">merged into PHP 8.6</a>.
+          Earlier patches:
+          <a href="https://github.com/php/php-src/pull/20902" target="_blank" rel="noopener">#20902</a>,
+          <a href="https://github.com/php/php-src/pull/20983" target="_blank" rel="noopener">#20983</a>,
+          <a href="https://github.com/php/php-src/pull/21085" target="_blank" rel="noopener">#21085</a>.
+        </dd>
+      </div>
+      <div>
+        <dt>Open source</dt>
+        <dd>
+          <a href="https://github.com/redis/redis/pull/12215" target="_blank" rel="noopener">Redis</a>,
+          phpMyAdmin, MySQL Server, Symfony, AWS SDK for PHP.
+        </dd>
+      </div>
+      <div>
+        <dt>Education</dt>
+        <dd>M.S. Financial Engineering, Washington, D.C. · B.S. Computer Science, Mansoura University, Egypt.</dd>
+      </div>
+      <div>
+        <dt>Also</dt>
+        <dd>
+          IBM <a href="https://research.ibm.com/haifa/ponderthis/challenges/October2025.html" target="_blank" rel="noopener">“Ponder This”</a> October 2025 solver ·
+          <a href="https://github.com/khaledalam/worktools" target="_blank" rel="noopener">WorkTools</a> ·
+          <a href="https://www.linkedin.com/company/canvamagnet" target="_blank" rel="noopener">CanvaMagnet</a>
+        </dd>
+      </div>
+    </dl>
   </main>
 </body>
 </html>
