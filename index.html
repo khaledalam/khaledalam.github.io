@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Khaled Alam — Software Specialist</title>
-  <link rel="icon" href="./logo.png" />
+  <link rel="icon" href="./logo.png" type="image/png" sizes="256x256" />
   <link rel="apple-touch-icon" href="./logo.png" />
   <meta name="description" content="Khaled Alam, Software Specialist in Dubai: 10+ years building SaaS, PropTech and FinTech products with PHP/Laravel, React and AI. Author of a PHP 8.6 RFC." />
   <meta name="author" content="Khaled Alam" />
@@ -107,7 +107,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Non-blocking: text renders at once in the metric-matched fallback, then swaps to Inter without shifting. -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" /></noscript>
 
   <style>
     :root {
