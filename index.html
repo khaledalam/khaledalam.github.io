@@ -6,7 +6,7 @@
   <title>Khaled Alam — Software Specialist</title>
   <link rel="icon" href="./logo.png" />
   <link rel="apple-touch-icon" href="./logo.png" />
-  <meta name="description" content="Khaled Alam, Software Specialist in Dubai. 10+ years building production SaaS, PropTech, FinTech and e-commerce products with PHP/Laravel, React/Next.js, TypeScript and AI/LLM integrations." />
+  <meta name="description" content="Khaled Alam, Software Specialist in Dubai: 10+ years building SaaS, PropTech and FinTech products with PHP/Laravel, React and AI. Author of a PHP 8.6 RFC." />
   <meta name="author" content="Khaled Alam" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0a0a0f" />
@@ -23,7 +23,7 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://khaledalam.net/" />
   <meta property="og:title" content="Khaled Alam — Software Specialist" />
-  <meta property="og:description" content="Khaled Alam, Software Specialist in Dubai. 10+ years building production SaaS, PropTech, FinTech and e-commerce products with PHP/Laravel, React/Next.js, TypeScript and AI/LLM integrations." />
+  <meta property="og:description" content="Khaled Alam, Software Specialist in Dubai: 10+ years building SaaS, PropTech and FinTech products with PHP/Laravel, React and AI. Author of a PHP 8.6 RFC." />
   <meta property="og:image" content="https://khaledalam.net/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -34,7 +34,7 @@
   <meta name="twitter:site" content="@KhaledAlamXYZ" />
   <meta name="twitter:creator" content="@KhaledAlamXYZ" />
   <meta name="twitter:title" content="Khaled Alam — Software Specialist" />
-  <meta name="twitter:description" content="Khaled Alam, Software Specialist in Dubai. 10+ years building production SaaS, PropTech, FinTech and e-commerce products with PHP/Laravel, React/Next.js, TypeScript and AI/LLM integrations." />
+  <meta name="twitter:description" content="Khaled Alam, Software Specialist in Dubai: 10+ years building SaaS, PropTech and FinTech products with PHP/Laravel, React and AI. Author of a PHP 8.6 RFC." />
   <meta name="twitter:image" content="https://khaledalam.net/og.png" />
   <meta name="twitter:image:alt" content="Khaled Alam — Software Specialist" />
 
@@ -218,6 +218,17 @@
       border-bottom-color: var(--accent);
     }
 
+    .writing { margin: 2.5rem 0 0; text-align: left; }
+    .writing-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.5rem; }
+    .writing h2 { margin: 0; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+    .writing-head a { font-size: 0.8125rem; color: var(--accent); text-decoration: none; white-space: nowrap; }
+    .writing-head a:hover { text-decoration: underline; }
+    .writing-list { list-style: none; margin: 0; padding: 0; }
+    .writing-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.625rem 0; border-top: 1px solid var(--rule); }
+    .writing-list a { color: var(--fg); text-decoration: none; font-size: 0.9375rem; font-weight: 500; line-height: 1.45; }
+    .writing-list a:hover { color: var(--accent); }
+    .writing-list time { flex-shrink: 0; font-size: 0.8125rem; color: var(--muted); }
+
     .facts {
       margin: 2.5rem 0 0;
       padding-top: 1.5rem;
@@ -350,12 +361,25 @@
     </p>
 
     <nav>
-      <a href="https://github.com/khaledalam" target="_blank" rel="noopener">GitHub</a>
       <a href="https://blog.khaledalam.net">Blog</a>
+      <a href="https://github.com/khaledalam" target="_blank" rel="noopener">GitHub</a>
       <a href="https://linkedin.com/in/khaledalam" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://drive.google.com/file/d/164HYcgPta5W5onAAXbwIoamOTVmsIlSm/view" target="_blank" rel="noopener">Résumé</a>
       <a href="mailto:khaledalam.net@gmail.com">Email</a>
     </nav>
+
+    <!-- Static list for crawlers and no-JS; the script below refreshes it from the blog's RSS feed. -->
+    <section class="writing" aria-labelledby="writing-h">
+      <div class="writing-head">
+        <h2 id="writing-h">Latest from the blog</h2>
+        <a href="https://blog.khaledalam.net">All posts →</a>
+      </div>
+      <ul class="writing-list">
+        <li><a href="https://blog.khaledalam.net/php-8-6-object-property-writes-on-constants/">RFC Merged into PHP Core: Object Property Writes on Constants (PHP 8.6)</a><time datetime="2026-08-13">Aug 2026</time></li>
+        <li><a href="https://blog.khaledalam.net/contributing-to-php-core/">Contributing to PHP Core: Fixing a NAN Reflection Bug</a><time datetime="2026-07-17">Jul 2026</time></li>
+        <li><a href="https://blog.khaledalam.net/avatoon-3d-talking-avatar-lip-sync-react/">Avatoon: 3D Talking Avatar with Lip-Sync in React</a><time datetime="2026-07-16">Jul 2026</time></li>
+      </ul>
+    </section>
 
     <dl class="facts">
       <div>
@@ -419,5 +443,23 @@
       <span class="launch-go">Play →</span>
     </a>
   </main>
+  <script>
+    // Keep "Latest from the blog" current without redeploying this page.
+    fetch('https://blog.khaledalam.net/feed.xml').then(r => r.ok ? r.text() : Promise.reject()).then(xml => {
+      const items = [...new DOMParser().parseFromString(xml, 'application/xml').querySelectorAll('item')].slice(0, 3);
+      const list = document.querySelector('.writing-list');
+      if (items.length < 3 || !list) return;
+      list.replaceChildren(...items.map(it => {
+        const li = document.createElement('li'), a = document.createElement('a'), t = document.createElement('time');
+        const d = new Date(it.querySelector('pubDate').textContent);
+        a.href = it.querySelector('link').textContent;
+        a.textContent = it.querySelector('title').textContent;
+        t.dateTime = d.toISOString().slice(0, 10);
+        t.textContent = d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+        li.append(a, t);
+        return li;
+      }));
+    }).catch(() => {});
+  </script>
 </body>
 </html>
