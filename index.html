@@ -11,7 +11,8 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0a0a0f" />
 
-  <link rel="preload" as="image" href="./DP_Khaled.webp" type="image/webp" />
+  <link rel="preload" as="image" href="./DP_Khaled.webp" type="image/webp" media="(max-width: 47.99rem)" />
+  <link rel="preload" as="image" href="./DP_Khaled_Gray.webp" type="image/webp" media="(min-width: 48rem)" />
 
   <!-- Open Graph / Facebook -->
   <!-- og.png is a purpose-built 1200x630 card. DP_Khaled.jpg is 1170x1464
@@ -332,7 +333,10 @@
   </button>
 
   <main>
-    <img class="avatar" src="./DP_Khaled.webp" alt="Khaled Alam" width="96" height="96" />
+    <picture>
+      <source media="(min-width: 48rem)" srcset="./DP_Khaled_Gray.webp" type="image/webp" />
+      <img class="avatar" src="./DP_Khaled.webp" alt="Khaled Alam" width="96" height="96" />
+    </picture>
 
     <h1>Khaled Alam</h1>
     <p class="title">Software Specialist</p>
