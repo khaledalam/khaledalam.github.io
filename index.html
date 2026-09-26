@@ -238,6 +238,54 @@
       .facts > div { grid-template-columns: 1fr; }
     }
 
+    .launch {
+      margin: 2rem auto 0;
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      padding: 0.625rem 0.875rem 0.625rem 0.625rem;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      text-align: left;
+      text-decoration: none;
+      color: var(--fg);
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .launch:hover,
+    .launch:focus-visible { border-color: var(--accent); transform: translateY(-1px); }
+
+    .launch img {
+      width: 104px;
+      height: 55px;
+      border-radius: 7px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .launch-text { display: grid; gap: 0.125rem; font-size: 0.8125rem; line-height: 1.4; color: var(--muted); }
+    .launch-text b { color: var(--fg); font-size: 0.9375rem; font-weight: 600; }
+
+    .launch-tag {
+      display: inline-block;
+      margin-right: 0.375rem;
+      padding: 0 0.375rem;
+      border-radius: 4px;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--accent);
+      vertical-align: 1px;
+    }
+
+    .launch-go { margin-left: auto; color: var(--accent); font-weight: 600; font-size: 0.875rem; white-space: nowrap; }
+
+    @media (max-width: 30rem) {
+      .launch-go { display: none; }
+    }
+
     .theme-toggle {
       position: fixed;
       top: 1rem;
@@ -297,6 +345,15 @@
       <a href="mailto:khaledalam.net@gmail.com">Email</a>
     </nav>
 
+    <a class="launch" href="https://khaledalam.net/mini-command/">
+      <img src="./mini-command/og-image.jpg?v=2" alt="" width="104" height="55" loading="lazy" />
+      <span class="launch-text">
+        <b><span class="launch-tag">New</span>Mini Command</b>
+        A free online 1v1 real-time strategy game I built. Play it in your browser.
+      </span>
+      <span class="launch-go">Play →</span>
+    </a>
+
     <dl class="facts">
       <div>
         <dt>PHP core</dt>
@@ -324,6 +381,7 @@
       <div>
         <dt>Projects</dt>
         <dd>
+          <a href="https://khaledalam.net/mini-command/">Mini Command</a>, a browser RTS game ·
           <a href="https://github.com/khaledalam/avatoon" target="_blank" rel="noopener">Avatoon</a>, a 3D talking-avatar component for React ·
           <a href="https://www.linkedin.com/company/canvamagnet" target="_blank" rel="noopener">CanvaMagnet</a>
         </dd>
