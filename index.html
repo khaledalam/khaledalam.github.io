@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,10 +9,10 @@
   <meta name="description" content="Khaled Alam, Software Specialist in Dubai: 10+ years building SaaS, PropTech and FinTech products with PHP/Laravel, React and AI. Author of a PHP 8.6 RFC." />
   <meta name="author" content="Khaled Alam" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="theme-color" content="#0a0a0f" />
+  <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)" />
 
-  <link rel="preload" as="image" href="./DP_Khaled.webp" type="image/webp" media="(max-width: 47.99rem)" />
-  <link rel="preload" as="image" href="./DP_Khaled_Gray.webp" type="image/webp" media="(min-width: 48rem)" />
+  <link rel="preload" as="image" href="./DP_Khaled_sq.webp" type="image/webp" />
 
   <!-- Open Graph / Facebook -->
   <!-- og.png is a purpose-built 1200x630 card. DP_Khaled.jpg is 1170x1464
@@ -107,350 +107,458 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Non-blocking: text renders at once in the metric-matched fallback, then swaps to Inter without shifting. -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+  <!-- Non-blocking: text renders at once in the metric-matched fallback, then swaps to Montserrat without shifting. -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" /></noscript>
+
+  <script>
+    // Saved choice wins; otherwise follow the system. Runs before paint so there is no flash.
+    try { var t = localStorage.getItem("theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) {}
+    function toggleTheme() {
+      var r = document.documentElement;
+      var dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+      r.dataset.theme = dark ? "light" : "dark";
+      try { localStorage.setItem("theme", r.dataset.theme); } catch (e) {}
+    }
+  </script>
 
   <style>
     :root {
-      --bg: #f9fafb;
-      --fg: #111827;
-      --muted: #6b7280;
-      --rule: rgba(17, 24, 39, 0.10);
-      --accent: #2563eb;
+      --bg: #fafafa;
+      --card: #ffffff;
+      --heading: #3d4451;
+      --fg: #434343;
+      --muted: #8c8c8c;
+      --rule: #e8e8e8;
+      --link: #0050b3;
+      --award: #874d00;
+      --pill-border: #bfbfbf;
+      --pdf: #d46b08;
+      --shadow: 0 6px 22px rgba(77, 101, 130, 0.16);
+      --tile: radial-gradient(circle at 18% 18%, rgba(255,255,255,.9), rgba(255,255,255,0) 34%), linear-gradient(135deg, #edf6ff 0%, #dbe8f6 54%, #c8d7e8 100%);
+      --tile-fg: #7d8da0;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0f1115; --card: #171a21; --heading: #e6e8eb; --fg: #c3c7ce; --muted: #8b919b;
+        --rule: #262a33; --link: #6aa9ff; --award: #e0a458; --pill-border: #3a3f4a; --pdf: #f0a15a;
+        --shadow: 0 6px 22px rgba(0,0,0,.45);
+        --tile: radial-gradient(circle at 18% 18%, rgba(255,255,255,.08), rgba(255,255,255,0) 34%), linear-gradient(135deg, #1d2633 0%, #18202b 54%, #131a23 100%);
+        --tile-fg: #8595a8;
+        color-scheme: dark;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #0f1115; --card: #171a21; --heading: #e6e8eb; --fg: #c3c7ce; --muted: #8b919b;
+      --rule: #262a33; --link: #6aa9ff; --award: #e0a458; --pill-border: #3a3f4a; --pdf: #f0a15a;
+      --shadow: 0 6px 22px rgba(0,0,0,.45);
+      --tile: radial-gradient(circle at 18% 18%, rgba(255,255,255,.08), rgba(255,255,255,0) 34%), linear-gradient(135deg, #1d2633 0%, #18202b 54%, #131a23 100%);
+      --tile-fg: #8595a8;
+      color-scheme: dark;
     }
 
-    html.dark {
-      --bg: #0a0a0f;
-      --fg: #f3f4f6;
-      --muted: #9ca3af;
-      --rule: rgba(255, 255, 255, 0.12);
-      --accent: #60a5fa;
-    }
-
-    /* Arial sized to Inter's metrics, so swapping in the web font does not move the text. */
+    /* Arial sized to Montserrat's metrics, so swapping in the web font does not move the text. */
     @font-face {
-      font-family: 'Inter Fallback';
+      font-family: 'Montserrat Fallback';
       src: local('Arial');
-      ascent-override: 90.2%;
-      descent-override: 22.48%;
+      ascent-override: 84.95%;
+      descent-override: 22.03%;
       line-gap-override: 0%;
-      size-adjust: 107.4%;
+      size-adjust: 113.39%;
     }
 
     * { box-sizing: border-box; }
-
-    html, body { height: 100%; }
-
     body {
       margin: 0;
       background: var(--bg);
       color: var(--fg);
-      font-family: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      letter-spacing: -0.011em;
+      font-family: 'Montserrat', 'Montserrat Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1.5rem;
     }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    :focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
 
-    main {
-      width: 100%;
-      max-width: 34rem;
-      margin: auto;
-      text-align: center;
-    }
-
-    .avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 1.5rem;
-      display: block;
-      border: 1px solid var(--rule);
-    }
-
-    h1 {
-      font-size: clamp(1.75rem, 5vw, 2.25rem);
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      margin: 0 0 0.375rem;
-      line-height: 1.15;
-    }
-
-    .title {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .summary {
-      max-width: 30rem;
-      margin: 1rem auto 0;
-      font-size: 0.9375rem;
-      line-height: 1.6;
-      color: var(--muted);
-    }
-
-    nav {
-      margin-top: 1.75rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem 1.25rem;
-      font-size: 0.9375rem;
-    }
-
-    nav a {
-      color: var(--fg);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 1px;
-      transition: color 0.15s ease, border-color 0.15s ease;
-    }
-
-    nav a:hover,
-    nav a:focus-visible {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-
-    .writing { margin: 2.5rem 0 0; text-align: left; }
-    .writing-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.5rem; }
-    .writing h2 { margin: 0; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
-    .writing-head a { font-size: 0.8125rem; color: var(--accent); text-decoration: none; white-space: nowrap; }
-    .writing-head a:hover { text-decoration: underline; }
-    .writing-list { list-style: none; margin: 0; padding: 0; }
-    .writing-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.625rem 0; border-top: 1px solid var(--rule); }
-    .writing-list a { color: var(--fg); text-decoration: none; font-size: 0.9375rem; font-weight: 500; line-height: 1.45; }
-    .writing-list a:hover { color: var(--accent); }
-    .writing-list time { flex-shrink: 0; font-size: 0.8125rem; color: var(--muted); }
-
-    .facts {
-      margin: 2.5rem 0 0;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--rule);
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 64px 40px 80px;
       display: grid;
-      gap: 0.875rem;
-      text-align: left;
-      font-size: 0.8125rem;
-      line-height: 1.65;
-      color: var(--muted);
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 64px;
     }
 
-    .facts > div {
-      display: grid;
-      grid-template-columns: 5.5rem 1fr;
-      gap: 0.125rem 1rem;
+    /* ---------- Sidebar ---------- */
+    .side { position: sticky; top: 64px; align-self: start; }
+    .side .photo {
+      display: block; width: 280px; height: 280px; object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
     }
+    .side .name { margin: 20px 0 0; font-size: 24px; font-weight: 500; color: var(--heading); line-height: 1.2; }
+    .side .role { margin: 4px 0 0; font-size: 15px; color: var(--fg); }
+    .socials { display: flex; gap: 14px; margin: 14px 0 0; padding: 0; list-style: none; }
+    .socials a { color: var(--muted); display: inline-flex; transition: color .2s; }
+    .socials a:hover { color: var(--heading); }
+    .socials svg { width: 22px; height: 22px; }
+    .side hr { border: 0; border-top: 2px solid var(--rule); margin: 22px 0 18px; }
+    .contact { list-style: none; margin: 0; padding: 0; font-size: 14.5px; display: grid; gap: 6px; }
+    .contact li { display: flex; align-items: center; gap: 8px; }
+    .contact svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--muted); }
+    .contact .sub { color: var(--muted); }
 
-    .facts dt {
-      color: var(--fg);
-      font-weight: 500;
+    /* ---------- Main ---------- */
+    h1 { margin: 12px 0 18px; font-size: 42px; font-weight: 600; color: var(--heading); line-height: 1.1; }
+    .bio { font-weight: 300; font-size: 16.5px; line-height: 1.6; margin: 0; max-width: 60rem; }
+    .bio b { font-weight: 500; }
+    h2 { margin: 64px 0 20px; font-size: 30px; font-weight: 600; color: var(--heading); }
+    h2 .more { font-size: 14px; font-weight: 500; margin-left: 12px; }
+
+    /* News: horizontally scrolling cards */
+    .news { position: relative; }
+    .news-track {
+      display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory;
+      scrollbar-width: none; padding: 2px 0 6px;
     }
+    .news-track::-webkit-scrollbar { display: none; }
+    .news-card {
+      flex: 0 0 168px; scroll-snap-align: start;
+      background: var(--card); border: 1px solid var(--rule); border-radius: 4px;
+      display: flex; flex-direction: column; overflow: hidden;
+      font-size: 14px; line-height: 1.45;
+    }
+    .news-card .img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; background: var(--tile); }
+    .news-card .tile {
+      aspect-ratio: 1; display: flex; align-items: center; justify-content: center; text-align: center;
+      background: var(--tile); color: var(--tile-fg); font-weight: 600; font-size: 20px; line-height: 1.15; padding: 14px;
+    }
+    .news-card .tile small { display: block; font-size: 12px; font-weight: 400; opacity: .8; margin-bottom: 4px; }
+    .news-card p { margin: 0; padding: 12px 10px 0; flex: 1; overflow-wrap: anywhere; }
+    .news-card time { display: block; padding: 18px 10px 12px; color: var(--muted); font-size: 14px; }
+    .news-btn {
+      position: absolute; top: 172px; width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid var(--rule); background: var(--card); color: var(--heading);
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08); transition: opacity .2s;
+    }
+    .news-btn[hidden] { display: none; }
+    .news-btn.prev { left: -20px; }
+    .news-btn.next { right: -20px; }
 
+    /* Projects */
+    .project { display: grid; grid-template-columns: 35% 1fr; gap: 30px; margin-bottom: 64px; }
+    .project .media {
+      border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); align-self: start;
+      aspect-ratio: 1200 / 630; background: var(--tile);
+    }
+    .project .media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .project .media.tile:hover { text-decoration: none; }
+    .project .media.tile {
+      display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+      color: var(--tile-fg); line-height: 1.1; padding: 24px;
+    }
+    .project .media.tile small { font-size: 15px; font-weight: 400; opacity: .8; margin-bottom: 6px; }
+    .project .media.tile b { font-size: 26px; font-weight: 650; }
+    .project h3 { margin: 0 0 6px; font-size: 22px; font-weight: 600; color: var(--heading); line-height: 1.3; }
+    .project h3 a { color: inherit; }
+    .project .venue { font-size: 13.5px; font-weight: 500; margin: 0 0 12px; }
+    .project .venue .award { color: var(--award); font-weight: 500; }
+    .project .venue .award svg { width: 13px; height: 13px; vertical-align: -1px; margin: 0 3px 0 6px; }
+    .tldr { font-size: 14px; line-height: 1.6; margin: 0 0 12px; }
+    .tldr .tag {
+      display: inline-block; font-weight: 600; font-size: 13px; background: var(--card); color: var(--heading);
+      padding: 0 6px; border-radius: 5px; box-shadow: 0 0 3px 0 var(--pill-border); margin-right: 6px;
+    }
+    .links { display: flex; flex-wrap: wrap; gap: 6px; }
+    .links a {
+      display: inline-flex; align-items: center; gap: 5px; height: 22px; padding: 0 10px;
+      border: 1px solid var(--pill-border); border-radius: 25px; background: var(--card);
+      font-size: 12px; font-weight: 600; color: var(--link); transition: border-color .3s;
+    }
+    .links a:hover { text-decoration: none; border-color: var(--muted); }
+    .links a.primary { color: var(--pdf); }
+    .links svg { width: 12px; height: 12px; }
+
+    /* Writing */
+    .posts { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+    .posts li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+    .posts a { color: var(--heading); font-weight: 500; font-size: 15.5px; }
+    .posts time { color: var(--muted); font-size: 13.5px; flex-shrink: 0; }
+
+    /* Experience */
+    .xp { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+    .xp li { display: grid; grid-template-columns: 48px 1fr; gap: 16px; align-items: center; }
+    .xp img { width: 48px; height: 48px; border-radius: 8px; object-fit: contain; background: #fff; border: 1px solid var(--rule); }
+    .xp .t { font-weight: 600; color: var(--heading); font-size: 15.5px; }
+    .xp .d { font-size: 14px; }
+    .facts { margin: 28px 0 0; display: grid; gap: 10px; font-size: 14.5px; }
+    .facts div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; }
+    .facts dt { font-weight: 600; color: var(--heading); }
     .facts dd { margin: 0; }
 
-    .facts a {
-      color: var(--muted);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-      text-decoration-thickness: 1px;
-    }
-
-    .facts a:hover,
-    .facts a:focus-visible { color: var(--accent); }
-
-    @media (max-width: 34rem) {
-      .facts > div { grid-template-columns: 1fr; }
-    }
-
-    .launch {
-      margin: 2rem auto 0;
-      display: flex;
-      align-items: center;
-      gap: 0.875rem;
-      padding: 0.625rem 0.875rem 0.625rem 0.625rem;
-      border: 1px solid var(--rule);
-      border-radius: 12px;
-      text-align: left;
-      text-decoration: none;
-      color: var(--fg);
-      transition: border-color 0.15s ease, transform 0.15s ease;
-    }
-
-    .launch:hover,
-    .launch:focus-visible { border-color: var(--accent); transform: translateY(-1px); }
-
-    .launch img {
-      width: 104px;
-      height: 55px;
-      border-radius: 7px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .launch-text { display: grid; gap: 0.125rem; font-size: 0.8125rem; line-height: 1.4; color: var(--muted); }
-    .launch-text b { color: var(--fg); font-size: 0.9375rem; font-weight: 600; }
-
-    .launch-go { margin-left: auto; color: var(--accent); font-weight: 600; font-size: 0.875rem; white-space: nowrap; }
-
-    @media (max-width: 30rem) {
-      .launch-go { display: none; }
-    }
+    footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
     .theme-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: none;
-      border: 1px solid var(--rule);
-      border-radius: 8px;
-      width: 34px;
-      height: 34px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: var(--muted);
-      line-height: 0;
+      position: fixed; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%;
+      background: var(--card); border: 1px solid var(--rule); color: var(--muted); cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center; line-height: 0; z-index: 10;
     }
+    .theme-toggle:hover { color: var(--heading); }
 
-    .theme-toggle:hover { color: var(--fg); }
-
-    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-
-    @media (prefers-reduced-motion: reduce) {
-      * { transition: none !important; }
+    @media (max-width: 1000px) {
+      .page { grid-template-columns: 220px minmax(0, 1fr); gap: 40px; padding: 48px 28px 64px; }
+      .side .photo { width: 220px; height: 220px; }
+      .side { top: 48px; }
     }
+    @media (max-width: 760px) {
+      .page { grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 40px 16px 56px; }
+      .side { position: static; text-align: center; }
+      .side .photo { width: 200px; height: 200px; margin: 0 auto; }
+      .socials { justify-content: center; }
+      .contact { justify-items: center; }
+      .side hr { max-width: 200px; margin-left: auto; margin-right: auto; }
+      h1 { display: none; }
+      .bio { margin-top: 24px; }
+      h2 { margin-top: 48px; font-size: 26px; }
+      .news-btn { display: none; }
+      .project { grid-template-columns: minmax(0, 1fr); gap: 16px; margin-bottom: 48px; }
+      .posts li { flex-direction: column; gap: 2px; }
+      .facts div { grid-template-columns: 1fr; gap: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
   </style>
-
-  <script>
-    if (localStorage.getItem("theme") === "light") {
-      document.documentElement.classList.remove("dark");
-    }
-    function toggleTheme() {
-      var isDark = document.documentElement.classList.toggle("dark");
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-    }
-  </script>
 </head>
 
 <body>
   <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle colour theme">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
   </button>
 
-  <main>
-    <picture>
-      <source media="(min-width: 48rem)" srcset="./DP_Khaled_Gray.webp" type="image/webp" />
-      <img class="avatar" src="./DP_Khaled.webp" alt="Khaled Alam" width="96" height="96" />
-    </picture>
+  <div class="page">
+    <aside class="side">
+      <img class="photo" src="./DP_Khaled_sq.webp" alt="Khaled Alam" width="280" height="280" fetchpriority="high" />
+      <p class="name">Khaled Alam</p>
+      <p class="role">Software Specialist</p>
+      <ul class="socials">
+        <li><a href="https://github.com/khaledalam" target="_blank" rel="me noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg></a></li>
+        <li><a href="https://linkedin.com/in/khaledalam" target="_blank" rel="me noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></a></li>
+        <li><a href="https://twitter.com/KhaledAlamXYZ" target="_blank" rel="me noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64Z"/></svg></a></li>
+        <li><a href="https://www.youtube.com/NinjoCoding" target="_blank" rel="me noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.12-2.13C19.5 3.56 12 3.56 12 3.56s-7.5 0-9.38.51A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.12 2.13c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3 3 0 0 0 2.12-2.13A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8ZM9.6 15.57V8.43L15.82 12 9.6 15.57Z"/></svg></a></li>
+      </ul>
+      <hr />
+      <ul class="contact">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg><a href="mailto:khaledalam.net@gmail.com">khaledalam.net@gmail.com</a></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Dubai, UAE</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7M9 15.5h7M9 19h4"/></svg><span><a href="https://drive.google.com/file/d/164HYcgPta5W5onAAXbwIoamOTVmsIlSm/view" target="_blank" rel="noopener">Résumé</a> <span class="sub">(PDF)</span></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></svg><a href="https://blog.khaledalam.net">Blog</a></li>
+      </ul>
+    </aside>
 
-    <h1>Khaled Alam</h1>
-    <p class="title">Software Specialist · Dubai, UAE</p>
-    <p class="summary">
-      10+ years building and running production SaaS, PropTech, FinTech and e-commerce products,
-      from architecture to deployment. PHP/Laravel, React/Next.js, TypeScript and AI/LLM integrations.
-    </p>
+    <main>
+      <h1>Khaled Alam</h1>
+      <p class="bio">
+        I'm a Software Specialist in Dubai with 10+ years building and running production SaaS, PropTech,
+        FinTech and e-commerce products, from architecture to deployment. Previously, I was lead full-stack
+        engineer at <b>Makyee</b>, whose mobile app reached #1 on the UAE App Store. I work across
+        PHP/Laravel, React/Next.js, TypeScript and AI/LLM integrations, and I contribute to PHP itself: my
+        <a href="https://wiki.php.net/rfc/const_object_property_write" target="_blank" rel="noopener">RFC</a>
+        was merged into PHP 8.6.
+      </p>
 
-    <nav>
-      <a href="https://blog.khaledalam.net">Blog</a>
-      <a href="https://github.com/khaledalam" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://linkedin.com/in/khaledalam" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://drive.google.com/file/d/164HYcgPta5W5onAAXbwIoamOTVmsIlSm/view" target="_blank" rel="noopener">Résumé</a>
-      <a href="mailto:khaledalam.net@gmail.com">Email</a>
-    </nav>
-
-    <!-- Static list for crawlers and no-JS; the script below refreshes it from the blog's RSS feed. -->
-    <section class="writing" aria-labelledby="writing-h">
-      <div class="writing-head">
-        <h2 id="writing-h">Latest from the blog</h2>
-        <a href="https://blog.khaledalam.net">All posts →</a>
+      <h2 id="news">News</h2>
+      <div class="news">
+        <button class="news-btn prev" type="button" aria-label="Previous news" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+        <div class="news-track">
+          <article class="news-card">
+            <img class="img" src="https://blog.khaledalam.net/_img/wp-content/uploads/2026/09/mini-command-free-online-rts-game.jpg.thumb.webp" alt="" width="168" height="168" loading="lazy" />
+            <p>Launched <a href="https://khaledalam.net/mini-command/">Mini Command</a>, a free 1v1 real-time strategy game that runs in your browser. 🎮</p>
+            <time datetime="2026-09">Sep, 2026</time>
+          </article>
+          <article class="news-card">
+            <img class="img" src="https://blog.khaledalam.net/_img/wp-content/uploads/2026/08/php-8-6-object-property-writes-on-constants.png.thumb.webp" alt="" width="168" height="168" loading="lazy" />
+            <p>My <a href="https://wiki.php.net/rfc/const_object_property_write" target="_blank" rel="noopener">RFC</a> on object property writes on constants was <a href="https://github.com/php/php-src/commit/b16cab7da8e5748b173542da42fc8b602ae59dea" target="_blank" rel="noopener">merged into PHP 8.6</a>!</p>
+            <time datetime="2026-08">Aug, 2026</time>
+          </article>
+          <article class="news-card">
+            <div class="tile"><span><small>php-src</small>#20976</span></div>
+            <p>Added <a href="https://github.com/php/php-src/pull/20976" target="_blank" rel="noopener">zend_class_use_internal_traits()</a> to the Zend engine.</p>
+            <time datetime="2026-07">Jul, 2026</time>
+          </article>
+          <article class="news-card">
+            <img class="img" src="https://blog.khaledalam.net/_img/wp-content/uploads/2026/07/contributing-to-php-core.png.thumb.webp" alt="" width="168" height="168" loading="lazy" />
+            <p>Fixed a <a href="https://github.com/php/php-src/pull/22694" target="_blank" rel="noopener">NAN reflection bug</a> in PHP core. <a href="https://blog.khaledalam.net/contributing-to-php-core/">How it went</a>.</p>
+            <time datetime="2026-07">Jul, 2026</time>
+          </article>
+          <article class="news-card">
+            <img class="img" src="https://blog.khaledalam.net/_img/wp-content/uploads/2026/07/avatoon-3d-talking-avatar-react-1.jpg.thumb.webp" alt="" width="168" height="168" loading="lazy" />
+            <p>Released <a href="https://github.com/khaledalam/avatoon" target="_blank" rel="noopener">Avatoon</a>, a 3D talking avatar with lip-sync for React.</p>
+            <time datetime="2026-07">Jul, 2026</time>
+          </article>
+          <article class="news-card">
+            <img class="img" src="https://blog.khaledalam.net/_img/wp-content/uploads/2026/02/Screenshot-2026-02-17-at-7.29.33-AM.png.thumb.webp" alt="" width="168" height="168" loading="lazy" />
+            <p><a href="https://github.com/php/php-src/pull/20902" target="_blank" rel="noopener">ReflectionConstant::inNamespace()</a> merged into PHP core.</p>
+            <time datetime="2026-02">Feb, 2026</time>
+          </article>
+          <article class="news-card">
+            <div class="tile"><span><small>Open source</small>phpMyAdmin</span></div>
+            <p>A <a href="https://github.com/phpmyadmin/phpmyadmin/pull/19564" target="_blank" rel="noopener">fix</a> for the table comment field was merged into phpMyAdmin.</p>
+            <time datetime="2025-12">Dec, 2025</time>
+          </article>
+          <article class="news-card">
+            <div class="tile"><span><small>IBM Research</small>Ponder This</span></div>
+            <p>Listed as a solver of IBM Research's <a href="https://research.ibm.com/haifa/ponderthis/challenges/October2025.html" target="_blank" rel="noopener">“Ponder This”</a> challenge.</p>
+            <time datetime="2025-10">Oct, 2025</time>
+          </article>
+          <article class="news-card">
+            <div class="tile"><span><small>Catalysts</small>1st place</span></div>
+            <p>Won 1st place in the Catalysts Coding Contest, and placed in the top 15 in Egypt at ACM ICPC ECPC.</p>
+            <time datetime="2018">2018</time>
+          </article>
+        </div>
+        <button class="news-btn next" type="button" aria-label="Next news"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
       </div>
-      <ul class="writing-list">
+
+      <h2 id="projects">Projects</h2>
+
+      <article class="project">
+        <a class="media tile" href="https://blog.khaledalam.net/php-8-6-object-property-writes-on-constants/"><small>RFC · merged into</small><b>PHP 8.6</b></a>
+        <div>
+          <h3><a href="https://wiki.php.net/rfc/const_object_property_write" target="_blank" rel="noopener">PHP RFC: Allow Object Property Writes on Objects Referenced by Constants</a></h3>
+          <p class="venue">PHP 8.6<span class="award"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 9.1 8.3 2 9.2l5.2 4.8L5.8 21 12 17.5 18.2 21l-1.4-7L22 9.2l-7.1-.9z"/></svg>Merged into php-src</span></p>
+          <p class="tldr"><span class="tag">TLDR</span>An RFC I authored and implemented: <code>CONFIG-&gt;debug = true;</code> is now legal for global and class constants. A constant's binding stays immutable, but the object it holds was always mutable. The vote passed 17–2 and it ships in PHP 8.6.</p>
+          <div class="links">
+            <a class="primary" href="https://wiki.php.net/rfc/const_object_property_write" target="_blank" rel="noopener">RFC</a>
+            <a href="https://github.com/php/php-src/commit/b16cab7da8e5748b173542da42fc8b602ae59dea" target="_blank" rel="noopener">Commit</a>
+            <a href="https://blog.khaledalam.net/php-8-6-object-property-writes-on-constants/">Blog post</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <a class="media" href="https://khaledalam.net/mini-command/"><img src="https://blog.khaledalam.net/_img/wp-content/uploads/2026/09/mini-command-free-online-rts-game.jpg.webp" alt="Mini Command, a real-time strategy game in the browser" width="1200" height="630" loading="lazy" /></a>
+        <div>
+          <h3><a href="https://khaledalam.net/mini-command/">Mini Command</a></h3>
+          <p class="venue">Browser game · TypeScript, Phaser, Cloudflare Workers</p>
+          <p class="tldr"><span class="tag">TLDR</span>A free online 1v1 real-time strategy game that runs in the browser, with multiplayer on Cloudflare Durable Objects and hosting that costs $0 to run.</p>
+          <div class="links">
+            <a class="primary" href="https://khaledalam.net/mini-command/">Play</a>
+            <a href="https://blog.khaledalam.net/mini-command-free-online-rts-browser-game/">Blog post</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <a class="media" href="https://khaledalam.net/avatoon/"><img src="https://blog.khaledalam.net/_img/wp-content/uploads/2026/07/avatoon-3d-talking-avatar-react-1.jpg.webp" alt="Avatoon 3D talking avatar" width="1200" height="630" loading="lazy" /></a>
+        <div>
+          <h3><a href="https://github.com/khaledalam/avatoon" target="_blank" rel="noopener">Avatoon</a></h3>
+          <p class="venue">Open source · React, React Native, Three Fiber</p>
+          <p class="tldr"><span class="tag">TLDR</span>A React and React Native Three Fiber component for animated 3D avatars with lip-sync and head motion.</p>
+          <div class="links">
+            <a class="primary" href="https://khaledalam.net/avatoon/">Demo</a>
+            <a href="https://github.com/khaledalam/avatoon" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://blog.khaledalam.net/avatoon-3d-talking-avatar-lip-sync-react/">Blog post</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="media tile"><small>Contributions to</small><b>php-src</b></div>
+        <div>
+          <h3>PHP core contributions</h3>
+          <p class="venue">php/php-src · 2026</p>
+          <p class="tldr"><span class="tag">TLDR</span>Merged patches to the PHP engine and the Reflection extension: new APIs, a bug fix, and code clean-ups.</p>
+          <div class="links">
+            <a href="https://github.com/php/php-src/pull/20902" target="_blank" rel="noopener">#20902 inNamespace()</a>
+            <a href="https://github.com/php/php-src/pull/20976" target="_blank" rel="noopener">#20976 internal traits</a>
+            <a href="https://github.com/php/php-src/pull/22694" target="_blank" rel="noopener">#22694 NAN fix</a>
+            <a href="https://github.com/php/php-src/pull/20983" target="_blank" rel="noopener">#20983</a>
+            <a href="https://github.com/php/php-src/pull/21085" target="_blank" rel="noopener">#21085</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="media tile"><small>Library</small><b>unit</b></div>
+        <div>
+          <h3><a href="https://github.com/khaledalam/unit" target="_blank" rel="noopener">unit</a></h3>
+          <p class="venue">Open source · PHP</p>
+          <p class="tldr"><span class="tag">TLDR</span>A lightweight PHP library for physical quantities and unit conversions, with arithmetic, precision formatting and dimensional analysis.</p>
+          <div class="links">
+            <a class="primary" href="https://khaledalam.net/unit/">Docs</a>
+            <a href="https://github.com/khaledalam/unit" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="media tile"><small>Open source</small><b>Contributions</b></div>
+        <div>
+          <h3>Other open-source contributions</h3>
+          <p class="venue">phpMyAdmin · Symfony · AWS</p>
+          <p class="tldr"><span class="tag">TLDR</span>Merged contributions to phpMyAdmin, the Symfony Demo application (Arabic translation) and the AWS SDK for PHP.</p>
+          <div class="links">
+            <a href="https://github.com/phpmyadmin/phpmyadmin/pull/19564" target="_blank" rel="noopener">phpMyAdmin</a>
+            <a href="https://github.com/symfony/demo/pull/1142" target="_blank" rel="noopener">Symfony Demo</a>
+            <a href="https://github.com/aws/aws-sdk-php/pull/2078" target="_blank" rel="noopener">AWS SDK for PHP</a>
+          </div>
+        </div>
+      </article>
+
+      <h2 id="writing">Writing <a class="more" href="https://blog.khaledalam.net">All posts →</a></h2>
+      <!-- Static list for crawlers and no-JS; the script below refreshes it from the blog's RSS feed. -->
+      <ul class="posts">
+        <li><a href="https://blog.khaledalam.net/mini-command-free-online-rts-browser-game/">Mini Command: A Free Online RTS Game in Your Browser (and How I Built It)</a><time datetime="2026-09-26">Sep 2026</time></li>
         <li><a href="https://blog.khaledalam.net/php-8-6-object-property-writes-on-constants/">RFC Merged into PHP Core: Object Property Writes on Constants (PHP 8.6)</a><time datetime="2026-08-13">Aug 2026</time></li>
         <li><a href="https://blog.khaledalam.net/contributing-to-php-core/">Contributing to PHP Core: Fixing a NAN Reflection Bug</a><time datetime="2026-07-17">Jul 2026</time></li>
         <li><a href="https://blog.khaledalam.net/avatoon-3d-talking-avatar-lip-sync-react/">Avatoon: 3D Talking Avatar with Lip-Sync in React</a><time datetime="2026-07-16">Jul 2026</time></li>
+        <li><a href="https://blog.khaledalam.net/semantic-search-from-scratch/">Semantic Search from Scratch: Build Search That Understands Meaning</a><time datetime="2026-07-14">Jul 2026</time></li>
       </ul>
-    </section>
 
-    <dl class="facts">
-      <div>
-        <dt>Experience</dt>
-        <dd>
-          Lead full-stack engineer at Makyee (PropTech; its mobile app reached #1 on the UAE App Store) ·
-          9H Digital · Amplify, for clients including Victoria’s Secret PINK, STC and Arla Foods ·
-          Lead Liaison · ABC Hosting.
-        </dd>
-      </div>
-      <div>
-        <dt>PHP core</dt>
-        <dd>
-          Author of the
-          <a href="https://wiki.php.net/rfc/const_object_property_write" target="_blank" rel="noopener">object property writes on constants</a>
-          RFC, <a href="https://github.com/php/php-src/commit/b16cab7da8e5748b173542da42fc8b602ae59dea" target="_blank" rel="noopener">merged into PHP 8.6</a>.
-          Merged patches:
-          <a href="https://github.com/php/php-src/pull/20902" target="_blank" rel="noopener">#20902</a>,
-          <a href="https://github.com/php/php-src/pull/20976" target="_blank" rel="noopener">#20976</a>,
-          <a href="https://github.com/php/php-src/pull/20983" target="_blank" rel="noopener">#20983</a>,
-          <a href="https://github.com/php/php-src/pull/21085" target="_blank" rel="noopener">#21085</a>,
-          <a href="https://github.com/php/php-src/pull/22694" target="_blank" rel="noopener">#22694</a>.
-        </dd>
-      </div>
-      <div>
-        <dt>Open source</dt>
-        <dd>
-          Merged contributions to
-          <a href="https://github.com/phpmyadmin/phpmyadmin/pull/19564" target="_blank" rel="noopener">phpMyAdmin</a>,
-          <a href="https://github.com/symfony/demo/pull/1142" target="_blank" rel="noopener">Symfony Demo</a> and the
-          <a href="https://github.com/aws/aws-sdk-php/pull/2078" target="_blank" rel="noopener">AWS SDK for PHP</a>.
-        </dd>
-      </div>
-      <div>
-        <dt>Projects</dt>
-        <dd>
-          <a href="https://khaledalam.net/mini-command/">Mini Command</a>, a browser RTS game ·
-          <a href="https://github.com/khaledalam/avatoon" target="_blank" rel="noopener">Avatoon</a>, a 3D talking-avatar component for React ·
-          <a href="https://www.linkedin.com/company/canvamagnet" target="_blank" rel="noopener">CanvaMagnet</a>
-        </dd>
-      </div>
-      <div>
-        <dt>Recognition</dt>
-        <dd>
-          1st place, Catalysts Coding Contest (2018) · Top 15 in Egypt, ACM ICPC ECPC (2018) ·
-          IBM Research <a href="https://research.ibm.com/haifa/ponderthis/challenges/October2025.html" target="_blank" rel="noopener">“Ponder This”</a> listed solver (October 2025).
-        </dd>
-      </div>
-      <div>
-        <dt>Education</dt>
-        <dd>M.S. Financial Engineering, Washington, D.C. (expected 2027) · B.S. Computer Science, Mansoura, Egypt.</dd>
-      </div>
-    </dl>
+      <h2 id="experience">Experience</h2>
+      <ul class="xp">
+        <li><img src="./img/companies/makyee-logo.webp" alt="" width="48" height="48" loading="lazy" /><div><div class="t">Makyee</div><div class="d">Lead full-stack engineer · Dubai · 2024–2025 · PropTech; its mobile app reached #1 on the UAE App Store</div></div></li>
+        <li><img src="./img/companies/9h-digital.webp" alt="" width="48" height="48" loading="lazy" /><div><div class="t">9H Digital</div><div class="d">Senior full-stack engineer (contract) · Malta, remote · 2023–2024</div></div></li>
+        <li><img src="./img/companies/amplify.webp" alt="" width="48" height="48" loading="lazy" /><div><div class="t">Amplify</div><div class="d">Senior full-stack engineer · Dubai · 2021 · clients including Victoria’s Secret PINK, STC and Arla Foods</div></div></li>
+        <li><img src="./img/companies/leadliaison.webp" alt="" width="48" height="48" loading="lazy" /><div><div class="t">Lead Liaison</div><div class="d">Software engineer &amp; AWS cloud solution architect · Dallas, remote · 2020–2021</div></div></li>
+      </ul>
+      <dl class="facts">
+        <div><dt>Recognition</dt><dd>1st place, Catalysts Coding Contest (2018) · Top 15 in Egypt, ACM ICPC ECPC (2018) · IBM Research <a href="https://research.ibm.com/haifa/ponderthis/challenges/October2025.html" target="_blank" rel="noopener">“Ponder This”</a> listed solver (October 2025)</dd></div>
+        <div><dt>Education</dt><dd>M.S. Financial Engineering, Washington, D.C. (expected 2027) · B.S. Computer Science, Mansoura, Egypt</dd></div>
+      </dl>
 
-    <a class="launch" href="https://khaledalam.net/mini-command/">
-      <img src="./mini-command/og-image.jpg?v=2" alt="" width="104" height="55" loading="lazy" />
-      <span class="launch-text">
-        <b>Mini Command</b>
-        A free online 1v1 real-time strategy game I built. Play it in your browser.
-      </span>
-      <span class="launch-go">Play →</span>
-    </a>
-  </main>
+      <footer>
+        <span>© 2026 Khaled Alam</span>
+        <span><a href="https://blog.khaledalam.net">Blog</a> · <a href="https://github.com/khaledalam" target="_blank" rel="noopener">GitHub</a> · <a href="https://linkedin.com/in/khaledalam" target="_blank" rel="noopener">LinkedIn</a></span>
+      </footer>
+    </main>
+  </div>
+
   <script>
-    // Keep "Latest from the blog" current without redeploying this page.
+    // News carousel: arrows scroll by roughly one view and hide at either end.
+    (function () {
+      var track = document.querySelector('.news-track');
+      var prev = document.querySelector('.news-btn.prev'), next = document.querySelector('.news-btn.next');
+      function update() {
+        prev.hidden = track.scrollLeft < 4;
+        next.hidden = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+      }
+      function go(dir) { track.scrollBy({ left: dir * track.clientWidth * 0.8, behavior: 'smooth' }); }
+      prev.addEventListener('click', function () { go(-1); });
+      next.addEventListener('click', function () { go(1); });
+      track.addEventListener('scroll', update, { passive: true });
+      addEventListener('resize', update);
+      update();
+    })();
+
+    // Keep "Writing" current without redeploying this page.
     fetch('https://blog.khaledalam.net/feed.xml').then(r => r.ok ? r.text() : Promise.reject()).then(xml => {
-      const items = [...new DOMParser().parseFromString(xml, 'application/xml').querySelectorAll('item')].slice(0, 3);
-      const list = document.querySelector('.writing-list');
-      if (items.length < 3 || !list) return;
+      const items = [...new DOMParser().parseFromString(xml, 'application/xml').querySelectorAll('item')].slice(0, 5);
+      const list = document.querySelector('.posts');
+      if (items.length < 5 || !list) return;
       list.replaceChildren(...items.map(it => {
         const li = document.createElement('li'), a = document.createElement('a'), t = document.createElement('time');
         const d = new Date(it.querySelector('pubDate').textContent);
