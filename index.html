@@ -12,7 +12,7 @@
   <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)" />
 
-  <link rel="preload" as="image" href="./DP_Khaled_sq.webp" type="image/webp" />
+  <link rel="preload" as="image" href="./Khaled_Alam_DP.webp" type="image/webp" />
 
   <!-- Open Graph / Facebook -->
   <!-- og.png is a purpose-built 1200x630 card. DP_Khaled.jpg is 1170x1464
@@ -291,10 +291,15 @@
 
     /* Experience */
     .xp { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
-    .xp li { display: grid; grid-template-columns: 48px 1fr; gap: 16px; align-items: center; }
+    .xp li { display: grid; grid-template-columns: 48px 1fr; gap: 16px; align-items: center; line-height: 1.45; }
     .xp img { width: 48px; height: 48px; border-radius: 8px; object-fit: contain; background: #fff; border: 1px solid var(--rule); }
     .xp .t { font-weight: 600; color: var(--heading); font-size: 15.5px; }
-    .xp .d { font-size: 14px; }
+    .xp .d { font-size: 14px; color: var(--muted); }
+    .xp .co { font-weight: 500; color: var(--fg); }
+    .xp .note { color: var(--fg); }
+    .xp .note::before { content: "· "; color: var(--muted); }
+    .xp .mono { width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: var(--tile); color: var(--tile-fg); font-weight: 700; font-size: 14px; border: 1px solid var(--rule); }
+    .xp-earlier { margin: 18px 0 0; font-size: 14px; color: var(--muted); }
     .facts { margin: 28px 0 0; display: grid; gap: 10px; font-size: 14.5px; }
     .facts div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; }
     .facts dt { font-weight: 600; color: var(--heading); }
@@ -340,7 +345,7 @@
 
   <div class="page">
     <aside class="side">
-      <img class="photo" src="./DP_Khaled_sq.webp" alt="Khaled Alam" width="280" height="280" fetchpriority="high" />
+      <img class="photo" src="./Khaled_Alam_DP.webp" alt="Khaled Alam" width="280" height="280" fetchpriority="high" />
       <p class="name">Khaled Alam</p>
       <p class="role">Software Specialist</p>
       <ul class="socials">
@@ -363,7 +368,8 @@
       <p class="bio">
         I'm a Software Specialist in Dubai with 10+ years building and running production SaaS, PropTech,
         FinTech and e-commerce products, from architecture to deployment. Previously, I was lead full-stack
-        engineer at <b>Makyee</b>, whose mobile app reached #1 on the UAE App Store. I work across
+        engineer at <b>Makyee</b>, whose mobile app reached #1 on the UAE App Store, a GenAI C++ engineer at
+        <b>Cohere</b>, and a software development engineer intern at <b>Amazon</b>. I work across
         PHP/Laravel, React/Next.js, TypeScript and AI/LLM integrations, and I contribute to PHP itself: my
         <a href="https://wiki.php.net/rfc/const_object_property_write" target="_blank" rel="noopener">RFC</a>
         was merged into PHP 8.6.
@@ -520,11 +526,18 @@
 
       <h2 id="experience">Experience</h2>
       <ul class="xp">
-        <li><img src="./img/companies/makyee-logo.webp" alt="" width="48" height="48" loading="lazy" /><div><div class="t">Makyee</div><div class="d">Lead full-stack engineer · Dubai · 2024–2025 · PropTech; its mobile app reached #1 on the UAE App Store</div></div></li>
-        <li><img src="./img/companies/9h-digital.webp" alt="" width="48" height="48" loading="lazy" /><div><div class="t">9H Digital</div><div class="d">Senior full-stack engineer (contract) · Malta, remote · 2023–2024</div></div></li>
-        <li><img src="./img/companies/amplify.webp" alt="" width="48" height="48" loading="lazy" /><div><div class="t">Amplify</div><div class="d">Senior full-stack engineer · Dubai · 2021 · clients including Victoria’s Secret PINK, STC and Arla Foods</div></div></li>
-        <li><img src="./img/companies/leadliaison.webp" alt="" width="48" height="48" loading="lazy" /><div><div class="t">Lead Liaison</div><div class="d">Software engineer &amp; AWS cloud solution architect · Dallas, remote · 2020–2021</div></div></li>
+        <li><span class="mono">PHP</span><div><div class="t">PHP core &amp; open-source contributor · <span class="co">Open source</span></div><div class="d">Nov 2025 – present <span class="note">RFC merged into PHP 8.6</span></div></div></li>
+        <li><span class="mono">CM</span><div><div class="t">Founder &amp; owner · <span class="co">CanvaMagnet</span></div><div class="d">Feb 2025 – Feb 2026 · Dubai</div></div></li>
+        <li><img src="./img/companies/prepaire.webp" alt="" width="48" height="48" loading="lazy" /><div><div class="t">Senior frontend engineer &amp; API integration specialist · <span class="co">Prepaire Labs</span></div><div class="d">Apr – Jun 2025 · Abu Dhabi</div></div></li>
+        <li><img src="./img/companies/makyee-logo.webp" alt="" width="48" height="48" loading="lazy" /><div><div class="t">Lead full-stack engineer · <span class="co">Makyee</span></div><div class="d">Apr 2024 – Mar 2025 · Dubai <span class="note">Mobile app reached #1 on the UAE App Store</span></div></div></li>
+        <li><img src="./img/companies/cohere.webp" alt="" width="48" height="48" loading="lazy" /><div><div class="t">GenAI C++ software engineer &amp; problem author · <span class="co">Cohere</span></div><div class="d">Mar – Aug 2024 · Toronto, remote</div></div></li>
+        <li><img src="./img/companies/9h-digital.webp" alt="" width="48" height="48" loading="lazy" /><div><div class="t">Senior full-stack engineer (contract) · <span class="co">9H Digital</span></div><div class="d">Nov 2022 – Mar 2024 · Malta, remote</div></div></li>
+        <li><img src="./img/companies/amplify.webp" alt="" width="48" height="48" loading="lazy" /><div><div class="t">Senior full-stack engineer · <span class="co">Amplify Marketing Agency</span></div><div class="d">Feb 2021 – Oct 2022 · Dubai <span class="note">Clients including Victoria’s Secret PINK, STC and Arla Foods</span></div></div></li>
+        <li><img src="./img/companies/leadliaison.webp" alt="" width="48" height="48" loading="lazy" /><div><div class="t">Software engineer &amp; AWS cloud solution architect · <span class="co">Lead Liaison</span></div><div class="d">Feb 2020 – Feb 2021 · Dallas <span class="note">2020 Stand Out Engineer Award</span></div></div></li>
+        <li><img src="./img/companies/amazon-aws.webp" alt="" width="48" height="48" loading="lazy" /><div><div class="t">Software development engineer intern · <span class="co">Amazon</span></div><div class="d">Nov 2019 – Jan 2020 · Winnipeg, Canada</div></div></li>
+        <li><span class="mono">ABC</span><div><div class="t">Full-stack developer · <span class="co">ABC Hosting</span></div><div class="d">Jan 2016 – Aug 2019 · Warsaw, remote <span class="note">Worked on MintMe.com</span></div></div></li>
       </ul>
+      <p class="xp-earlier">Earlier: Vola Solutions (senior full-stack engineer, 2020) · Kolega Kapital Indonesia (mobile engineer intern, 2019) · freelance software developer on Upwork (2013–2015).</p>
       <dl class="facts">
         <div><dt>Recognition</dt><dd>1st place, Catalysts Coding Contest (2018) · Top 15 in Egypt, ACM ICPC ECPC (2018) · IBM Research <a href="https://research.ibm.com/haifa/ponderthis/challenges/October2025.html" target="_blank" rel="noopener">“Ponder This”</a> listed solver (October 2025)</dd></div>
         <div><dt>Education</dt><dd>M.S. Financial Engineering, Washington, D.C. (expected 2027) · B.S. Computer Science, Mansoura, Egypt</dd></div>
