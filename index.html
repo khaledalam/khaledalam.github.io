@@ -304,6 +304,9 @@
     .facts div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; }
     .facts dt { font-weight: 600; color: var(--heading); }
     .facts dd { margin: 0; }
+    .facts ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+    .facts li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+    .facts .yr { flex: none; color: var(--muted); font-variant-numeric: tabular-nums; }
 
     footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
@@ -539,8 +542,16 @@
       </ul>
       <p class="xp-earlier">Earlier: Vola Solutions (senior full-stack engineer, 2020) and Kolega Kapital Indonesia (mobile engineer intern, 2019).</p>
       <dl class="facts">
-        <div><dt>Recognition</dt><dd>1st place, Catalysts Coding Contest (2018) · Top 15 in Egypt, ACM ICPC ECPC (2018) · IBM Research <a href="https://research.ibm.com/haifa/ponderthis/challenges/October2025.html" target="_blank" rel="noopener">“Ponder This”</a> listed solver (October 2025) · Reported a reproducible crash in Ubuntu's pyecm (ECM factorization) while factoring RSA-260, confirmed by Ubuntu maintainers (<a href="https://bugs.launchpad.net/ubuntu/+source/pyecm/+bug/1899312" target="_blank" rel="noopener">Launchpad #1899312</a>, 2020)</dd></div>
-        <div><dt>Education</dt><dd>M.Sc. Financial Engineering, WorldQuant University (WQU) (expected 2027) · B.S. Computer Science, Faculty of Computers and Information, Mansoura</dd></div>
+        <div><dt>Recognition</dt><dd><ul>
+          <li><span>IBM Research <a href="https://research.ibm.com/haifa/ponderthis/challenges/October2025.html" target="_blank" rel="noopener">“Ponder This”</a> listed solver</span><span class="yr">Oct 2025</span></li>
+          <li><span>Reported a crash in Ubuntu's pyecm while factoring RSA-260, confirmed by maintainers (<a href="https://bugs.launchpad.net/ubuntu/+source/pyecm/+bug/1899312" target="_blank" rel="noopener">Launchpad #1899312</a>)</span><span class="yr">2020</span></li>
+          <li><span>1st place, Catalysts Coding Contest</span><span class="yr">2018</span></li>
+          <li><span>Top 15 in Egypt, ACM ICPC ECPC</span><span class="yr">2018</span></li>
+        </ul></dd></div>
+        <div><dt>Education</dt><dd><ul>
+          <li><span>M.Sc. Financial Engineering, WorldQuant University (WQU)</span><span class="yr">2027 (exp.)</span></li>
+          <li><span>B.S. Computer Science, Faculty of Computers and Information, Mansoura</span><span class="yr">2015 – 2019</span></li>
+        </ul></dd></div>
       </dl>
 
       <footer>
