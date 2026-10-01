@@ -111,6 +111,17 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" /></noscript>
 
+  <!-- Google Analytics (async, never blocks rendering). No page views are sent for visitors who send Do Not Track or Global Privacy Control. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1VE9JR3KNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    if (navigator.doNotTrack !== "1" && !navigator.globalPrivacyControl) {
+      gtag("js", new Date());
+      gtag("config", "G-1VE9JR3KNR");
+    }
+  </script>
+
   <script>
     // Saved choice wins; otherwise follow the system. Runs before paint so there is no flash.
     try { var t = localStorage.getItem("theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) {}
