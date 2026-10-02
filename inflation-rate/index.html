@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inflation Rate by Country, 1960–2031 — Khaled Alam</title>
+  <link rel="icon" href="../logo.png" type="image/png" sizes="256x256" />
+  <link rel="apple-touch-icon" href="../logo.png" />
+  <meta name="description" content="Annual inflation rate for 200 countries from 1960 to 2031: latest figures, IMF forecasts, history charts, regional comparisons and a purchasing-power calculator. Open IMF and World Bank data." />
+  <meta name="author" content="Khaled Alam" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)" />
+  <link rel="canonical" href="https://khaledalam.net/inflation-rate/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Khaled Alam" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://khaledalam.net/inflation-rate/" />
+  <meta property="og:title" content="Inflation Rate by Country, 1960–2031" />
+  <meta property="og:description" content="Latest inflation, IMF forecasts and full history for 200 countries, from open IMF and World Bank data." />
+  <meta property="og:image" content="https://khaledalam.net/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Khaled Alam — Software Specialist" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@KhaledAlamXYZ" />
+  <meta name="twitter:creator" content="@KhaledAlamXYZ" />
+  <meta name="twitter:image" content="https://khaledalam.net/og.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://khaledalam.net/inflation-rate/#webpage",
+        "url": "https://khaledalam.net/inflation-rate/",
+        "name": "Inflation Rate by Country, 1960–2031",
+        "isPartOf": { "@id": "https://khaledalam.net/#website" },
+        "author": { "@id": "https://khaledalam.net/#person" },
+        "mainEntity": { "@id": "https://khaledalam.net/inflation-rate/#dataset" }
+      },
+      {
+        "@type": "Dataset",
+        "@id": "https://khaledalam.net/inflation-rate/#dataset",
+        "name": "Annual consumer price inflation by country, 1960–2031",
+        "description": "Annual average consumer price inflation for about 200 countries, combining IMF World Economic Outlook data (1980 onward, with projections) and World Bank data (1960 onward).",
+        "creator": { "@id": "https://khaledalam.net/#person" },
+        "isBasedOn": [
+          "https://www.imf.org/external/datamapper/PCPIPCH@WEO",
+          "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG"
+        ],
+        "temporalCoverage": "1960/2031",
+        "spatialCoverage": "World",
+        "distribution": { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://khaledalam.net/inflation-rate/data.json" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" /></noscript>
+  <link rel="preload" as="fetch" href="data.json" crossorigin />
+
+  <script>
+    // Saved choice wins; otherwise follow the system. Runs before paint so there is no flash.
+    try { var t = localStorage.getItem("theme"); if (t === "dark" || t === "light") document.documentElement.dataset.theme = t; } catch (e) {}
+    function toggleTheme() {
+      var r = document.documentElement;
+      var dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+      r.dataset.theme = dark ? "light" : "dark";
+      try { localStorage.setItem("theme", r.dataset.theme); } catch (e) {}
+      document.dispatchEvent(new Event("themechange"));
+    }
+  </script>
+  <style>
+    :root {
+      --bg: #fafafa; --card: #fff; --heading: #3d4451; --fg: #434343; --muted: #8c8c8c; --rule: #e8e8e8; --link: #0050b3; --pill: #bfbfbf; color-scheme: light;
+      --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --hover: #f2f4f7; --nodata: #e6e6e6;
+      --m0: #f5b89c; --m1: #cde2fb; --m2: #9ec5f4; --m3: #6da7ec; --m4: #3987e5; --m5: #256abf; --m6: #184f95; --m7: #0d366b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0f1115; --card: #171a21; --heading: #e6e8eb; --fg: #c3c7ce; --muted: #8b919b; --rule: #262a33; --link: #6aa9ff; --pill: #3a3f4a; color-scheme: dark;
+        --s1: #3987e5; --s2: #d95926; --s3: #199e70; --hover: #1e222b; --nodata: #2a2e37;
+        --m0: #8a3a18; --m1: #0d366b; --m2: #184f95; --m3: #256abf; --m4: #3987e5; --m5: #6da7ec; --m6: #9ec5f4; --m7: #cde2fb;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #0f1115; --card: #171a21; --heading: #e6e8eb; --fg: #c3c7ce; --muted: #8b919b; --rule: #262a33; --link: #6aa9ff; --pill: #3a3f4a; color-scheme: dark;
+      --s1: #3987e5; --s2: #d95926; --s3: #199e70; --hover: #1e222b; --nodata: #2a2e37;
+      --m0: #8a3a18; --m1: #0d366b; --m2: #184f95; --m3: #256abf; --m4: #3987e5; --m5: #6da7ec; --m6: #9ec5f4; --m7: #cde2fb;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    :focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 40px 24px 64px; }
+    .back { font-size: 14px; font-weight: 500; color: var(--muted); }
+    .back:hover { color: var(--heading); text-decoration: none; }
+    .theme-toggle {
+      position: fixed; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%;
+      background: var(--card); border: 1px solid var(--rule); color: var(--muted); cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center; line-height: 0; z-index: 10;
+    }
+    .theme-toggle:hover { color: var(--heading); }
+    header { margin: 18px 0 24px; }
+    h1 { margin: 0; font-size: 40px; font-weight: 600; color: var(--heading); line-height: 1.1; }
+    h2 { margin: 0; font-size: 30px; font-weight: 600; color: var(--heading); line-height: 1.15; }
+    h3 { margin: 0 0 12px; font-size: 15px; font-weight: 600; color: var(--heading); }
+    .lede { margin: 8px 0 0; font-size: 15px; line-height: 1.6; max-width: 70ch; }
+    .meta { margin: 8px 0 0; font-size: 13px; color: var(--muted); }
+    .num { font-variant-numeric: tabular-nums; }
+
+    .card { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; }
+    .strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0 0 20px; }
+    .tile { padding: 14px 16px; }
+    .tile .k { font-size: 12px; color: var(--muted); font-weight: 500; }
+    .tile .v { margin-top: 4px; font-size: 24px; font-weight: 600; color: var(--heading); font-variant-numeric: tabular-nums; }
+    .tile .s { margin-top: 2px; font-size: 12px; color: var(--muted); }
+
+    .map { position: relative; padding: 12px; margin-bottom: 20px; }
+    .map svg { display: block; width: 100%; height: auto; }
+    .map path { stroke: var(--card); stroke-width: .5; cursor: pointer; transition: opacity .15s; }
+    .map path.nd { fill: url(#hatch); cursor: default; }
+    .hatch { background: repeating-linear-gradient(135deg, var(--nodata) 0 2px, transparent 2px 4px); }
+    .map path.dim { opacity: .18; }
+    .map path:hover { stroke: var(--heading); stroke-width: 1; }
+    .b0 { fill: var(--m0); } .b1 { fill: var(--m1); } .b2 { fill: var(--m2); } .b3 { fill: var(--m3); }
+    .b4 { fill: var(--m4); } .b5 { fill: var(--m5); } .b6 { fill: var(--m6); } .b7 { fill: var(--m7); }
+    .legend { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 8px 4px 0; font-size: 12px; color: var(--muted); align-items: center; }
+    .legend i { display: inline-block; width: 14px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+    .legend .ttl { color: var(--fg); font-weight: 500; }
+    .tip { position: absolute; pointer-events: none; background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 6px 10px; font-size: 12.5px; color: var(--fg); box-shadow: 0 4px 14px rgba(0,0,0,.12); white-space: nowrap; z-index: 5; }
+    .tip b { color: var(--heading); font-weight: 600; }
+
+    .controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tabs button { height: 32px; padding: 0 14px; border-radius: 25px; border: 1px solid var(--pill); background: var(--card); color: var(--fg); font: inherit; font-size: 13px; font-weight: 500; cursor: pointer; }
+    .tabs button[aria-pressed="true"] { background: var(--heading); border-color: var(--heading); color: var(--bg); }
+    .search { height: 34px; width: 240px; max-width: 100%; padding: 0 12px; border-radius: 25px; border: 1px solid var(--pill); background: var(--card); color: var(--fg); font: inherit; font-size: 13.5px; }
+    .count { font-size: 12.5px; color: var(--muted); margin: 0 0 8px; }
+
+    .tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    caption { text-align: left; }
+    th, td { padding: 9px 12px; text-align: right; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+    th:first-child, td:first-child { text-align: left; }
+    thead th { font-size: 12px; font-weight: 600; color: var(--muted); background: var(--card); position: sticky; top: 0; }
+    th button { all: unset; cursor: pointer; display: inline-flex; gap: 4px; align-items: center; }
+    th button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+    th button::after { content: "↕"; opacity: .35; font-size: 11px; }
+    th[aria-sort="ascending"] button::after { content: "↑"; opacity: 1; }
+    th[aria-sort="descending"] button::after { content: "↓"; opacity: 1; }
+    tbody tr:hover { background: var(--hover); }
+    td.name a { color: var(--heading); font-weight: 500; }
+    td.name small { color: var(--muted); font-size: 11.5px; margin-left: 6px; }
+    td.last { font-weight: 600; color: var(--heading); }
+    .chg { font-size: 11px; color: var(--muted); margin-left: 4px; }
+    td.muted, .muted { color: var(--muted); }
+    td.spark { padding-top: 4px; padding-bottom: 4px; }
+    td.spark svg { display: block; margin-left: auto; }
+    .sl { fill: none; stroke: var(--s1); stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
+    .sl.p { stroke-dasharray: 2 2.5; }
+
+    #detail > .back { display: inline-block; margin-top: 14px; }
+    #detail .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; margin: 16px 0 18px; }
+    #detail .sub { margin: 6px 0 0; font-size: 13.5px; color: var(--muted); }
+    .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 20px; }
+    .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    figure.panel { margin: 0 0 20px; padding: 18px 18px 14px; }
+    .grid2 figure.panel { margin: 0; }
+    .grid2 { margin-bottom: 20px; }
+    .chartbox { position: relative; height: 300px; }
+    figcaption { margin-top: 10px; font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .key { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12.5px; color: var(--fg); margin: -4px 0 10px; }
+    .key span { display: inline-flex; align-items: center; gap: 6px; }
+    .key i { width: 16px; height: 0; border-top: 2px solid; display: inline-block; }
+    .key i.dash { border-top-style: dashed; }
+
+    .calc { padding: 18px; margin-bottom: 20px; }
+    .calc form { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: end; }
+    .calc label { display: grid; gap: 4px; font-size: 12px; color: var(--muted); font-weight: 500; }
+    .calc input, .calc select { height: 36px; padding: 0 10px; border-radius: 6px; border: 1px solid var(--pill); background: var(--bg); color: var(--fg); font: inherit; font-size: 14px; }
+    .calc input { width: 130px; }
+    .calc .out { margin: 14px 0 0; font-size: 15px; line-height: 1.6; }
+    .calc .out b { color: var(--heading); font-size: 20px; }
+    details.yby { padding: 14px 18px; margin-bottom: 20px; }
+    details.yby summary { cursor: pointer; font-weight: 600; color: var(--heading); font-size: 14px; }
+    details.yby .tablewrap { margin-top: 12px; max-height: 420px; overflow: auto; }
+    details.yby td, details.yby th { padding: 6px 10px; font-size: 13px; }
+    tr.proj td { color: var(--muted); font-style: italic; }
+
+    .notes { margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--muted); line-height: 1.65; }
+    .notes p { margin: 0 0 8px; }
+    .loading { padding: 60px 0; text-align: center; color: var(--muted); }
+
+    @media (max-width: 900px) {
+      .grid2 { grid-template-columns: minmax(0, 1fr); }
+      .cards, .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 760px) {
+      .wrap { padding: 28px 16px 48px; }
+      h1 { font-size: 30px; padding-right: 40px; }
+      h2 { font-size: 24px; }
+      .search { width: 100%; }
+      .chartbox { height: 240px; }
+      .tile .v { font-size: 20px; }
+      th, td { padding: 8px 8px; font-size: 13px; }
+      th:first-child, td:first-child { position: sticky; left: 0; background: var(--card); z-index: 1; }
+      thead th:first-child { z-index: 2; background: var(--card); }
+      td.name small { display: none; }
+      td.name { white-space: normal; min-width: 116px; max-width: 132px; line-height: 1.3; }
+      thead th { white-space: normal; min-width: 64px; }
+      td.spark svg { width: 72px; }
+      .calc input { width: 100px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle colour theme">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
+  </button>
+
+  <div class="wrap">
+    <a class="back" href="/">← Khaled Alam</a>
+
+    <section id="list" aria-labelledby="title">
+      <header>
+        <h1 id="title">Inflation Rate by Country</h1>
+        <p class="lede">Annual consumer price inflation for about 200 countries, with full history back to 1960 and IMF forecasts. Select a country for its charts and a purchasing-power calculator.</p>
+        <p class="meta" id="metaline">Source: IMF WEO / World Bank</p>
+      </header>
+
+      <div class="strip" id="strip"></div>
+
+      <div class="map card" id="map" hidden>
+        <svg id="mapsvg" viewBox="0 0 960 470" role="img" aria-labelledby="mapdesc"><defs><pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="var(--card)"/><line x1="0" y1="0" x2="0" y2="5" stroke="var(--nodata)" stroke-width="3"/></pattern></defs><desc id="mapdesc">World map of countries coloured by their latest annual inflation rate. The table below lists the same figures.</desc></svg>
+        <div class="legend" id="maplegend"></div>
+        <div class="tip" id="maptip" hidden></div>
+      </div>
+
+      <div class="controls">
+        <div class="tabs" role="group" aria-label="Continent" id="tabs"></div>
+        <input class="search" id="search" type="search" placeholder="Search country…" aria-label="Search country" autocomplete="off" />
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <div class="card tablewrap">
+        <table id="tbl">
+          <caption class="sr-only" style="position:absolute;left:-9999px">Annual inflation rate by country, percent</caption>
+          <thead><tr id="thead"></tr></thead>
+          <tbody id="tbody"><tr><td colspan="7" class="loading">Loading data…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="detail" hidden aria-live="polite"></section>
+
+    <div class="notes">
+      <p><strong>About the data.</strong> Figures are annual average consumer price inflation (percent change in the average CPI over the year). From 1980 onward they come from the IMF World Economic Outlook; earlier years, and gaps the IMF does not cover, come from the World Bank. Years from <span class="projyear">this year</span> onward are IMF estimates and projections and are marked as such. Sites that publish the latest monthly year-on-year figure will show different numbers.</p>
+      <p id="srcline">Source: IMF WEO / World Bank.</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-array@3.2.4/dist/d3-array.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-geo@3.1.1/dist/d3-geo.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js" defer></script>
+  <script>
+  (function () {
+    "use strict";
+    var CONTINENTS = ["All", "Africa", "Asia", "Europe", "America", "Australia"];
+    var CONT_LABEL = { Australia: "Australia & Oceania" };
+    var BINS = [0, 2, 4, 6, 10, 20, 50]; // upper edges of buckets b0..b6; b7 is 50%+
+    var BIN_LABELS = ["Below 0", "0–2", "2–4", "4–6", "6–10", "10–20", "20–50", "50+"];
+
+    var D, M, ROWS = [], BY = {}, charts = [];
+    var state = { cont: "All", q: "", sort: "name", dir: 1 };
+
+    var $ = function (id) { return document.getElementById(id); };
+    function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+    function css(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+    function fmt(v, d) {
+      if (v == null || isNaN(v)) return "—";
+      d = d == null ? 1 : d;
+      return Number(v).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+    }
+    function fmtBig(v) {
+      if (!isFinite(v)) return "—";
+      if (Math.abs(v) >= 1e12) return v.toExponential(2).replace("e+", " × 10^");
+      return v.toLocaleString("en-US", { maximumFractionDigits: v >= 100 ? 0 : 2 });
+    }
+    function bin(v) { for (var i = 0; i < BINS.length; i++) if (v < BINS[i]) return i; return 7; }
+
+    // cpi arrays start at meta.y0; gdp, lur and regional series start at 1980.
+    function at(arr, y, start) { var i = y - start; return arr && i >= 0 && i < arr.length ? arr[i] : null; }
+    function cpi(c, y) { return at(c.cpi, y, M.y0); }
+
+    function prep() {
+      M = D.meta;
+      Object.keys(D.countries).forEach(function (code) {
+        var c = D.countries[code];
+        c.code = code;
+        var ref = null;
+        for (var y = M.proj - 1; y >= M.y0; y--) if (cpi(c, y) != null) { ref = y; break; }
+        c.ref = ref;
+        c.last = ref == null ? null : cpi(c, ref);
+        c.prev = ref == null ? null : cpi(c, ref - 1);
+        var s = 0, n = 0;
+        for (var k = 0; k < 5 && ref != null; k++) { var v = cpi(c, ref - k); if (v != null) { s += v; n++; } }
+        c.avg5 = n >= 3 ? s / n : null;
+        c.fc = cpi(c, M.proj + 1);
+        BY[code] = c;
+        if (ref != null) ROWS.push(c);
+      });
+    }
+
+    // ---------- header strip ----------
+    function strip() {
+      var w = D.regions.WEOWORLD, latest = M.proj - 1;
+      var cur = ROWS.filter(function (c) { return c.ref === latest; });
+      var dd = cur.filter(function (c) { return c.last >= 10; }).length;
+      var sorted = cur.slice().sort(function (a, b) { return a.last - b.last; });
+      var med = sorted.length ? (sorted.length % 2 ? sorted[(sorted.length - 1) / 2].last : (sorted[sorted.length / 2 - 1].last + sorted[sorted.length / 2].last) / 2) : null;
+      var hi = sorted[sorted.length - 1];
+      var tiles = [
+        ["World, " + latest, fmt(at(w.cpi, latest, M.imfY0)) + "%", "IMF world aggregate"],
+        ["World, " + (M.proj + 1) + " forecast", fmt(at(w.cpi, M.proj + 1, M.imfY0)) + "%", "IMF projection"],
+        ["Median country, " + latest, fmt(med) + "%", cur.length + " countries reporting"],
+        ["Double-digit inflation, " + latest, dd + " countries", hi ? "Highest: " + esc(hi.n) + " " + fmt(hi.last) + "%" : ""]
+      ];
+      $("strip").innerHTML = tiles.map(function (t) {
+        return '<div class="card tile"><div class="k">' + t[0] + '</div><div class="v">' + t[1] + '</div><div class="s">' + t[2] + "</div></div>";
+      }).join("");
+    }
+
+    // ---------- table ----------
+    var COLS = [
+      { key: "name", label: "Country" },
+      { key: "last", label: "Last, %" },
+      { key: "prev", label: "Previous, %" },
+      { key: "ref", label: "Reference" },
+      { key: "avg5", label: "5-yr avg, %" },
+      { key: "fc", label: "" },
+      { key: "spark", label: "Trend", nosort: true }
+    ];
+
+    function thead() {
+      COLS[5].label = (M.proj + 1) + " IMF forecast, %";
+      $("thead").innerHTML = COLS.map(function (c) {
+        if (c.nosort) return '<th scope="col">' + c.label + "</th>";
+        var s = state.sort === c.key ? (state.dir > 0 ? "ascending" : "descending") : "none";
+        return '<th scope="col" aria-sort="' + s + '"><button type="button" data-k="' + c.key + '">' + c.label + "</button></th>";
+      }).join("");
+    }
+
+    function spark(c) {
+      var y0 = M.proj - 15, y1 = M.proj + 1, pts = [], W = 96, H = 24;
+      for (var y = y0; y <= y1; y++) { var v = cpi(c, y); if (v != null) pts.push([y, v]); }
+      if (pts.length < 2) return "";
+      var lo = Math.min.apply(null, pts.map(function (p) { return p[1]; }));
+      var hi = Math.max.apply(null, pts.map(function (p) { return p[1]; }));
+      if (hi === lo) { hi += 1; lo -= 1; }
+      function xy(p) { return ((p[0] - y0) / (y1 - y0) * (W - 2) + 1).toFixed(1) + "," + (H - 2 - (p[1] - lo) / (hi - lo) * (H - 4)).toFixed(1); }
+      var act = pts.filter(function (p) { return p[0] < M.proj; });
+      var prj = pts.filter(function (p) { return p[0] >= M.proj - 1; });
+      var lbl = "Trend " + y0 + "–" + y1 + ", from " + fmt(pts[0][1]) + "% to " + fmt(pts[pts.length - 1][1]) + "%";
+      return '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + lbl + '">' +
+        (act.length > 1 ? '<polyline class="sl" points="' + act.map(xy).join(" ") + '"/>' : "") +
+        (prj.length > 1 ? '<polyline class="sl p" points="' + prj.map(xy).join(" ") + '"/>' : "") + "</svg>";
+    }
+
+    function rows() {
+      var q = state.q.trim().toLowerCase();
+      var list = ROWS.filter(function (c) {
+        return (state.cont === "All" || c.c === state.cont) && (!q || c.n.toLowerCase().indexOf(q) >= 0 || c.code.toLowerCase() === q);
+      });
+      var k = state.sort, d = state.dir;
+      list.sort(function (a, b) {
+        if (k === "name") return d * a.n.localeCompare(b.n);
+        var x = a[k], y = b[k];
+        if (x == null && y == null) return a.n.localeCompare(b.n);
+        if (x == null) return 1;
+        if (y == null) return -1;
+        return d * (x - y) || a.n.localeCompare(b.n);
+      });
+      $("count").textContent = list.length + (list.length === 1 ? " country" : " countries") + (state.cont === "All" ? "" : " in " + (CONT_LABEL[state.cont] || state.cont)) + (q ? " matching “" + state.q.trim() + "”" : "");
+      $("tbody").innerHTML = list.length ? list.map(function (c) {
+        var ch = c.prev != null ? c.last - c.prev : null;
+        var arrow = ch == null ? "" : '<span class="chg" aria-label="' + (ch > 0 ? "up" : ch < 0 ? "down" : "unchanged") + '">' + (ch > 0 ? "▲" : ch < 0 ? "▼" : "•") + "</span>";
+        return "<tr>" +
+          '<td class="name"><a href="#' + c.code + '">' + esc(c.n) + "</a><small>" + c.code + "</small></td>" +
+          '<td class="last num">' + fmt(c.last) + arrow + "</td>" +
+          '<td class="num">' + fmt(c.prev) + "</td>" +
+          '<td class="num muted">' + c.ref + "</td>" +
+          '<td class="num">' + fmt(c.avg5) + "</td>" +
+          '<td class="num">' + fmt(c.fc) + "</td>" +
+          '<td class="spark">' + spark(c) + "</td></tr>";
+      }).join("") : '<tr><td colspan="7" class="muted">No countries match.</td></tr>';
+      mapDim();
+    }
+
+    function tabs() {
+      $("tabs").innerHTML = CONTINENTS.map(function (c) {
+        return '<button type="button" data-c="' + c + '" aria-pressed="' + (state.cont === c) + '">' + c + "</button>";
+      }).join("");
+    }
+
+    // ---------- map ----------
+    var mapReady = false, mapPaths = [];
+    function drawMap() {
+      if (!window.d3 || !d3.geoPath || !window.topojson) return;
+      fetch("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json").then(function (r) { return r.json(); }).then(function (world) {
+        var byNum = {};
+        ROWS.forEach(function (c) { if (c.iso) byNum[c.iso] = c; });
+        var fc = topojson.feature(world, world.objects.countries);
+        fc.features = fc.features.filter(function (f) { return f.properties.name !== "Antarctica"; });
+        var proj = d3.geoNaturalEarth1().fitSize([960, 470], fc);
+        var path = d3.geoPath(proj);
+        var svg = $("mapsvg"), ns = "http://www.w3.org/2000/svg", tip = $("maptip"), box = $("map");
+        fc.features.forEach(function (f) {
+          var c = byNum[f.id] || (f.properties.name === "Kosovo" ? BY.UVK : null);
+          var p = document.createElementNS(ns, "path");
+          p.setAttribute("d", path(f));
+          p.setAttribute("class", c ? "b" + bin(c.last) : "nd");
+          p._c = c; p._name = f.properties.name;
+          svg.appendChild(p);
+          mapPaths.push(p);
+        });
+        function move(e) {
+          var p = e.target; if (p.tagName !== "path") { tip.hidden = true; return; }
+          var c = p._c, r = box.getBoundingClientRect();
+          tip.innerHTML = c ? "<b>" + esc(c.n) + "</b> " + fmt(c.last) + "% <span class=\"muted\">(" + c.ref + ")</span>" : esc(p._name) + ' <span class="muted">no data</span>';
+          tip.hidden = false;
+          var x = e.clientX - r.left + 14, y = e.clientY - r.top + 14;
+          if (x + tip.offsetWidth > r.width - 4) x = e.clientX - r.left - tip.offsetWidth - 14;
+          tip.style.left = x + "px"; tip.style.top = y + "px";
+        }
+        svg.addEventListener("mousemove", move);
+        svg.addEventListener("mouseleave", function () { tip.hidden = true; });
+        svg.addEventListener("click", function (e) { var c = e.target._c; if (c) location.hash = c.code; });
+        $("maplegend").innerHTML = '<span class="ttl">Inflation ' + (M.proj - 1) + ", %</span>" +
+          BIN_LABELS.map(function (l, i) { return '<span><i style="background:var(--m' + i + ')"></i>' + l + "</span>"; }).join("") +
+          '<span><i class="hatch" style="border:1px solid var(--nodata)"></i>No data</span>';
+        $("map").hidden = false;
+        mapReady = true;
+        mapDim();
+      }).catch(function () { /* the table carries the same data; skip the map */ });
+    }
+    function mapDim() {
+      if (!mapReady) return;
+      mapPaths.forEach(function (p) {
+        var on = state.cont === "All" || (p._c && p._c.c === state.cont);
+        p.classList.toggle("dim", !on);
+      });
+    }
+
+    // ---------- country view ----------
+    function stats(c) {
+      var act = [];
+      for (var y = M.y0; y < M.proj; y++) { var v = cpi(c, y); if (v != null) act.push([y, v]); }
+      var vals = act.map(function (p) { return p[1]; });
+      var mean = vals.reduce(function (a, b) { return a + b; }, 0) / vals.length;
+      var sd = Math.sqrt(vals.reduce(function (a, b) { return a + (b - mean) * (b - mean); }, 0) / vals.length);
+      var peak = act.reduce(function (a, b) { return b[1] > a[1] ? b : a; });
+      var low = act.reduce(function (a, b) { return b[1] < a[1] ? b : a; });
+      var last10 = act.filter(function (p) { return p[0] > c.ref - 10; });
+      return {
+        first: act[0][0], n: act.length,
+        avg10: last10.reduce(function (a, b) { return a + b[1]; }, 0) / last10.length, n10: last10.length,
+        sd: sd, peak: peak, low: low,
+        dd: act.filter(function (p) { return p[1] >= 10; }).length
+      };
+    }
+
+    function card(k, v, s) { return '<div class="card tile"><div class="k">' + k + '</div><div class="v">' + v + '</div><div class="s">' + (s || "&nbsp;") + "</div></div>"; }
+
+    function detail(code) {
+      var c = BY[code];
+      var st = stats(c), reg = D.regions[c.r], world = D.regions.WEOWORLD;
+      var ch = c.prev != null ? c.last - c.prev : null;
+      var wbNote = c.wb ? c.wb.map(function (r) { return r[0] === r[1] ? r[0] : r[0] + "–" + r[1]; }).join(", ") : "";
+      var yMax = M.y0 + c.cpi.length - 1;
+      var hasGdp = !!c.gdp, hasLur = !!c.lur;
+      var gaps = [], g0 = null;
+      for (var gy = st.first; gy <= c.ref + 1; gy++) {
+        var miss = gy <= c.ref && cpi(c, gy) == null;
+        if (miss && g0 == null) g0 = gy;
+        if (!miss && g0 != null) { gaps.push(g0 === gy - 1 ? g0 : g0 + "–" + (gy - 1)); g0 = null; }
+      }
+
+      var h = '<a class="back" href="#' + (state.cont === "All" ? "" : state.cont.toLowerCase()) + '">← All countries</a>' +
+        '<div class="head"><div><h2>' + esc(c.n) + " inflation rate</h2>" +
+        '<p class="sub">' + (CONT_LABEL[c.c] || c.c) + (c.inc ? " · " + esc(c.inc) : "") + " · Annual average CPI inflation, " + st.first + "–" + yMax + "</p></div></div>" +
+        '<div class="cards">' +
+          card("Latest (" + c.ref + ")", fmt(c.last) + "%", c.fc != null ? (M.proj + 1) + " IMF forecast: " + fmt(c.fc) + "%" : "") +
+          card("Previous (" + (c.ref - 1) + ")", fmt(c.prev) + "%") +
+          card("Change", ch == null ? "—" : (ch > 0 ? "+" : "") + fmt(ch) + " pp", "percentage points vs " + (c.ref - 1)) +
+          card(st.n10 + "-year average", fmt(st.avg10) + "%", (c.ref - st.n10 + 1) + "–" + c.ref) +
+          card("All-time peak", fmt(st.peak[1]) + "%", "in " + st.peak[0]) +
+          card("Lowest", fmt(st.low[1]) + "%", "in " + st.low[0]) +
+          card("Volatility", fmt(st.sd) + " pp", "standard deviation, " + st.first + "–" + c.ref) +
+          card("Double-digit years", st.dd, "of " + st.n + " years with data") +
+        "</div>" +
+        '<figure class="panel card"><h3>Inflation history, ' + st.first + "–" + yMax + "</h3>" +
+          '<div class="key"><span><i style="border-color:var(--s1)"></i>Actual</span><span><i class="dash" style="border-color:var(--s1)"></i>IMF estimate / projection (' + M.proj + "+)</span></div>" +
+          '<div class="chartbox"><canvas id="cHist" role="img" aria-label="Line chart of ' + esc(c.n) + ' annual inflation by year. Values are in the year-by-year table below."></canvas></div>' +
+          "<figcaption>Annual average consumer price inflation, %." + (wbNote ? " " + wbNote + ": World Bank; other years: IMF WEO." : " IMF WEO.") + (gaps.length ? " Neither source has a figure for " + gaps.join(", ") + ", so the line is broken there." : "") + "</figcaption></figure>" +
+        '<div class="grid2">' +
+          '<figure class="panel card"><h3>Compared with ' + esc(reg.n) + " and the world</h3>" +
+            '<div class="key"><span><i style="border-color:var(--s1)"></i>' + esc(c.n) + '</span><span><i style="border-color:var(--s2)"></i>' + esc(reg.n) + '</span><span><i style="border-color:var(--s3)"></i>World</span></div>' +
+            '<div class="chartbox"><canvas id="cCmp" role="img" aria-label="Line chart comparing ' + esc(c.n) + " with " + esc(reg.n) + ' and the world average."></canvas></div>' +
+            "<figcaption>IMF regional and world aggregates, 1980–" + M.y1 + ". Dashed: projections.</figcaption></figure>" +
+          '<figure class="panel card"><h3>Average inflation by decade</h3>' +
+            '<div class="chartbox"><canvas id="cDec" role="img" aria-label="Bar chart of average inflation per decade for ' + esc(c.n) + '."></canvas></div>' +
+            "<figcaption>Mean of the years with data in each decade, actual years only. The " + Math.floor((M.proj - 1) / 10) * 10 + "s are incomplete.</figcaption></figure>" +
+        "</div>" +
+        (hasGdp ? '<figure class="panel card"><h3>Inflation vs real GDP growth' + (hasLur ? " and unemployment" : "") + "</h3>" +
+          '<div class="key"><span><i style="border-color:var(--s1)"></i>Inflation</span><span><i style="border-color:var(--s2)"></i>Real GDP growth</span>' + (hasLur ? '<span><i style="border-color:var(--s3)"></i>Unemployment rate</span>' : "") + "</div>" +
+          '<div class="chartbox"><canvas id="cMac" role="img" aria-label="Line chart of inflation, real GDP growth' + (hasLur ? " and unemployment" : "") + " for " + esc(c.n) + '."></canvas></div>' +
+          "<figcaption>All in percent, IMF WEO, 1980–" + M.y1 + ". Dashed: projections." + (hasLur ? "" : " The IMF publishes no unemployment series for this country.") + "</figcaption></figure>" : "") +
+        '<section class="calc card" aria-labelledby="calcH"><h3 id="calcH">Purchasing-power calculator</h3>' +
+          '<form id="calcF" onsubmit="return false"><label>Amount<input id="cAmt" type="number" min="0" step="any" value="100" inputmode="decimal" /></label>' +
+          '<label>In year<select id="cFrom"></select></label><label>Worth in<select id="cTo"></select></label></form>' +
+          '<p class="out" id="cOut" aria-live="polite"></p></section>' +
+        '<details class="yby card"><summary>Year-by-year data</summary><div class="tablewrap"><table><caption style="position:absolute;left:-9999px">' + esc(c.n) + " annual data, percent</caption>" +
+          '<thead><tr><th scope="col">Year</th><th scope="col">Inflation</th><th scope="col">' + esc(reg.n) + '</th><th scope="col">World</th>' + (hasGdp ? '<th scope="col">GDP growth</th>' : "") + (hasLur ? '<th scope="col">Unemployment</th>' : "") + "</tr></thead><tbody>" +
+          (function () {
+            var out = "";
+            for (var y = yMax; y >= st.first; y--) {
+              out += '<tr class="' + (y >= M.proj ? "proj" : "") + '"><td>' + y + (y >= M.proj ? " (proj.)" : "") + '</td><td class="num">' + fmt(cpi(c, y)) + '</td><td class="num">' + fmt(at(reg.cpi, y, M.imfY0)) + '</td><td class="num">' + fmt(at(world.cpi, y, M.imfY0)) + "</td>" +
+                (hasGdp ? '<td class="num">' + fmt(at(c.gdp, y, M.imfY0)) + "</td>" : "") + (hasLur ? '<td class="num">' + fmt(at(c.lur, y, M.imfY0)) + "</td>" : "") + "</tr>";
+            }
+            return out;
+          })() + "</tbody></table></div></details>";
+
+      $("detail").innerHTML = h;
+      document.title = c.n + " Inflation Rate, " + st.first + "–" + yMax + " — Khaled Alam";
+      drawCharts(c, st);
+      setupCalc(c, st);
+    }
+
+    // ---------- charts ----------
+    function destroyCharts() { charts.forEach(function (ch) { ch.destroy(); }); charts = []; }
+
+    function lineDs(label, start, arr, y0, y1, color) {
+      var data = [];
+      for (var y = y0; y <= y1; y++) data.push(at(arr, y, start));
+      return {
+        label: label, data: data, borderColor: color, backgroundColor: color, borderWidth: 2, pointRadius: 0,
+        pointHoverRadius: 4, pointHoverBorderWidth: 2, pointHoverBorderColor: css("--card"), spanGaps: false, tension: 0,
+        segment: { borderDash: function (ctx) { return y0 + ctx.p1DataIndex >= M.proj ? [5, 4] : undefined; } }
+      };
+    }
+
+    function baseOpts(unit) {
+      var muted = css("--muted"), rule = css("--rule"), fg = css("--fg");
+      return {
+        responsive: true, maintainAspectRatio: false, animation: false,
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: css("--card"), titleColor: css("--heading"), bodyColor: fg, borderColor: rule, borderWidth: 1,
+            padding: 10, boxPadding: 4, usePointStyle: true,
+            callbacks: {
+              title: function (items) { var y = +items[0].label; return isNaN(y) ? items[0].label : y + (y >= M.proj ? " (IMF projection)" : ""); },
+              label: function (it) { return " " + it.dataset.label + ": " + (it.parsed.y == null ? "—" : fmt(it.parsed.y) + unit); }
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false }, border: { color: rule }, ticks: { color: muted, maxRotation: 0, autoSkip: true, autoSkipPadding: 14, font: { family: "Montserrat, -apple-system, sans-serif", size: 11 } } },
+          y: { grid: { color: rule }, border: { display: false }, ticks: { color: muted, font: { family: "Montserrat, -apple-system, sans-serif", size: 11 }, callback: function (v) { return v.toLocaleString("en-US") + "%"; } } }
+        }
+      };
+    }
+
+    function years(a, b) { var out = []; for (var y = a; y <= b; y++) out.push(String(y)); return out; }
+
+    function drawCharts(c, st) {
+      destroyCharts();
+      if (!window.Chart) return;
+      Chart.defaults.font.family = "Montserrat, -apple-system, sans-serif";
+      var s1 = css("--s1"), s2 = css("--s2"), s3 = css("--s3");
+      var yMax = M.y0 + c.cpi.length - 1;
+
+      var o = baseOpts("%");
+      charts.push(new Chart($("cHist"), { type: "line", data: { labels: years(st.first, yMax), datasets: [lineDs(c.n, M.y0, c.cpi, st.first, yMax, s1)] }, options: o }));
+
+      var reg = D.regions[c.r], world = D.regions.WEOWORLD;
+      var cy0 = Math.max(M.imfY0, st.first);
+      charts.push(new Chart($("cCmp"), { type: "line", data: { labels: years(cy0, M.y1), datasets: [
+        lineDs(c.n, M.y0, c.cpi, cy0, M.y1, s1), lineDs(reg.n, M.imfY0, reg.cpi, cy0, M.y1, s2), lineDs("World", M.imfY0, world.cpi, cy0, M.y1, s3)
+      ] }, options: baseOpts("%") }));
+
+      var dec = [], dl = [], dn = [];
+      for (var d0 = Math.floor(st.first / 10) * 10; d0 < M.proj; d0 += 10) {
+        var s = 0, n = 0;
+        for (var y = d0; y < d0 + 10 && y < M.proj; y++) { var v = cpi(c, y); if (v != null) { s += v; n++; } }
+        if (n) { dl.push(d0 + "s"); dec.push(s / n); dn.push(n); }
+      }
+      var od = baseOpts("%");
+      od.interaction = { mode: "index", intersect: false };
+      od.plugins.tooltip.callbacks.title = function (items) { return items[0].label; };
+      od.plugins.tooltip.callbacks.label = function (it) { return " Average: " + fmt(it.parsed.y) + "% (" + dn[it.dataIndex] + " yrs)"; };
+      charts.push(new Chart($("cDec"), { type: "bar", data: { labels: dl, datasets: [{ label: "Average", data: dec, backgroundColor: s1, borderRadius: 4, borderSkipped: "start", maxBarThickness: 44, categoryPercentage: 0.8, barPercentage: 0.9 }] }, options: od }));
+
+      if (c.gdp) {
+        var ds = [lineDs("Inflation", M.y0, c.cpi, M.imfY0, M.y1, s1), lineDs("Real GDP growth", M.imfY0, c.gdp, M.imfY0, M.y1, s2)];
+        if (c.lur) ds.push(lineDs("Unemployment", M.imfY0, c.lur, M.imfY0, M.y1, s3));
+        charts.push(new Chart($("cMac"), { type: "line", data: { labels: years(M.imfY0, M.y1), datasets: ds }, options: baseOpts("%") }));
+      }
+    }
+
+    // ---------- purchasing power ----------
+    function setupCalc(c, st) {
+      var yMax = M.y0 + c.cpi.length - 1, f = $("cFrom"), t = $("cTo");
+      var opts = "";
+      for (var y = st.first; y <= yMax; y++) if (cpi(c, y) != null || y === st.first) opts += '<option value="' + y + '">' + y + (y >= M.proj ? " (proj.)" : "") + "</option>";
+      f.innerHTML = opts; t.innerHTML = opts;
+      f.value = String(Math.max(st.first, c.ref - 20 >= st.first ? c.ref - 20 : st.first));
+      t.value = String(c.ref);
+      function run() {
+        var A = parseFloat($("cAmt").value), a = +f.value, b = +t.value, out = $("cOut");
+        if (!(A >= 0)) { out.textContent = "Enter an amount."; return; }
+        if (a === b) { out.innerHTML = "Pick two different years."; return; }
+        var lo = Math.min(a, b), hi = Math.max(a, b), factor = 1;
+        for (var y = lo + 1; y <= hi; y++) {
+          var r = cpi(c, y);
+          if (r == null) { out.textContent = "No inflation figure for " + y + ", so this period can't be calculated."; return; }
+          factor *= 1 + r / 100;
+        }
+        var val = b > a ? A * factor : A / factor;
+        var proj = hi >= M.proj ? " This uses IMF projections for " + M.proj + (hi > M.proj ? "–" + hi : "") + "." : "";
+        var pct = (factor - 1) * 100;
+        out.innerHTML = esc(fmtBig(A)) + " units in " + a + " had the same purchasing power as <b>" + esc(fmtBig(val)) + "</b> units in " + b + ".<br>" +
+          '<span class="muted">Prices ' + (factor >= 1 ? "rose" : "fell") + " " + (factor >= 1 ? fmtBig(pct) + "%" : fmtBig(-pct) + "%") + " between " + lo + " and " + hi + " (" + (factor >= 100 ? fmtBig(factor) : factor.toFixed(2)) + "×" + "), compounding each year's average inflation." + proj + "</span>";
+      }
+      ["input", "change"].forEach(function (ev) { $("calcF").addEventListener(ev, run); });
+      run();
+    }
+
+    // ---------- routing ----------
+    var current = null;
+    function route() {
+      var h = decodeURIComponent(location.hash.slice(1));
+      if (BY[h] && BY[h].ref != null) {
+        current = h;
+        $("list").hidden = true; $("detail").hidden = false;
+        detail(h);
+        window.scrollTo(0, 0);
+        return;
+      }
+      current = null;
+      destroyCharts();
+      $("detail").hidden = true; $("list").hidden = false;
+      document.title = "Inflation Rate by Country, " + M.y0 + "–" + M.y1 + " — Khaled Alam";
+      var cont = CONTINENTS.filter(function (c) { return c.toLowerCase() === h.toLowerCase(); })[0];
+      state.cont = cont || "All";
+      tabs(); rows();
+    }
+
+    function onTheme() { if (current) drawCharts(BY[current], stats(BY[current])); }
+
+    function init() {
+      prep();
+      var built = new Date(M.built + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+      $("metaline").innerHTML = "Source: IMF WEO / World Bank · Last updated " + built;
+      $("srcline").innerHTML = 'Source: <a href="https://www.imf.org/external/datamapper/PCPIPCH@WEO">IMF ' + esc(M.imf) + '</a> (inflation, GDP growth, unemployment, regional aggregates) and <a href="https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG">World Bank</a> (data updated ' + esc(M.wb) + "). Last updated " + built + '. <a href="data.json">Download the data (JSON)</a>.';
+      Array.prototype.forEach.call(document.querySelectorAll(".projyear"), function (e) { e.textContent = M.proj; });
+      strip(); thead();
+      $("tabs").addEventListener("click", function (e) {
+        var b = e.target.closest("button"); if (!b) return;
+        var c = b.getAttribute("data-c");
+        history.replaceState(null, "", c === "All" ? location.pathname : "#" + c.toLowerCase());
+        state.cont = c; tabs(); rows();
+      });
+      $("search").addEventListener("input", function (e) { state.q = e.target.value; rows(); });
+      $("thead").addEventListener("click", function (e) {
+        var b = e.target.closest("button"); if (!b) return;
+        var k = b.getAttribute("data-k");
+        if (state.sort === k) state.dir = -state.dir; else { state.sort = k; state.dir = k === "name" ? 1 : -1; }
+        thead(); rows();
+      });
+      window.addEventListener("hashchange", route);
+      document.addEventListener("themechange", onTheme);
+      matchMedia("(prefers-color-scheme: dark)").addEventListener("change", onTheme);
+      route();
+      drawMap();
+    }
+
+    window.addEventListener("DOMContentLoaded", function () {
+      // Canvas text does not wait for web fonts, so give Montserrat a moment before the first chart.
+      var font = document.fonts && document.fonts.load ? Promise.race([document.fonts.load("500 11px Montserrat"), new Promise(function (r) { setTimeout(r, 1500); })]).catch(function () {}) : Promise.resolve();
+      Promise.all([fetch("data.json").then(function (r) { return r.json(); }), font]).then(function (v) { D = v[0]; init(); })
+        .catch(function () { $("tbody").innerHTML = '<tr><td colspan="7" class="muted">Could not load the data. Please reload the page.</td></tr>'; });
+    });
+  })();
+  </script>
+</body>
+</html>
