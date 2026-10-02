@@ -19,6 +19,17 @@
     a { color: var(--accent); text-decoration: none; margin: 0 0.6rem; }
     a:hover { text-decoration: underline; }
   </style>
+
+  <!-- Google Analytics (async, never blocks rendering). No page views are sent for visitors who send Do Not Track or Global Privacy Control. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1VE9JR3KNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    if (navigator.doNotTrack !== "1" && !navigator.globalPrivacyControl) {
+      gtag("js", new Date());
+      gtag("config", "G-1VE9JR3KNR");
+    }
+  </script>
 </head>
 <body>
   <main>
@@ -26,5 +37,17 @@
     <p>There's nothing at this address.</p>
     <p><a href="/">Khaled Alam</a><a href="https://blog.khaledalam.net">Blog</a><a href="/mini-command/">Mini Command</a></p>
   </main>
+  <!-- tawk.to live chat: visitor and chat alerts go to the tawk.to mobile app. -->
+  <script>
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://embed.tawk.to/6abde2ec5a394b3443302b74/1k3qrsqrl";
+      s.charset = "UTF-8";
+      s.setAttribute("crossorigin", "*");
+      document.body.appendChild(s);
+    })();
+  </script>
 </body>
 </html>

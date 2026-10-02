@@ -70,6 +70,17 @@
       .pages { display: block; }
     }
   </style>
+
+  <!-- Google Analytics (async, never blocks rendering). No page views are sent for visitors who send Do Not Track or Global Privacy Control. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1VE9JR3KNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    if (navigator.doNotTrack !== "1" && !navigator.globalPrivacyControl) {
+      gtag("js", new Date());
+      gtag("config", "G-1VE9JR3KNR");
+    }
+  </script>
 </head>
 <body>
   <div class="wrap">
@@ -92,5 +103,17 @@
       <img src="page-2.webp?v=202610010639" alt="Khaled Alam CV, page 2" width="1240" height="1754" loading="lazy" />
     </div>
   </div>
+  <!-- tawk.to live chat: visitor and chat alerts go to the tawk.to mobile app. -->
+  <script>
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://embed.tawk.to/6abde2ec5a394b3443302b74/1k3qrsqrl";
+      s.charset = "UTF-8";
+      s.setAttribute("crossorigin", "*");
+      document.body.appendChild(s);
+    })();
+  </script>
 </body>
 </html>

@@ -220,6 +220,17 @@
     }
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
   </style>
+
+  <!-- Google Analytics (async, never blocks rendering). No page views are sent for visitors who send Do Not Track or Global Privacy Control. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1VE9JR3KNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    if (navigator.doNotTrack !== "1" && !navigator.globalPrivacyControl) {
+      gtag("js", new Date());
+      gtag("config", "G-1VE9JR3KNR");
+    }
+  </script>
 </head>
 <body>
   <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle colour theme">
@@ -694,7 +705,18 @@
     }
 
     // ---------- routing ----------
-    var current = null;
+    var current = null, routedOnce = false;
+    // Hash routes don't reload the page, so report each country view to Google Analytics
+    // and tawk.to ourselves. The first route is already covered by the normal page view.
+    function trackView(code) {
+      if (!routedOnce) { routedOnce = true; return; }
+      if (typeof gtag === "function" && navigator.doNotTrack !== "1" && !navigator.globalPrivacyControl) {
+        gtag("event", "page_view", { page_location: location.href, page_path: location.pathname + location.hash, page_title: document.title });
+      }
+      if (code && window.Tawk_API && typeof Tawk_API.addEvent === "function") {
+        try { Tawk_API.addEvent("viewed-country", { country: code, url: location.href }, function () {}); } catch (e) {}
+      }
+    }
     function route() {
       var h = decodeURIComponent(location.hash.slice(1));
       if (BY[h] && BY[h].ref != null) {
@@ -702,6 +724,7 @@
         $("list").hidden = true; $("detail").hidden = false;
         detail(h);
         window.scrollTo(0, 0);
+        trackView(h);
         return;
       }
       current = null;
@@ -711,6 +734,7 @@
       var cont = CONTINENTS.filter(function (c) { return c.toLowerCase() === h.toLowerCase(); })[0];
       state.cont = cont || "All";
       tabs(); rows();
+      trackView(null);
     }
 
     function onTheme() { if (current) drawCharts(BY[current], stats(BY[current])); }
@@ -749,6 +773,18 @@
         .catch(function () { $("tbody").innerHTML = '<tr><td colspan="7" class="muted">Could not load the data. Please reload the page.</td></tr>'; });
     });
   })();
+  </script>
+  <!-- tawk.to live chat: visitor and chat alerts go to the tawk.to mobile app. -->
+  <script>
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://embed.tawk.to/6abde2ec5a394b3443302b74/1k3qrsqrl";
+      s.charset = "UTF-8";
+      s.setAttribute("crossorigin", "*");
+      document.body.appendChild(s);
+    })();
   </script>
 </body>
 </html>
