@@ -261,7 +261,8 @@
     <section id="detail" hidden aria-live="polite"></section>
 
     <div class="notes">
-      <p><strong>About the data.</strong> Figures are annual average consumer price inflation (percent change in the average CPI over the year). From 1980 onward they come from the IMF World Economic Outlook; earlier years, and gaps the IMF does not cover, come from the World Bank. Years from <span class="projyear">this year</span> onward are IMF estimates and projections and are marked as such. Sites that publish the latest monthly year-on-year figure will show different numbers.</p>
+      <p><strong>About the data.</strong> “Last” is the most recent official figure: consumer prices compared with the same month (or quarter) a year earlier. For each country it comes from whichever of these publishes the newest figure: the IMF CPI dataset, the OECD, the BIS, the World Bank Global Economic Monitor, or the national central bank (Venezuela). Where none has a figure from the past year, “Last” is the latest annual average, marked “avg”.</p>
+      <p>The history, averages and forecasts use annual average inflation: the IMF World Economic Outlook from 1980, and the World Bank for earlier years and gaps. Years from <span class="projyear">this year</span> onward are IMF estimates and projections and are marked as such. New figures are checked for automatically every day.</p>
       <p id="srcline">Source: IMF WEO / World Bank.</p>
     </div>
   </div>
@@ -300,6 +301,18 @@
     function at(arr, y, start) { var i = y - start; return arr && i >= 0 && i < arr.length ? arr[i] : null; }
     function cpi(c, y) { return at(c.cpi, y, M.y0); }
 
+    var MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    // Latest-figure periods are "YYYY-MM" or "YYYY-Qn"; k is a month index used for sorting.
+    function period(t) {
+      var y = +t.slice(0, 4), r = t.slice(5);
+      return r[0] === "Q" ? { q: true, y: y, n: +r.slice(1), k: y * 12 + (+r.slice(1)) * 3 - 1 } : { q: false, y: y, n: +r, k: y * 12 + (+r) - 1 };
+    }
+    function shift(p, steps) {
+      var size = p.q ? 3 : 1, k = p.k - steps * size, y = Math.floor(k / 12), m = k % 12 + 1;
+      return p.q ? { q: true, y: y, n: m / 3, k: k } : { q: false, y: y, n: m, k: k };
+    }
+    function plabel(p) { return p.q ? "Q" + p.n + " " + p.y : MON[p.n - 1] + " " + p.y; }
+
     function prep() {
       M = D.meta;
       Object.keys(D.countries).forEach(function (code) {
@@ -314,6 +327,15 @@
         for (var k = 0; k < 5 && ref != null; k++) { var v = cpi(c, ref - k); if (v != null) { s += v; n++; } }
         c.avg5 = n >= 3 ? s / n : null;
         c.fc = cpi(c, M.proj + 1);
+        // L/P = latest and previous figure: the most recent month (or quarter) year-on-year
+        // when a source has one, otherwise the latest annual average.
+        if (c.mo) {
+          var pp = period(c.mo.t), v = c.mo.v;
+          c.L = v[v.length - 1]; c.P = v.length > 1 ? v[v.length - 2] : null;
+          c.per = plabel(pp); c.pper = plabel(shift(pp, 1)); c.rk = pp.k;
+        } else if (ref != null) {
+          c.L = c.last; c.P = c.prev; c.per = ref + " avg"; c.pper = (ref - 1) + " avg"; c.rk = ref * 12 - 1;
+        }
         BY[code] = c;
         if (ref != null) ROWS.push(c);
       });
@@ -341,12 +363,12 @@
     // ---------- table ----------
     var COLS = [
       { key: "name", label: "Country" },
-      { key: "last", label: "Last, %" },
-      { key: "prev", label: "Previous, %" },
-      { key: "ref", label: "Reference" },
+      { key: "L", label: "Last, %" },
+      { key: "P", label: "Previous, %" },
+      { key: "rk", label: "Reference" },
       { key: "avg5", label: "5-yr avg, %" },
       { key: "fc", label: "" },
-      { key: "spark", label: "Trend", nosort: true }
+      { key: "spark", label: "Trend, annual", nosort: true }
     ];
 
     function thead() {
@@ -390,13 +412,13 @@
       });
       $("count").textContent = list.length + (list.length === 1 ? " country" : " countries") + (state.cont === "All" ? "" : " in " + (CONT_LABEL[state.cont] || state.cont)) + (q ? " matching “" + state.q.trim() + "”" : "");
       $("tbody").innerHTML = list.length ? list.map(function (c) {
-        var ch = c.prev != null ? c.last - c.prev : null;
+        var ch = c.P != null ? c.L - c.P : null;
         var arrow = ch == null ? "" : '<span class="chg" aria-label="' + (ch > 0 ? "up" : ch < 0 ? "down" : "unchanged") + '">' + (ch > 0 ? "▲" : ch < 0 ? "▼" : "•") + "</span>";
         return "<tr>" +
           '<td class="name"><a href="#' + c.code + '">' + esc(c.n) + "</a><small>" + c.code + "</small></td>" +
-          '<td class="last num">' + fmt(c.last) + arrow + "</td>" +
-          '<td class="num">' + fmt(c.prev) + "</td>" +
-          '<td class="num muted">' + c.ref + "</td>" +
+          '<td class="last num">' + fmt(c.L) + arrow + "</td>" +
+          '<td class="num">' + fmt(c.P) + "</td>" +
+          '<td class="muted">' + c.per + "</td>" +
           '<td class="num">' + fmt(c.avg5) + "</td>" +
           '<td class="num">' + fmt(c.fc) + "</td>" +
           '<td class="spark">' + spark(c) + "</td></tr>";
@@ -426,7 +448,7 @@
           var c = byNum[f.id] || (f.properties.name === "Kosovo" ? BY.UVK : null);
           var p = document.createElementNS(ns, "path");
           p.setAttribute("d", path(f));
-          p.setAttribute("class", c ? "b" + bin(c.last) : "nd");
+          p.setAttribute("class", c ? "b" + bin(c.L) : "nd");
           p._c = c; p._name = f.properties.name;
           svg.appendChild(p);
           mapPaths.push(p);
@@ -434,7 +456,7 @@
         function move(e) {
           var p = e.target; if (p.tagName !== "path") { tip.hidden = true; return; }
           var c = p._c, r = box.getBoundingClientRect();
-          tip.innerHTML = c ? "<b>" + esc(c.n) + "</b> " + fmt(c.last) + "% <span class=\"muted\">(" + c.ref + ")</span>" : esc(p._name) + ' <span class="muted">no data</span>';
+          tip.innerHTML = c ? "<b>" + esc(c.n) + "</b> " + fmt(c.L) + "% <span class=\"muted\">(" + c.per + ")</span>" : esc(p._name) + ' <span class="muted">no data</span>';
           tip.hidden = false;
           var x = e.clientX - r.left + 14, y = e.clientY - r.top + 14;
           if (x + tip.offsetWidth > r.width - 4) x = e.clientX - r.left - tip.offsetWidth - 14;
@@ -443,7 +465,7 @@
         svg.addEventListener("mousemove", move);
         svg.addEventListener("mouseleave", function () { tip.hidden = true; });
         svg.addEventListener("click", function (e) { var c = e.target._c; if (c) location.hash = c.code; });
-        $("maplegend").innerHTML = '<span class="ttl">Inflation ' + (M.proj - 1) + ", %</span>" +
+        $("maplegend").innerHTML = '<span class="ttl">Latest inflation, %</span>' +
           BIN_LABELS.map(function (l, i) { return '<span><i style="background:var(--m' + i + ')"></i>' + l + "</span>"; }).join("") +
           '<span><i class="hatch" style="border:1px solid var(--nodata)"></i>No data</span>';
         $("map").hidden = false;
@@ -482,7 +504,8 @@
     function detail(code) {
       var c = BY[code];
       var st = stats(c), reg = D.regions[c.r], world = D.regions.WEOWORLD;
-      var ch = c.prev != null ? c.last - c.prev : null;
+      var ch = c.P != null ? c.L - c.P : null;
+      var src = c.mo ? (M.sources[c.mo.s] || c.mo.s) : "IMF WEO";
       var wbNote = c.wb ? c.wb.map(function (r) { return r[0] === r[1] ? r[0] : r[0] + "–" + r[1]; }).join(", ") : "";
       var yMax = M.y0 + c.cpi.length - 1;
       var hasGdp = !!c.gdp, hasLur = !!c.lur;
@@ -497,19 +520,22 @@
         '<div class="head"><div><h2>' + esc(c.n) + " inflation rate</h2>" +
         '<p class="sub">' + (CONT_LABEL[c.c] || c.c) + (c.inc ? " · " + esc(c.inc) : "") + " · Annual average CPI inflation, " + st.first + "–" + yMax + "</p></div></div>" +
         '<div class="cards">' +
-          card("Latest (" + c.ref + ")", fmt(c.last) + "%", c.fc != null ? (M.proj + 1) + " IMF forecast: " + fmt(c.fc) + "%" : "") +
-          card("Previous (" + (c.ref - 1) + ")", fmt(c.prev) + "%") +
-          card("Change", ch == null ? "—" : (ch > 0 ? "+" : "") + fmt(ch) + " pp", "percentage points vs " + (c.ref - 1)) +
+          card("Latest (" + c.per + ")", fmt(c.L) + "%", c.mo ? "Year-on-year · " + esc(src) : "Annual average · IMF WEO") +
+          card("Previous (" + c.pper + ")", fmt(c.P) + "%", c.mo ? c.ref + " annual average: " + fmt(c.last) + "%" : "") +
+          card("Change", ch == null ? "—" : (ch > 0 ? "+" : "") + fmt(ch) + " pp", "vs " + c.pper + (c.fc != null ? " · " + (M.proj + 1) + " IMF forecast " + fmt(c.fc) + "%" : "")) +
           card(st.n10 + "-year average", fmt(st.avg10) + "%", (c.ref - st.n10 + 1) + "–" + c.ref) +
           card("All-time peak", fmt(st.peak[1]) + "%", "in " + st.peak[0]) +
           card("Lowest", fmt(st.low[1]) + "%", "in " + st.low[0]) +
           card("Volatility", fmt(st.sd) + " pp", "standard deviation, " + st.first + "–" + c.ref) +
           card("Double-digit years", st.dd, "of " + st.n + " years with data") +
         "</div>" +
+        (c.mo && c.mo.v.length > 2 ? '<figure class="panel card"><h3>Latest ' + c.mo.v.length + (period(c.mo.t).q ? " quarters" : " months") + ", year-on-year</h3>" +
+          '<div class="chartbox"><canvas id="cMo" role="img" aria-label="Line chart of ' + esc(c.n) + ' recent year-on-year inflation."></canvas></div>' +
+          "<figcaption>Consumer prices compared with the same " + (period(c.mo.t).q ? "quarter" : "month") + " a year earlier, %. Source: " + esc(src) + ".</figcaption></figure>" : "") +
         '<figure class="panel card"><h3>Inflation history, ' + st.first + "–" + yMax + "</h3>" +
           '<div class="key"><span><i style="border-color:var(--s1)"></i>Actual</span><span><i class="dash" style="border-color:var(--s1)"></i>IMF estimate / projection (' + M.proj + "+)</span></div>" +
           '<div class="chartbox"><canvas id="cHist" role="img" aria-label="Line chart of ' + esc(c.n) + ' annual inflation by year. Values are in the year-by-year table below."></canvas></div>' +
-          "<figcaption>Annual average consumer price inflation, %." + (wbNote ? " " + wbNote + ": World Bank; other years: IMF WEO." : " IMF WEO.") + (gaps.length ? " Neither source has a figure for " + gaps.join(", ") + ", so the line is broken there." : "") + "</figcaption></figure>" +
+          "<figcaption>Annual average consumer price inflation, %." + (useLog(c, st.first, yMax) ? " Logarithmic scale, so each gridline is ten times the one below." : "") + (wbNote ? " " + wbNote + ": World Bank; other years: IMF WEO." : " IMF WEO.") + (gaps.length ? " Neither source has a figure for " + gaps.join(", ") + ", so the line is broken there." : "") + "</figcaption></figure>" +
         '<div class="grid2">' +
           '<figure class="panel card"><h3>Compared with ' + esc(reg.n) + " and the world</h3>" +
             '<div class="key"><span><i style="border-color:var(--s1)"></i>' + esc(c.n) + '</span><span><i style="border-color:var(--s2)"></i>' + esc(reg.n) + '</span><span><i style="border-color:var(--s3)"></i>World</span></div>' +
@@ -580,6 +606,14 @@
       };
     }
 
+    // Hyperinflation flattens decades of history on a linear axis; a log axis keeps them
+    // readable. Only possible when every value is positive.
+    function useLog(c, a, b) {
+      var lo = Infinity, hi = -Infinity;
+      for (var y = a; y <= b; y++) { var v = cpi(c, y); if (v != null) { lo = Math.min(lo, v); hi = Math.max(hi, v); } }
+      return hi >= 1000 && lo > 0;
+    }
+
     function years(a, b) { var out = []; for (var y = a; y <= b; y++) out.push(String(y)); return out; }
 
     function drawCharts(c, st) {
@@ -589,7 +623,21 @@
       var s1 = css("--s1"), s2 = css("--s2"), s3 = css("--s3");
       var yMax = M.y0 + c.cpi.length - 1;
 
+      if (c.mo && $("cMo")) {
+        var lp = period(c.mo.t), n = c.mo.v.length, ml = [];
+        for (var i = n - 1; i >= 0; i--) ml.push(plabel(shift(lp, i)));
+        var om = baseOpts("%");
+        om.plugins.tooltip.callbacks.title = function (items) { return items[0].label; };
+        charts.push(new Chart($("cMo"), { type: "line", data: { labels: ml, datasets: [{ label: c.n, data: c.mo.v, borderColor: s1, backgroundColor: s1, borderWidth: 2, pointRadius: 0, pointHoverRadius: 4, tension: 0, spanGaps: false }] }, options: om }));
+      }
+
       var o = baseOpts("%");
+      if (useLog(c, st.first, yMax)) {
+        o.scales.y.type = "logarithmic";
+        o.scales.y.ticks.callback = function (v) { var e = Math.log10(v); return Math.abs(e - Math.round(e)) < 1e-9 ? v.toLocaleString("en-US") + "%" : ""; };
+        var rule = css("--rule");
+        o.scales.y.grid.color = function (ctx) { return ctx.tick && ctx.tick.label ? rule : "transparent"; };
+      }
       charts.push(new Chart($("cHist"), { type: "line", data: { labels: years(st.first, yMax), datasets: [lineDs(c.n, M.y0, c.cpi, st.first, yMax, s1)] }, options: o }));
 
       var reg = D.regions[c.r], world = D.regions.WEOWORLD;
@@ -671,7 +719,7 @@
       prep();
       var built = new Date(M.built + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
       $("metaline").innerHTML = "Source: IMF WEO / World Bank · Last updated " + built;
-      $("srcline").innerHTML = 'Source: <a href="https://www.imf.org/external/datamapper/PCPIPCH@WEO">IMF ' + esc(M.imf) + '</a> (inflation, GDP growth, unemployment, regional aggregates) and <a href="https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG">World Bank</a> (data updated ' + esc(M.wb) + "). Last updated " + built + '. <a href="data.json">Download the data (JSON)</a>.';
+      $("srcline").innerHTML = 'Source: <a href="https://www.imf.org/external/datamapper/PCPIPCH@WEO">IMF ' + esc(M.imf) + '</a> (inflation, GDP growth, unemployment, regional aggregates) and <a href="https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG">World Bank</a> (data updated ' + esc(M.wb) + "); latest figures from " + Object.keys(M.sources || {}).map(function (k) { return esc(M.sources[k]); }).join(", ") + ". Last updated " + built + '. <a href="data.json">Download the data (JSON)</a>.';
       Array.prototype.forEach.call(document.querySelectorAll(".projyear"), function (e) { e.textContent = M.proj; });
       strip(); thead();
       $("tabs").addEventListener("click", function (e) {
