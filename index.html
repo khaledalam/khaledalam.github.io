@@ -226,6 +226,17 @@
     h1 { margin: 12px 0 18px; font-size: 42px; font-weight: 600; color: var(--heading); line-height: 1.1; }
     .bio { font-weight: 300; font-size: 16.5px; line-height: 1.6; margin: 0; max-width: 60rem; }
     .bio b { font-weight: 500; }
+    .spotlight {
+      display: flex; align-items: center; gap: 16px; max-width: 60rem; margin: 28px 0 0; padding: 14px 18px 14px 14px;
+      background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--link); border-radius: 10px;
+      box-shadow: var(--shadow); color: var(--fg); text-decoration: none; transition: transform .15s, border-color .15s;
+    }
+    .spotlight:hover { transform: translateY(-2px); border-color: var(--link); text-decoration: none; }
+    .spotlight img { flex: none; width: 64px; height: 64px; border-radius: 8px; object-fit: cover; }
+    .spotlight .tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--link); }
+    .spotlight strong { display: block; margin: 2px 0; font-size: 17px; font-weight: 600; color: var(--heading); }
+    .spotlight span.desc { display: block; font-size: 14px; font-weight: 300; line-height: 1.45; }
+    .spotlight .go { margin-left: auto; flex: none; font-size: 20px; color: var(--link); }
     h2 { margin: 64px 0 20px; font-size: 30px; font-weight: 600; color: var(--heading); }
     h2 .more { font-size: 14px; font-weight: 500; margin-left: 12px; }
 
@@ -342,6 +353,9 @@
       .side hr { max-width: 200px; margin-left: auto; margin-right: auto; }
       h1 { display: none; }
       .bio { margin-top: 24px; }
+      .spotlight { gap: 12px; padding: 12px 14px 12px 12px; align-items: flex-start; }
+      .spotlight img { width: 48px; height: 48px; }
+      .spotlight .go { display: none; }
       h2 { margin-top: 48px; font-size: 26px; }
       .news-btn { display: none; }
       .project { grid-template-columns: minmax(0, 1fr); gap: 16px; margin-bottom: 48px; }
@@ -390,10 +404,25 @@
         version of this site.
       </p>
 
+      <a class="spotlight" href="/inflation-rate/">
+        <img src="./img/news/inflation-rate.webp" alt="" width="64" height="64" />
+        <span>
+          <span class="tag">New · Free tool</span>
+          <strong>Inflation Rate by Country</strong>
+          <span class="desc">Latest inflation for 200 countries, history back to 1960, IMF forecasts and a purchasing-power calculator. Updated daily from official data.</span>
+        </span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+
       <h2 id="news">News</h2>
       <div class="news">
         <button class="news-btn prev" type="button" aria-label="Previous news" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
         <div class="news-track">
+          <article class="news-card">
+            <img class="img" src="./img/news/inflation-rate.webp" alt="" width="168" height="168" loading="lazy" />
+            <p>Launched a free <a href="https://khaledalam.net/inflation-rate/">inflation tracker</a> for 200 countries, built on open IMF, OECD, BIS and World Bank data. 📈</p>
+            <time datetime="2026-10">Oct, 2026</time>
+          </article>
           <article class="news-card">
             <img class="img" src="./img/news/mini-command.webp" alt="" width="168" height="168" loading="lazy" />
             <p>Launched <a href="https://khaledalam.net/mini-command/">Mini Command</a>, a free 1v1 real-time strategy game that runs in your browser. 🎮</p>
